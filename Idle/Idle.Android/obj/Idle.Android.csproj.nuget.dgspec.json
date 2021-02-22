@@ -91,6 +91,9 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
+              "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj": {
+                "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj"
+              },
               "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj": {
                 "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj"
               }
@@ -160,6 +163,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

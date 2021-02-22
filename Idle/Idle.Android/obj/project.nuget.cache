@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1F7qCq0bp1QcIr9Fe03sHRWJSiA7/0eV5xfmjOwxoeUDO+t/7vrvKsb+GIMh816d8nHZXIeCihRsn2ydjzpOHg==",
+  "dgSpecHash": "YPgPoui1F6Scs7AAZRP261MYuFtVfebTT7lcZxcHkqsL6wUd5vTondIQLIUICPY1zTUXKSndGBfoavasbdY2DQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.Android\\Idle.Android.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Aorus\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Aorus\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\Aorus\\.nuget\\packages\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Users\\Aorus\\.nuget\\packages\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
