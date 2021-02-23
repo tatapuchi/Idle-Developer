@@ -27,6 +27,8 @@ A developer level refers to your calibre as a developer, every time you complete
 
 
 ### Items
-Items are things you can buy from the shop using in game currency, these can be hardware components (Computer Components, Peripherals, Chipsets, etc.), proprietary software tools, Computing Books (Increase Level), 
+Items are things you can buy from the shop using in game currency, these can be hardware components (Computer Components, Peripherals, Chipsets, etc.), proprietary software tools (IDEs, Subscriptions, etc), Computing Books (Increase Level), Furniture, etc. Tools that you buy will be treated as software tools, and as such will also have learning sessions for them.
+
 
 ### Session
+A session is a core component of this game, it can be a learning session that results in XP for a language/framework/tool or a job session that results in money being earned. Multiple sessions can be held at once, tapping on the session buttons will speed up their progress, all sessions automatically restart once finish.
