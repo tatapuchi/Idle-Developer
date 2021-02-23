@@ -31,7 +31,7 @@ Jobs are unlocked when you have reached a certain level in what you are learning
 
 
 ### Projects
-Projects are coding projects that you create on ypour own based on your skill set, you can make money off of these and use them as a secondary income source.
+Projects are coding projects that you create on ypour own based on your skill set, you can make money off of these and use them as a secondary income source. Projects are also a way of creating your own items, similar to crafting, you could build a robot and code it through an arduino/components bought in the shop, a discord bot, etc.
 
 
 ### Items
