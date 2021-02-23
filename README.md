@@ -2,9 +2,7 @@
 
 
 ### Setting
-You are a developer starting out on your IT journey, you will be learning frameworks, languages and tools that will allow you to earn money in order to obtain the tools you need to get more money and StackOverflow fame. You choose a language to start off with and start learning it, learning is accelerated by taps, once a learning session is completed, you get a certain amount of XP for it, the more completed learning sessions, the faster you learn but more XP needed. Upon reaching an XP cap you increase your level in that language/framework/tool. XP for a certain language can be traded in for frameworks for the language, which follows the same tap tap learning pattern.
-
-Once you have enough levels in a language or framework, you can also apply for a job, allowing you to earn coins. Coins can be used to buy tools that buff your developer, such as proprietary IDEs like IntelliJ Ultimate, Adobe Products, a PC, PC component upgrades, Monitors, more PCs, etc.
+You are a developer starting out on your IT journey, you will be learning frameworks, languages and tools that will allow you to earn money in order to obtain the tools you need to get more money and StackOverflow fame. 
 
 
 ### Developer Levels
@@ -12,18 +10,28 @@ A developer level refers to your calibre as a developer, every time you complete
 
 
 ### Languages
-
+Starting off you will select a language to begin with, once a learning session for a language completes you earn XP for said language which contributes to your level in said language. XP for a language will allow you to "buy" other frameworks and languages to learn. Upon reaching a certain level in a language, you may fulfill requirements for a job, which will allow you to earn in game currency. The higher your level in a language, the faster learning sessions are for that language and related languages/frameworks/tools. Languages alone will not provide many job oppurtunites, but will get you started off.
 
 ### Frameworks
-
+Frameworks are similar to languages, however these provide many more job oppurtunites, and also allow you to build your own projects, which may be another source of income. Learning related frameworks and tools for a language will also increase the speed of XP, and increase your calibre as a developer.
 
 
 ### Tools
+Tools are developer tools that aid in development and also provide XP towards your overall calibre as a developer, tools to learn can also be purchased from the shop (eg: IntelliJ Ultimate, Adobe Products)
 
+
+### Skill Level
+The levels you can be at in a certain framework/language/tool are divided into sections, reflecting your skill in said framework/language/tool. 
+These sections are letter based, ranging as F - E - D - C - B - A - S - S+ - S++ - Z
+Your skill level will also translate into the job oppurtunites you have, junior dev, senior dev, etc.
 
 
 ### Jobs
+Jobs are unlocked when you have reached a certain level in what you are learning, allowing you to gain in game currency through a job session, which is similar to a learning session, except that it gets you money but less XP than a learning session. Jobs can be working at a company, Freelancing, Youtubing, Blogging, etc.
 
+
+### Projects
+Projects are coding projects that you create on ypour own based on your skill set, you can make money off of these and use them as a secondary income source.
 
 
 ### Items
