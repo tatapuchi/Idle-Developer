@@ -31,11 +31,11 @@ Jobs are unlocked when you have reached a certain level in what you are learning
 
 
 ### Projects
-Projects are coding projects that you create on ypour own based on your skill set, you can make money off of these and use them as a secondary income source. Projects are also a way of creating your own items, similar to crafting, you could build a robot and code it through an arduino/components bought in the shop, a discord bot, etc.
+Projects are coding projects that you create on ypour own based on your skill set, you can make money off of these and use them as a secondary income source. Projects are also a way of creating your own items, similar to crafting, you could build a robot and code it through an arduino/components bought in the shop, a discord bot, build and code a keyboard, etc. Projects are a central aspect of the game, equivalent to crafting.
 
 
 ### Items
-Items are things you can buy from the shop using in game currency, these can be hardware components (Computer Components, Peripherals, Chipsets, etc.), proprietary software tools (IDEs, Subscriptions, etc), Computing Books (Increase Level), Furniture, etc. Tools that you buy will be treated as software tools, and as such will also have learning sessions for them.
+Items are things you can buy from the shop using in game currency, these can be hardware components (Computer Components, Peripherals, Chipsets, etc.), proprietary software tools (IDEs, Subscriptions, etc), Computing Books (Increase Level), Furniture, etc. Tools that you buy will be treated as software tools, and as such will also have learning sessions for them. Items are divided into rarities, namely: Common, Uncommon, Rare, Epic, Legendary, Mythical, Ancient, Forbidden, and they also may have modifiers on them.
 
 
 ### Session
