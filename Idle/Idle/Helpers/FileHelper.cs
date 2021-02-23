@@ -7,15 +7,8 @@ using System.Text;
 namespace Idle.Helpers
 {
     //Non-instantiable Helper class that handles file IO for data persistence
-    public class FileHelper
+    public static class FileHelper
     {
-
-        //Non-instantiable Helper Class
-        private FileHelper()
-        {
-            throw new InvalidOperationException();
-        }
-
 
         //File Path to json file containing Player data
         private static readonly string file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Player.json");
@@ -33,10 +26,16 @@ namespace Idle.Helpers
         public static Player ReadPlayer()
         {
             string json = File.ReadAllText(file);
-            Player player = (Player) Newtonsoft.Json.JsonConvert.DeserializeObject(json);
+            var player = Newtonsoft.Json.JsonConvert.DeserializeObject<Player>(json);
 
             return player;
         }
+
+        public static void ClearPlayer()
+        {
+            File.WriteAllText(file, string.Empty);
+        }
+
 
     }
 }

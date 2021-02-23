@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Idle.Core.Models.Fields
+{
+
+    public abstract class Languages : Field
+    {
+        public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
+        public virtual int XP { get; set; }
+        public virtual int Level { get; set; }
+    }
+
+
+}

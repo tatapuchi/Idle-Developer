@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Idle.MainPage">
 
-    <StackLayout>
+    <StackLayout Margin="12">
 
         <Entry x:Name="FileEntry"/>
-        <Button Clicked="Button_Clicked"/>
+        <Button x:Name="Java" Text="Java" CornerRadius="12" BackgroundColor="Orange" Clicked="Java_Clicked" />
+        <Button x:Name="HTML" Text="HTML" CornerRadius="12" BackgroundColor="Orange" Clicked="HTML_Clicked"/>
+        <Button x:Name="CSS" Text="CSS" CornerRadius="12" BackgroundColor="Orange" Clicked="CSS_Clicked"/>
+        <Button x:Name="JavaScript" Text="JavaScript" CornerRadius="12" BackgroundColor="Orange" Clicked="JavaScript_Clicked"/>
+        <Button x:Name="Python" Text="Python" CornerRadius="12" BackgroundColor="Orange" Clicked="Python_Clicked"/>
 
     </StackLayout>
 
