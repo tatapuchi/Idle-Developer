@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Idle.Core.Models.Fields;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using static Idle.Core.Models.Field;
@@ -18,13 +19,18 @@ namespace Idle.Core.Models
         public int Coins { get; set; }
 
         //Languages the player currently can use
-        public Language Languages { get; set; }
+        private Language languagelist;
+
+        public Language LanguageList { get { return languagelist; } set { languagelist = value;
+                if (value == Language.Java) { Fields.Add(Languages.GetLanguage(value)); } } }
 
         //Frameworks the player currently can use
-        public Framework Frameworks { get; set; }
+        public Framework Frameworklist { get; set; }
 
         //Tools the player currently can use
-        public Tool Tools { get; set; }
+        public Tool Toollist { get; set; }
+
+        public List<Field> Fields { get; set; }
 
 
 

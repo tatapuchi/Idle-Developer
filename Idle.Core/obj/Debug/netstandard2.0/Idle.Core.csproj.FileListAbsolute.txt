@@ -4,7 +4,6 @@ C:\Users\Aorus\source\repos\Idle\Idle.Core\bin\Debug\netstandard2.0\Idle.Core.pd
 C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csprojAssemblyReference.cache
 C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.AssemblyInfoInputs.cache
 C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.AssemblyInfo.cs
-C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csproj.CoreCompileInputs.cache
 C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.dll
 C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.pdb
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\bin\Debug\netstandard2.0\Idle.Core.deps.json
@@ -16,3 +15,4 @@ C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\I
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csproj.CoreCompileInputs.cache
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.dll
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.pdb
+C:\Users\Aorus\source\repos\Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csproj.CoreCompileInputs.cache

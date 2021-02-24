@@ -6,6 +6,7 @@
     <StackLayout Margin="12">
 
         <Entry x:Name="FileEntry"/>
+        <Entry x:Name="SessionEntry"/>
         <Button x:Name="Java" Text="Java" CornerRadius="12" BackgroundColor="Orange" Clicked="Java_Clicked" />
         <Button x:Name="HTML" Text="HTML" CornerRadius="12" BackgroundColor="Orange" Clicked="HTML_Clicked"/>
         <Button x:Name="CSS" Text="CSS" CornerRadius="12" BackgroundColor="Orange" Clicked="CSS_Clicked"/>

@@ -7,6 +7,7 @@
 
             <StackLayout Margin="12">
 
+                
                 <Label Text="C#"/>
                 <Button x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label>Progress</Label>
@@ -14,10 +15,10 @@
 
                 <Line/>
 
-                <Label Text="Java"/>
-                <Button x:Name="Upgrade1" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-                <Label>Progress</Label>
-                <ProgressBar x:Name="ProgressBar1" ProgressColor="Orange"/>
+            <Label  TextColor="White" Text="Java"/>
+            <Button TextColor="White" x:Name="JavaUpgrade" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+                <Label TextColor="White" x:Name="JavaLabel">Level 1</Label>
+                <ProgressBar x:Name="JavaProgressBar" ProgressColor="Orange"/>
 
                 <Line/>
 
@@ -25,6 +26,8 @@
                 <Button x:Name="Upgrade2" Text="Upgrade" Clicked="Upgrade2_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label>Progress</Label>
                 <ProgressBar x:Name="ProgressBar2" ProgressColor="Orange"/>
+
+            <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked"/>
         </StackLayout>
             
         

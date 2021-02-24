@@ -11,7 +11,6 @@ namespace Idle
     {
         //Single Player object used by code to update the player
         public static Player player;
-        public static Dictionary<string, Field> fields;
         public App()
         {
             InitializeComponent();
@@ -20,9 +19,20 @@ namespace Idle
             Sharpnado.Tabs.Initializer.Initialize(false, false);
 
             //Upon starting, load and initialzie our static player object from data in the file
-            player = FileHelper.ReadPlayer();
 
-            //fields = FileHelper.ReadFields();
+            player = new Player();
+            player.XP = 0;
+            player.Coins = 50;
+            player.Level = 1;
+            player.LanguageList = Field.Language.None;
+            player.Frameworklist = Field.Framework.None;
+            player.Toollist = Field.Tool.None;
+            player.Fields = new List<Field>();
+            player.LanguageList |= Field.Language.Java;
+            //FileHelper.WritePlayer(player);
+
+            //player = FileHelper.ReadPlayer();
+
 
             MainPage = new MainPage();
         }
