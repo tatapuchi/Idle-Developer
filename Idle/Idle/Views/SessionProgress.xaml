@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Idle.Views.SessionProgress">
+    <ContentPage.Content>        
+        
+
+            <StackLayout Margin="12">
+
+                <Label Text="Session progress"/>
+                <Button x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+                <Label>Progress</Label>
+                <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+
+                <Line/>
+
+                <Label Text="Session progress"/>
+                <Button x:Name="Upgrade1" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+                <Label>Progress</Label>
+                <ProgressBar x:Name="ProgressBar1" ProgressColor="Orange"/>
+
+                <Line/>
+
+                <Label Text="Session progress"/>
+                <Button x:Name="Upgrade2" Text="Upgrade" Clicked="Upgrade2_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+                <Label>Progress</Label>
+                <ProgressBar x:Name="ProgressBar2" ProgressColor="Orange"/>
+        </StackLayout>
+            
+        
+    </ContentPage.Content>
+</ContentPage>

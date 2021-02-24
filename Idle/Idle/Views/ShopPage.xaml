@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Idle.Views.IDETab">
+  <!--Pages can be added as references or inline-->
+    <ContentPage Title="IDEs">
+        <Button x:Name="CLionBuy" Text="Buy CLion"  CornerRadius="12" BackgroundColor="Orange"/>
+    </ContentPage>
+    <ContentPage Title="Tools">
+        <Button x:Name="IntelliJBuy" Text="Buy Intellij"  CornerRadius="12" BackgroundColor="Orange"/>
+    </ContentPage>
+    <ContentPage Title="Languages">
+        <Button x:Name="JavaBuy" Text="Buy Java"  CornerRadius="12" BackgroundColor="Orange"/>
+    </ContentPage>
+</TabbedPage>

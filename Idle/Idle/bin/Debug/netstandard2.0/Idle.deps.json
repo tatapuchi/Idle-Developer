@@ -12,6 +12,7 @@
           "Idle.Core": "1.0.0",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
+          "Sharpnado.Tabs": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
         },
@@ -33,11 +34,52 @@
           }
         }
       },
+      "Sharpnado.Shadows/1.2.0": {
+        "dependencies": {
+          "ThomasLevesque.WeakEvent": "4.1.0",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sharpnado.Shadows.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      },
+      "Sharpnado.Tabs/2.1.0": {
+        "dependencies": {
+          "Sharpnado.Shadows": "1.2.0",
+          "Sharpnado.TaskMonitor": "1.0.1",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sharpnado.Tabs.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "Sharpnado.TaskMonitor/1.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Sharpnado.TaskMonitor.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "runtime": {
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {
             "assemblyVersion": "4.1.4.0",
             "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "ThomasLevesque.WeakEvent/4.1.0": {
+        "runtime": {
+          "lib/netstandard2.0/WeakEvent.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.1.0.0"
           }
         }
       },
@@ -102,12 +144,40 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
+    "Sharpnado.Shadows/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zjHTh6pZXpGb0viQ5wL5XtFrQNA5xeNzkveVAJvH8x7HLFRnUIXaJ6QzbUfeAdAL2nEAJSffcaeE3wQP6a6m0g==",
+      "path": "sharpnado.shadows/1.2.0",
+      "hashPath": "sharpnado.shadows.1.2.0.nupkg.sha512"
+    },
+    "Sharpnado.Tabs/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b3tdGEHtqXT5qvW4V/ZnIBKKMA8NZ5LYypbHsmjd1ViHfjh5kCy0+IbgSmLg12Obel7wt0iD+dZrny+A1wKCzQ==",
+      "path": "sharpnado.tabs/2.1.0",
+      "hashPath": "sharpnado.tabs.2.1.0.nupkg.sha512"
+    },
+    "Sharpnado.TaskMonitor/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ou7ff5tmFApSXHf0o7majjpR4u0vJUyEKJ5ILBAC5U594qUMGjhae180xWOO1aAjKzTGPZM5ZFvf4SOf+EzIJg==",
+      "path": "sharpnado.taskmonitor/1.0.1",
+      "hashPath": "sharpnado.taskmonitor.1.0.1.nupkg.sha512"
+    },
     "System.Numerics.Vectors/4.5.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "path": "system.numerics.vectors/4.5.0",
       "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "ThomasLevesque.WeakEvent/4.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mcp8UoYXWvPmud7UJmREULQLxLmX6SYet2pyZUHpcmIiku3JoqEilPUu9QeUZrV7fOCp0Pfva/VDhG+n3afGyg==",
+      "path": "thomaslevesque.weakevent/4.1.0",
+      "hashPath": "thomaslevesque.weakevent.4.1.0.nupkg.sha512"
     },
     "Xamarin.Essentials/1.6.1": {
       "type": "package",

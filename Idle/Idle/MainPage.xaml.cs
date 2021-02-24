@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Idle.Views;
 
 namespace Idle
 {
@@ -52,6 +53,11 @@ namespace Idle
             App.player.Languages |= Core.Models.Field.Language.Python;
             FileEntry.Text = App.player.Languages.ToString();
             FileHelper.WritePlayer(App.player);
+        }
+
+        private void BtnSessionProgress_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new SessionProgress();
         }
     }
 }

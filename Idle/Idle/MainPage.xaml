@@ -11,6 +11,8 @@
         <Button x:Name="CSS" Text="CSS" CornerRadius="12" BackgroundColor="Orange" Clicked="CSS_Clicked"/>
         <Button x:Name="JavaScript" Text="JavaScript" CornerRadius="12" BackgroundColor="Orange" Clicked="JavaScript_Clicked"/>
         <Button x:Name="Python" Text="Python" CornerRadius="12" BackgroundColor="Orange" Clicked="Python_Clicked"/>
+        <!-- Temporary button to bring you to session progress-->
+        <Button x:Name="btnSessionProgress" Text="(TEMP)Go to Progress Page" CornerRadius="12" BackgroundColor="Orange" Clicked="BtnSessionProgress_Clicked"/>
 
     </StackLayout>
 

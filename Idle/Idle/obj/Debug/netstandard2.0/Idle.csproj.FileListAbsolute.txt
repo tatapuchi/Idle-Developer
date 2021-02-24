@@ -34,3 +34,5 @@ C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\I
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Idle.dll
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\ref\Idle.dll
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Idle.pdb
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\ShopPage.xaml.g.cs
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\SessionProgress.xaml.g.cs

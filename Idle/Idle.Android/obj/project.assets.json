@@ -11,6 +11,46 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Sharpnado.Shadows/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "ThomasLevesque.WeakEvent": "4.1.0",
+          "Xamarin.Forms": "3.6.0.220655"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Sharpnado.Shadows.Android.dll": {},
+          "lib/MonoAndroid10/Sharpnado.Shadows.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Sharpnado.Shadows.Android.dll": {},
+          "lib/MonoAndroid10/Sharpnado.Shadows.dll": {}
+        }
+      },
+      "Sharpnado.Tabs/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Sharpnado.Shadows": "1.2.0",
+          "Sharpnado.TaskMonitor": "1.0.1",
+          "Xamarin.Forms": "3.6.0.220655"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Sharpnado.Tabs.Android.dll": {},
+          "lib/MonoAndroid10/Sharpnado.Tabs.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Sharpnado.Tabs.Android.dll": {},
+          "lib/MonoAndroid10/Sharpnado.Tabs.dll": {}
+        }
+      },
+      "Sharpnado.TaskMonitor/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Sharpnado.TaskMonitor.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Sharpnado.TaskMonitor.dll": {}
+        }
+      },
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -18,6 +58,15 @@
         },
         "runtime": {
           "lib/MonoAndroid10/_._": {}
+        }
+      },
+      "ThomasLevesque.WeakEvent/4.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/WeakEvent.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/WeakEvent.dll": {}
         }
       },
       "Xamarin.AndroidX.Activity/1.1.0.5": {
@@ -986,6 +1035,7 @@
         "dependencies": {
           "Idle.Core": "1.0.0",
           "Newtonsoft.Json": "12.0.3",
+          "Sharpnado.Tabs": "2.1.0",
           "Xamarin.Essentials": "1.6.1",
           "Xamarin.Forms": "5.0.0.2012"
         },
@@ -1040,6 +1090,77 @@
         "packageIcon.png"
       ]
     },
+    "Sharpnado.Shadows/1.2.0": {
+      "sha512": "zjHTh6pZXpGb0viQ5wL5XtFrQNA5xeNzkveVAJvH8x7HLFRnUIXaJ6QzbUfeAdAL2nEAJSffcaeE3wQP6a6m0g==",
+      "type": "package",
+      "path": "sharpnado.shadows/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "images/shadows.png",
+        "lib/MonoAndroid10/Sharpnado.Shadows.Android.dll",
+        "lib/MonoAndroid10/Sharpnado.Shadows.Android.pdb",
+        "lib/MonoAndroid10/Sharpnado.Shadows.dll",
+        "lib/MonoAndroid10/Sharpnado.Shadows.pdb",
+        "lib/Xamarin.iOS10/Sharpnado.Shadows.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Shadows.iOS.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Shadows.iOS.pdb",
+        "lib/Xamarin.iOS10/Sharpnado.Shadows.pdb",
+        "lib/netstandard2.0/Sharpnado.Shadows.dll",
+        "lib/netstandard2.0/Sharpnado.Shadows.pdb",
+        "lib/tizen40/Sharpnado.Shadows.Tizen.dll",
+        "lib/tizen40/Sharpnado.Shadows.Tizen.pdb",
+        "lib/tizen40/Sharpnado.Shadows.dll",
+        "lib/tizen40/Sharpnado.Shadows.pdb",
+        "lib/uap10.0.16299/Sharpnado.Shadows.UWP.dll",
+        "lib/uap10.0.16299/Sharpnado.Shadows.UWP.pdb",
+        "lib/uap10.0.16299/Sharpnado.Shadows.dll",
+        "lib/uap10.0.16299/Sharpnado.Shadows.pdb",
+        "sharpnado.shadows.1.2.0.nupkg.sha512",
+        "sharpnado.shadows.nuspec"
+      ]
+    },
+    "Sharpnado.Tabs/2.1.0": {
+      "sha512": "b3tdGEHtqXT5qvW4V/ZnIBKKMA8NZ5LYypbHsmjd1ViHfjh5kCy0+IbgSmLg12Obel7wt0iD+dZrny+A1wKCzQ==",
+      "type": "package",
+      "path": "sharpnado.tabs/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "images/logo_2_1.png",
+        "lib/MonoAndroid10/Sharpnado.Tabs.Android.dll",
+        "lib/MonoAndroid10/Sharpnado.Tabs.Android.pdb",
+        "lib/MonoAndroid10/Sharpnado.Tabs.dll",
+        "lib/MonoAndroid10/Sharpnado.Tabs.pdb",
+        "lib/Xamarin.iOS10/Sharpnado.Tabs.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Tabs.iOS.dll",
+        "lib/Xamarin.iOS10/Sharpnado.Tabs.iOS.pdb",
+        "lib/Xamarin.iOS10/Sharpnado.Tabs.pdb",
+        "lib/netstandard2.0/Sharpnado.Tabs.dll",
+        "lib/netstandard2.0/Sharpnado.Tabs.pdb",
+        "lib/uap10.0.16299/Sharpnado.Tabs.UWP.dll",
+        "lib/uap10.0.16299/Sharpnado.Tabs.UWP.pdb",
+        "lib/uap10.0.16299/Sharpnado.Tabs.dll",
+        "lib/uap10.0.16299/Sharpnado.Tabs.pdb",
+        "sharpnado.tabs.2.1.0.nupkg.sha512",
+        "sharpnado.tabs.nuspec"
+      ]
+    },
+    "Sharpnado.TaskMonitor/1.0.1": {
+      "sha512": "ou7ff5tmFApSXHf0o7majjpR4u0vJUyEKJ5ILBAC5U594qUMGjhae180xWOO1aAjKzTGPZM5ZFvf4SOf+EzIJg==",
+      "type": "package",
+      "path": "sharpnado.taskmonitor/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Sharpnado.TaskMonitor.dll",
+        "sharpnado.taskmonitor.1.0.1.nupkg.sha512",
+        "sharpnado.taskmonitor.nuspec",
+        "task-monitor.png"
+      ]
+    },
     "System.Numerics.Vectors/4.5.0": {
       "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "type": "package",
@@ -1085,6 +1206,30 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "ThomasLevesque.WeakEvent/4.1.0": {
+      "sha512": "mcp8UoYXWvPmud7UJmREULQLxLmX6SYet2pyZUHpcmIiku3JoqEilPUu9QeUZrV7fOCp0Pfva/VDhG+n3afGyg==",
+      "type": "package",
+      "path": "thomaslevesque.weakevent/4.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "assets/weakevent.png",
+        "lib/net40/WeakEvent.dll",
+        "lib/net40/WeakEvent.pdb",
+        "lib/net40/WeakEvent.xml",
+        "lib/net45/WeakEvent.dll",
+        "lib/net45/WeakEvent.pdb",
+        "lib/net45/WeakEvent.xml",
+        "lib/netstandard1.3/WeakEvent.dll",
+        "lib/netstandard1.3/WeakEvent.pdb",
+        "lib/netstandard1.3/WeakEvent.xml",
+        "lib/netstandard2.0/WeakEvent.dll",
+        "lib/netstandard2.0/WeakEvent.pdb",
+        "lib/netstandard2.0/WeakEvent.xml",
+        "thomaslevesque.weakevent.4.1.0.nupkg.sha512",
+        "thomaslevesque.weakevent.nuspec"
       ]
     },
     "Xamarin.AndroidX.Activity/1.1.0.5": {
@@ -2195,29 +2340,30 @@
     "MonoAndroid,Version=v11.0": [
       "Idle >= 1.0.0",
       "Idle.Core >= 1.0.0",
+      "Sharpnado.Tabs >= 2.1.0",
       "Xamarin.Essentials >= 1.6.1",
       "Xamarin.Forms >= 5.0.0.2012"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aorus\\.nuget\\packages\\": {},
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.Android\\Idle.Android.csproj",
+      "projectUniqueName": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.Android\\Idle.Android.csproj",
       "projectName": "Idle.Android",
-      "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.Android\\Idle.Android.csproj",
-      "packagesPath": "C:\\Users\\Aorus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.Android\\obj\\",
+      "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.Android\\Idle.Android.csproj",
+      "packagesPath": "C:\\Users\\Evolve-4\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Evolve-4\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2231,11 +2377,11 @@
       "frameworks": {
         "monoandroid11.0": {
           "projectReferences": {
-            "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj": {
-              "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj"
+            "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle.Core\\Idle.Core.csproj": {
+              "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle.Core\\Idle.Core.csproj"
             },
-            "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj": {
-              "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj"
+            "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle\\Idle.csproj": {
+              "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle\\Idle.csproj"
             }
           }
         }
@@ -2244,6 +2390,10 @@
     "frameworks": {
       "monoandroid11.0": {
         "dependencies": {
+          "Sharpnado.Tabs": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.6.1, )"

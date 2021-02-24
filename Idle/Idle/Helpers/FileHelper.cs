@@ -25,8 +25,10 @@ namespace Idle.Helpers
         //Reads Player.json and returns a deserialized Player object from the file data
         public static Player ReadPlayer()
         {
-            string json = File.ReadAllText(file);
-            var player = Newtonsoft.Json.JsonConvert.DeserializeObject<Player>(json);
+            //string json = File.ReadAllText(file);
+            //var player = Newtonsoft.Json.JsonConvert.DeserializeObject<Player>(json);
+
+            var player = new Player();
 
             return player;
         }

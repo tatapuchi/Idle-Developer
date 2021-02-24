@@ -1,9 +1,4 @@
 int attr alpha 0x0
-int attr fastScrollEnabled 0x0
-int attr fastScrollHorizontalThumbDrawable 0x0
-int attr fastScrollHorizontalTrackDrawable 0x0
-int attr fastScrollVerticalThumbDrawable 0x0
-int attr fastScrollVerticalTrackDrawable 0x0
 int attr font 0x0
 int attr fontProviderAuthority 0x0
 int attr fontProviderCerts 0x0
@@ -14,11 +9,6 @@ int attr fontProviderQuery 0x0
 int attr fontStyle 0x0
 int attr fontVariationSettings 0x0
 int attr fontWeight 0x0
-int attr layoutManager 0x0
-int attr recyclerViewStyle 0x0
-int attr reverseLayout 0x0
-int attr spanCount 0x0
-int attr stackFromEnd 0x0
 int attr ttcIndex 0x0
 int color notification_action_color_filter 0x0
 int color notification_icon_bg_color 0x0
@@ -31,12 +21,6 @@ int dimen compat_button_padding_vertical_material 0x0
 int dimen compat_control_corner_material 0x0
 int dimen compat_notification_large_icon_max_height 0x0
 int dimen compat_notification_large_icon_max_width 0x0
-int dimen fastscroll_default_thickness 0x0
-int dimen fastscroll_margin 0x0
-int dimen fastscroll_minimum_range 0x0
-int dimen item_touch_helper_max_drag_scroll_per_frame 0x0
-int dimen item_touch_helper_swipe_escape_max_velocity 0x0
-int dimen item_touch_helper_swipe_escape_velocity 0x0
 int dimen notification_action_icon_size 0x0
 int dimen notification_action_text_size 0x0
 int dimen notification_big_circle_margin 0x0
@@ -111,7 +95,6 @@ int id icon 0x0
 int id icon_group 0x0
 int id info 0x0
 int id italic 0x0
-int id item_touch_helper_previous_elevation 0x0
 int id line1 0x0
 int id line3 0x0
 int id normal 0x0
@@ -186,18 +169,3 @@ int styleable GradientColor_android_type 11
 int[] styleable GradientColorItem { 0x10101a5, 0x1010514 }
 int styleable GradientColorItem_android_color 0
 int styleable GradientColorItem_android_offset 1
-int[] styleable RecyclerView { 0x10100eb, 0x10100f1, 0x10100c4, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }
-int styleable RecyclerView_android_clipToPadding 0
-int styleable RecyclerView_android_descendantFocusability 1
-int styleable RecyclerView_android_orientation 2
-int styleable RecyclerView_fastScrollEnabled 3
-int styleable RecyclerView_fastScrollHorizontalThumbDrawable 4
-int styleable RecyclerView_fastScrollHorizontalTrackDrawable 5
-int styleable RecyclerView_fastScrollVerticalThumbDrawable 6
-int styleable RecyclerView_fastScrollVerticalTrackDrawable 7
-int styleable RecyclerView_layoutManager 8
-int styleable RecyclerView_reverseLayout 9
-int styleable RecyclerView_spanCount 10
-int styleable RecyclerView_stackFromEnd 11
-int[] styleable ViewPager2 { 0x10100c4 }
-int styleable ViewPager2_android_orientation 0

@@ -14,6 +14,9 @@ namespace Idle
         {
             InitializeComponent();
 
+            //Initialize Sharpnado tabs
+            Sharpnado.Tabs.Initializer.Initialize(false, false);
+
             //Upon starting, load and initialzie our static player object from data in the file
             player = FileHelper.ReadPlayer();
 

@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>pixel_2_pie_9_0_-_api_28</SelectedDevice>
     <DefaultDevice>pixel_2_pie_9_0_-_api_28</DefaultDevice>
+    <AndroidDesignerPreferredTheme>Theme.AppCompat.Light.NoActionBar</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>
