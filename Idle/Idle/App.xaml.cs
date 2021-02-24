@@ -2,6 +2,7 @@
 using Idle.Helpers;
 using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,9 +12,29 @@ namespace Idle
     {
         //Single Player object used by code to update the player
         public static Player player;
+        public static int timesopened;
         public App()
         {
             InitializeComponent();
+
+            //Check how many times the app has been opened
+            #region Times Opened
+
+            if (Preferences.ContainsKey("Times_Opened")) 
+            {
+                Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
+            }
+            else
+            {
+                Preferences.Set("Times_Opened", 1);
+            }
+
+            timesopened = Preferences.Get("Times_Opened", 1);
+
+            #endregion
+
+
+
 
             //Initialize Sharpnado tabs
             Sharpnado.Tabs.Initializer.Initialize(false, false);
