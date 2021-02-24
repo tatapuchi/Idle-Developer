@@ -13,6 +13,8 @@ namespace Idle.Helpers
         //File Path to json file containing Player data
         private static readonly string file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Player.json");
 
+        private static readonly string fieldfile = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Fields.json");
+
 
         //Serializes Player object and writes the content to Player.json
         public static void WritePlayer(Player player)
@@ -38,6 +40,21 @@ namespace Idle.Helpers
             File.WriteAllText(file, string.Empty);
         }
 
+
+
+        public static void WriteFields(Dictionary<string, Field> fields)
+        {
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(fields);
+            File.WriteAllText(fieldfile, json);
+        }
+
+        public static Dictionary<string, Field> ReadFields()
+        {
+            string json = File.ReadAllText(fieldfile);
+            var fields = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Field>>(json);
+
+            return fields;
+        }
 
     }
 }

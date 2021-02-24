@@ -1,6 +1,7 @@
 ﻿using Idle.Core.Models;
 using Idle.Helpers;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace Idle
     {
         //Single Player object used by code to update the player
         public static Player player;
+        public static Dictionary<string, Field> fields;
         public App()
         {
             InitializeComponent();
@@ -19,6 +21,8 @@ namespace Idle
 
             //Upon starting, load and initialzie our static player object from data in the file
             player = FileHelper.ReadPlayer();
+
+            //fields = FileHelper.ReadFields();
 
             MainPage = new MainPage();
         }

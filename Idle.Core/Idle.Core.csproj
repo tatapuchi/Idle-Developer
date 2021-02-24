@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Models\Fields\Framework\" />
+    <Folder Include="Models\Fields\Tool\" />
+    <Folder Include="Models\Items\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
