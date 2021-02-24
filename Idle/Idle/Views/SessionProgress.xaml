@@ -7,21 +7,21 @@
 
             <StackLayout Margin="12">
 
-                <Label Text="Session progress"/>
+                <Label Text="C#"/>
                 <Button x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label>Progress</Label>
                 <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
 
                 <Line/>
 
-                <Label Text="Session progress"/>
+                <Label Text="Java"/>
                 <Button x:Name="Upgrade1" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label>Progress</Label>
                 <ProgressBar x:Name="ProgressBar1" ProgressColor="Orange"/>
 
                 <Line/>
 
-                <Label Text="Session progress"/>
+                <Label Text="Kotlin"/>
                 <Button x:Name="Upgrade2" Text="Upgrade" Clicked="Upgrade2_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label>Progress</Label>
                 <ProgressBar x:Name="ProgressBar2" ProgressColor="Orange"/>

@@ -1160,3 +1160,16 @@ C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle.Android\obj\Debug\110\andr
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle.Android\obj\Debug\110\android\assets\WeakEvent.pdb
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle.Android\obj\Debug\110\android\src\crc64994682affb61faca\AndroidShadowsRenderer.java
 C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle.Android\obj\Debug\110\android\src\crc64994682affb61faca\ShadowView.java
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Shadows.Android.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Shadows.Android.pdb
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Shadows.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Shadows.pdb
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Tabs.Android.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Tabs.Android.pdb
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Tabs.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.Tabs.pdb
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\Sharpnado.TaskMonitor.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\WeakEvent.dll
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\assets\WeakEvent.pdb
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\src\crc64994682affb61faca\AndroidShadowsRenderer.java
+C:\Users\Aorus\source\repos\Idle\Idle\Idle.Android\obj\Debug\110\android\src\crc64994682affb61faca\ShadowView.java

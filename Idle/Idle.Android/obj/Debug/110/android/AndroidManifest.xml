@@ -8,7 +8,7 @@
     <package android:name="Mono.Android.DebugRuntime" />
     <package android:name="Mono.Android.Platform.ApiLevel_30" />
   </queries>
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="Idle" android:theme="@style/MainTheme">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:icon="@mipmap/icon" android:label="Idle" android:theme="@style/MainTheme">
     <activity android:name="crc64e77e1149a96d86ca.MainActivity" android:configChanges="orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:icon="@mipmap/icon" android:label="Idle" android:theme="@style/MainTheme">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
