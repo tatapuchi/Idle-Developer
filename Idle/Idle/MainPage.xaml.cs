@@ -24,35 +24,37 @@ namespace Idle
         {
             App.player.LanguageList |= Core.Models.Field.Language.Java;
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player);
+            if(App.player.Fields[nameof(Java)] != null) { 
+                SessionEntry.Text = App.player.Fields[nameof(Java)].ToString(); }
+            FileHelper.WritePlayer(App.player.DTO);
         }
 
         private void HTML_Clicked(object sender, EventArgs e)
         {
             App.player.LanguageList |= Core.Models.Field.Language.HTML;
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player);
+            FileHelper.WritePlayer(App.player.DTO);
         }
 
         private void CSS_Clicked(object sender, EventArgs e)
         {
             App.player.LanguageList |= Core.Models.Field.Language.CSS;
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player);
+            FileHelper.WritePlayer(App.player.DTO);
         }
 
         private void JavaScript_Clicked(object sender, EventArgs e)
         {
             App.player.LanguageList |= Core.Models.Field.Language.JavaScript;
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player);
+            FileHelper.WritePlayer(App.player.DTO);
         }
 
         private void Python_Clicked(object sender, EventArgs e)
         {
             App.player.LanguageList |= Core.Models.Field.Language.Python;
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player);
+            FileHelper.WritePlayer(App.player.DTO);
         }
 
         private void BtnSessionProgress_Clicked(object sender, EventArgs e)

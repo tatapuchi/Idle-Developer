@@ -1,4 +1,6 @@
-﻿using Idle.Helpers;
+﻿using Idle.Core.Models.Fields;
+using Idle.Core.Models.Fields.Language;
+using Idle.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,9 @@ namespace Idle.Views
         public SessionProgress()
         {
             InitializeComponent();
-            JavaLabel.Text = App.player.Fields[0].Level.ToString();
+            Java java = new Java();
+            java.DTOtoBO(App.player.Fields[nameof(Java)]);
+            JavaLabel.Text = java.Level.ToString();
 
             Task.Run(async () =>
             {
@@ -31,10 +35,10 @@ namespace Idle.Views
                     {
                         if(JavaProgressBar.Progress >= 1.0f)
                         {
-                            App.player.Fields[0].Level++;
-                            App.player.Fields[0].XP += 35;
+                            java.Level++;
+                            java.XP += 35;
                             JavaProgressBar.Progress = 0.0f;
-                            JavaLabel.Text = $"Level {App.player.Fields[0].Level}, {App.player.Fields[0].XP} XP";
+                            JavaLabel.Text = $"Level {java.Level}, {java.XP} XP";
                         }
                         JavaProgressBar.Progress += 0.01f;
 
@@ -70,7 +74,7 @@ namespace Idle.Views
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            FileHelper.WritePlayer(App.player);
+            FileHelper.WritePlayer(App.player.DTO);
         }
     }
 }

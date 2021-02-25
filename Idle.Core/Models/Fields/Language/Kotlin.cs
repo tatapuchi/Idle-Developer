@@ -6,23 +6,35 @@ namespace Idle.Core.Models.Fields.Language
 {
     public sealed class Kotlin : Languages
     {
-        private string name = "Kotlin";
-        public override string Name { get => name; set => name = value; }
 
-        private string description = "An android language";
-        public override string Description { get => description; set => description = value; }
+
+        public Kotlin()
+        {
+            _dto = new FieldDTO {XP = _xp, Level = _level,};
+        }
+
+        private string _name = "Kotlin";
+        public override string Name { get => _name;}
+
+        private string _description = "An android language";
+        public override string Description { get => _description;}
 
 
 
         //Default amount of xp
-        private int xp = 0;
-        public override int XP { get => xp; set => xp = value; }
+        private int _xp = 0;
+        public override int XP { get => _xp; set { _xp = value; _dto.XP = value; } }
 
 
         //Default level
-        private int level = 1;
-        public override int Level { get => level; set => level = value; }
+        private int _level = 1;
+        public override int Level { get => _level; set { _level = value; _dto.Level = value; } }
 
+
+        private FieldDTO _dto = new FieldDTO();
+        public override FieldDTO DTO { get => _dto; set => _dto = value; }
+
+        
 
 
     }

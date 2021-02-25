@@ -15,9 +15,9 @@
 
                 <Line/>
 
-            <Label  TextColor="White" Text="Java"/>
+            <Label  TextColor="Black" Text="Java"/>
             <Button TextColor="White" x:Name="JavaUpgrade" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-                <Label TextColor="White" x:Name="JavaLabel">Level 1</Label>
+                <Label TextColor="Black" x:Name="JavaLabel">Level 1</Label>
                 <ProgressBar x:Name="JavaProgressBar" ProgressColor="Orange"/>
 
                 <Line/>

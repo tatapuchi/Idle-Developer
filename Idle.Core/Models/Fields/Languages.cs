@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields
         public virtual string Description { get; set; }
         public virtual int XP { get; set; }
         public virtual int Level { get; set; }
+        public virtual FieldDTO DTO { get; set; }
 
         public static Languages GetLanguage(Field.Language languauge)
         {
@@ -29,6 +30,16 @@ namespace Idle.Core.Models.Fields
             }
 
         }
+
+        public void DTOtoBO(FieldDTO dto)
+        {
+            this.XP = dto.XP;
+            this.Level = dto.Level;
+            this.DTO = dto;
+            
+        }
+
+
 
 
     }
