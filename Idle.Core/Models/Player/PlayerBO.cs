@@ -19,7 +19,10 @@ namespace Idle.Core.Models.Player
             _dto.FrameworkList = _frameworklist;
             _dto.ToolList = _toollist;
             _dto.Fields = _fields;
+            _dto.Inventory = _inventory;
         }
+
+        #region Properties
 
         private PlayerDTO _dto = new PlayerDTO();
         public PlayerDTO DTO { get => _dto; set => _dto = value; }
@@ -53,7 +56,43 @@ namespace Idle.Core.Models.Player
         private SortedList<string, FieldDTO> _fields = new SortedList<string, FieldDTO>();
         public SortedList<string, FieldDTO> Fields { get => _fields;}
 
+
+        public SortedList<string, int> _inventory = new SortedList<string, int>();
+        public SortedList<string, int> Inventory { get => _inventory;}
+
+        #endregion Properties
+
         //Need to get a PlayerBO so we can set stuff from areas in the code, which doesnt work with a DTO
+
+        public void AddInventory(string key)
+        {
+            if (_inventory.ContainsKey(key))
+            {
+                _inventory[key]++;
+                return;
+            }
+
+            _inventory.Add(key, 1);
+
+        }
+
+        public void RemoveInventory(string key)
+        {
+            if (_inventory.ContainsKey(key))
+            {
+                if(_inventory[key] > 1)
+                {
+                    _inventory[key]--;
+                }
+
+                _inventory.Remove(key);
+
+            }
+
+        }
+
+
+
         public static PlayerBO DTOtoBO(PlayerDTO dto)
         {
 
@@ -66,6 +105,7 @@ namespace Idle.Core.Models.Player
             player._toollist = dto.ToolList;
             //Copy constructor
             player._fields = new SortedList<string, FieldDTO>(dto.Fields);
+            player._inventory = new SortedList<string, int>(dto.Inventory);
 
             return player;
 

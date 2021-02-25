@@ -10,7 +10,10 @@ namespace Idle.Core.Models
 
         //Name of item eg: HP Omen 15, RTX 3090
         public string Name { get; set; }
+        public int Amount { get; set; }
+        public int Cost { get; set; }
 
+        public int MaxStackAmount { get; set; }
         //Description of item
         public string Description { get; set; }
 

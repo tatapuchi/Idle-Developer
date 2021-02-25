@@ -15,6 +15,7 @@ namespace Idle.Core.Models.Player
         public Framework FrameworkList { get; set; }
         public Tool ToolList { get; set; }
         public SortedList<string, FieldDTO> Fields {get; set;}
+        public SortedList<string, int> Inventory { get; set; }
 
     }
 }

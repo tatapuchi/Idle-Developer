@@ -31,6 +31,23 @@ namespace Idle.Core.Models.Fields
 
         }
 
+        public static Languages GetLanguage(string language)
+        {
+            switch (language)
+            {
+                case nameof(Java):
+                    return new Java();
+                case nameof(CSharp):
+                    return new CSharp();
+                case nameof(Kotlin):
+                    return new Kotlin();
+
+                default:
+                    return null;
+            }
+
+        }
+
         public void DTOtoBO(FieldDTO dto)
         {
             this.XP = dto.XP;

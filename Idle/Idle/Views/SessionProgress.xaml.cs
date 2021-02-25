@@ -1,8 +1,10 @@
-﻿using Idle.Core.Models.Fields;
+﻿using Idle.Core.Models;
+using Idle.Core.Models.Fields;
 using Idle.Core.Models.Fields.Language;
 using Idle.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,7 @@ namespace Idle.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SessionProgress : ContentPage
     {
+        //ObservableCollection<Field> collection = new ObservableCollection<Field>();
         private float progress = 0;
         private float progress1 = 0;
         private float progress2 = 0;
@@ -22,6 +25,9 @@ namespace Idle.Views
         public SessionProgress()
         {
             InitializeComponent();
+
+
+
             Java java = new Java();
             java.DTOtoBO(App.player.Fields[nameof(Java)]);
             JavaLabel.Text = java.Level.ToString();

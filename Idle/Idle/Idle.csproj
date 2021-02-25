@@ -24,6 +24,8 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Services\" />
+    <Folder Include="Views\Cells\" />
+    <Folder Include="Views\Partials\" />
   </ItemGroup>
 
   <ItemGroup>
