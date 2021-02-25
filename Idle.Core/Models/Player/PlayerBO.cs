@@ -24,6 +24,9 @@ namespace Idle.Core.Models.Player
 
         #region Properties
 
+        //TODO fat setters -> methods
+
+
         private PlayerDTO _dto = new PlayerDTO();
         public PlayerDTO DTO { get => _dto; set => _dto = value; }
 
@@ -110,6 +113,8 @@ namespace Idle.Core.Models.Player
             return player;
 
         }
+
+
 
     }
 }

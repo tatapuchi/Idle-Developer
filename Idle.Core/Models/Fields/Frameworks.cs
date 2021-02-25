@@ -22,6 +22,35 @@ namespace Idle.Core.Models.Fields
 
         }
 
+        public static Frameworks GetFramework(string framework)
+        {
+            switch (framework)
+            {
+                default:
+                    return null;
+            }
+
+        }
+
+        public static bool IsFramework(string framework)
+        {
+            switch (framework)
+            {
+                default:
+                    return false;
+            }
+
+        }
+
+        public void DTOtoBO(FieldDTO dto)
+        {
+            this.XP = dto.XP;
+            this.Level = dto.Level;
+            this.DTO = dto;
+
+        }
+
+
     }
 
 }

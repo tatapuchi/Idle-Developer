@@ -5,7 +5,7 @@ using System.Text;
 namespace Idle.Core.Models
 {
     //Top level Item type
-    public interface Item
+    public abstract class Item
     {
 
         //Name of item eg: HP Omen 15, RTX 3090
@@ -19,6 +19,16 @@ namespace Idle.Core.Models
 
         //Rarity of a given item
         public Rarity rarity { get; set; }
+
+        public static Item GetItem(string item)
+        {
+            switch (item)
+            {
+                default:
+                    return null;
+            }
+
+        }
 
 
         // Enum type defining rarities

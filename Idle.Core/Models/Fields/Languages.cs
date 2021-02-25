@@ -48,6 +48,21 @@ namespace Idle.Core.Models.Fields
 
         }
 
+        public static bool IsLanguage(string name)
+        {
+            switch (name)
+            {
+                case nameof(Java):
+                    return true;
+                case nameof(CSharp):
+                    return true;
+                case nameof(Kotlin):
+                    return true;
+                default:
+                    return false;
+            }
+        }
+
         public void DTOtoBO(FieldDTO dto)
         {
             this.XP = dto.XP;

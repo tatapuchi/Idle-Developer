@@ -23,5 +23,33 @@ namespace Idle.Core.Models.Fields
 
         }
 
+        public static Tools GetTool(string tool)
+        {
+            switch (tool)
+            {
+                default:
+                    return null;
+            }
+
+        }
+
+        public static bool IsTool(string tool)
+        {
+            switch (tool)
+            {
+                default:
+                    return false;
+            }
+
+        }
+
+        public void DTOtoBO(FieldDTO dto)
+        {
+            this.XP = dto.XP;
+            this.Level = dto.Level;
+            this.DTO = dto;
+
+        }
+
     }
 }
