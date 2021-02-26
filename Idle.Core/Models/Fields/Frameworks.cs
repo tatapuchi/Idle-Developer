@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Idle.Core.Models.Player;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +11,6 @@ namespace Idle.Core.Models.Fields
         public virtual string Description { get; set; }
         public virtual int XP { get; set; }
         public virtual int Level { get; set; }
-        public virtual FieldDTO DTO { get; set; }
 
         public static Frameworks GetFramework(Field.Framework framework)
         {
@@ -42,13 +42,25 @@ namespace Idle.Core.Models.Fields
 
         }
 
-        public void DTOtoBO(FieldDTO dto)
+        //Methods regarding conversion of the framework to a DTO and vice versa
+        #region DTO methods
+        public void UpdateFromDTO(FieldDTO dto)
         {
-            this.XP = dto.XP;
-            this.Level = dto.Level;
-            this.DTO = dto;
+            XP = dto.XP;
+            Level = dto.Level;
 
         }
+
+        public FieldDTO ConvertToDTO()
+        {
+            FieldDTO dto = new FieldDTO();
+            dto.XP = XP;
+            dto.Level = XP;
+
+            return dto;
+
+        }
+        #endregion
 
 
     }

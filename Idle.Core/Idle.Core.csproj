@@ -5,6 +5,10 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\Aorus\source\repos\Idle\Idle.Core\Idle.Core.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Models\Fields\Framework\" />
     <Folder Include="Models\Fields\Tool\" />

@@ -1,32 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Idle.Views.SessionProgress">
+             x:Class="Idle.Views.SessionProgress"
+             xmlns:cells="clr-namespace:Idle.Views.Cells">
     <ContentPage.Content>        
         
 
-            <StackLayout Margin="12">
+            <StackLayout Margin="12" >
 
-                
-                <Label Text="C#"/>
-                <Button x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-                <Label>Progress</Label>
-                <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+            <ListView x:Name="LanguageList" HeightRequest="800">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <StackLayout>
 
-                <Line/>
+                                <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
+                                <Button TextColor="White" x:Name="Upgrade" Text="Upgrade"  CornerRadius="12" BackgroundColor="Orange"/>
+                                <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Level}"/>
+                                <Label TextColor="Black" x:Name="XPLabel" Text="{Binding XP}"/>
+                                <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+
+                                <Line/>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Label  TextColor="Black" Text="Java"/>
             <Button TextColor="White" x:Name="JavaUpgrade" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
                 <Label TextColor="Black" x:Name="JavaLabel">Level 1</Label>
                 <ProgressBar x:Name="JavaProgressBar" ProgressColor="Orange"/>
 
-                <Line/>
-
-                <Label Text="Kotlin"/>
-                <Button x:Name="Upgrade2" Text="Upgrade" Clicked="Upgrade2_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-                <Label>Progress</Label>
-                <ProgressBar x:Name="ProgressBar2" ProgressColor="Orange"/>
-
+                
             <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked"/>
         </StackLayout>
             

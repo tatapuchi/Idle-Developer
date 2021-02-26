@@ -22,44 +22,69 @@ namespace Idle
 
         private void Java_Clicked(object sender, EventArgs e)
         {
-            App.player.LanguageList |= Core.Models.Field.Language.Java;
+            App.player.AddLanguage(Core.Models.Field.Language.Java);
             FileEntry.Text = App.player.LanguageList.ToString();
             if(App.player.Fields[nameof(Java)] != null) { 
                 SessionEntry.Text = App.player.Fields[nameof(Java)].ToString(); }
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
+        }
+
+
+
+        private void Kotlin_Clicked(object sender, EventArgs e)
+        {
+            App.player.AddLanguage(Core.Models.Field.Language.Kotlin);
+            FileEntry.Text = App.player.LanguageList.ToString();
+            if (App.player.Fields[nameof(Kotlin)] != null)
+            {
+                SessionEntry.Text = App.player.Fields[nameof(Kotlin)].ToString();
+            }
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
+        }
+
+        private void CSharp_Clicked(object sender, EventArgs e)
+        {
+            App.player.AddLanguage(Core.Models.Field.Language.CSharp);
+            FileEntry.Text = App.player.LanguageList.ToString();
+            if (App.player.Fields[nameof(CSharp)] != null)
+            {
+                SessionEntry.Text = App.player.Fields[nameof(CSharp)].ToString();
+            }
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
         private void HTML_Clicked(object sender, EventArgs e)
         {
-            App.player.LanguageList |= Core.Models.Field.Language.HTML;
+            App.player.AddLanguage(Core.Models.Field.Language.HTML);
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
         private void CSS_Clicked(object sender, EventArgs e)
         {
-            App.player.LanguageList |= Core.Models.Field.Language.CSS;
+            App.player.AddLanguage(Core.Models.Field.Language.CSS);
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
         private void JavaScript_Clicked(object sender, EventArgs e)
         {
-            App.player.LanguageList |= Core.Models.Field.Language.JavaScript;
+            App.player.AddLanguage(Core.Models.Field.Language.JavaScript);
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
         private void Python_Clicked(object sender, EventArgs e)
         {
-            App.player.LanguageList |= Core.Models.Field.Language.Python;
+            App.player.AddLanguage(Core.Models.Field.Language.Python);
             FileEntry.Text = App.player.LanguageList.ToString();
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
         private void BtnSessionProgress_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new SessionProgress();
         }
+
     }
 }

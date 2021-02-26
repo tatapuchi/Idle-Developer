@@ -12,7 +12,7 @@ namespace Idle
     public partial class App : Application
     {
         //Single Player object used by code to update the player
-        public static PlayerBO player = new PlayerBO();
+        public static Player player = new Player();
         public static int timesopened;
         public App()
         {
@@ -21,16 +21,16 @@ namespace Idle
             //Check how many times the app has been opened
             #region Times Opened
 
-            if (Preferences.ContainsKey("Times_Opened"))
-            { 
-                Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
-                player = PlayerBO.DTOtoBO(FileHelper.ReadPlayer());
-            }
-            else
-            {
+            //if (Preferences.ContainsKey("Times_Opened"))
+            //{ 
+            //    Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
+            //    player = PlayerBO.DTOtoBO(FileHelper.ReadPlayer());
+            //}
+            //else
+            //{
                 Preferences.Set("Times_Opened", 1);
-                FileHelper.WritePlayer(player.DTO);
-            }
+                FileHelper.WritePlayer(player.ConvertToDTO());
+            //}
 
             timesopened = Preferences.Get("Times_Opened", 1);
 
@@ -56,7 +56,7 @@ namespace Idle
         protected override void OnSleep()
         {
             //Upon finishing, save the player data back to our file
-            FileHelper.WritePlayer(player.DTO);
+            FileHelper.WritePlayer(player.ConvertToDTO());
         }
 
         protected override void OnResume()

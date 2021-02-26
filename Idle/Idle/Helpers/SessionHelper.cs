@@ -18,7 +18,7 @@ namespace Idle.Helpers
                 if (Languages.IsLanguage(pair.Key))
                 {
                     Languages language = Languages.GetLanguage(pair.Key);
-                    language.DTOtoBO(pair.Value);
+                    language.UpdateFromDTO(pair.Value);
 
                     languagecollection.Add(language);
                 }
@@ -36,7 +36,7 @@ namespace Idle.Helpers
                 if (Frameworks.IsFramework(pair.Key))
                 {
                     Frameworks framework = Frameworks.GetFramework(pair.Key);
-                    framework.DTOtoBO(pair.Value);
+                    framework.UpdateFromDTO(pair.Value);
 
                     frameworkcollection.Add(framework);
                 }
@@ -54,7 +54,7 @@ namespace Idle.Helpers
                 if (Tools.IsTool(pair.Key))
                 {
                     Tools tool = Tools.GetTool(pair.Key);
-                    tool.DTOtoBO(pair.Value);
+                    tool.UpdateFromDTO(pair.Value);
 
                     toolcollection.Add(tool);
                 }

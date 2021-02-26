@@ -24,7 +24,6 @@
   <ItemGroup>
     <Folder Include="Assets\" />
     <Folder Include="Services\" />
-    <Folder Include="Views\Cells\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
 
@@ -35,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\Cells\SessionCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ShopPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

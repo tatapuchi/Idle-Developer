@@ -17,43 +17,41 @@ namespace Idle.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SessionProgress : ContentPage
     {
-        //ObservableCollection<Field> collection = new ObservableCollection<Field>();
-        private float progress = 0;
-        private float progress1 = 0;
-        private float progress2 = 0;
+        ObservableCollection<Field> collection = new ObservableCollection<Field>();
 
         public SessionProgress()
         {
             InitializeComponent();
-
+            collection = SessionHelper.GetLanguageList(App.player.Fields);
+            LanguageList.ItemsSource = collection;
 
 
             Java java = new Java();
-            java.DTOtoBO(App.player.Fields[nameof(Java)]);
-            JavaLabel.Text = java.Level.ToString();
+            //java.DTOtoBO(App.player.Fields[nameof(Java)]);
+            //JavaLabel.Text = java.Level.ToString();
 
-            Task.Run(async () =>
-            {
+            //Task.Run(async () =>
+            //{
 
-                while (true)
-                {
-                    Device.BeginInvokeOnMainThread(() =>
-                    {
-                        if(JavaProgressBar.Progress >= 1.0f)
-                        {
-                            java.Level++;
-                            java.XP += 35;
-                            JavaProgressBar.Progress = 0.0f;
-                            JavaLabel.Text = $"Level {java.Level}, {java.XP} XP";
-                        }
-                        JavaProgressBar.Progress += 0.01f;
+            //    while (true)
+            //    {
+            //        Device.BeginInvokeOnMainThread(() =>
+            //        {
+            //            if(JavaProgressBar.Progress >= 1.0f)
+            //            {
+            //                java.Level++;
+            //                java.XP += 35;
+            //                JavaProgressBar.Progress = 0.0f;
+            //                JavaLabel.Text = $"Level {java.Level}, {java.XP} XP";
+            //            }
+            //            JavaProgressBar.Progress += 0.01f;
 
-                    });
+            //        });
 
-                    await Task.Delay(40);
+            //        await Task.Delay(40);
 
-                }
-            });
+            //    }
+            //});
         }
 
 
@@ -65,22 +63,9 @@ namespace Idle.Views
             else { JavaProgressBar.Progress = 1.0f; }
         }
 
-
-        private void Upgrade_Clicked(object sender, EventArgs e)
-        {
-            progress += 0.1f;
-            ProgressBar.Progress = progress;
-        }
-
-        private void Upgrade2_Clicked(object sender, EventArgs e)
-        {
-            progress2 += 0.1f;
-            ProgressBar2.Progress = progress2;
-        }
-
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
-            FileHelper.WritePlayer(App.player.DTO);
+            FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
     }
 }

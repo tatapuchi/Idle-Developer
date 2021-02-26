@@ -8,8 +8,6 @@ namespace Idle.Core.Models
     public interface Field
     {
 
-        public FieldDTO DTO { get; set; }
-
         //Name of field eg: Java, Bootstrap, IntelliJ, etc
         public string Name { get; set; }
 
@@ -24,12 +22,6 @@ namespace Idle.Core.Models
 
 
         #region Listing
-        public enum FieldType
-        {
-            Language,
-            Tool,
-            Framework
-        }
 
 
         //Flags to select what frameworks the user has access to

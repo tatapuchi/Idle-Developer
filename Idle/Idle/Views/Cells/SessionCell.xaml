@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Idle.Views.Cells.SessionCell">
+  <ViewCell.View>
+      <StackLayout HeightRequest="300">
+          
+            <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
+            <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+            <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Level}"/>
+            <Label TextColor="Black" x:Name="XPLabel" Text="{Binding XP}"/>
+            <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+
+            <Line/>
+          
+        </StackLayout>
+  </ViewCell.View>
+</ViewCell>
