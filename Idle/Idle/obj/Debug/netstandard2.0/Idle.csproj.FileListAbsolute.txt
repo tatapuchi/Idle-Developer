@@ -39,3 +39,7 @@ C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\V
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\SessionProgress.xaml.g.cs
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\ShopPage.xaml.g.cs
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Cells\SessionCell.xaml.g.cs
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Cells\SessionCell.xaml.g.cs
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\IDETab.xaml.g.cs
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\LanguagesTab.xaml.g.cs
+C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\ToolsTab.xaml.g.cs

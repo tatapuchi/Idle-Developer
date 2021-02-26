@@ -8,29 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Idle.Views.ShopPage.xaml", "Views/ShopPage.xaml", typeof(global::Idle.Views.IDETab))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Idle.Views.ShopPage.xaml", "Views/ShopPage.xaml", typeof(global::Idle.Views.ShopPage))]
 
 namespace Idle.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\ShopPage.xaml")]
-    public partial class IDETab : global::Xamarin.Forms.TabbedPage {
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button CLionBuy;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button IntelliJBuy;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.Button JavaBuy;
+    public partial class ShopPage : global::Xamarin.Forms.TabbedPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(IDETab));
-            CLionBuy = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "CLionBuy");
-            IntelliJBuy = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "IntelliJBuy");
-            JavaBuy = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Button>(this, "JavaBuy");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(ShopPage));
         }
     }
 }
