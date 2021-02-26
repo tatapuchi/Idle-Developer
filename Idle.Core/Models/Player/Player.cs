@@ -51,6 +51,8 @@ namespace Idle.Core.Models.Player
 
         ///<value> Enum Flags for which tools the player has access to </value>
         public Tool ToolList { get; set; }
+
+        
         public SortedList<string, FieldDTO> Fields { get; set; }
 
         public SortedList<string, int> Inventory { get; set; }

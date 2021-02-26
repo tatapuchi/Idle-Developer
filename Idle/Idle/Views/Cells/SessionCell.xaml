@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Idle.Views.Cells.SessionCell">
   <ViewCell.View>
-      <StackLayout HeightRequest="300">
+      <StackLayout >
           
             <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
             <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>

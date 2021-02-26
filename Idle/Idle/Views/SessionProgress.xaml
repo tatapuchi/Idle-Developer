@@ -8,22 +8,10 @@
 
             <StackLayout Margin="12" >
 
-            <ListView x:Name="LanguageList" HeightRequest="800">
+            <ListView x:Name="LanguageList" RowHeight="150" SelectionMode="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell >
-                            <StackLayout>
-
-                                <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
-                                <Button TextColor="White" x:Name="Upgrade" Text="Upgrade"  CornerRadius="12" BackgroundColor="Orange"/>
-                                <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Level}"/>
-                                <Label TextColor="Black" x:Name="XPLabel" Text="{Binding XP}"/>
-                                <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
-
-                                <Line/>
-
-                            </StackLayout>
-                        </ViewCell>
+                        <cells:SessionCell/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

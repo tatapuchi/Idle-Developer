@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Idle.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Idle.Core.Models.Player.Player">
+            <summary>
+            This is the business class for player, it is used to track and record data on the player.
+            </summary>
+            <remarks>
+            DTO class is seperate to this class
+            </remarks>
+        </member>
+        <member name="M:Idle.Core.Models.Player.Player.#ctor">
+            <summary>
+            <c>Player</c> constructor, used to create an object of the player business class and set default values to the properties
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.XP">
+            <value> Amount of XP the player has </value>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.Level">
+            <value> Level the player is at </value>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.Coins">
+            <value> Amount of coins  the player has </value>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.LanguageList">
+            <value> Enum Flags for which languages the player has access to </value>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.FrameworkList">
+            <value> Enum Flags for which frameworks the player has access to </value>
+        </member>
+        <member name="P:Idle.Core.Models.Player.Player.ToolList">
+            <value> Enum Flags for which tools the player has access to </value>
+        </member>
+    </members>
+</doc>
