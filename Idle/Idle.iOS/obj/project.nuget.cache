@@ -1,17 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "WS/hWO+zjMII9cXmnWCWtzxaXZhjJxMN8CVYWrdlXK0XxWFSbmkfEhNoxmFMks6ku2TRHvnkB1hhEwE5JCgAlA==",
+  "dgSpecHash": "efu3KLIUBFjpOd1ALsLNLURV+FU8YlafJpN1oON6t4AkwaDbQwFQSjyK0e9E75DBFGXnggzbtKUAGwpP1nazng==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Aorus\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\sharpnado.shadows\\1.2.0\\sharpnado.shadows.1.2.0.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\sharpnado.tabs\\2.1.0\\sharpnado.tabs.2.1.0.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\sharpnado.taskmonitor\\1.0.1\\sharpnado.taskmonitor.1.0.1.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\thomaslevesque.weakevent\\4.1.0\\thomaslevesque.weakevent.4.1.0.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\Aorus\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\sharpnado.shadows\\1.2.0\\sharpnado.shadows.1.2.0.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\sharpnado.tabs\\2.1.0\\sharpnado.tabs.2.1.0.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\sharpnado.taskmonitor\\1.0.1\\sharpnado.taskmonitor.1.0.1.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\thomaslevesque.weakevent\\4.1.0\\thomaslevesque.weakevent.4.1.0.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Users\\Evolve-4\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

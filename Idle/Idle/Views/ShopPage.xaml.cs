@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Idle.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class IDETab : TabbedPage
+    public partial class ShopPage : TabbedPage
     {
-        public IDETab()
+        public ShopPage()
         {
             InitializeComponent();
         }
