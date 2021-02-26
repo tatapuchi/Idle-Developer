@@ -16,13 +16,6 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Label  TextColor="Black" Text="Java"/>
-            <Button TextColor="White" x:Name="JavaUpgrade" Text="Upgrade" Clicked="Upgrade1_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-                <Label TextColor="Black" x:Name="JavaLabel">Level 1</Label>
-                <ProgressBar x:Name="JavaProgressBar" ProgressColor="Orange"/>
-
-                
-            <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked"/>
         </StackLayout>
             
         

@@ -1407,24 +1407,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Evolve-4\\.nuget\\packages\\": {},
+    "C:\\Users\\Aorus\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
       "projectName": "Idle.iOS",
-      "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
-      "packagesPath": "C:\\Users\\Evolve-4\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle.iOS\\obj\\",
+      "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.iOS\\Idle.iOS.csproj",
+      "packagesPath": "C:\\Users\\Aorus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Evolve-4\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -1438,11 +1438,11 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle.Core\\Idle.Core.csproj": {
-              "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle.Core\\Idle.Core.csproj"
+            "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj": {
+              "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle.Core\\Idle.Core.csproj"
             },
-            "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle\\Idle.csproj": {
-              "projectPath": "C:\\Users\\Evolve-4\\source\\repos\\Xamarin-Idle\\Idle\\Idle\\Idle.csproj"
+            "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj": {
+              "projectPath": "C:\\Users\\Aorus\\source\\repos\\Idle\\Idle\\Idle\\Idle.csproj"
             }
           }
         }
