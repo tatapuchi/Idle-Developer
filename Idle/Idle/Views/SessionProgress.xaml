@@ -15,7 +15,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
+                
+            <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked"/>
         </StackLayout>
             
         

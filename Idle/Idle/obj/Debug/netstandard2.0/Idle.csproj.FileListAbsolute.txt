@@ -40,3 +40,6 @@ C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Sessio
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\ShopPage.xaml.g.cs
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Cells\SessionCell.xaml.g.cs
 C:\Users\Aorus\source\repos\Idle\Idle\Idle\bin\Debug\netstandard2.0\Idle.Core.xml
+C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\IDETab.xaml.g.cs
+C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\LanguagesTab.xaml.g.cs
+C:\Users\Aorus\source\repos\Idle\Idle\Idle\obj\Debug\netstandard2.0\Views\Tabs\ToolsTab.xaml.g.cs
