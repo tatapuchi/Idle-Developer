@@ -13,6 +13,7 @@ namespace Idle
     {
         //Single Player object used by code to update the player
         public static Player player = new Player();
+        public static FieldInfo fieldinfo = new FieldInfo();
         public static int timesopened;
         public App()
         {

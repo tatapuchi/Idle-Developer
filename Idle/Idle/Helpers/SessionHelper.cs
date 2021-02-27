@@ -15,9 +15,9 @@ namespace Idle.Helpers
             ObservableCollection<Field> languagecollection = new ObservableCollection<Field>();
             foreach(KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
-                if (Languages.IsLanguage(pair.Key))
+                if (App.fieldinfo.IsLanguage(pair.Key))
                 {
-                    Languages language = Languages.GetLanguage(pair.Key);
+                    Languages language = App.fieldinfo.GetLanguage(pair.Key);
                     language.UpdateFromDTO(pair.Value);
 
                     languagecollection.Add(language);
@@ -33,9 +33,9 @@ namespace Idle.Helpers
             ObservableCollection<Field> frameworkcollection = new ObservableCollection<Field>();
             foreach (KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
-                if (Frameworks.IsFramework(pair.Key))
+                if (App.fieldinfo.IsFramework(pair.Key))
                 {
-                    Frameworks framework = Frameworks.GetFramework(pair.Key);
+                    Frameworks framework = App.fieldinfo.GetFramework(pair.Key);
                     framework.UpdateFromDTO(pair.Value);
 
                     frameworkcollection.Add(framework);
@@ -51,9 +51,9 @@ namespace Idle.Helpers
             ObservableCollection<Field> toolcollection = new ObservableCollection<Field>();
             foreach (KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
-                if (Tools.IsTool(pair.Key))
+                if (App.fieldinfo.IsTool(pair.Key))
                 {
-                    Tools tool = Tools.GetTool(pair.Key);
+                    Tools tool = App.fieldinfo.GetTool(pair.Key);
                     tool.UpdateFromDTO(pair.Value);
 
                     toolcollection.Add(tool);

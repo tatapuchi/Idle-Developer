@@ -12,35 +12,6 @@ namespace Idle.Core.Models.Fields
         public virtual int XP { get; set; }
         public virtual int Level { get; set; }
 
-        public static Frameworks GetFramework(Field.Framework framework)
-        {
-            switch (framework)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public static Frameworks GetFramework(string framework)
-        {
-            switch (framework)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public static bool IsFramework(string framework)
-        {
-            switch (framework)
-            {
-                default:
-                    return false;
-            }
-
-        }
 
         //Methods regarding conversion of the framework to a DTO and vice versa
         #region DTO methods

@@ -12,35 +12,6 @@ namespace Idle.Core.Models.Fields
         public virtual int XP { get; set; }
         public virtual int Level { get; set; }
 
-        public static Tools GetTool(Field.Tool tool) 
-        {
-            switch (tool)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public static Tools GetTool(string tool)
-        {
-            switch (tool)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public static bool IsTool(string tool)
-        {
-            switch (tool)
-            {
-                default:
-                    return false;
-            }
-
-        }
 
         //Methods regarding conversion of the framework to a DTO and vice versa
         #region DTO methods

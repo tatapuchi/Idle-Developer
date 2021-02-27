@@ -95,23 +95,26 @@ namespace Idle.Core.Models.Player
         #region Field Methods
         public void AddLanguage(Field.Language language)
         {
+            FieldInfo info = new FieldInfo();
             if (LanguageList.HasFlag(language)) { return; }
             LanguageList |= language;
-            Fields.Add(language.ToString(), Languages.GetLanguage(language).ConvertToDTO());
+            Fields.Add(language.ToString(), info.GetLanguage(language).ConvertToDTO());
         }
 
         public void AddFramework(Field.Framework framework)
         {
+            FieldInfo info = new FieldInfo();
             if (FrameworkList.HasFlag(framework)) { return; }
             FrameworkList |= framework;
-            Fields.Add(framework.ToString(), Frameworks.GetFramework(framework).ConvertToDTO());
+            Fields.Add(framework.ToString(), info.GetFramework(framework).ConvertToDTO());
         }
 
         public void AddTool(Field.Tool tool)
         {
+            FieldInfo info = new FieldInfo();
             if (ToolList.HasFlag(tool)) { return; }
             ToolList |= tool;
-            Fields.Add(tool.ToString(), Tools.GetTool(tool).ConvertToDTO());
+            Fields.Add(tool.ToString(), info.GetTool(tool).ConvertToDTO());
         }
         #endregion
 

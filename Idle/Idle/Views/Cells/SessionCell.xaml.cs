@@ -12,6 +12,9 @@ namespace Idle.Views.Cells
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SessionCell : ViewCell
     {
+
+
+
         public SessionCell()
         {
             InitializeComponent();
