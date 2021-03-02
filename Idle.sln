@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idle.Android", "Idle\Idle.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idle.iOS", "Idle\Idle.iOS\Idle.iOS.csproj", "{2FC17A3C-64B4-4F09-AB85-60722F0AB89B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idle", "Idle\Idle\Idle.csproj", "{19EEAFB3-ACEB-45F6-95DB-EA2943134ACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle", "Idle\Idle\Idle.csproj", "{19EEAFB3-ACEB-45F6-95DB-EA2943134ACF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idle.Core", "Idle.Core\Idle.Core.csproj", "{AF40E67E-3C27-42D3-AF15-88EB4A5025C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Core", "Idle.Core\Idle.Core.csproj", "{AF40E67E-3C27-42D3-AF15-88EB4A5025C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
