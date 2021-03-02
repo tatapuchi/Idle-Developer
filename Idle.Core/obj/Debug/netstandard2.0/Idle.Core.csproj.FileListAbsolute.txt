@@ -1,9 +1,0 @@
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\bin\Debug\netstandard2.0\Idle.Core.deps.json
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\bin\Debug\netstandard2.0\Idle.Core.dll
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\bin\Debug\netstandard2.0\Idle.Core.pdb
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csprojAssemblyReference.cache
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.AssemblyInfoInputs.cache
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.AssemblyInfo.cs
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.csproj.CoreCompileInputs.cache
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.dll
-C:\Users\Evolve-4\source\repos\Xamarin-Idle\Idle.Core\obj\Debug\netstandard2.0\Idle.Core.pdb

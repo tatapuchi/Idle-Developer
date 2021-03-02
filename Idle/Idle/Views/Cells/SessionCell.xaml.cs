@@ -27,7 +27,11 @@ namespace Idle.Views.Cells
                     {
                         if (ProgressBar.Progress >= 1.0f)
                         {
-                            
+                            int Level = Int32.Parse(LevelLabel.Text); Level++;
+                            int XP = Int32.Parse(XPLabel.Text); XP += 35;
+                            LevelLabel.Text = Level.ToString();
+                            XPLabel.Text = XP.ToString();
+
                             ProgressBar.Progress = 0.0f;
                         }
 

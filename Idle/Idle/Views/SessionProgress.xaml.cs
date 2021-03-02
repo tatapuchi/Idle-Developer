@@ -17,7 +17,9 @@ namespace Idle.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SessionProgress : ContentPage
     {
-        ObservableCollection<Field> collection = new ObservableCollection<Field>();
+
+        //we need a new way to convert this back to the sortedlist
+        ObservableCollection<Languages> collection = new ObservableCollection<Languages>();
 
         public SessionProgress()
         {
@@ -28,6 +30,7 @@ namespace Idle.Views
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
+            SessionHelper.UpdateFields(collection);
             FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
     }

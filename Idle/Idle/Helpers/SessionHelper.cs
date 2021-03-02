@@ -1,5 +1,6 @@
 ﻿using Idle.Core.Models;
 using Idle.Core.Models.Fields;
+using Idle.Core.Models.Player;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,9 +11,32 @@ namespace Idle.Helpers
     //This class should contain static helper methods to calculate time taken for a session, XP earned, etc.
     public static class SessionHelper
     {
-        public static ObservableCollection<Field> GetLanguageList(SortedList<string, FieldDTO> sortedlist)
+        //Change this, this is very bad
+        public static void UpdateFields(ObservableCollection<Languages> collection)
         {
-            ObservableCollection<Field> languagecollection = new ObservableCollection<Field>();
+            var fields = App.player.Fields;
+            foreach (KeyValuePair<string, FieldDTO> pair in App.player.Fields)
+            {
+                if (App.fieldinfo.IsLanguage(pair.Key))
+                {
+                    foreach(Languages language in collection)
+                    {
+
+                        if (pair.Key.Equals(nameof(language)))
+                        {
+                            App.player.Fields[pair.Key] = language.ConvertToDTO();
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+        public static ObservableCollection<Languages> GetLanguageList(SortedList<string, FieldDTO> sortedlist)
+        {
+            ObservableCollection<Languages> languagecollection = new ObservableCollection<Languages>();
             foreach(KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
                 if (App.fieldinfo.IsLanguage(pair.Key))

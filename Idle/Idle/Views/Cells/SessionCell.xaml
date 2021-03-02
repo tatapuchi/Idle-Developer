@@ -7,8 +7,8 @@
           
             <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
             <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-            <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Level}"/>
-            <Label TextColor="Black" x:Name="XPLabel" Text="{Binding XP}"/>
+            <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Path=Level, Mode=TwoWay}"/>
+            <Label TextColor="Black" x:Name="XPLabel" Text="{Binding Path=XP, Mode=TwoWay}"/>
             <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
 
             <Line/>
