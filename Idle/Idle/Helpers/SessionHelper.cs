@@ -14,15 +14,18 @@ namespace Idle.Helpers
         //Change this, this is very bad
         public static void UpdateFields(ObservableCollection<Languages> collection)
         {
-            var fields = App.player.Fields;
-            foreach (KeyValuePair<string, FieldDTO> pair in App.player.Fields)
+
+            SortedList<string, FieldDTO> fields;
+            fields = new SortedList<string, FieldDTO>(App.player.Fields);
+            foreach (KeyValuePair<string, FieldDTO> pair in fields)
             {
                 if (App.fieldinfo.IsLanguage(pair.Key))
                 {
                     foreach(Languages language in collection)
                     {
 
-                        if (pair.Key.Equals(nameof(language)))
+                        //this is returning false
+                        if (pair.Key.Equals(language.ToString()))
                         {
                             App.player.Fields[pair.Key] = language.ConvertToDTO();
                         }
@@ -33,6 +36,7 @@ namespace Idle.Helpers
             }
 
         }
+
 
         public static ObservableCollection<Languages> GetLanguageList(SortedList<string, FieldDTO> sortedlist)
         {

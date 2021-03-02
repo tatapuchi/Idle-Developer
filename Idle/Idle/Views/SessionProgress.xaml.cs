@@ -26,6 +26,9 @@ namespace Idle.Views
             InitializeComponent();
             collection = SessionHelper.GetLanguageList(App.player.Fields);
             LanguageList.ItemsSource = collection;
+
+
+
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)

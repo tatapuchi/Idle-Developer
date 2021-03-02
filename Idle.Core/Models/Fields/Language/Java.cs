@@ -23,6 +23,11 @@ namespace Idle.Core.Models.Fields.Language
         public override int XP { get; set; }
 
         public override int Level { get; set; }
+
+        public override string ToString()
+        {
+            return nameof(Java);
+        }
     }
 
 

@@ -26,7 +26,7 @@ namespace Idle.Core.Models.Fields
         {
             FieldDTO dto = new FieldDTO();
             dto.XP = XP;
-            dto.Level = XP;
+            dto.Level = Level;
 
             return dto;
 
