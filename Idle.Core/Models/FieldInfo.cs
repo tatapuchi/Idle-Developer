@@ -55,6 +55,14 @@ namespace Idle.Core.Models.Player
                     return new CSharp();
                 case Field.Language.Kotlin:
                     return new Kotlin();
+                case Field.Language.Python:
+                    return new Python();
+                case Field.Language.JavaScript:
+                    return new JavaScript();
+                case Field.Language.HTML:
+                    return new HTML();
+                case Field.Language.CSS:
+                    return new CSS();
 
                 default:
                     return null;
@@ -72,6 +80,14 @@ namespace Idle.Core.Models.Player
                     return new CSharp();
                 case nameof(Kotlin):
                     return new Kotlin();
+                case nameof(Python):
+                    return new Python();
+                case nameof(JavaScript):
+                    return new JavaScript();
+                case nameof(HTML):
+                    return new HTML();
+                case nameof(CSS):
+                    return new CSS();
 
                 default:
                     return null;
@@ -88,6 +104,14 @@ namespace Idle.Core.Models.Player
                 case nameof(CSharp):
                     return true;
                 case nameof(Kotlin):
+                    return true;
+                case nameof(Python):
+                    return true;
+                case nameof(JavaScript):
+                    return true;
+                case nameof(HTML):
+                    return true;
+                case nameof(CSS):
                     return true;
                 default:
                     return false;

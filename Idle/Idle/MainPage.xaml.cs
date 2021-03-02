@@ -24,8 +24,6 @@ namespace Idle
         {
             App.player.AddLanguage(Core.Models.Field.Language.Java);
             FileEntry.Text = App.player.LanguageList.ToString();
-            if(App.player.Fields[nameof(Java)] != null) { 
-                SessionEntry.Text = App.player.Fields[nameof(Java)].ToString(); }
             FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
@@ -35,10 +33,6 @@ namespace Idle
         {
             App.player.AddLanguage(Core.Models.Field.Language.Kotlin);
             FileEntry.Text = App.player.LanguageList.ToString();
-            if (App.player.Fields[nameof(Kotlin)] != null)
-            {
-                SessionEntry.Text = App.player.Fields[nameof(Kotlin)].ToString();
-            }
             FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
@@ -46,10 +40,6 @@ namespace Idle
         {
             App.player.AddLanguage(Core.Models.Field.Language.CSharp);
             FileEntry.Text = App.player.LanguageList.ToString();
-            if (App.player.Fields[nameof(CSharp)] != null)
-            {
-                SessionEntry.Text = App.player.Fields[nameof(CSharp)].ToString();
-            }
             FileHelper.WritePlayer(App.player.ConvertToDTO());
         }
 
