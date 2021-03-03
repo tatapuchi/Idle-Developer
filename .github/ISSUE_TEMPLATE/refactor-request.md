@@ -2,7 +2,7 @@
 name: Refactor request
 about: Indicate an area to refactor
 title: ''
-labels: enhancement
+labels: refactor
 assignees: ''
 
 ---
