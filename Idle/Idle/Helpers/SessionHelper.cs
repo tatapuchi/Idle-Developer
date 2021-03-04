@@ -15,17 +15,15 @@ namespace Idle.Helpers
         public static void UpdateFields(ObservableCollection<Languages> collection)
         {
 
-            SortedList<string, FieldDTO> fields;
-            fields = new SortedList<string, FieldDTO>(App.player.Fields);
+            SortedList<string, FieldDTO> fields = new SortedList<string, FieldDTO>(App.player.Fields);
             foreach (KeyValuePair<string, FieldDTO> pair in fields)
             {
                 if (App.fieldinfo.IsLanguage(pair.Key))
                 {
                     foreach(Languages language in collection)
                     {
-
-                        //this is returning false
-                        if (pair.Key.Equals(language.ToString()))
+                        //changed from tostring to name
+                        if (pair.Key.Equals(language.Name))
                         {
                             App.player.Fields[pair.Key] = language.ConvertToDTO();
                         }

@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Resx\" />
     <Folder Include="Services\" />
     <Folder Include="Views\Partials\" />
   </ItemGroup>
