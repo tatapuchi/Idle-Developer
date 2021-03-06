@@ -21,6 +21,12 @@ namespace Idle.Core.Models.Player
             {
                 case nameof(GithubEnterprise):
                     return new GithubEnterprise();
+                case nameof(GithubOne):
+                    return new GithubOne();
+                case nameof(GithubPro):
+                    return new GithubPro();
+                case nameof(GithubTeam):
+                    return new GithubTeam();
                 default:
                     return null;
             }

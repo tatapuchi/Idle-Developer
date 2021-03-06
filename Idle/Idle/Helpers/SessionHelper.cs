@@ -11,6 +11,10 @@ namespace Idle.Helpers
     //This class should contain static helper methods to calculate time taken for a session, XP earned, etc.
     public static class SessionHelper
     {
+
+
+
+
         //Change this, this is very bad
         public static void UpdateFields(ObservableCollection<Languages> collection)
         {
@@ -90,15 +94,21 @@ namespace Idle.Helpers
 
         }
 
-        public static List<Item> GetInventory(SortedList<string, int> sortedlist)
+        //This should be in an ItemHelper class
+        public static ObservableCollection<Item> GetInventory(SortedList<string, int> sortedlist)
         {
-            foreach(KeyValuePair<string, int> pair in sortedlist)
+            ObservableCollection<Item> itemcollection = new ObservableCollection<Item>();
+            foreach (KeyValuePair<string, int> pair in sortedlist)
             {
+                itemcollection.Add(App.fieldinfo.GetItem(pair.Key));
 
             }
 
-            return null;
+            return itemcollection;
         }
+
+
+        public static void UpdateItems() { }
 
     }
 

@@ -61,7 +61,7 @@ namespace Idle.Core.Models.Player
 
         //Methods regarding adding and removing items from the inventory
         #region Inventory Methods
-        public void AddInventory(string key)
+        public void AddItem(string key)
         {
             FieldInfo info = new FieldInfo();
             //add method that takes in name and gives back maxstackamount
@@ -77,7 +77,7 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public void RemoveInventory(string key)
+        public void RemoveItem(string key)
         {
             if (Inventory.ContainsKey(key))
             {
