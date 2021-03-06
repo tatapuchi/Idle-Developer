@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "Kotlin";
             Description = "An Android Language";
+            Language = Field.Language.Kotlin;
         }
 
 

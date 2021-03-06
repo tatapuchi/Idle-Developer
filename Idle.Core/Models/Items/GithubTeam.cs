@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Items
             Cost = 199;
             Description = "Github's Team Plan";
             rarity = Rarity.Epic;
+            itemType = ItemType.GitHubTeam;
         }
     }
 }

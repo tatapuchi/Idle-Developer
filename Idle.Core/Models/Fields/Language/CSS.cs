@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "CSS";
             Description = "Style sheets";
+            Language = Field.Language.CSS;
         }
 
 

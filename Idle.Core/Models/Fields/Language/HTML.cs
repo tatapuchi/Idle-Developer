@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "HTML";
             Description = "Just Markup";
+            Language = Field.Language.HTML;
         }
 
 

@@ -12,7 +12,7 @@ namespace Idle.Core.Models.Items
             Cost = 99;
             Description = "Github's Pro Plan";
             rarity = Rarity.Rare;
-
+            itemType = ItemType.GitHubPro;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Idle.Views
             InitializeComponent();
             BindingContext = ViewModel;
 
-            ViewModel.Languages = SessionHelper.GetLanguageList(App.player.Fields);
+            ViewModel.Languages = SessionHelper.GetLanguageList(App.player.Languages);
             LanguageList.ItemsSource = ViewModel.Languages;
 
 

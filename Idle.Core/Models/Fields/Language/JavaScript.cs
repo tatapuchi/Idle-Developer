@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "JavaScript";
             Description = "A web Language";
+            Language = Field.Language.JavaScript;
         }
 
 

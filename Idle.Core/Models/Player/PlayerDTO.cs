@@ -27,10 +27,12 @@ namespace Idle.Core.Models.Player
         public Tool ToolList { get; set; }
 
         //SortedList of Fields meant to keep track of the players progress (XP and level) for a certain field, eg: Java (360 XP at Level 3) or Kotlin (7400 XP at Level 15)
-        public SortedList<string, FieldDTO> Fields {get; set;}
+        public SortedList<Field.Language, FieldDTO> Languages { get; set; }
+        public SortedList<Field.Framework, FieldDTO> Frameworks { get; set; }
+        public SortedList<Field.Tool, FieldDTO> Tools { get; set; }
 
         //Inventory, meant to store the name of the item eg: nameof(PyCharm) as a string, and the amount of said item 
-        public SortedList<string, int> Inventory { get; set; }
+        public SortedList<Item.ItemType, int> Inventory { get; set; }
 
     }
 }
