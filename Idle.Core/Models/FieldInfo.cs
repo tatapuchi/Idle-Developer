@@ -32,6 +32,25 @@ namespace Idle.Core.Models.Player
             }
 
         }
+
+        public Item GetItem(string item, int amount)
+        {
+            switch (item)
+            {
+                case nameof(GithubEnterprise):
+                    return new GithubEnterprise() { Amount = amount };
+                case nameof(GithubOne):
+                    return new GithubOne() { Amount = amount }; ;
+                case nameof(GithubPro):
+                    return new GithubPro() { Amount = amount }; ;
+                case nameof(GithubTeam):
+                    return new GithubTeam() { Amount = amount }; ;
+                default:
+                    return null;
+            }
+
+        }
+
         #endregion
 
         #region Tool Methods

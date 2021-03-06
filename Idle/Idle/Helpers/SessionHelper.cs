@@ -4,6 +4,7 @@ using Idle.Core.Models.Player;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace Idle.Helpers
@@ -15,7 +16,7 @@ namespace Idle.Helpers
 
 
 
-        //Change this, this is very bad
+        //Change this, this is very bad?
         public static void UpdateFields(ObservableCollection<Languages> collection)
         {
 
@@ -42,7 +43,9 @@ namespace Idle.Helpers
 
         public static ObservableCollection<Languages> GetLanguageList(SortedList<string, FieldDTO> sortedlist)
         {
-            ObservableCollection<Languages> languagecollection = new ObservableCollection<Languages>();
+
+
+            ObservableCollection<Languages> languageCollection = new ObservableCollection<Languages>();
             foreach(KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
                 if (App.fieldinfo.IsLanguage(pair.Key))
@@ -50,17 +53,17 @@ namespace Idle.Helpers
                     Languages language = App.fieldinfo.GetLanguage(pair.Key);
                     language.UpdateFromDTO(pair.Value);
 
-                    languagecollection.Add(language);
+                    languageCollection.Add(language);
                 }
             }
 
-            return languagecollection;
+            return languageCollection;
 
         }
 
         public static ObservableCollection<Field> GetFrameworkList(SortedList<string, FieldDTO> sortedlist)
         {
-            ObservableCollection<Field> frameworkcollection = new ObservableCollection<Field>();
+            ObservableCollection<Field> frameworkCollection = new ObservableCollection<Field>();
             foreach (KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
                 if (App.fieldinfo.IsFramework(pair.Key))
@@ -68,47 +71,52 @@ namespace Idle.Helpers
                     Frameworks framework = App.fieldinfo.GetFramework(pair.Key);
                     framework.UpdateFromDTO(pair.Value);
 
-                    frameworkcollection.Add(framework);
+                    frameworkCollection.Add(framework);
                 }
             }
 
-            return frameworkcollection;
+            return frameworkCollection;
 
         }
 
         public static ObservableCollection<Field> GetToolList(SortedList<string, FieldDTO> sortedlist)
         {
-            ObservableCollection<Field> toolcollection = new ObservableCollection<Field>();
+            ObservableCollection<Field> toolCollection = new ObservableCollection<Field>();
             foreach (KeyValuePair<string, FieldDTO> pair in sortedlist)
             {
                 if (App.fieldinfo.IsTool(pair.Key))
                 {
+                    //Get the exact type of tool
                     Tools tool = App.fieldinfo.GetTool(pair.Key);
+                    //Fill in values for our empty tool object
                     tool.UpdateFromDTO(pair.Value);
 
-                    toolcollection.Add(tool);
+                    toolCollection.Add(tool);
                 }
             }
 
-            return toolcollection;
+            return toolCollection;
 
         }
 
         //This should be in an ItemHelper class
         public static ObservableCollection<Item> GetInventory(SortedList<string, int> sortedlist)
         {
-            ObservableCollection<Item> itemcollection = new ObservableCollection<Item>();
-            foreach (KeyValuePair<string, int> pair in sortedlist)
-            {
-                itemcollection.Add(App.fieldinfo.GetItem(pair.Key));
+            var items = sortedlist.Select(x => App.fieldinfo.GetItem(x.Key, x.Value));
+            return new ObservableCollection<Item>(items);
 
-            }
+            //ObservableCollection<Item> itemCollection = new ObservableCollection<Item>();
+            //foreach (KeyValuePair<string, int> pair in sortedlist)
+            //{
+            //    itemCollection.Add(App.fieldinfo.GetItem(pair.Key, pair.Value));
 
-            return itemcollection;
+            //}
+
+            //return itemCollection;
         }
 
 
-        public static void UpdateItems() { }
+
 
     }
 

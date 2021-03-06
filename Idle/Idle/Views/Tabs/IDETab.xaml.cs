@@ -21,31 +21,29 @@ namespace Idle.Views.Tabs
         public IDETab()
         {
             InitializeComponent();
+            Items = SessionHelper.GetInventory(App.player.Inventory);
             InventoryList.ItemsSource = Items;
+            var x = Items[2].Amount;
         }
 
         private void GithubEnterprise_Clicked(object sender, EventArgs e)
         {
             App.player.AddItem(nameof(Core.Models.Items.GithubEnterprise));
-            Items = SessionHelper.GetInventory(App.player.Inventory);
         }
 
         private void GithubOne_Clicked(object sender, EventArgs e)
         {
             App.player.AddItem(nameof(Core.Models.Items.GithubOne));
-            Items = SessionHelper.GetInventory(App.player.Inventory);
         }
 
         private void GithubTeams_Clicked(object sender, EventArgs e)
         {
             App.player.AddItem(nameof(Core.Models.Items.GithubTeam));
-            Items = SessionHelper.GetInventory(App.player.Inventory);
         }
 
         private void GithubPro_Clicked(object sender, EventArgs e)
         {
             App.player.AddItem(nameof(Core.Models.Items.GithubPro));
-            Items = SessionHelper.GetInventory(App.player.Inventory);
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
