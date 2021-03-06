@@ -14,16 +14,12 @@ namespace Idle.Views.Cells
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SessionCell : ViewCell
     {
-        //Perhaps set the Task.Delay() value to be bound to the level of the itemsource object with some multiplier
-        private int _level;
-        private int _xp;
+
         private Languages _language;
 
         public SessionCell()
         {
             InitializeComponent();
-            //_level = Int32.Parse(LevelLabel.Text);
-            //_xp = Int32.Parse(XPLabel.Text);
 
             Task.Run(async () =>
             {
@@ -35,15 +31,8 @@ namespace Idle.Views.Cells
                     {
                         if (ProgressBar.Progress >= 1.0f)
                         {
-                            //_level++;
-                            //_xp++;
-                            //var level = Int32.Parse(LevelLabel.Text);
-                            //var xp = Int32.Parse(XPLabel.Text);
-                            //LevelLabel.Text = level.ToString();
-                            //XPLabel.Text = xp.ToString();
                             _language.Level++;
                             _language.XP += 35;
-                            //BindingContext = _language;
 
                             ProgressBar.Progress = 0.0f;
                         }
@@ -63,7 +52,6 @@ namespace Idle.Views.Cells
         {
             base.OnAppearing();
             _language = BindingContext as Languages;
-
         }
 
         private void Upgrade_Clicked(object sender, EventArgs e)

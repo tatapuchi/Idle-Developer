@@ -76,5 +76,9 @@ namespace Idle
             App.Current.MainPage = new SessionProgress();
         }
 
+        private void ShopButton_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new ShopPage();
+        }
     }
 }

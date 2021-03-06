@@ -7,6 +7,7 @@
         <member name="T:Idle.Core.Models.Player.FieldInfo">
             <summary>
             Helper for sorting and determining what subtype of field something belongs to, etc
+            Items as well
             </summary>
         </member>
         <member name="T:Idle.Core.Models.Player.Player">

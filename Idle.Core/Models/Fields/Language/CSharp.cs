@@ -12,15 +12,6 @@ namespace Idle.Core.Models.Fields.Language
             Description = "A .NET Language";
         }
 
-        public override string Name { get; set; }
-
-        public override string Description { get; set; }
-
-
-
-        public override int XP { get; set; }
-
-        public override int Level { get; set; }
 
         public override string ToString()
         {

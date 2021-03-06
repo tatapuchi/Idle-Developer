@@ -4,7 +4,10 @@
              x:Class="Idle.Views.Tabs.IDETab">
     <ContentPage.Content>
         <StackLayout Margin="12">
-            <Button Text="Buy VS 2019 pro" x:Name="BuyVisualStudio" Clicked="BuyVisualStudio_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+            <Button Text="Github Pro" x:Name="GithubPro" Clicked="GithubPro_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+            <Button Text="Github Team" x:Name="GithubTeams" Clicked="GithubTeams_Clicked"  CornerRadius="12" BackgroundColor="Orange"/>
+            <Button Text="Github Enterprise" x:Name="GithubEnterprise" Clicked="GithubEnterprise_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+            <Button Text="Github One" x:Name="GithubOne" Clicked="GithubOne_Clicked"  CornerRadius="12" BackgroundColor="Orange"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

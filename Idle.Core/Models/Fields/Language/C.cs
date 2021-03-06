@@ -4,27 +4,18 @@ using System.Text;
 
 namespace Idle.Core.Models.Fields.Language
 {
-    public sealed class Kotlin : Languages
+    public sealed class C : Languages
     {
-
-
-        public Kotlin()
+        public C()
         {
-            Name = "Kotlin";
-            Description = "An Android Language";
-        }
 
+
+        }
 
 
         public override string ToString()
         {
-            return nameof(Kotlin);
+            return nameof(C);
         }
-
     }
-
-
-
-
 }
-

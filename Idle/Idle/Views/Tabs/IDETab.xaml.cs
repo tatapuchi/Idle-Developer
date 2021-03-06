@@ -17,7 +17,22 @@ namespace Idle.Views.Tabs
             InitializeComponent();
         }
 
-        private void BuyVisualStudio_Clicked(object sender, EventArgs e)
+        private void GithubEnterprise_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GithubOne_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GithubTeams_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GithubPro_Clicked(object sender, EventArgs e)
         {
 
         }
