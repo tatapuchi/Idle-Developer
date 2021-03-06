@@ -63,8 +63,12 @@ namespace Idle.Core.Models.Player
         #region Inventory Methods
         public void AddInventory(string key)
         {
+            FieldInfo info = new FieldInfo();
+            //add method that takes in name and gives back maxstackamount
             if (Inventory.ContainsKey(key))
             {
+                if (info.GetItem(key).MaxStackAmount <= Inventory[key]) { return; }
+
                 Inventory[key]++;
                 return;
             }

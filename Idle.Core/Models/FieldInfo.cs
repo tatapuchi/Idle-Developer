@@ -1,5 +1,6 @@
 ﻿using Idle.Core.Models.Fields;
 using Idle.Core.Models.Fields.Language;
+using Idle.Core.Models.Items;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,9 +9,25 @@ namespace Idle.Core.Models.Player
 {
     /// <summary>
     /// Helper for sorting and determining what subtype of field something belongs to, etc
+    /// Items as well
     /// </summary>
     public class FieldInfo
     {
+
+        #region Item Methods
+        public Item GetItem(string item)
+        {
+            switch (item)
+            {
+                case nameof(GithubEnterprise):
+                    return new GithubEnterprise();
+                default:
+                    return null;
+            }
+
+        }
+        #endregion
+
         #region Tool Methods
         public Tools GetTool(Field.Tool tool)
         {

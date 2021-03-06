@@ -9,16 +9,17 @@ namespace Idle.Core.Models
     {
 
         //Name of item eg: HP Omen 15, RTX 3090
-        public string Name { get; set; }
-        public int Amount { get; set; }
-        public int Cost { get; set; }
+        public virtual string Name { get; set; }
+        public virtual int Amount { get; set; }
+        public virtual int Cost { get; set; }
 
-        public int MaxStackAmount { get; set; }
+        private int _maxStackAmount = 1;
+        public virtual int MaxStackAmount { get => _maxStackAmount; set => _maxStackAmount = value; }
         //Description of item
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
         //Rarity of a given item
-        public Rarity rarity { get; set; }
+        public virtual Rarity rarity { get; set; }
 
         public static Item GetItem(string item)
         {

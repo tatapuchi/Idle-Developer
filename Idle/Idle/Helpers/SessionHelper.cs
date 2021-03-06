@@ -22,8 +22,8 @@ namespace Idle.Helpers
                 {
                     foreach(Languages language in collection)
                     {
-                        //changed from tostring to name
-                        if (pair.Key.Equals(language.Name))
+                        //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                        if (pair.Key.Equals(language.ToString()))
                         {
                             App.player.Fields[pair.Key] = language.ConvertToDTO();
                         }

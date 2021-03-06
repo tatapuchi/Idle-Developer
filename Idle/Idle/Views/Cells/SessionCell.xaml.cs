@@ -43,7 +43,7 @@ namespace Idle.Views.Cells
                             //XPLabel.Text = xp.ToString();
                             _language.Level++;
                             _language.XP += 35;
-                            BindingContext = _language;
+                            //BindingContext = _language;
 
                             ProgressBar.Progress = 0.0f;
                         }

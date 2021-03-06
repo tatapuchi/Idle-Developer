@@ -22,16 +22,16 @@ namespace Idle
             //Check how many times the app has been opened
             #region Times Opened
 
-            //if (Preferences.ContainsKey("Times_Opened"))
-            //{ 
-            //    Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
-            //    player.UpdateFromDTO(FileHelper.ReadPlayer());
-            //}
-            //else
-            //{
+            if (Preferences.ContainsKey("Times_Opened"))
+            { 
+                Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
+                player.UpdateFromDTO(FileHelper.ReadPlayer());
+            }
+            else
+            {
                 Preferences.Set("Times_Opened", 1);
                 FileHelper.WritePlayer(player.ConvertToDTO());
-            //}
+            }
 
             timesopened = Preferences.Get("Times_Opened", 1);
 
