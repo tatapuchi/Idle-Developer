@@ -34,7 +34,7 @@ namespace Idle.Core.Models
         Ancient,
         Forbidden
         }
-        public enum ItemType { GitHubOne, GitHubEnterprise, GitHubPro, GitHubTeam}
+        public enum ItemType { GitHubOne, GitHubEnterprise, GitHubPro, GitHubTeam, Rider}
 
     }
 }
