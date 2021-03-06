@@ -73,12 +73,14 @@ namespace Idle
 
         private void BtnSessionProgress_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new SessionProgress();
+            //App.Current.MainPage = new SessionProgress();
+            Navigation.PushAsync(new SessionPage());
         }
 
         private void ShopButton_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new ShopPage();
+            //App.Current.MainPage = new ShopPage();
+            Navigation.PushAsync(new ShopPage());
         }
     }
 }
