@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Items
             Cost = 999;
             Description = "Github's Ultimate Plan";
             rarity = Rarity.Mythical;
+            itemType = ItemType.GitHubOne;
         }
     }
 }

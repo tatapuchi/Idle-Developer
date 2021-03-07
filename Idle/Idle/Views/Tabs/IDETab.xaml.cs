@@ -23,27 +23,26 @@ namespace Idle.Views.Tabs
             InitializeComponent();
             Items = SessionHelper.GetInventory(App.player.Inventory);
             InventoryList.ItemsSource = Items;
-            var x = Items[2].Amount;
         }
 
         private void GithubEnterprise_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(nameof(Core.Models.Items.GithubEnterprise));
+            App.player.AddItem(Item.ItemType.GitHubEnterprise);
         }
 
         private void GithubOne_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(nameof(Core.Models.Items.GithubOne));
+            App.player.AddItem(Item.ItemType.GitHubOne);
         }
 
         private void GithubTeams_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(nameof(Core.Models.Items.GithubTeam));
+            App.player.AddItem(Item.ItemType.GitHubTeam);
         }
 
         private void GithubPro_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(nameof(Core.Models.Items.GithubPro));
+            App.player.AddItem(Item.ItemType.GitHubPro);
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)

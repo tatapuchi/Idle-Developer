@@ -26,8 +26,10 @@ namespace Idle.Core.Models.Player
             LanguageList = Language.None;
             FrameworkList = Framework.None;
             ToolList = Tool.None;
-            Fields = new SortedList<string, FieldDTO>();
-            Inventory = new SortedList<string, int>();
+            Languages = new SortedList<Field.Language, FieldDTO>();
+            Frameworks = new SortedList<Field.Framework, FieldDTO>();
+            Tools = new SortedList<Field.Tool, FieldDTO>();
+            Inventory = new SortedList<Item.ItemType, int>();
 
         }
 
@@ -53,48 +55,48 @@ namespace Idle.Core.Models.Player
         public Tool ToolList { get; set; }
 
         
-        public SortedList<string, FieldDTO> Fields { get; set; }
+        public SortedList<Field.Language, FieldDTO> Languages { get; set; }
+        public SortedList<Field.Framework, FieldDTO> Frameworks { get; set; }
+        public SortedList<Field.Tool, FieldDTO> Tools { get; set; }
 
-        public SortedList<string, int> Inventory { get; set; }
+        public SortedList<Item.ItemType, int> Inventory { get; set; }
         #endregion
 
 
         //Methods regarding adding and removing items from the inventory
         #region Inventory Methods
-        public void AddItem(string key)
+        public void AddItem(Item.ItemType type)
         {
             FieldInfo info = new FieldInfo();
             //add method that takes in name and gives back maxstackamount
-            if (Inventory.ContainsKey(key))
+            if (Inventory.ContainsKey(type))
             {
-                if (info.GetItem(key).MaxStackAmount <= Inventory[key]) { return; }
+                if (info.GetItem(type).MaxStackAmount <= Inventory[type]) { return; }
 
-                Inventory[key]++;
+                Inventory[type]++;
                 return;
             }
 
-            Inventory.Add(key, 1);
+            Inventory.Add(type, 1);
 
         }
 
-        public void RemoveItem(string key)
+        public void RemoveItem(Item.ItemType type)
         {
-            if (Inventory.ContainsKey(key))
+            if (Inventory.ContainsKey(type))
             {
-                if (Inventory[key] > 1)
+                if (Inventory[type] > 1)
                 {
-                    Inventory[key]--;
+                    Inventory[type]--;
                 }
 
-                Inventory.Remove(key);
+                Inventory.Remove(type);
 
             }
 
         }
 
         #endregion
-
-
         //Methods regarding adding flags to enums and to the Fields SortedList
         #region Field Methods
         public void AddLanguage(Field.Language language)
@@ -102,7 +104,7 @@ namespace Idle.Core.Models.Player
             FieldInfo info = new FieldInfo();
             if (LanguageList.HasFlag(language)) { return; }
             LanguageList |= language;
-            Fields.Add(language.ToString(), info.GetLanguage(language).ConvertToDTO());
+            Languages.Add(language, info.GetLanguage(language).ConvertToDTO());
         }
 
         public void AddFramework(Field.Framework framework)
@@ -110,7 +112,7 @@ namespace Idle.Core.Models.Player
             FieldInfo info = new FieldInfo();
             if (FrameworkList.HasFlag(framework)) { return; }
             FrameworkList |= framework;
-            Fields.Add(framework.ToString(), info.GetFramework(framework).ConvertToDTO());
+            Frameworks.Add(framework, info.GetFramework(framework).ConvertToDTO());
         }
 
         public void AddTool(Field.Tool tool)
@@ -118,7 +120,7 @@ namespace Idle.Core.Models.Player
             FieldInfo info = new FieldInfo();
             if (ToolList.HasFlag(tool)) { return; }
             ToolList |= tool;
-            Fields.Add(tool.ToString(), info.GetTool(tool).ConvertToDTO());
+            Tools.Add(tool, info.GetTool(tool).ConvertToDTO());
         }
         #endregion
 
@@ -135,7 +137,9 @@ namespace Idle.Core.Models.Player
                 LanguageList = LanguageList,
                 FrameworkList = FrameworkList,
                 ToolList = ToolList,
-                Fields = Fields,
+                Languages = Languages,
+                Frameworks = Frameworks,
+                Tools = Tools,
                 Inventory = Inventory
             };
 
@@ -152,7 +156,9 @@ namespace Idle.Core.Models.Player
             LanguageList = dto.LanguageList;
             FrameworkList = dto.FrameworkList;
             ToolList = dto.ToolList;
-            Fields = dto.Fields;
+            Languages = dto.Languages;
+            Frameworks = dto.Frameworks;
+            Tools = dto.Tools;
             Inventory = dto.Inventory;
         }
 

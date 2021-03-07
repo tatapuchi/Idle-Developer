@@ -11,6 +11,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "Java";
             Description = "A Coffee Language";
+            Language = Field.Language.Java;
         }
 
 

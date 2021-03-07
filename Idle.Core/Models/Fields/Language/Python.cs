@@ -12,6 +12,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "Python";
             Description = "A Snake Language";
+            Language = Field.Language.Python;
         }
 
 

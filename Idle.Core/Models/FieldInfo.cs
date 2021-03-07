@@ -4,6 +4,7 @@ using Idle.Core.Models.Items;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static Idle.Core.Models.Item;
 
 namespace Idle.Core.Models.Player
 {
@@ -15,17 +16,18 @@ namespace Idle.Core.Models.Player
     {
 
         #region Item Methods
-        public Item GetItem(string item)
+
+        public Item GetItem(ItemType item)
         {
             switch (item)
             {
-                case nameof(GithubEnterprise):
+                case ItemType.GitHubEnterprise:
                     return new GithubEnterprise();
-                case nameof(GithubOne):
+                case ItemType.GitHubOne:
                     return new GithubOne();
-                case nameof(GithubPro):
+                case ItemType.GitHubPro:
                     return new GithubPro();
-                case nameof(GithubTeam):
+                case ItemType.GitHubTeam:
                     return new GithubTeam();
                 default:
                     return null;
@@ -33,18 +35,18 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public Item GetItem(string item, int amount)
+        public Item GetItem(ItemType item, int amount)
         {
             switch (item)
             {
-                case nameof(GithubEnterprise):
+                case ItemType.GitHubEnterprise:
                     return new GithubEnterprise() { Amount = amount };
-                case nameof(GithubOne):
-                    return new GithubOne() { Amount = amount }; ;
-                case nameof(GithubPro):
-                    return new GithubPro() { Amount = amount }; ;
-                case nameof(GithubTeam):
-                    return new GithubTeam() { Amount = amount }; ;
+                case ItemType.GitHubOne:
+                    return new GithubOne() { Amount = amount };
+                case ItemType.GitHubPro:
+                    return new GithubPro() { Amount = amount };
+                case ItemType.GitHubTeam:
+                    return new GithubTeam() { Amount = amount };
                 default:
                     return null;
             }
@@ -64,17 +66,7 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public Tools GetTool(string tool)
-        {
-            switch (tool)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public bool IsTool(string tool)
+        public bool IsTool(Field.Tool tool)
         {
             switch (tool)
             {
@@ -83,6 +75,8 @@ namespace Idle.Core.Models.Player
             }
 
         }
+
+
         #endregion
 
         #region Language Methods
@@ -112,53 +106,29 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public Languages GetLanguage(string language)
+        public bool IsLanguage(Field.Language languauge)
         {
-            switch (language)
+            switch (languauge)
             {
-                case nameof(Java):
-                    return new Java();
-                case nameof(CSharp):
-                    return new CSharp();
-                case nameof(Kotlin):
-                    return new Kotlin();
-                case nameof(Python):
-                    return new Python();
-                case nameof(JavaScript):
-                    return new JavaScript();
-                case nameof(HTML):
-                    return new HTML();
-                case nameof(CSS):
-                    return new CSS();
-
-                default:
-                    return null;
-            }
-
-        }
-
-        public bool IsLanguage(string name)
-        {
-            switch (name)
-            {
-                case nameof(Java):
+                case Field.Language.Java:
                     return true;
-                case nameof(CSharp):
+                case Field.Language.CSharp:
                     return true;
-                case nameof(Kotlin):
+                case Field.Language.Kotlin:
                     return true;
-                case nameof(Python):
+                case Field.Language.Python:
                     return true;
-                case nameof(JavaScript):
+                case Field.Language.JavaScript:
                     return true;
-                case nameof(HTML):
+                case Field.Language.HTML:
                     return true;
-                case nameof(CSS):
+                case Field.Language.CSS:
                     return true;
                 default:
                     return false;
             }
         }
+
 
         #endregion
 
@@ -173,17 +143,7 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public Frameworks GetFramework(string framework)
-        {
-            switch (framework)
-            {
-                default:
-                    return null;
-            }
-
-        }
-
-        public bool IsFramework(string framework)
+        public bool IsFramework(Field.Framework framework)
         {
             switch (framework)
             {
@@ -192,6 +152,8 @@ namespace Idle.Core.Models.Player
             }
 
         }
+
+
 
         #endregion
 

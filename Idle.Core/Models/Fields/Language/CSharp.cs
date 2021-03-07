@@ -10,6 +10,7 @@ namespace Idle.Core.Models.Fields.Language
         {
             Name = "C#";
             Description = "A .NET Language";
+            Language = Field.Language.CSharp;
         }
 
 

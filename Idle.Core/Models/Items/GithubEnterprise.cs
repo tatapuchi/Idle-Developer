@@ -13,7 +13,7 @@ namespace Idle.Core.Models.Items
             Cost = 499;
             Description = "Github's Enterprise Plan";
             rarity = Rarity.Legendary;
-
+            itemType = ItemType.GitHubEnterprise;
 
         }
 

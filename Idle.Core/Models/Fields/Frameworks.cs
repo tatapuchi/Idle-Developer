@@ -17,6 +17,8 @@ namespace Idle.Core.Models.Fields
         private int _level;
         public int Level { get { return _level; } set { _level = value; NotifyPropertyChanged(nameof(Level)); } }
 
+        public Field.Framework Framework { get; set; }
+
 
         //Methods regarding conversion of the framework to a DTO and vice versa
         #region DTO methods

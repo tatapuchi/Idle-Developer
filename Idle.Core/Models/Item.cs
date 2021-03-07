@@ -18,6 +18,8 @@ namespace Idle.Core.Models
         //Description of item
         public string Description { get; set; }
 
+        public ItemType itemType { get; set; }
+
         //Rarity of a given item
         public Rarity rarity { get; set; }
 
@@ -34,7 +36,18 @@ namespace Idle.Core.Models
         Ancient,
         Forbidden
         }
-        public enum ItemType { GitHubOne, GitHubEnterprise, GitHubPro, GitHubTeam}
+        public enum ItemType { 
+            GitHubOne,
+            GitHubEnterprise,
+            GitHubPro,
+            GitHubTeam,
+            Rider,
+            CLion,
+            Bamboo,
+            AdobeXD,
+            AdobeAe,
+            AdobeAi
+            }
 
     }
 }
