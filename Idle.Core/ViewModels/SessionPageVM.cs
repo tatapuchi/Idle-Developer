@@ -12,6 +12,12 @@ namespace Idle.Core.ViewModels
     {
         private ObservableCollection<Languages> _languages;
         public ObservableCollection<Languages> Languages { get { return _languages; } set { _languages = value; NotifyPropertyChanged(nameof(Languages)); } }
+
+        private ObservableCollection<Frameworks> _frameworks;
+        public ObservableCollection<Frameworks> Frameworks { get { return _frameworks; } set { _frameworks = value; NotifyPropertyChanged(nameof(Frameworks)); } }
+
+        private ObservableCollection<Tools> _tools;
+        public ObservableCollection<Tools> Tools { get { return _tools; } set { _tools = value; NotifyPropertyChanged(nameof(Tools)); } }
         public SessionPageVM()
         {
         }

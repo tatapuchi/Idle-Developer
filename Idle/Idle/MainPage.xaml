@@ -5,18 +5,12 @@
 
     <StackLayout Margin="12">
 
-        <Entry x:Name="FileEntry"/>
-        <Entry x:Name="SessionEntry"/>
-        <Button x:Name="Java" Text="Java" CornerRadius="12" BackgroundColor="Orange" Clicked="Java_Clicked" />
-        <Button x:Name="Kotlin" Text="Kotlin" CornerRadius="12" BackgroundColor="Orange" Clicked="Kotlin_Clicked" />
-        <Button x:Name="CSharp" Text="C#" CornerRadius="12" BackgroundColor="Orange" Clicked="CSharp_Clicked" />
-        <Button x:Name="HTML" Text="HTML" CornerRadius="12" BackgroundColor="Orange" Clicked="HTML_Clicked"/>
-        <Button x:Name="CSS" Text="CSS" CornerRadius="12" BackgroundColor="Orange" Clicked="CSS_Clicked"/>
-        <Button x:Name="JavaScript" Text="JavaScript" CornerRadius="12" BackgroundColor="Orange" Clicked="JavaScript_Clicked"/>
-        <Button x:Name="Python" Text="Python" CornerRadius="12" BackgroundColor="Orange" Clicked="Python_Clicked"/>
-        <!-- Temporary button to bring you to session progress-->
-        <Button x:Name="btnSessionProgress" Text="Progress Page" CornerRadius="12" BackgroundColor="Orange" Clicked="BtnSessionProgress_Clicked"/>
-        <Button x:Name="ShopButton" Text="Shop Page" CornerRadius="12" BackgroundColor="Orange" Clicked="ShopButton_Clicked"/>
+
+        <Button x:Name="SessionPage" Text="Session Page" Clicked="BtnSessionProgress_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+        <Button x:Name="ShopButton" Text="Shop Page" CornerRadius="12" BackgroundColor="LightGreen" Clicked="ShopButton_Clicked"/>
+        <Button x:Name="UpgradeButton" Text="Upgrade Page" Clicked="UpgradeButton_Clicked" CornerRadius="12" BackgroundColor="LightSalmon"/>
+        <Button x:Name="JobButton" Text="Job Page" Clicked="JobButton_Clicked" CornerRadius="12" BackgroundColor="Chocolate" />
+        <Button x:Name="ProjectButton" Text="Project Page" Clicked="ProjectButton_Clicked"  CornerRadius="12" BackgroundColor="Gray"/>
 
     </StackLayout>
 

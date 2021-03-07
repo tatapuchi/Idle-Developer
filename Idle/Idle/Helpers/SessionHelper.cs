@@ -17,7 +17,7 @@ namespace Idle.Helpers
 
 
         //Change this, this is very bad?
-        public static void UpdateFields(ObservableCollection<Languages> collection)
+        public static void UpdateLanguages(ObservableCollection<Languages> collection)
         {
 
             SortedList<Field.Language, FieldDTO> fields = new SortedList<Field.Language, FieldDTO>(App.player.Languages);
@@ -35,6 +35,50 @@ namespace Idle.Helpers
                     }
 
                 
+            }
+
+        }
+
+        public static void UpdateTools(ObservableCollection<Tools> collection)
+        {
+
+            SortedList<Field.Tool, FieldDTO> fields = new SortedList<Field.Tool, FieldDTO>(App.player.Tools);
+            foreach (KeyValuePair<Field.Tool, FieldDTO> pair in fields)
+            {
+
+                foreach (Tools tool in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(tool.Tool))
+                    {
+                        App.player.Tools[pair.Key] = tool.ConvertToDTO();
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        public static void UpdateFrameworks(ObservableCollection<Frameworks> collection)
+        {
+
+            SortedList<Field.Framework, FieldDTO> fields = new SortedList<Field.Framework, FieldDTO>(App.player.Frameworks);
+            foreach (KeyValuePair<Field.Framework, FieldDTO> pair in fields)
+            {
+
+                foreach (Frameworks framework in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(framework.Framework))
+                    {
+                        App.player.Frameworks[pair.Key] = framework.ConvertToDTO();
+                    }
+
+                }
+
+
             }
 
         }

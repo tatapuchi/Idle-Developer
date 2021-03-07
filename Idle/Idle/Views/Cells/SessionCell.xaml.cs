@@ -15,7 +15,7 @@ namespace Idle.Views.Cells
     public partial class SessionCell : ViewCell
     {
 
-        private Languages _language;
+        private Field _field;
 
         public SessionCell()
         {
@@ -31,8 +31,8 @@ namespace Idle.Views.Cells
                     {
                         if (ProgressBar.Progress >= 1.0f)
                         {
-                            _language.Level++;
-                            _language.XP += 35;
+                            _field.Level++;
+                            _field.XP += 35;
 
                             ProgressBar.Progress = 0.0f;
                         }
@@ -51,7 +51,7 @@ namespace Idle.Views.Cells
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _language = BindingContext as Languages;
+            _field = BindingContext as Field;
         }
 
         private void Upgrade_Clicked(object sender, EventArgs e)

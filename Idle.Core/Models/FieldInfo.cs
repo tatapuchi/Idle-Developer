@@ -1,4 +1,5 @@
 ﻿using Idle.Core.Models.Fields;
+using Idle.Core.Models.Fields.Framework;
 using Idle.Core.Models.Fields.Language;
 using Idle.Core.Models.Items;
 using System;
@@ -137,6 +138,14 @@ namespace Idle.Core.Models.Player
         {
             switch (framework)
             {
+                case Field.Framework.BootStrap:
+                    return new BootStrap();
+                case Field.Framework.Flutter:
+                    return new Flutter();
+                case Field.Framework.Xamarin:
+                    return new Xamarin();
+                case Field.Framework.LibGDX:
+                    return new LibGDX();
                 default:
                     return null;
             }
@@ -147,6 +156,14 @@ namespace Idle.Core.Models.Player
         {
             switch (framework)
             {
+                case Field.Framework.BootStrap:
+                    return true;
+                case Field.Framework.Flutter:
+                    return true;
+                case Field.Framework.Xamarin:
+                    return true;
+                case Field.Framework.LibGDX:
+                    return true;
                 default:
                     return false;
             }

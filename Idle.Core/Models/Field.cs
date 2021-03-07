@@ -29,12 +29,15 @@ namespace Idle.Core.Models
         public enum Framework : long
         {
             None = 0,
-            Bootstrap = 1,
-            Nodejs = 2,
-            React = 4,
-            Angular = 8,
-            Vue = 16,
-            Rails = 32
+            BootStrap = 1,
+            Nodejs = 1 << 1,
+            React = 1 << 2,
+            Angular = 1 << 3,
+            Vue = 1 << 4,
+            Rails = 1 << 5,
+            LibGDX = 1 << 6,
+            Flutter = 1 << 7,
+            Xamarin = 1 << 8
         }
 
         //Flags to select what languages the user has access to
@@ -69,14 +72,12 @@ namespace Idle.Core.Models
         public enum Tool : long
         {
             None = 0,
-            Thing = 1, 
-            Monday = 2,  
-            Tuesday = 4,  
-            Wednesday = 8,  
-            Thursday = 16,  
-            Friday = 32,  
-            Saturday = 64,  
-            Sunday = 128 
+            GitHub = 1,
+            Jenkins = 1 << 1,
+            Trello = 1 << 2,
+            PyCharm = 1 << 3,
+            VSCode = 1 << 4,
+            Atom = 1 << 5
         }
 
         #endregion
