@@ -31,7 +31,7 @@ namespace Idle.Views.Cells
                     {
                         if (ProgressBar.Progress >= 1.0f)
                         {
-                            _field.Level++;
+                            //_field.Level++;
                             _field.XP += 35;
 
                             ProgressBar.Progress = 0.0f;

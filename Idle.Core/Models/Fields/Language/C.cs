@@ -9,13 +9,11 @@ namespace Idle.Core.Models.Fields.Language
         public C()
         {
 
-
+            Name = "C";
+            Description = "A Low Level Language";
+            Language = Field.Language.C;
         }
 
 
-        public override string ToString()
-        {
-            return nameof(C);
-        }
     }
 }
