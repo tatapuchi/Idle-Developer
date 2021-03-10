@@ -67,6 +67,7 @@ namespace Idle.Core.Models.Player
 
         }
 
+        //IsTool and the other Isfunctions as obsolete
         public bool IsTool(Field.Tool tool)
         {
             switch (tool)

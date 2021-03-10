@@ -105,6 +105,7 @@ namespace Idle.Core.Models.Player
             if (LanguageList.HasFlag(language)) { return; }
             LanguageList |= language;
             Languages.Add(language, info.GetLanguage(language).ConvertToDTO());
+            
         }
 
         public void AddFramework(Field.Framework framework)
