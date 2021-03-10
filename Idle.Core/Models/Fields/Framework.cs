@@ -1,36 +1,48 @@
-﻿using Idle.Core.Models.Fields.Language;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using static Idle.Core.Models.Fields.IField;
 
 namespace Idle.Core.Models.Fields
 {
-
-    public abstract class Languages : Field, INotifyPropertyChanged
+    public class Framework : IField, INotifyPropertyChanged
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public Framework()
+        {
+            XP = 0;
+            Level = 0;
+            Cost = 500;
+            Name = "Framework";
+            Description = "Useful Programming Framework";
+            Type = FrameworkType.None;
+        }
 
+        //DTO Properties
         private int _xp;
         public int XP { get { return _xp; } set { _xp = value; NotifyPropertyChanged(nameof(XP)); } }
 
         private int _level;
         public int Level { get { return _level; } set { _level = value; NotifyPropertyChanged(nameof(Level)); } }
 
-        public Field.Language Language { get; set; }
+        //BO Properties
+        public int Cost { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public FrameworkType Type { get; set; }
+        public LanguageType Prerequisites { get; set; }
 
-        //Methods regarding conversion of the framework to a DTO and vice versa
-        #region DTO methods
-        public void UpdateFromDTO(FieldDTO dto)
+
+        #region DTO System
+        public void Update(FieldDTO dto)
         {
             XP = dto.XP;
             Level = dto.Level;
 
         }
 
-        public FieldDTO ConvertToDTO()
+        public FieldDTO Convert()
         {
             FieldDTO dto = new FieldDTO();
             dto.XP = XP;
@@ -40,7 +52,6 @@ namespace Idle.Core.Models.Fields
 
         }
         #endregion
-
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;
@@ -61,11 +72,5 @@ namespace Idle.Core.Models.Fields
         #endregion
 
 
-
-
-
-
     }
-
-
 }

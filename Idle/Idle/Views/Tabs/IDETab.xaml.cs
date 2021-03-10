@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Idle.Core.Models.Items.Item;
 
 namespace Idle.Views.Tabs
 {
@@ -21,34 +22,34 @@ namespace Idle.Views.Tabs
         public IDETab()
         {
             InitializeComponent();
-            Items = SessionHelper.GetInventory(App.player.Inventory);
+            Items = App.player.GetInventoryCollection();
             InventoryList.ItemsSource = Items;
         }
 
         private void GithubEnterprise_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(Item.ItemType.GitHubEnterprise);
+            App.player.AddItem(ItemType.GitHubEnterprise);
         }
 
         private void GithubOne_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(Item.ItemType.GitHubOne);
+            App.player.AddItem(ItemType.GitHubOne);
         }
 
         private void GithubTeams_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(Item.ItemType.GitHubTeam);
+            App.player.AddItem(ItemType.GitHubTeam);
         }
 
         private void GithubPro_Clicked(object sender, EventArgs e)
         {
-            App.player.AddItem(Item.ItemType.GitHubPro);
+            App.player.AddItem(ItemType.GitHubPro);
         }
 
         private void SaveButton_Clicked(object sender, EventArgs e)
         {
             //Work on a observablecollection to sortedlist method for inventory
-            FileHelper.WritePlayer(App.player.ConvertToDTO());
+            FileHelper.WritePlayer(App.player.Convert());
         }
     }
 }

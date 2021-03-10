@@ -1,38 +1,31 @@
-﻿using System;
+﻿using Idle.Core.Models.Fields;
+using Idle.Core.Models.Jobs;
+using Idle.Core.Models.Projects;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using static Idle.Core.Models.Field;
+using static Idle.Core.Models.Fields.IField;
+using static Idle.Core.Models.Items.Item;
+using static Idle.Core.Models.Jobs.Job;
+using static Idle.Core.Models.Projects.Project;
 
 namespace Idle.Core.Models.Player
 {
-    //Data Transfer class for player
     public class PlayerDTO
     {
-        //Current XP of the player
+        public string Username { get; set; }
         public int XP { get; set; }
-
-        //Current Level of the player
         public int Level { get; set; }
-
-        //Number of coins player currently has
         public int Coins { get; set; }
 
-        //Enum Flags meant to hold the fields(of subtype language) that the player currently has access to
-        public Language LanguageList { get; set; }
+        public SortedList<LanguageType, FieldDTO> Languages { get; set; }
+        public SortedList<FrameworkType, FieldDTO> Frameworks { get; set; }
+        public SortedList<ToolType, FieldDTO> Tools { get; set; }
 
-        //Enum Flags meant to hold the fields (of subtype framework) that the player currently has access to
-        public Framework FrameworkList { get; set; }
+        public SortedList<ItemType, int> Inventory { get; set; }
 
-        //Enum Flags meant to hold the fields (of subtype tool) that the player currently has access to
-        public Tool ToolList { get; set; }
+        public SortedList<JobType, JobDTO> Jobs { get; set; }
 
-        //SortedList of Fields meant to keep track of the players progress (XP and level) for a certain field, eg: Java (360 XP at Level 3) or Kotlin (7400 XP at Level 15)
-        public SortedList<Field.Language, FieldDTO> Languages { get; set; }
-        public SortedList<Field.Framework, FieldDTO> Frameworks { get; set; }
-        public SortedList<Field.Tool, FieldDTO> Tools { get; set; }
-
-        //Inventory, meant to store the name of the item eg: nameof(PyCharm) as a string, and the amount of said item 
-        public SortedList<Item.ItemType, int> Inventory { get; set; }
-
+        public SortedList<ProjectType, ProjectDTO> Projects { get; set; }
     }
 }
