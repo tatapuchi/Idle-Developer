@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Fields\Tool\" />
+    <Folder Include="Models\Jobs\" />
+    <Folder Include="Models\Projects\" />
   </ItemGroup>
 
 </Project>
