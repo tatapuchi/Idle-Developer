@@ -2,31 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Core.Models
+namespace Idle.Core.Models.Fields
 {
-    //Top level field type for languages, frameworks and tools
-    public interface Field
+    public interface IField
     {
-
-        //Name of field eg: Java, Bootstrap, IntelliJ, etc
-        public string Name { get; set; }
-
-        //Description of field
-        public string Description { get; set; }
-
-        //Current amount of XP for a field
-        public int XP { get; set; }
-
-        //Current level for a field
         public int Level { get; set; }
-
-
-        #region Listing
+        public int XP { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
 
 
         //Flags to select what frameworks the user has access to
         [Flags]
-        public enum Framework : long
+        public enum FrameworkType : long
         {
             None = 0,
             BootStrap = 1,
@@ -42,16 +30,16 @@ namespace Idle.Core.Models
 
         //Flags to select what languages the user has access to
         [Flags]
-        public enum Language : long
+        public enum LanguageType : long
         {
             None = 0,
-            HTML = 1,  
-            CSS = 1 << 1,  
-            JavaScript = 1 << 2,  
-            Python = 1 << 3,  
-            PHP = 1 << 4,  
-            C = 1 << 5,  
-            CPP = 1 << 6,  
+            HTML = 1,
+            CSS = 1 << 1,
+            JavaScript = 1 << 2,
+            Python = 1 << 3,
+            PHP = 1 << 4,
+            C = 1 << 5,
+            CPP = 1 << 6,
             CSharp = 1 << 7,
             Java = 1 << 8,
             TypeScript = 1 << 9,
@@ -69,7 +57,7 @@ namespace Idle.Core.Models
 
         //Flags to select what tools the user has access to
         [Flags]
-        public enum Tool : long
+        public enum ToolType : long
         {
             None = 0,
             GitHub = 1,
@@ -80,7 +68,7 @@ namespace Idle.Core.Models
             Atom = 1 << 5
         }
 
-        #endregion
+
 
     }
 }

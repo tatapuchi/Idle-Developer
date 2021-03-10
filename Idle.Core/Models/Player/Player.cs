@@ -1,73 +1,101 @@
 ﻿using Idle.Core.Models.Fields;
+using Idle.Core.Models.Items;
+using Idle.Core.Models.Jobs;
+using Idle.Core.Models.Projects;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
-using static Idle.Core.Models.Field;
+using static Idle.Core.Models.Fields.IField;
+using static Idle.Core.Models.Items.Item;
+using static Idle.Core.Models.Jobs.Job;
+using static Idle.Core.Models.Projects.Project;
 
 namespace Idle.Core.Models.Player
 {
-    /// <summary>
-    /// This is the business class for player, it is used to track and record data on the player.
-    /// </summary>
-    /// <remarks>
-    /// DTO class is seperate to this class
-    /// </remarks>
+    //maybe add username password system
     public class Player
     {
-        /// <summary>
-        /// <c>Player</c> constructor, used to create an object of the player business class and set default values to the properties
-        /// </summary>
         public Player()
         {
-            //Setting properties to their default values
+
+            Username = "0xB01b";
             XP = 0;
             Level = 1;
             Coins = 0;
-            LanguageList = Language.None;
-            FrameworkList = Framework.None;
-            ToolList = Tool.None;
-            Languages = new SortedList<Field.Language, FieldDTO>();
-            Frameworks = new SortedList<Field.Framework, FieldDTO>();
-            Tools = new SortedList<Field.Tool, FieldDTO>();
-            Inventory = new SortedList<Item.ItemType, int>();
+            Languages = new SortedList<LanguageType, FieldDTO>();
+            Frameworks = new SortedList<FrameworkType, FieldDTO>();
+            Tools = new SortedList<ToolType, FieldDTO>();
+            Inventory = new SortedList<ItemType, int>();
+            Jobs = new SortedList<JobType, JobDTO>();
+            Projects = new SortedList<ProjectType, ProjectDTO>();
 
         }
 
-        //Player Properties
-        #region Properties
-
-        ///<value> Amount of XP the player has </value>
+        public string Username { get; set; }
         public int XP { get; set; }
-
-        ///<value> Level the player is at </value>
         public int Level { get; set; }
-
-        ///<value> Amount of coins  the player has </value>
         public int Coins { get; set; }
 
-        ///<value> Enum Flags for which languages the player has access to </value>
-        public Language LanguageList { get; set; }
+        public SortedList<LanguageType, FieldDTO> Languages { get; set; }
+        public SortedList<FrameworkType, FieldDTO> Frameworks { get; set; }
+        public SortedList<ToolType, FieldDTO> Tools { get; set; }
 
-        ///<value> Enum Flags for which frameworks the player has access to </value>
-        public Framework FrameworkList { get; set; }
+        public SortedList<ItemType, int> Inventory { get; set; }
 
-        ///<value> Enum Flags for which tools the player has access to </value>
-        public Tool ToolList { get; set; }
+        public SortedList<JobType, JobDTO> Jobs { get; set; }
 
-        
-        public SortedList<Field.Language, FieldDTO> Languages { get; set; }
-        public SortedList<Field.Framework, FieldDTO> Frameworks { get; set; }
-        public SortedList<Field.Tool, FieldDTO> Tools { get; set; }
+        public SortedList<ProjectType, ProjectDTO> Projects { get; set; }
 
-        public SortedList<Item.ItemType, int> Inventory { get; set; }
+        #region Field System
+        public void AddLanguage(LanguageType type)
+        {
+            Info info = new Info();
+            if (Languages.ContainsKey(type)) { return; }
+            Languages.Add(type, info.GetLanguage(type).Convert());
+
+        }
+
+        public void AddFramework(FrameworkType type)
+        {
+            Info info = new Info();
+            if (Frameworks.ContainsKey(type)) { return; }
+            Frameworks.Add(type, info.GetFramework(type).Convert());
+        }
+
+        public void AddTool(ToolType type)
+        {
+            Info info = new Info();
+            if (Tools.ContainsKey(type)) { return; }
+            Tools.Add(type, info.GetTool(type).Convert());
+        }
+
+        public void AddJob(JobType type)
+        {
+            Info info = new Info();
+            if (Jobs.ContainsKey(type)) { return; }
+            Jobs.Add(type, info.GetJob(type).Convert());
+
+        }
+
+        public void RemoveJob(JobType type)
+        {
+            Jobs.Remove(type);
+        }
+
+        public void AddProject(ProjectType type)
+        {
+            Info info = new Info();
+            if (Projects.ContainsKey(type)) { return; }
+            Projects.Add(type, info.GetProject(type).Convert());
+        }
+
         #endregion
 
-
-        //Methods regarding adding and removing items from the inventory
-        #region Inventory Methods
+        #region Inventory System
         public void AddItem(Item.ItemType type)
         {
-            FieldInfo info = new FieldInfo();
+            Info info = new Info();
             //add method that takes in name and gives back maxstackamount
             if (Inventory.ContainsKey(type))
             {
@@ -81,6 +109,22 @@ namespace Idle.Core.Models.Player
 
         }
 
+        public void AddItem(Item item)
+        {
+            Info info = new Info();
+            //add method that takes in name and gives back maxstackamount
+            if (Inventory.ContainsKey(item.Type))
+            {
+                if (info.GetItem(item.Type).MaxStackAmount <= Inventory[item.Type]) { return; }
+
+                Inventory[item.Type] = item.Amount;
+                return;
+            }
+
+            Inventory.Add(item.Type, item.Amount);
+
+        }
+
         public void RemoveItem(Item.ItemType type)
         {
             if (Inventory.ContainsKey(type))
@@ -88,6 +132,7 @@ namespace Idle.Core.Models.Player
                 if (Inventory[type] > 1)
                 {
                     Inventory[type]--;
+                    return;
                 }
 
                 Inventory.Remove(type);
@@ -96,52 +141,39 @@ namespace Idle.Core.Models.Player
 
         }
 
-        #endregion
-        //Methods regarding adding flags to enums and to the Fields SortedList
-        #region Field Methods
-        public void AddLanguage(Field.Language language)
+        public void RemoveItem(Item item)
         {
-            FieldInfo info = new FieldInfo();
-            if (LanguageList.HasFlag(language)) { return; }
-            LanguageList |= language;
-            Languages.Add(language, info.GetLanguage(language).ConvertToDTO());
-            
+            if (Inventory.ContainsKey(item.Type))
+            {
+                if (Inventory[item.Type] > 1)
+                {
+                    Inventory[item.Type]--;
+                    return;
+                }
+
+                Inventory.Remove(item.Type);
+
+            }
+
         }
 
-        public void AddFramework(Field.Framework framework)
-        {
-            FieldInfo info = new FieldInfo();
-            if (FrameworkList.HasFlag(framework)) { return; }
-            FrameworkList |= framework;
-            Frameworks.Add(framework, info.GetFramework(framework).ConvertToDTO());
-        }
-
-        public void AddTool(Field.Tool tool)
-        {
-            FieldInfo info = new FieldInfo();
-            if (ToolList.HasFlag(tool)) { return; }
-            ToolList |= tool;
-            Tools.Add(tool, info.GetTool(tool).ConvertToDTO());
-        }
         #endregion
 
-
-        //Methods regarding conversion of the player to a DTO and vice versa
-        #region DTO Methods
-        public PlayerDTO ConvertToDTO()
+        #region DTO System
+        public PlayerDTO Convert()
         {
             PlayerDTO dto = new PlayerDTO
             {
                 XP = XP,
                 Level = Level,
                 Coins = Coins,
-                LanguageList = LanguageList,
-                FrameworkList = FrameworkList,
-                ToolList = ToolList,
+                Jobs = Jobs,
+                Projects = Projects,
                 Languages = Languages,
                 Frameworks = Frameworks,
                 Tools = Tools,
-                Inventory = Inventory
+                Inventory = Inventory,
+                Username = Username
             };
 
 
@@ -149,20 +181,195 @@ namespace Idle.Core.Models.Player
 
         }
 
-        public void UpdateFromDTO(PlayerDTO dto)
+        public void Update(PlayerDTO dto)
         {
             XP = dto.XP;
             Level = dto.Level;
             Coins = dto.Coins;
-            LanguageList = dto.LanguageList;
-            FrameworkList = dto.FrameworkList;
-            ToolList = dto.ToolList;
+            Jobs = dto.Jobs;
+            Projects = dto.Projects;
             Languages = dto.Languages;
             Frameworks = dto.Frameworks;
             Tools = dto.Tools;
             Inventory = dto.Inventory;
+            Username = dto.Username;
         }
 
+
+        #endregion
+
+        #region Conversion System
+        //conversion from sortedlists to observablecollections and back
+        public void UpdateLanguages(ObservableCollection<Language> collection) 
+        {
+            SortedList<LanguageType, FieldDTO> sortedList = new SortedList<LanguageType, FieldDTO>(Languages);
+            foreach (KeyValuePair<LanguageType, FieldDTO> pair in sortedList)
+            {
+                foreach (Language language in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(language.Type))
+                    {
+                        Languages[pair.Key] = language.Convert();
+                    }
+                }
+            }
+        }
+
+        public void UpdateFrameworks(ObservableCollection<Framework> collection)
+        {
+            SortedList<FrameworkType, FieldDTO> sortedList = new SortedList<FrameworkType, FieldDTO>(Frameworks);
+            foreach (KeyValuePair<FrameworkType, FieldDTO> pair in sortedList)
+            {
+                foreach (Framework framework in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(framework.Type))
+                    {
+                        Frameworks[pair.Key] = framework.Convert();
+                    }
+                }
+            }
+        }
+
+        public void UpdateTools(ObservableCollection<Tool> collection)
+        {
+            SortedList<ToolType, FieldDTO> sortedList = new SortedList<ToolType, FieldDTO>(Tools);
+            foreach (KeyValuePair<ToolType, FieldDTO> pair in sortedList)
+            {
+                foreach (Tool tool in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(tool.Type))
+                    {
+                        Tools[pair.Key] = tool.Convert();
+                    }
+                }
+            }
+        }
+
+        public void UpdateJobs(ObservableCollection<Job> collection)
+        {
+            SortedList<JobType, JobDTO> sortedList = new SortedList<JobType, JobDTO>(Jobs);
+            foreach (KeyValuePair<JobType, JobDTO> pair in sortedList)
+            {
+                foreach (Job job in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(job.Type))
+                    {
+                        Jobs[pair.Key] = job.Convert();
+                    }
+                }
+            }
+        }
+
+        public void UpdateProjects(ObservableCollection<Project> collection)
+        {
+
+            SortedList<ProjectType, ProjectDTO> sortedList = new SortedList<ProjectType, ProjectDTO>(Projects);
+            foreach (KeyValuePair<ProjectType, ProjectDTO> pair in sortedList)
+            {
+                foreach (Project project in collection)
+                {
+                    //ToString() must be done instead of using name property being there are outliers, eg: C# and CSharp is not the same thing
+                    if (pair.Key.Equals(project.Type))
+                    {
+                        Projects[pair.Key] = project.Convert();
+                    }
+                }
+            }
+        }
+
+
+        public ObservableCollection<Language> GetLanguageCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Language> collection = new ObservableCollection<Language>();
+            foreach (KeyValuePair<LanguageType, FieldDTO> pair in Languages)
+            {
+                Language language = info.GetLanguage(pair.Key);
+                language.Update(pair.Value);
+
+                collection.Add(language);
+            }
+
+            return collection;
+        }
+
+        public ObservableCollection<Framework> GetFrameworkCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Framework> collection = new ObservableCollection<Framework>();
+            foreach (KeyValuePair<FrameworkType, FieldDTO> pair in Frameworks)
+            {
+                Framework framework = info.GetFramework(pair.Key);
+                framework.Update(pair.Value);
+
+                collection.Add(framework);
+            }
+
+            return collection;
+        }
+
+        public ObservableCollection<Tool> GetToolCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Tool> collection = new ObservableCollection<Tool>();
+            foreach (KeyValuePair<ToolType, FieldDTO> pair in Tools)
+            {
+                Tool tool = info.GetTool(pair.Key);
+                tool.Update(pair.Value);
+
+                collection.Add(tool);
+            }
+
+            return collection;
+        }
+
+        public ObservableCollection<Job> GetJobCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Job> collection = new ObservableCollection<Job>();
+            foreach (KeyValuePair<JobType, JobDTO> pair in Jobs)
+            {
+                Job job = info.GetJob(pair.Key);
+                job.Update(pair.Value);
+
+                collection.Add(job);
+            }
+
+            return collection;
+        }
+
+        public ObservableCollection<Project> GetProjectCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Project> collection = new ObservableCollection<Project>();
+            foreach (KeyValuePair<ProjectType, ProjectDTO> pair in Projects)
+            {
+                Project project = info.GetProject(pair.Key);
+                project.Update(pair.Value);
+
+                collection.Add(project);
+            }
+
+            return collection;
+        }
+
+        public ObservableCollection<Item> GetInventoryCollection()
+        {
+            Info info = new Info();
+            ObservableCollection<Item> collection = new ObservableCollection<Item>();
+            foreach (KeyValuePair<ItemType, int> pair in Inventory)
+            {
+                Item item = info.GetItem(pair.Key, pair.Value);
+
+                collection.Add(item);
+            }
+
+            return collection;
+        }
 
         #endregion
 

@@ -15,7 +15,7 @@ namespace Idle.Views.Cells
     public partial class SessionCell : ViewCell
     {
 
-        private Field _field;
+        private IField _field;
 
         public SessionCell()
         {
@@ -51,7 +51,7 @@ namespace Idle.Views.Cells
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _field = BindingContext as Field;
+            _field = BindingContext as IField;
         }
 
         private void Upgrade_Clicked(object sender, EventArgs e)

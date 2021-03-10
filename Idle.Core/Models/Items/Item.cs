@@ -2,41 +2,47 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Core.Models
+namespace Idle.Core.Models.Items
 {
-    //Top level Item type
-    public abstract class Item
+    public class Item
     {
 
-        //Name of item eg: HP Omen 15, RTX 3090
+        public Item()
+        {
+            Name = "Item";
+            Description = "Some Item";
+            Amount = 1;
+            Cost = 100;
+            Type = ItemType.None;
+            rarity = Rarity.Common;
+        }
+
         public string Name { get; set; }
         public int Amount { get; set; }
         public int Cost { get; set; }
 
         private int _maxStackAmount = 1;
         public int MaxStackAmount { get => _maxStackAmount; set => _maxStackAmount = value; }
-        //Description of item
         public string Description { get; set; }
-
-        public ItemType itemType { get; set; }
-
-        //Rarity of a given item
+        public ItemType Type { get; set; }
         public Rarity rarity { get; set; }
 
 
-        // Enum type defining rarities
-        public enum Rarity 
-        { 
-        Common,
-        Uncommon,
-        Rare,
-        Epic,
-        Legendary,
-        Mythical,
-        Ancient,
-        Forbidden
+        public enum Rarity
+        {
+            Common,
+            Uncommon,
+            Rare,
+            Epic,
+            Legendary,
+            Mythical,
+            Ancient,
+            Forbidden
         }
-        public enum ItemType { 
+
+        public enum ItemType
+        {
+            None,
             GitHubOne,
             GitHubEnterprise,
             GitHubPro,
@@ -47,7 +53,9 @@ namespace Idle.Core.Models
             AdobeXD,
             AdobeAe,
             AdobeAi
-            }
+        }
+
+
 
     }
 }
