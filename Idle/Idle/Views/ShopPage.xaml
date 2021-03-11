@@ -2,25 +2,9 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Idle.Views.ShopPage"
-             xmlns:views="clr-namespace:Idle.Views.Tabs"
+             xmlns:partials="clr-namespace:Idle.Views.Partials"
              xmlns:tabs="http://sharpnado.com">
     <!--Pages can be added as references or inline-->
-    <TabbedPage.Children>
-        <NavigationPage Title="IDEs">
-            <x:Arguments>
-                <views:IDETab/>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Languages">
-            <x:Arguments>
-                <views:LanguagesTab/>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Tools">
-            <x:Arguments>
-                <views:ToolsTab/>
-            </x:Arguments>
-        </NavigationPage>
-    </TabbedPage.Children>
+
 
 </TabbedPage>

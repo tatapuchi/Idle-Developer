@@ -4,6 +4,9 @@
              x:Class="Idle.Views.Cells.SessionCell">
   <ViewCell.View>
       <StackLayout >
+            <StackLayout.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Progress"/>
+            </StackLayout.GestureRecognizers>
           
             <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
             <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>

@@ -1,6 +1,7 @@
 ﻿using Idle.Core.Models;
 using Idle.Core.Models.Player;
 using Idle.Helpers;
+using Idle.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
@@ -19,6 +20,10 @@ namespace Idle
         {
             InitializeComponent();
 
+
+
+            //Initialize Sharpnado tabs
+            Sharpnado.Tabs.Initializer.Initialize(false, false);
             //Check how many times the app has been opened
             #region Times Opened
 
@@ -26,11 +31,13 @@ namespace Idle
             { 
                 Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
                 player.Update(FileHelper.ReadPlayer());
+                MainPage = new NavigationPage(new MainPage());
             }
             else
             {
                 Preferences.Set("Times_Opened", 1);
                 FileHelper.WritePlayer(player.Convert());
+                MainPage = new NavigationPage(new SetupPage());
             }
 
             timesopened = Preferences.Get("Times_Opened", 1);
@@ -40,14 +47,12 @@ namespace Idle
 
 
 
-            //Initialize Sharpnado tabs
-            Sharpnado.Tabs.Initializer.Initialize(false, false);
 
             //Upon starting, load and initialzie our static player object from data in the file
 
 
 
-            MainPage = new NavigationPage(new MainPage());
+            
         }
 
         protected override void OnStart()

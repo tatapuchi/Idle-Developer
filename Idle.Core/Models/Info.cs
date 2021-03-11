@@ -111,6 +111,8 @@ namespace Idle.Core.Models
                     return new Language() { Name = "Java", Description = "Cool language", Cost = 1000, Type = type };
                 case LanguageType.Kotlin:
                     return new Language() { Name = "Kotlin", Description = "android Language", Cost = 800, Type = type };
+                case LanguageType.Swift:
+                    return new Language() { Name = "Swift", Description = "iOS Language", Cost = 800, Type = type };
 
                 default:
                     return null;
