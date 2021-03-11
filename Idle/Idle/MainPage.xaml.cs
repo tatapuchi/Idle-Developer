@@ -31,11 +31,6 @@ namespace Idle
             Navigation.PushAsync(new ShopPage());
         }
 
-        private void UpgradeButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new UpgradePage());
-        }
-
         private void JobButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new JobPage());

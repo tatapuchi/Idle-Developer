@@ -24,6 +24,12 @@ namespace Idle.Helpers
             File.WriteAllText(file, json);
         }
 
+        public static void WritePlayer(Player player)
+        {
+            string json = Newtonsoft.Json.JsonConvert.SerializeObject(player.Convert());
+            File.WriteAllText(file, json);
+        }
+
 
         //Reads Player.json and returns a deserialized Player object from the file data
         public static PlayerDTO ReadPlayer()

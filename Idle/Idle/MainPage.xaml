@@ -8,7 +8,6 @@
 
         <Button x:Name="SessionPage" Text="Session Page" Clicked="BtnSessionProgress_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
         <Button x:Name="ShopButton" Text="Shop Page" CornerRadius="12" BackgroundColor="LightGreen" Clicked="ShopButton_Clicked"/>
-        <Button x:Name="UpgradeButton" Text="Upgrade Page" Clicked="UpgradeButton_Clicked" CornerRadius="12" BackgroundColor="LightSalmon"/>
         <Button x:Name="JobButton" Text="Job Page" Clicked="JobButton_Clicked" CornerRadius="12" BackgroundColor="Chocolate" />
         <Button x:Name="ProjectButton" Text="Project Page" Clicked="ProjectButton_Clicked"  CornerRadius="12" BackgroundColor="Gray"/>
 

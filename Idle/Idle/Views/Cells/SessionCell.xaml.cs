@@ -54,10 +54,15 @@ namespace Idle.Views.Cells
             _field = BindingContext as IField;
         }
 
-        private void Upgrade_Clicked(object sender, EventArgs e)
+        private void Progress(object sender, EventArgs e)
         {
             if (ProgressBar.Progress <= 0.9f) { ProgressBar.Progress += 0.1f; }
             else { ProgressBar.Progress = 1.0f; }
+        }
+
+        private void Upgrade_Clicked(object sender, EventArgs e)
+        {
+            if(_field.XP >= 50) { App.Current.MainPage.Navigation.PushAsync(new UpgradePage(_field)); }
         }
     }
 }
