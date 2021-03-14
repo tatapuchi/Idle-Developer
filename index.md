@@ -5,6 +5,12 @@ This is the official site for Idle Developer.
 
 The game is currently being built using Xamarin, and a number of useful plugins.
 
+We are currently looking for an artist, with experience in Adobe AfterEffects as we are planning on using Lottie for animations.
+
+### Team
+- tatapuchi [0xB01b] Project Lead
+- rorylinnane Developer
+
 
 ### Support or Contact
 
