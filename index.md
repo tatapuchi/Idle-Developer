@@ -15,6 +15,8 @@ We are currently looking for an artist, with experience in Adobe AfterEffects as
 ### Developers
 - rorylinnane Developer
 
+### Artists
+Help Wanted :(
 
 ## Support or Contact
 
