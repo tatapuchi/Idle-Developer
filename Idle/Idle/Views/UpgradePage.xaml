@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Idle.Views.UpgradePage">
+    <ContentPage.Content>
+        <StackLayout Margin="12">
+            <Label Text="Upgrade your skill"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button CornerRadius="12" Text="Upgrade" BackgroundColor="LightBlue" 
+                    Clicked="Button_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
