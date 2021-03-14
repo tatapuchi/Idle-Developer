@@ -7,6 +7,10 @@ The game is currently being built using Xamarin, and a number of useful plugins.
 
 We are currently looking for an artist, with experience in Adobe AfterEffects as we are planning on using Lottie for animations.
 
+Currently, we are not monetizing the game (Microtransactions/Ads) but are looking to possibly include github sponsorships/donations as a way to make some money
+
+
+
 ## Team
 
 ### Project Lead
@@ -17,6 +21,8 @@ We are currently looking for an artist, with experience in Adobe AfterEffects as
 
 ### Artists
 Help Wanted :(
+
+
 
 ## Support or Contact
 
