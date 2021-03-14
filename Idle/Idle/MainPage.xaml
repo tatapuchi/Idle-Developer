@@ -1,16 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Idle.MainPage">
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+            xmlns:local="clr-namespace:Idle.Views"
+            x:Class="Idle.MainPage">
 
-    <StackLayout Margin="12">
-
-
-        <Button x:Name="SessionPage" Text="Session Page" Clicked="BtnSessionProgress_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-        <Button x:Name="ShopButton" Text="Shop Page" CornerRadius="12" BackgroundColor="LightGreen" Clicked="ShopButton_Clicked"/>
-        <Button x:Name="JobButton" Text="Job Page" Clicked="JobButton_Clicked" CornerRadius="12" BackgroundColor="Chocolate" />
-        <Button x:Name="ProjectButton" Text="Project Page" Clicked="ProjectButton_Clicked"  CornerRadius="12" BackgroundColor="Gray"/>
-
-    </StackLayout>
-
-</ContentPage>
+    <TabbedPage.Children>
+        <NavigationPage Title="Fields">
+            <x:Arguments>
+                <local:SessionPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Shop">
+            <x:Arguments>
+                <local:ShopPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Job">
+            <x:Arguments>
+                <local:JobPage/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Projects">
+            <x:Arguments>
+                <local:ProjectPage/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

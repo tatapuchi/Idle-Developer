@@ -16,7 +16,6 @@ namespace Idle.Helpers
         private static readonly string file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Player.json");
 
 
-
         //Serializes Player object and writes the content to Player.json
         public static void WritePlayer(PlayerDTO dto)
         {
