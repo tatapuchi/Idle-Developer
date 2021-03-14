@@ -1,4 +1,4 @@
-## Welcome to Idle Developer
+# Welcome to Idle Developer
 
 Greetings,
 This is the official site for Idle Developer.
