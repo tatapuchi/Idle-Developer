@@ -1,5 +1,6 @@
 ﻿using Idle.Core.Models;
 using Idle.Core.Models.Fields;
+using Sharpnado.Tabs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ using Xamarin.Forms.Xaml;
 namespace Idle.Views.Cells
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SessionCell : ViewCell
+    public partial class SessionCell : ViewCell, IAnimatableReveal
     {
 
         private IField _field;
@@ -47,6 +48,8 @@ namespace Idle.Views.Cells
 
             });
         }
+
+        public bool Animate { get; set;}
 
         protected override void OnAppearing()
         {

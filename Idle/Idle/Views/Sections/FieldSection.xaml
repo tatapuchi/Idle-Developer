@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:cells="clr-namespace:Idle.Views.Cells"
+             x:Class="Idle.Views.Sections.FieldSection" BackgroundColor="#F0F0F3">
+  <ContentView.Content>
+      <StackLayout >
+            <ListView x:Name="CollectionList" RowHeight="300">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <cells:SessionCell/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Button x:Name="Save" CornerRadius="12" Text="Save" BackgroundColor="LightBlue" Clicked="Save_Clicked" Margin="24, 0, 24, 0"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

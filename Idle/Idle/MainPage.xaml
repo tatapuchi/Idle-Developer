@@ -1,29 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-            xmlns:local="clr-namespace:Idle.Views"
-            x:Class="Idle.MainPage">
+             xmlns:local="clr-namespace:Idle.Views"
+             xmlns:sharp="http://sharpnado.com" xmlns:sections="clr-namespace:Idle.Views.Sections"
+             x:Class="Idle.MainPage" BackgroundColor="#F0F0F3" >
 
-    <TabbedPage.Children>
-        <NavigationPage Title="Fields">
-            <x:Arguments>
-                <local:SessionPage/>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Shop">
-            <x:Arguments>
-                <local:ShopPage/>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Job">
-            <x:Arguments>
-                <local:JobPage/>
-            </x:Arguments>
-        </NavigationPage>
-        <NavigationPage Title="Projects">
-            <x:Arguments>
-                <local:ProjectPage/>
-            </x:Arguments>
-        </NavigationPage>
-    </TabbedPage.Children>
-</TabbedPage>
+    <!--Styles-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Style for tabs-->
+            <Style x:Key="BottomTabStyle" TargetType="sharp:BottomTabItem">
+                <Setter Property="SelectedTabColor" Value="MediumPurple" />
+                <Setter Property="UnselectedLabelColor" Value="Gray" />
+                <Setter Property="UnselectedIconColor" Value="LightGray" />
+                <Setter Property="FontFamily" Value="Chewy" />
+                <Setter Property="LabelSize" Value="14" />
+                <Setter Property="IconSize" Value="28" />
+                <!--IsTextVisible: Whether text below tab icons is visible-->
+                <Setter Property="IsTextVisible" Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <!--Page Content-->
+    <ContentPage.Content>
+        
+        <Grid >
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="18*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <ScrollView Grid.RowSpan="1" Grid.ColumnSpan="3">
+                <sharp:ViewSwitcher x:Name="Switcher"
+                           Animate="True"
+                           SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}">
+                    <sections:FieldSection Animate="True"  />
+                    <sections:FieldSection Animate="True"  />
+                    <sections:FieldSection Animate="True"  />
+                    <sections:FieldSection Animate="True"  />
+                    <sections:FieldSection Animate="True"  />
+                </sharp:ViewSwitcher>
+            </ScrollView>
+
+
+
+
+            <sharp:TabHostView 
+                      Grid.Row="1" Grid.Column ="1" HorizontalOptions="Start" VerticalOptions="Start"
+                      HeightRequest="70" WidthRequest="400" TabType="Fixed" IsSegmented="True" Shades="{sharp:NeumorphismShades}"
+                      CornerRadius="30" Margin="15" SegmentedHasSeparator="False" BackgroundColor="#F0F0F3" 
+                      SelectedIndex="{Binding Source={x:Reference Switcher}, Path=SelectedIndex, Mode=TwoWay}">
+                <sharp:TabHostView.Tabs>
+                    <sharp:BottomTabItem IconImageSource="Rock.png" Style= "{StaticResource BottomTabStyle}" IsTextVisible="True"
+                                Label="Work" IsSelected="True"/>
+                    <sharp:BottomTabItem IconImageSource="Volcano.png" Style="{StaticResource BottomTabStyle}" IsTextVisible="True"
+                                Label="Shop" />
+                    <sharp:BottomTabItem IconImageSource="Volcano_With_Hat.png" Style="{StaticResource BottomTabStyle}" IsTextVisible="True"
+                                Label="Home" />
+                    <sharp:BottomTabItem IconImageSource="Volcano.png" Style="{StaticResource BottomTabStyle}" IsTextVisible="True"
+                                Label="Projects" />
+                    <sharp:BottomTabItem IconImageSource="Volcano_With_Hat.png" Style="{StaticResource BottomTabStyle}" IsTextVisible="True"
+                                Label="Job" />
+                </sharp:TabHostView.Tabs>
+            </sharp:TabHostView>
+
+        </Grid>
+    </ContentPage.Content>
+
+
+
+</ContentPage>

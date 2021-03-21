@@ -11,7 +11,7 @@ using Idle.Views;
 
 namespace Idle
 {
-    public partial class MainPage : TabbedPage
+    public partial class MainPage : ContentPage
     {
         public MainPage()
         {
@@ -19,26 +19,5 @@ namespace Idle
             
         }
 
-        private void BtnSessionProgress_Clicked(object sender, EventArgs e)
-        {
-            //App.Current.MainPage = new SessionProgress();
-            Navigation.PushAsync(new SessionPage());
-        }
-
-        private void ShopButton_Clicked(object sender, EventArgs e)
-        {
-            //App.Current.MainPage = new ShopPage();
-            Navigation.PushAsync(new ShopPage());
-        }
-
-        private void JobButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new JobPage());
-        }
-
-        private void ProjectButton_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ProjectPage());
-        }
     }
 }
