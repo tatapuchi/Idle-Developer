@@ -9,4 +9,9 @@
     <DocumentationFile>C:\Users\Aorus\source\repos\Idle\Idle.Core\Idle.Core.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Sharpnado.Shadows" Version="1.2.0" />
+    <PackageReference Include="Sharpnado.Tabs" Version="2.1.0" />
+  </ItemGroup>
+
 </Project>

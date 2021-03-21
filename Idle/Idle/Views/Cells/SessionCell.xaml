@@ -1,21 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Idle.Views.Cells.SessionCell">
+             x:Class="Idle.Views.Cells.SessionCell" xmlns:sharp="http://sharpnado.com" >
   <ViewCell.View>
-      <StackLayout >
-            <StackLayout.GestureRecognizers>
-                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Progress"/>
-            </StackLayout.GestureRecognizers>
-          
-            <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
-            <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
-            <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Path=Level, Mode=TwoWay}"/>
-            <Label TextColor="Black" x:Name="XPLabel" Text="{Binding Path=XP, Mode=TwoWay}"/>
-            <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+        <StackLayout Padding="36" BackgroundColor="#F0F0F3">
+
+            <sharp:Shadows 
+            CornerRadius="40"
+            Shades="{sharp:NeumorphismShades}">
+                <Frame
+                 CornerRadius="40"
+                 BackgroundColor="#F0F0F3">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Progress"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout>
+                        <Label x:Name="Title" TextColor="Black" Text="{Binding Name}"/>
+                        <Button TextColor="White" x:Name="Upgrade" Text="Upgrade" Clicked="Upgrade_Clicked" CornerRadius="12" BackgroundColor="Orange"/>
+                        <Label TextColor="Black" x:Name="LevelLabel" Text="{Binding Path=Level, Mode=TwoWay}"/>
+                        <Label TextColor="Black" x:Name="XPLabel" Text="{Binding Path=XP, Mode=TwoWay}"/>
+                        <ProgressBar x:Name="ProgressBar" ProgressColor="Orange"/>
+                    </StackLayout>
+                </Frame>
+            </sharp:Shadows>
+
+
 
             <Line/>
-          
+
         </StackLayout>
   </ViewCell.View>
 </ViewCell>

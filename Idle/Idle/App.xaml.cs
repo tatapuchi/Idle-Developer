@@ -8,6 +8,9 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+//Chewy-Regular font
+[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
+
 namespace Idle
 {
     public partial class App : Application
