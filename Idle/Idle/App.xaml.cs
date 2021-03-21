@@ -15,6 +15,8 @@ namespace Idle
         //Single Player object used by code to update the player
         public static Player player = new Player();
         public static Info info = new Info();
+
+        //Number of times opened
         public static int timesopened;
         public App()
         {
@@ -24,6 +26,10 @@ namespace Idle
 
             //Initialize Sharpnado tabs
             Sharpnado.Tabs.Initializer.Initialize(false, false);
+            //Initialize Sharpnado shadows
+            Sharpnado.Shades.Initializer.Initialize(loggerEnable: false);
+
+
             //Check how many times the app has been opened
             #region Times Opened
 
@@ -44,11 +50,6 @@ namespace Idle
 
             #endregion
 
-
-
-
-
-            //Upon starting, load and initialzie our static player object from data in the file
 
 
 
