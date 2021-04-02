@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\Aorus\source\repos\Idle\Idle.Core\Idle.Core.xml</DocumentationFile>
+    <DocumentationFile>.\Idle.Core.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
