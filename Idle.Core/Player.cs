@@ -25,7 +25,7 @@ namespace Idle.Core
             get { return _xp; }
             set 
             {
-                _xp = value;
+                _xp = (int)(value * XPMult);
                 while (_xp > (35 * Level))
                 {
                     if (_xp > (35 * Level)) { Level++; XP -= (35 * Level); }
@@ -65,19 +65,21 @@ namespace Idle.Core
         /// </summary>
         public string Grade { get { return _grade; } private set { _grade = value; } }
 
+        private float _speedMult = 1f;
         /// <summary>
         /// The speed multiplier of a player.
         /// Affects how fast you complete a learning or job session.
         /// This is an overall multiplier, that applies to all sessions
         /// </summary>
-        public float SpeedMult { get; set; }
+        public float SpeedMult { get { return _speedMult; } set { _speedMult = value; } }
 
+        private float _xpMult = 1f;
         /// <summary>
         /// The XP multiplier of a player.
         /// Affects how much the player XP increases as you level up in a field.
         /// This does not affect how much XP is earned from field sessions.
         /// </summary>
-        public float XPMult { get; set; }
+        public float XPMult { get { return _xpMult; } set { _xpMult = value; } }
 
         /// <summary>
         /// Basic Constructor that takes in no arguments.
