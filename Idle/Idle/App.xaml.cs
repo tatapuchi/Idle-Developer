@@ -39,14 +39,14 @@ namespace Idle
             if (Preferences.ContainsKey("Times_Opened"))
             { 
                 Preferences.Set("Times_Opened", Preferences.Get("Times_Opened", 1) + 1);
-                player.Update(FileHelper.ReadPlayer());
+                //player.Update(FileHelper.ReadPlayer());
                 MainPage = new NavigationPage(new MainPage());
             }
             else
             {
                 Preferences.Set("Times_Opened", 1);
-                FileHelper.WritePlayer(player.Convert());
-                MainPage = new NavigationPage(new SetupPage());
+                //FileHelper.WritePlayer(player.Convert());
+                //MainPage = new NavigationPage(new SetupPage());
             }
 
             timesopened = Preferences.Get("Times_Opened", 1);
@@ -66,7 +66,7 @@ namespace Idle
         protected override void OnSleep()
         {
             //Upon finishing, save the player data back to our file
-            FileHelper.WritePlayer(player.Convert());
+            //FileHelper.WritePlayer(player.Convert());
         }
 
         protected override void OnResume()
