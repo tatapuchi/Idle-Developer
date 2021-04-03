@@ -1,7 +1,4 @@
-﻿using Idle.Core.Models;
-using Idle.Core.Models.Player;
-using Idle.Helpers;
-using Idle.Views;
+﻿
 using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
@@ -16,8 +13,8 @@ namespace Idle
     public partial class App : Application
     {
         //Single Player object used by code to update the player
-        public static Player player = new Player();
-        public static Info info = new Info();
+        //public static Player player = new Player();
+        //public static Info info = new Info();
 
         //Number of times opened
         public static int timesopened;

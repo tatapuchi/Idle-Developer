@@ -4,10 +4,63 @@
         <name>Idle.Core</name>
     </assembly>
     <members>
-        <member name="T:Idle.Core.Models.Fields.FieldDTO">
+        <member name="T:Idle.Core.Player">
             <summary>
-            Data Transfer Object for a field instance
+            Player Class.
+            Everything happens here.
             </summary>
+        </member>
+        <member name="P:Idle.Core.Player.Username">
+            <summary>
+            Player's name
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.XP">
+            <summary>
+            XP of the player, dictates the level of the player
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.Level">
+            <summary>
+            Level of the player, dictates the grade of the player
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.Coins">
+            <summary>
+            Number of coins the player has (In-Game Currency)
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.Grade">
+            <summary>
+            The calibre of a developer, marked by a letter grade.
+            These letters range from F to S++
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.SpeedMult">
+            <summary>
+            The speed multiplier of a player.
+            Affects how fast you complete a learning or job session.
+            This is an overall multiplier, that applies to all sessions
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Player.XPMult">
+            <summary>
+            The XP multiplier of a player.
+            Affects how much the player XP increases as you level up in a field.
+            This does not affect how much XP is earned from field sessions.
+            </summary>
+        </member>
+        <member name="M:Idle.Core.Player.#ctor">
+            <summary>
+            Basic Constructor that takes in no arguments.
+            Sets username to a default value.
+            </summary>
+        </member>
+        <member name="M:Idle.Core.Player.ToString">
+            <summary>
+            Overriden ToString() method
+            </summary>
+            <returns>Returns a formatted string containing the players fields, items, coins, xp, level, etc.</returns>
         </member>
     </members>
 </doc>
