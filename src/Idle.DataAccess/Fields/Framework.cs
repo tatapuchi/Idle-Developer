@@ -7,26 +7,34 @@ using System.Text;
 
 namespace Idle.Core.Fields
 {
+    /// <summary>
+    /// Framework class that defines the structure of a framework
+    /// </summary>
     public class Framework : INotifyPropertyChanged
     {
         /// <summary>
-        /// The name of the language
+        /// The name of the framework
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// The description of this language
+        /// The description of this framework
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// The cost in player XP to unlock this language
+        /// The cost in player XP to unlock this framework
         /// </summary>
         public int Cost { get; set; }
 
+        /// <summary>
+        /// The frameworks that are needed to be able to start learning this framework.
+        /// </summary>
+        public HashSet<string> Prerequisites { get; set; }
+
         private int _xp = 0;
         /// <summary>
-        /// XP ín this language, dictates the level of the language
+        /// XP ín this framework, dictates the level of the framework
         /// </summary>
         public int XP
         {
@@ -44,7 +52,7 @@ namespace Idle.Core.Fields
 
         private int _level = 1;
         /// <summary>
-        /// Level in this language, dictates the grade of the player
+        /// Level in this framework, dictates the grade of the player
         /// </summary>
         public int Level
         {
@@ -65,14 +73,14 @@ namespace Idle.Core.Fields
         private string _grade = "F";
 
         /// <summary>
-        /// The calibre of a developer in a language, marked by a letter grade.
+        /// The calibre of a developer in a framework, marked by a letter grade.
         /// These letters range from F to S++
         /// </summary>
         public string Grade { get { return _grade; } private set { _grade = value; } }
 
         private float _speedMult = 1f;
         /// <summary>
-        /// The speed multiplier of a language.
+        /// The speed multiplier of a framework.
         /// Affects how fast you complete the learning session.
         /// </summary>
         public float SpeedMult { get { return _speedMult; } set { _speedMult = value; } }
@@ -80,11 +88,25 @@ namespace Idle.Core.Fields
         private float _xpMult = 1f;
 
         /// <summary>
-        /// The XP multiplier of a language.
-        /// Affects how much the language XP increase upon completion of a session.
+        /// The XP multiplier of a framework.
+        /// Affects how much the framework XP increase upon completion of a session.
         /// </summary>
         public float XPMult { get { return _xpMult; } set { _xpMult = value; } }
 
+        /// <summary>
+        /// Checks based on the players known languages, whether he can unlock this framework or not
+        /// </summary>
+        /// <param name="languages">string array of languages known</param>
+        /// <returns>true or false, depending on whether the player can unlock this framework or not</returns>
+        public bool IsAvailable(params string[] languages)
+        {
+            if (Prerequisites.IsSubsetOf(languages))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         #region Constructors
         /// <summary>
@@ -95,40 +117,45 @@ namespace Idle.Core.Fields
             Name = "Programming Language";
             Description = "A fast, statically typed, general purpose programming language";
             Cost = 50;
+            Prerequisites = new HashSet<string>() { "HTML", "CSS", "JavaScript" };
         }
 
         /// <summary>
         /// Constructor that doesnt take in a DTO
         /// </summary>
-        /// <param name="name">Name of the language</param>
-        /// <param name="description">Description of the language</param>
-        /// <param name="cost">Cost in player XP to unlock this language</param>
-        public Framework(string name, string description, int cost)
+        /// <param name="name">Name of the framework</param>
+        /// <param name="description">Description of the framework</param>
+        /// <param name="cost">Cost in player XP to unlock this framework</param>
+        /// <param name="prerequisites">string array of language prerequisites</param>
+        public Framework(string name, string description, int cost, params string[] prerequisites)
         {
             Name = name;
             Description = description;
             Cost = cost;
+            Prerequisites = new HashSet<string>(prerequisites);
         }
 
         /// <summary>
         /// Constructor that does take in a DTO
         /// </summary>
         /// <param name="dto">FieldDTO providing the values</param>
-        /// <param name="name">Name of the language</param>
-        /// <param name="description">Description of the language</param>
-        /// <param name="cost">Cost in player XP to unlock this language</param>
-        public Framework(FieldDTO dto, string name, string description, int cost)
+        /// <param name="name">Name of the framework</param>
+        /// <param name="description">Description of the framework</param>
+        /// <param name="cost">Cost in player XP to unlock this framework</param>
+        /// <param name="prerequisites">string array of language prerequisites</param>
+        public Framework(FieldDTO dto, string name, int cost, string description, params string[] prerequisites)
         {
             XP = dto.XP;
             Name = name;
             Description = description;
             Cost = cost;
+            Prerequisites = new HashSet<string>(prerequisites);
         }
         #endregion
 
         #region DTO System
         /// <summary>
-        /// Method to update the language's values from a DTO
+        /// Method to update the framework's values from a DTO
         /// </summary>
         /// <param name="dto">FieldDTO providing the values</param>
         public void Update(FieldDTO dto)

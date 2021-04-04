@@ -6,6 +6,9 @@ using System.Text;
 
 namespace Idle.Core.Fields
 {
+    /// <summary>
+    /// Language class that defines the structure of a language
+    /// </summary>
     public class Language: INotifyPropertyChanged
     {
         /// <summary>
