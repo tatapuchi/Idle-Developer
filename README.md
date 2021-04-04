@@ -91,8 +91,9 @@ A session is a core component of this game, it can be a learning session that re
 ---
 
 ## Misconceptions
+**`Cost`**
 ```csharp
-public int cost {get; set;}
+public int Cost {get; set;}
 ```
 You will find this property in Language, Framework, Tool and Item classes.
 However it can refer to the cost in Player XP to unlock a language/framework/tool or the cost in coins to purchase an item
