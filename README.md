@@ -87,3 +87,13 @@ Items are things you can buy from the shop using in game currency, these can be 
 
 ### Session
 A session is a core component of this game, it can be a learning session that results in XP for a language/framework/tool or a job session that results in money being earned. Multiple sessions can be held at once, tapping on the session buttons will speed up their progress, all sessions automatically restart once finish.
+
+---
+
+## Misconceptions
+```csharp
+public int cost {get; set;}
+```
+You will find this property in Language, Framework, Tool and Item classes.
+However it can refer to the cost in Player XP to unlock a language/framework/tool or the cost in coins to purchase an item
+
