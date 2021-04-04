@@ -7,7 +7,7 @@ namespace Idle.Core.Fields
     /// <summary>
     /// DTO for the field classes
     /// </summary>
-    public class FieldDTO
+    public class FieldDTO 
     {
         public int XP { get; set; }
         /// <summary>
