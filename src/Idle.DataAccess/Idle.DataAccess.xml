@@ -14,74 +14,93 @@
             Needed to distinguish what field this is
             </summary>
         </member>
+        <member name="T:Idle.Core.Fields.Framework">
+            <summary>
+            Framework class that defines the structure of a framework
+            </summary>
+        </member>
         <member name="P:Idle.Core.Fields.Framework.Name">
             <summary>
-            The name of the language
+            The name of the framework
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.Description">
             <summary>
-            The description of this language
+            The description of this framework
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.Cost">
             <summary>
-            The cost in player XP to unlock this language
+            The cost in player XP to unlock this framework
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Framework.Prerequisites">
+            <summary>
+            The frameworks that are needed to be able to start learning this framework.
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.XP">
             <summary>
-            XP ín this language, dictates the level of the language
+            XP ín this framework, dictates the level of the framework
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.Level">
             <summary>
-            Level in this language, dictates the grade of the player
+            Level in this framework, dictates the grade of the player
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.Grade">
             <summary>
-            The calibre of a developer in a language, marked by a letter grade.
+            The calibre of a developer in a framework, marked by a letter grade.
             These letters range from F to S++
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.SpeedMult">
             <summary>
-            The speed multiplier of a language.
+            The speed multiplier of a framework.
             Affects how fast you complete the learning session.
             </summary>
         </member>
         <member name="P:Idle.Core.Fields.Framework.XPMult">
             <summary>
-            The XP multiplier of a language.
-            Affects how much the language XP increase upon completion of a session.
+            The XP multiplier of a framework.
+            Affects how much the framework XP increase upon completion of a session.
             </summary>
+        </member>
+        <member name="M:Idle.Core.Fields.Framework.IsAvailable(System.String[])">
+            <summary>
+            Checks based on the players known languages, whether he can unlock this framework or not
+            </summary>
+            <param name="languages">string array of languages known</param>
+            <returns>true or false, depending on whether the player can unlock this framework or not</returns>
         </member>
         <member name="M:Idle.Core.Fields.Framework.#ctor">
             <summary>
             Parameterless constructor
             </summary>
         </member>
-        <member name="M:Idle.Core.Fields.Framework.#ctor(System.String,System.String,System.Int32)">
+        <member name="M:Idle.Core.Fields.Framework.#ctor(System.String,System.String,System.Int32,System.String[])">
             <summary>
             Constructor that doesnt take in a DTO
             </summary>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
+            <param name="name">Name of the framework</param>
+            <param name="description">Description of the framework</param>
+            <param name="cost">Cost in player XP to unlock this framework</param>
+            <param name="prerequisites">string array of language prerequisites</param>
         </member>
-        <member name="M:Idle.Core.Fields.Framework.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.String,System.Int32)">
+        <member name="M:Idle.Core.Fields.Framework.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.Int32,System.String,System.String[])">
             <summary>
             Constructor that does take in a DTO
             </summary>
             <param name="dto">FieldDTO providing the values</param>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
+            <param name="name">Name of the framework</param>
+            <param name="description">Description of the framework</param>
+            <param name="cost">Cost in player XP to unlock this framework</param>
+            <param name="prerequisites">string array of language prerequisites</param>
         </member>
         <member name="M:Idle.Core.Fields.Framework.Update(Idle.Core.Fields.FieldDTO)">
             <summary>
-            Method to update the language's values from a DTO
+            Method to update the framework's values from a DTO
             </summary>
             <param name="dto">FieldDTO providing the values</param>
         </member>
@@ -90,6 +109,11 @@
             Method to convert language business object to a fieldDTO
             </summary>
             <returns>FieldDTO that we can store</returns>
+        </member>
+        <member name="T:Idle.Core.Fields.Language">
+            <summary>
+            Language class that defines the structure of a language
+            </summary>
         </member>
         <member name="P:Idle.Core.Fields.Language.Name">
             <summary>
@@ -163,6 +187,83 @@
             <param name="dto">FieldDTO providing the values</param>
         </member>
         <member name="M:Idle.Core.Fields.Language.Convert">
+            <summary>
+            Method to convert language business object to a fieldDTO
+            </summary>
+            <returns>FieldDTO that we can store</returns>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.Name">
+            <summary>
+            The name of the language
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.Description">
+            <summary>
+            The description of this language
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.Cost">
+            <summary>
+            The cost in player XP to unlock this language
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.XP">
+            <summary>
+            XP ín this language, dictates the level of the language
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.Level">
+            <summary>
+            Level in this language, dictates the grade of the player
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.Grade">
+            <summary>
+            The calibre of a developer in a language, marked by a letter grade.
+            These letters range from F to S++
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.SpeedMult">
+            <summary>
+            The speed multiplier of a language.
+            Affects how fast you complete the learning session.
+            </summary>
+        </member>
+        <member name="P:Idle.Core.Fields.Tool.XPMult">
+            <summary>
+            The XP multiplier of a language.
+            Affects how much the language XP increase upon completion of a session.
+            </summary>
+        </member>
+        <member name="M:Idle.Core.Fields.Tool.#ctor">
+            <summary>
+            Parameterless constructor
+            </summary>
+        </member>
+        <member name="M:Idle.Core.Fields.Tool.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            Constructor that doesnt take in a DTO
+            </summary>
+            <param name="name">Name of the language</param>
+            <param name="description">Description of the language</param>
+            <param name="cost">Cost in player XP to unlock this language</param>
+        </member>
+        <member name="M:Idle.Core.Fields.Tool.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.Int32,System.String)">
+            <summary>
+            Constructor that does take in a DTO
+            </summary>
+            <param name="dto">FieldDTO providing the values</param>
+            <param name="name">Name of the language</param>
+            <param name="description">Description of the language</param>
+            <param name="cost">Cost in player XP to unlock this language</param>
+        </member>
+        <member name="M:Idle.Core.Fields.Tool.Update(Idle.Core.Fields.FieldDTO)">
+            <summary>
+            Method to update the language's values from a DTO
+            </summary>
+            <param name="dto">FieldDTO providing the values</param>
+        </member>
+        <member name="M:Idle.Core.Fields.Tool.Convert">
             <summary>
             Method to convert language business object to a fieldDTO
             </summary>

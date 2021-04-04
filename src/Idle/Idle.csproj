@@ -27,6 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Idle.Core\Idle.Core.csproj" />
+    <ProjectReference Include="..\Idle.DataAccess\Idle.DataAccess.csproj" />
   </ItemGroup>
 </Project>

@@ -111,6 +111,10 @@
     <AndroidResource Include="Resources\drawable\Volcano.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Idle.DataAccess\Idle.DataAccess.csproj">
+      <Project>{af40e67e-3c27-42d3-af15-88eb4a5025c5}</Project>
+      <Name>Idle.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Idle\Idle.csproj">
       <Project>{19eeafb3-aceb-45f6-95db-ea2943134acf}</Project>
       <Name>Idle</Name>
