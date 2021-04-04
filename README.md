@@ -9,7 +9,7 @@ When you achieve proficiency in a language, you can look for jobs, from which yo
 You can also start working on side projects, which serve as another source of income to you, more projects become available in a similar way to how jobs do, (Meaning that you will not be able to start an Operating System project while being level 2 in HTML).
 With coins you can buy items and numerous tools from the shop.
 
-
+---
 
 ### Developer 
 This is essentially your player character, you have coins, xp, levels, grades, and a number of other stuff we will go over.
@@ -45,8 +45,7 @@ Here is the complete list of possible grades, in ascending order:
 This is the in game currency. It can be used to purchase items from the shop.
 It can be obtained through jobs or through projects.
 
-
-
+---
 
 ### Languages
 Starting off you will select a language to begin with, once a learning session for a language completes you earn XP for said language which contributes to your level in said language. XP for a language will allow you to "buy" other frameworks and languages to learn. Upon reaching a certain level in a language, you may fulfill requirements for a job, which will allow you to earn in game currency. The higher your level in a language, the faster learning sessions are for that language and related languages/frameworks/tools. Languages alone will not provide many job oppurtunites, but will get you started off.
