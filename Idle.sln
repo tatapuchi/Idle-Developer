@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idle.iOS", "src\Platforms\I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle", "src\Idle\Idle.csproj", "{19EEAFB3-ACEB-45F6-95DB-EA2943134ACF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Core", "src\Idle.Core\Idle.Core.csproj", "{AF40E67E-3C27-42D3-AF15-88EB4A5025C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.DataAccess", "src\Idle.DataAccess\Idle.DataAccess.csproj", "{AF40E67E-3C27-42D3-AF15-88EB4A5025C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{A66ABF5A-4E37-47F4-BA69-E268EAD1B092}"
 EndProject
