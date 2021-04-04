@@ -5,8 +5,41 @@
 You are a developer starting out on your IT journey, you will be learning frameworks, languages and tools that will allow you to earn money in order to obtain the tools you need to get more money and StackOverflow fame. 
 
 
-### Developer Levels
-A developer level refers to your calibre as a developer, every time you complete a session (different sessions give different XP), XP is added to your player which contributes to his developer level. This is different to XP and Levels in languages/frameworks/tools as this refers to the developers skill as a whole. 
+
+### Developer 
+This is essentially your player character, you have coins, xp, levels, grades, and a number of other stuff we will go over.
+
+#### XP
+XP, or simply experience points, are points that contribute to your overall player level. This is your player XP, which is different to XP gained in languages, frameworks and tools.
+
+##### Usages
+
+* `Levelling:` Upon reaching enough XP, your player will level up
+* `Unlocking Fields:` Using your player XP, you can purchase languages, frameworks and tools
+
+##### Obtainment
+
+* `Learning Sessions:` Player XP is obtained whenever you complete a learning session for a language, framework or tool.
+* `Levelling Fields:` Player XP is obtained whenever you level up in a language, framework or tool
+
+##### Multiplier
+
+Your player has an XP Multiplier value, that adds to how much player XP you earn (by multiplying it), this value is at 1 by default, however can be increased by using items, learning certain tools, etc.
+
+
+#### Level
+This is your player level, when your player XP reaches a certain point, you level up. This may unlock certain items and may open up jobs and projects for you. 
+This level directly contributes to your overall grade as a developer.
+
+#### Grade
+This is your overall grade as a developer, depending on your player level it can range from `F` to `S++`
+Here is the complete list of possible grades, in ascending order:
+`F` --> `D` --> `C` --> `B` --> `A` --> `S` --> `S+` --> `S++`
+
+#### Coins
+This is the in game currency. It can be used to purchase items from the shop.
+
+
 
 
 ### Languages
