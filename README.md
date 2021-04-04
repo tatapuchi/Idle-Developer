@@ -3,6 +3,11 @@
 
 ### Setting
 You are a developer starting out on your IT journey, you will be learning frameworks, languages and tools that will allow you to earn money in order to obtain the tools you need to get more money and StackOverflow fame. 
+Starting out you will choose a path, this means you will be choosing what language you want to learn first (eg: `HTML`, `Python`, `Java`, etc), some languages will be harder than others.
+Once you will start learning that language, other languages, frameworks and tools can be unlocked as well.
+When you achieve proficiency in a language, you can look for jobs, from which you can earn coins. Job oppurtunites grow as you learn more languages, your overall player level increases, and you become more proficient in these languages.
+You can also start working on side projects, which serve as another source of income to you, more projects become available in a similar way to how jobs do, (Meaning that you will not be able to start an Operating System project while being level 2 in HTML).
+With coins you can buy items and numerous tools from the shop.
 
 
 
@@ -38,6 +43,7 @@ Here is the complete list of possible grades, in ascending order:
 
 #### Coins
 This is the in game currency. It can be used to purchase items from the shop.
+It can be obtained through jobs or through projects.
 
 
 
