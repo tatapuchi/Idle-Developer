@@ -49,5 +49,20 @@ namespace Idle.Core
             }
         }
 
+        public Framework GetFramework(FieldDTO dto)
+        {
+            switch (dto.Name)
+            {
+                case "React.js":
+                    return new Framework(dto, "React.js", 750,
+                        "A big web framework", "HTML", "CSS", "JavaScript");
+
+                default:
+                    return new Framework();
+            }
+        }
+
+
+
     }
 }
