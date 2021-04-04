@@ -48,24 +48,25 @@ It can be obtained through jobs or through projects.
 ---
 
 ### Languages
-Starting off you will select a language to begin with, once a learning session for a language completes you earn XP for said language which contributes to your level in said language. XP for a language will allow you to "buy" other frameworks and languages to learn. Upon reaching a certain level in a language, you may fulfill requirements for a job, which will allow you to earn in game currency. The higher your level in a language, the faster learning sessions are for that language and related languages/frameworks/tools. Languages alone will not provide many job oppurtunites, but will get you started off.
+Languages are one of the things that you can level up in, essentially you have a language that you learn. Completing a learning session results in XP being earned in that language, when you have enough XP then the level of the language automatically goes up. This is very similar to your player, and languages even follow the same **Grade** system. However it is for this language, and while it contributes to your player XP, it is not the same thing. 
+To unlock more languages you buy them using player XP.
+Here is what we mean by `"learning session"`, it is an example from the popular mobile game AdVenture Capitalist: 
+
+![AdVenture Capitalist Session](https://user-images.githubusercontent.com/56786013/113504625-95924e00-9539-11eb-8824-d2d3d1eeb0cc.jpg)  
+
+The picture should make clear what is meant by session, given that you have played an "Idle" Game before.
 
 ---
 
 ### Frameworks
-Frameworks are similar to languages, however these provide many more job oppurtunites, and also allow you to build your own projects, which may be another source of income. Learning related frameworks and tools for a language will also increase the speed of XP, and increase your calibre as a developer.
+Frameworks are similar to languages, however these provide many more job oppurtunites, and also allow you to build your own projects, which may be another source of income. Frameworks also have language requirements, such that you may need to be proficient (eg: At least level 10) in a language or number of languages, in order to make that framework available to you.
+To unlock a framework you buy it using player XP, given that of course, it is available to you.
 
 ---
 
 ### Tools
-Tools are developer tools that aid in development and also provide XP towards your overall calibre as a developer, tools to learn can also be purchased from the shop (eg: IntelliJ Ultimate, Adobe Products)
-
----
-
-### Skill Level
-The levels you can be at in a certain framework/language/tool are divided into sections, reflecting your skill in said framework/language/tool. 
-These sections are letter based, ranging as F - E - D - C - B - A - S - S+ - S++ - Z
-Your skill level will also translate into the job oppurtunites you have, junior dev, senior dev, etc.
+Tools are developer tools that aid in development, tools to learn can also be purchased for coins instead of player XP if they are proprietary(eg: IntelliJ Ultimate, Adobe Products).
+Essentially these are similar to languages and frameworks, however may also provide certain benefits, like adding to the player's XP multiplier.
 
 ---
 
