@@ -134,16 +134,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\Idle.Core\Idle.Core.csproj">
-      <Project>{af40e67e-3c27-42d3-af15-88eb4a5025c5}</Project>
-      <Name>Idle.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Idle\Idle.csproj">
-      <Project>{2B53B6EB-8F77-4125-BE24-94CEA7B6E87A}</Project>
-      <Name>Idle</Name>
-    </ProjectReference>
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\..\Idle\Idle.csproj">
+      <Project>{19eeafb3-aceb-45f6-95db-ea2943134acf}</Project>
+      <Name>Idle</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

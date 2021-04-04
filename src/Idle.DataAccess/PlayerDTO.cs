@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Core
+namespace Idle.DataAccess
 {
     public class PlayerDTO
     {
