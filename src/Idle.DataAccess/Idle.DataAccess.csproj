@@ -18,4 +18,9 @@
     <ProjectReference Include="..\Idle.Framework\Idle.Framework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Fields\" />
+    <Folder Include="Buffs\" />
+  </ItemGroup>
+
 </Project>
