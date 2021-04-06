@@ -12,10 +12,15 @@
   <ItemGroup>
     <PackageReference Include="Sharpnado.Shadows" Version="1.2.0" />
     <PackageReference Include="Sharpnado.Tabs" Version="2.1.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.Framework\Idle.Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Player\" />
   </ItemGroup>
 
 </Project>
