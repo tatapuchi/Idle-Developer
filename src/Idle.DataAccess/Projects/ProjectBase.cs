@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using Idle.DataAccess.Fields;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,8 @@ using System.Text;
 
 namespace Idle.DataAccess.Projects
 {
-    public abstract class ProjectBase : ModelBase, IDescriptive, IRequirement, IProgress, IBuffing
+
+    public abstract class ProjectBase : ModelBase, IDescriptive, IRequirement, IProgress
     {
 
         private int _income = 100;
@@ -28,40 +29,19 @@ namespace Idle.DataAccess.Projects
         public abstract int PlayerLevel { get; }
 
         // Progression Properties
-        private int _xp = 0;
         /// <summary>
         /// XP in this project
         /// </summary>
-        public int XP { get => _xp; set => _xp = value; }
-
-        private int _level = 1;
+        public int XP { get; set; } = 0;
         /// <summary>
         /// Level in this project
         /// </summary>
-        public int Level { get => _level; set => _level = value; }
-
-        private string _grade = "v1.0.0";
+        public int Level { get; set; } = 1;
         /// <summary>
         /// Grade in this project
         /// </summary>
-        public string Grade { get => _grade; set => _grade = value; }
+        public string Grade { get; set; } = "v1.0.0";
 
-        // Buff Properties
-        private float _xpMult = 1f;
-        /// <summary>
-        /// Base XP Multiplier of this project, the starter value may vary depending on the project
-        /// </summary>
-        public float XPMult { get => _xpMult; set => _xpMult = value; }
-
-        private float _speedMult = 1f;
-        /// <summary>
-        /// Base Speed Multiplier of this project, the starter value may vary depending on the project
-        /// </summary>
-        public float SpeedMult { get => _speedMult; set => _speedMult = value; }
-        /// <summary>
-        /// What buffs the project can be affected by
-        /// </summary>
-        public abstract List<BuffBase> Buffs { get; }
 
     }
 }

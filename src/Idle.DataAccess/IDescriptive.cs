@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Idle.DataAccess.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -23,7 +24,7 @@ namespace Idle.DataAccess
         /// <summary>
         /// The difficulty of something, could be a language/framework/tool, a job/project, etc
         /// </summary>
-        public ModelBase.Difficulty Difficulty { get; }
+        public Difficulty Difficulty { get; }
 
     }
 }

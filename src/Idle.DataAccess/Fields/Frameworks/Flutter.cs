@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,8 +12,7 @@ namespace Idle.DataAccess.Fields.Frameworks
     {
         public Flutter()
         {
-            XPMult = 0.7f;
-            SpeedMult = 0.8f;
+
         }
 
         public override string Name => "Flutter";
@@ -22,14 +21,14 @@ namespace Idle.DataAccess.Fields.Frameworks
 
         public override Difficulty Difficulty => Difficulty.Medium;
 
-        public override List<BuffBase> Buffs => new List<BuffBase>() { };
-
-        public override int Cost => 1250;
+        public override int XPCost => 1250;
 
         public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { }; // Add Dart into here
 
         public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { };
 
         public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { };
+
+        public override int PlayerLevel => 10;
     }
 }

@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +8,7 @@ namespace Idle.DataAccess.Fields
     /// <summary>
     /// Abstract class for all tools
     /// </summary>
-    public abstract class ToolBase : ModelBase, IDescriptive, IBuffing, IProgress, ICost
+    public abstract class ToolBase : ModelBase, IDescriptive, IProgress
     {
         // Descriptive Properties
         /// <summary>
@@ -22,55 +22,22 @@ namespace Idle.DataAccess.Fields
         /// <summary>
         /// Difficulty of the tool
         /// </summary>
-        public abstract ModelBase.Difficulty Difficulty { get; }
-
-
-
-        // Buff Properties
-        private float _xpMult = 1f;
-        /// <summary>
-        /// Base XP Multiplier of this tool, the starter value may vary depending on the tool
-        /// </summary>
-        public float XPMult { get => _xpMult; set => _xpMult = value; }
-
-        private float _speedMult = 1f;
-        /// <summary>
-        /// Base Speed Multiplier of this tool, the starter value may vary depending on the tool
-        /// </summary>
-        public float SpeedMult { get => _speedMult; set => _speedMult = value; }
-        /// <summary>
-        /// What buffs the tool can be affected by
-        /// </summary>
-        public abstract List<BuffBase> Buffs { get;}
-
+        public abstract Difficulty Difficulty { get; }
 
 
         // Progression Properties
-        private int _xp = 0;
         /// <summary>
-        /// XP in this language
+        /// XP in this tool
         /// </summary>
-        public int XP { get => _xp; set => _xp = value; }
-
-        private int _level = 1;
+        public int XP { get; set; } = 0;
         /// <summary>
-        /// Level in this lanugage
+        /// Level in this tool
         /// </summary>
-        public int Level { get => _level; set => _level = value; }
-
-        private string _grade = "F";
+        public int Level { get; set; } = 1;
         /// <summary>
-        /// Grade in this language
+        /// Grade in this tool
         /// </summary>
-        public string Grade { get => _grade; set => _grade = value; }
-
-
-
-        // Miscellaneous Properties
-        /// <summary>
-        /// Cost of this tool, could be in player XP, but also in coins if this is a proprietary tool
-        /// </summary>
-        public abstract int Cost { get; }
+        public string Grade { get; set; } = "F";
 
 
         // Tool Specific Properties

@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using Idle.DataAccess.Fields;
 using Idle.DataAccess.Fields.Frameworks;
 using Idle.DataAccess.Fields.Languages;
@@ -13,8 +13,6 @@ namespace Idle.DataAccess.Jobs
     {
         public ExampleJob()
         {
-            XPMult = 0.5f;
-            SpeedMult = 0.8f;
             Income = 500;
         }
 
@@ -31,7 +29,5 @@ namespace Idle.DataAccess.Jobs
         public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
 
         public override int PlayerLevel => 50;
-
-        public override List<BuffBase> Buffs => new List<BuffBase>() { };
     }
 }

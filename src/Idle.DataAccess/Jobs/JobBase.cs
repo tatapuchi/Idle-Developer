@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using Idle.DataAccess.Fields;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Idle.DataAccess.Jobs
 {
-    public abstract class JobBase : ModelBase, IDescriptive, IRequirement, IProgress, IBuffing
+    public abstract class JobBase : ModelBase, IDescriptive, IRequirement, IProgress
     {
 
         private int _income = 100;
@@ -28,40 +28,19 @@ namespace Idle.DataAccess.Jobs
         public abstract int PlayerLevel { get; }
 
         // Progression Properties
-        private int _xp = 0;
         /// <summary>
         /// XP in this job
         /// </summary>
-        public int XP { get => _xp; set => _xp = value; }
-
-        private int _level = 1;
+        public int XP { get; set; } = 0;
         /// <summary>
         /// Level in this job
         /// </summary>
-        public int Level { get => _level; set => _level = value; }
-
-        private string _grade = "Jr. Dev";
+        public int Level { get; set; } = 1;
         /// <summary>
         /// Grade in this job
         /// </summary>
-        public string Grade { get => _grade; set => _grade = value; }
+        public string Grade { get; set; } = "Jr. Dev";
 
-        // Buff Properties
-        private float _xpMult = 1f;
-        /// <summary>
-        /// Base XP Multiplier of this job, the starter value may vary depending on the job
-        /// </summary>
-        public float XPMult { get => _xpMult; set => _xpMult = value; }
-
-        private float _speedMult = 1f;
-        /// <summary>
-        /// Base Speed Multiplier of this job, the starter value may vary depending on the job
-        /// </summary>
-        public float SpeedMult { get => _speedMult; set => _speedMult = value; }
-        /// <summary>
-        /// What buffs the job can be affected by
-        /// </summary>
-        public abstract List<BuffBase> Buffs { get; }
 
 
     }

@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Buffs;
+﻿using Idle.DataAccess.Enums;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -9,7 +9,7 @@ namespace Idle.DataAccess.Fields
     /// <summary>
     /// Abstract class for all frameworks
     /// </summary>
-    public abstract class FrameworkBase : ModelBase, IDescriptive, IBuffing, IProgress, ICost, IRequirement
+    public abstract class FrameworkBase : ModelBase, IDescriptive, IProgress, IXPCost, IRequirement
     {
         // Descriptive Properties
         /// <summary>
@@ -23,47 +23,24 @@ namespace Idle.DataAccess.Fields
         /// <summary>
         /// Difficulty of the framework
         /// </summary>
-        public abstract ModelBase.Difficulty Difficulty { get; }
+        public abstract Difficulty Difficulty { get; }
 
-
-
-        // Buff Properties
-        private float _xpMult = 1f;
-        /// <summary>
-        /// Base XP Multiplier of this framework, the starter value may vary depending on the framework
-        /// </summary>
-        public float XPMult { get => _xpMult; set => _xpMult = value; }
-
-        private float _speedMult = 1f;
-        /// <summary>
-        /// Base Speed Multiplier of this framework, the starter value may vary depending on the framework
-        /// </summary>
-        public float SpeedMult { get => _speedMult; set => _speedMult = value; }
-        /// <summary>
-        /// What buffs the framework can be affected by
-        /// </summary>
-        public abstract List<BuffBase> Buffs { get; }
 
 
 
         // Progression Properties
-        private int _xp = 0;
         /// <summary>
         /// XP in this framework
         /// </summary>
-        public int XP { get => _xp; set => _xp = value; }
-
-        private int _level = 1;
+        public int XP { get; set; } = 0;
         /// <summary>
         /// Level in this framework
         /// </summary>
-        public int Level { get => _level; set => _level = value; }
-
-        private string _grade = "F";
+        public int Level { get; set; } = 1;
         /// <summary>
         /// Grade in this framework
         /// </summary>
-        public string Grade { get => _grade; set => _grade = value; }
+        public string Grade { get; set; } = "F";
 
 
 
@@ -71,7 +48,7 @@ namespace Idle.DataAccess.Fields
         /// <summary>
         /// Cost of this framework
         /// </summary>
-        public abstract int Cost { get; }
+        public abstract int XPCost { get; }
 
 
 
