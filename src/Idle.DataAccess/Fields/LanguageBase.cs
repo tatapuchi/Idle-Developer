@@ -8,7 +8,7 @@ namespace Idle.DataAccess.Fields
     /// <summary>
     /// Abstract base class for all languages
     /// </summary>
-    public abstract class LanguageBase : ModelBase, IDescriptive, IProgress, IXPCost
+    public abstract class LanguageBase : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome
     {
         // Descriptive Properties
         /// <summary>
@@ -47,6 +47,8 @@ namespace Idle.DataAccess.Fields
         /// Cost of this language
         /// </summary>
         public abstract int XPCost { get; }
+
+        public abstract int XPIncome { get; }
 
     }
 }

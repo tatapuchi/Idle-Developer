@@ -20,5 +20,6 @@ namespace Idle.DataAccess.Fields.Languages
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 850;
+        public override int XPIncome => 20;
     }
 }

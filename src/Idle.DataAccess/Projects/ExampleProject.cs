@@ -13,7 +13,7 @@ namespace Idle.DataAccess.Projects
     {
         public ExampleProject()
         {
-            Income = 700;
+
         }
 
         public override string Name => "Malware";
@@ -29,5 +29,8 @@ namespace Idle.DataAccess.Projects
         public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
 
         public override int PlayerLevel => 50;
+
+        public override int CoinIncome => 40;
+        public override int XPIncome => 20;
     }
 }

@@ -22,7 +22,6 @@ namespace Idle.DataAccess.Fields.Tools
         public override Difficulty Difficulty => Difficulty.Easy;
 
         public int XPCost => 500;
-
-        public override bool Proprietary => false;
+        public override int XPIncome => 30;
     }
 }

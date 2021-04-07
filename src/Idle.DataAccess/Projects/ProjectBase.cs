@@ -7,11 +7,12 @@ using System.Text;
 namespace Idle.DataAccess.Projects
 {
 
-    public abstract class ProjectBase : ModelBase, IDescriptive, IRequirement, IProgress
+    public abstract class ProjectBase : ModelBase, IDescriptive, IRequirement, IProgress, IXPIncome, ICoinIncome
     {
 
-        private int _income = 100;
-        public int Income { get => _income; set => _income = value; }
+        // Income Properties
+        public abstract int XPIncome { get; }
+        public abstract int CoinIncome { get; }
 
 
 

@@ -8,7 +8,7 @@ namespace Idle.DataAccess.Fields
     /// <summary>
     /// Abstract class for all tools
     /// </summary>
-    public abstract class ToolBase : ModelBase, IDescriptive, IProgress
+    public abstract class ToolBase : ModelBase, IDescriptive, IProgress, IXPIncome
     {
         // Descriptive Properties
         /// <summary>
@@ -39,12 +39,6 @@ namespace Idle.DataAccess.Fields
         /// </summary>
         public string Grade { get; set; } = "F";
 
-
-        // Tool Specific Properties
-        /// <summary>
-        /// Whether this tool is bought for Player XP (false), or for Coins (true)
-        /// </summary>
-        public abstract bool Proprietary { get; }
-
+        public abstract int XPIncome { get; }
     }
 }

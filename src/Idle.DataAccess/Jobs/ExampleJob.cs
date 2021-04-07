@@ -13,7 +13,6 @@ namespace Idle.DataAccess.Jobs
     {
         public ExampleJob()
         {
-            Income = 500;
         }
 
         public override string Name => "MacroHard Studios Developer";
@@ -29,5 +28,8 @@ namespace Idle.DataAccess.Jobs
         public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
 
         public override int PlayerLevel => 50;
+
+        public override int CoinIncome => 40;
+        public override int XPIncome => 20;
     }
 }

@@ -9,7 +9,7 @@ namespace Idle.DataAccess.Fields
     /// <summary>
     /// Abstract class for all frameworks
     /// </summary>
-    public abstract class FrameworkBase : ModelBase, IDescriptive, IProgress, IXPCost, IRequirement
+    public abstract class FrameworkBase : ModelBase, IDescriptive, IProgress, IXPCost, IRequirement, IXPIncome
     {
         // Descriptive Properties
         /// <summary>
@@ -49,6 +49,7 @@ namespace Idle.DataAccess.Fields
         /// Cost of this framework
         /// </summary>
         public abstract int XPCost { get; }
+        public abstract int XPIncome { get; }
 
 
 

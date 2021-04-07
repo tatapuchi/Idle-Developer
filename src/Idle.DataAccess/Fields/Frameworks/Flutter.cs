@@ -23,6 +23,8 @@ namespace Idle.DataAccess.Fields.Frameworks
 
         public override int XPCost => 1250;
 
+        public override int XPIncome => 20;
+
         public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { }; // Add Dart into here
 
         public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { };
@@ -30,5 +32,6 @@ namespace Idle.DataAccess.Fields.Frameworks
         public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { };
 
         public override int PlayerLevel => 10;
+
     }
 }

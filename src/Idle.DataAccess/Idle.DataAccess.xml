@@ -184,11 +184,6 @@
             Grade in this tool
             </summary>
         </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Proprietary">
-            <summary>
-            Whether this tool is bought for Player XP (false), or for Coins (true)
-            </summary>
-        </member>
         <member name="T:Idle.DataAccess.Fields.Tools.Github">
             <summary>
             Clas for the github tool
@@ -202,6 +197,16 @@
         <member name="P:Idle.DataAccess.ICoinCost.CoinCost">
             <summary>
             The cost of something in coins (Items are bought with coins)
+            </summary>
+        </member>
+        <member name="T:Idle.DataAccess.ICoinIncome">
+            <summary>
+            Interface defining income in coins
+            </summary>
+        </member>
+        <member name="P:Idle.DataAccess.ICoinIncome.CoinIncome">
+            <summary>
+            Income in coins
             </summary>
         </member>
         <member name="T:Idle.DataAccess.IDescriptive">
@@ -282,6 +287,16 @@
         <member name="P:Idle.DataAccess.IXPCost.XPCost">
             <summary>
             The cost of something in player XP (languages/frameworks/tools are bought with player XP)
+            </summary>
+        </member>
+        <member name="T:Idle.DataAccess.IXPIncome">
+            <summary>
+            Interface defining income in XP of the language/framework/tool, etc. (NOT player XP)
+            </summary>
+        </member>
+        <member name="P:Idle.DataAccess.IXPIncome.XPIncome">
+            <summary>
+            Income in XP
             </summary>
         </member>
         <member name="P:Idle.DataAccess.Jobs.JobBase.XP">
