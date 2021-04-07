@@ -14,8 +14,9 @@ namespace Idle.DataAccess.Repositories
 
         public override void CreateAsync(LanguageBase model)
         {
-            throw new NotImplementedException();
+            
         }
+
 
         public override Task<IEnumerable<LanguageBase>> GetAllAsync(LanguageBase model)
         {

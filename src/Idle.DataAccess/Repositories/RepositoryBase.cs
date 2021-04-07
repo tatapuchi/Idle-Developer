@@ -1,4 +1,6 @@
-﻿using SQLite;
+﻿using Idle.DataAccess.Fields;
+using Idle.DataAccess.Fields.Languages;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,8 +12,7 @@ namespace Idle.DataAccess.Repositories
     public abstract class RepositoryBase<TModel> where TModel: ModelBase
     {
         protected const string FileName = "idle.db3";
-        protected internal string DatabasePath;
-        // protected internal string Database = Path.Combine(Xamarin.Essentials.FileSystem.AppDataDirectory, FileName);
+        protected internal string DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FileName);
         protected internal SQLite.SQLiteOpenFlags Flags;
         private SQLiteAsyncConnection connection;
 
