@@ -9,29 +9,27 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-    public class RepositoryBase<TModel> where TModel: IModel, new()
+    public abstract class RepositoryBase<TModel> where TModel: ModelBase
     {
         protected const string FileName = "idle.db3";
         protected internal string DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FileName);
-        protected internal SQLiteOpenFlags Flags;
-        protected static SQLiteAsyncConnection connection;
+        protected internal SQLite.SQLiteOpenFlags Flags;
+        private SQLiteAsyncConnection connection;
 
         protected RepositoryBase()
         {
-            Flags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create;
+            Flags |= SQLiteOpenFlags.ReadWrite;
+            Flags |= SQLiteOpenFlags.Create;
             connection = new SQLiteAsyncConnection(DatabasePath, Flags);
-            connection.CreateTableAsync<TModel>();
         }
 
-        public async virtual void InsertAsync(TModel model) { await connection.InsertAsync(model); }
-        public async virtual void UpdateAsync(TModel model) { await connection.UpdateAsync(model); }
-        public async virtual void DeleteAsync(TModel model) { await connection.DeleteAsync(model); }
-        public async virtual Task<TModel> GetAsync(TModel model) {  return await connection.Table<TModel>().Where(i => i.ID == model.ID).FirstOrDefaultAsync(); }
-        public async virtual Task<IEnumerable<TModel>> GetAllAsync() { return await connection.Table<TModel>().ToListAsync(); }
+        public virtual void CreateAsync(TModel model) { }
+        public virtual void UpdateAsync(TModel model) { }
+        public virtual void RemoveAsync(TModel model) { }
+        public virtual Task<TModel> GetAsync(TModel model) { return null; }
+
+        public virtual Task<IEnumerable<TModel>> GetAllAsync(TModel model) { return null; }
 
 
     }
-
-
-
 }

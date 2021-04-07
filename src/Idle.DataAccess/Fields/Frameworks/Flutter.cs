@@ -8,35 +8,30 @@ namespace Idle.DataAccess.Fields.Frameworks
     /// <summary>
     /// Class for the flutter framework
     /// </summary>
-    public class Flutter : IFramework
+    public class Flutter : FrameworkBase
     {
         public Flutter()
         {
 
         }
 
-        public int ID { get; set; }
-        public string Name => "Flutter";
+        public override string Name => "Flutter";
 
-        public string Description => "Bird framework that make app.";
+        public override string Description => "Bird framework that make app.";
 
-        public Difficulty Difficulty => Difficulty.Medium;
+        public override Difficulty Difficulty => Difficulty.Medium;
 
-        public int XPCost => 1250;
+        public override int XPCost => 1250;
 
-        public int XPIncome => 20;
+        public override int XPIncome => 20;
 
-        public HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { }; // Add Dart into here
+        public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { }; // Add Dart into here
 
-        public HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { };
+        public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { };
 
-        public HashSet<ToolBase> Tools => new HashSet<ToolBase>() { };
+        public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { };
 
-        public int PlayerLevel => 10;
-
-        public int XP { get; set; }
-        public int Level { get; set; }
-        public string Grade { get; set; }
+        public override int PlayerLevel => 10;
 
     }
 }

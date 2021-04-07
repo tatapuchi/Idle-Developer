@@ -8,23 +8,18 @@ namespace Idle.DataAccess.Fields.Languages
     /// <summary>
     /// Class for the C# language
     /// </summary>
-    public class CSharp : ILanguage
+    public class CSharp : LanguageBase
     {
         public CSharp()
         {
         }
 
-        public int ID { get; set; }
-        public string Name => "C#";
+        public override string Name => "C#";
 
-        public string Description => "Alternatively known as D flat, used to make games such as terraria and many more. A general purpose language, used basically everywhere, its C#.";
+        public override string Description => "Alternatively known as D flat, used to make games such as terraria and many more. A general purpose language, used basically everywhere, its C#.";
 
-        public Difficulty Difficulty => Difficulty.Hard;
-        public int XPCost => 850;
-        public int XPIncome => 20;
-
-        public int XP { get; set; }
-        public int Level { get; set; }
-        public string Grade { get; set; }
+        public override Difficulty Difficulty => Difficulty.Hard;
+        public override int XPCost => 850;
+        public override int XPIncome => 20;
     }
 }
