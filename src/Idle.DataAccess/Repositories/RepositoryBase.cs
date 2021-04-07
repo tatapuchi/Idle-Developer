@@ -1,4 +1,5 @@
-﻿using Idle.DataAccess.Fields;
+﻿using Idle.DataAccess.Common;
+using Idle.DataAccess.Fields;
 using Idle.DataAccess.Fields.Languages;
 using SQLite;
 using System.Text;
