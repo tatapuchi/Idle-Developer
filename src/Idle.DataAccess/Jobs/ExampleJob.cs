@@ -9,27 +9,32 @@ using System.Text;
 
 namespace Idle.DataAccess.Jobs
 {
-    public class ExampleJob : JobBase
+    public class ExampleJob : IJob
     {
         public ExampleJob()
         {
         }
 
-        public override string Name => "MacroHard Studios Developer";
+        public int ID { get; set; }
+        public string Name => "MacroHard Studios Developer";
 
-        public override string Description => "A ripoff of MSFT";
+        public string Description => "A ripoff of MSFT";
 
-        public override Difficulty Difficulty => Difficulty.Medium;
+        public Difficulty Difficulty => Difficulty.Medium;
 
-        public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
+        public HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
 
-        public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
+        public HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
 
-        public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
+        public HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
 
-        public override int PlayerLevel => 50;
+        public int PlayerLevel => 50;
 
-        public override int CoinIncome => 40;
-        public override int XPIncome => 20;
+        public int CoinIncome => 40;
+        public int XPIncome => 20;
+
+        public int XP { get; set; }
+        public int Level { get; set; }
+        public string Grade { get; set; }
     }
 }

@@ -6,36 +6,36 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-    public class LanguageRepository : RepositoryBase<LanguageBase>
-    {
-        public LanguageRepository()
-        {
-        }
+    //public class LanguageRepository: RepositoryBase<ILanguage> 
+    //{
+    //    public LanguageRepository()
+    //    {
+    //    }
 
-        public override void CreateAsync(LanguageBase model)
-        {
-            
-        }
+    //    public async override void InsertAsync(ILanguage language)
+    //    {
+    //        await connection.InsertAsync(language);
+    //    }
 
+    //    public async override void DeleteAsync(ILanguage language)
+    //    {
+    //        await connection.DeleteAsync<ILanguage>(language);
+    //    }
 
-        public override Task<IEnumerable<LanguageBase>> GetAllAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
+    //    public async override void UpdateAsync(ILanguage language)
+    //    {
+    //        await connection.UpdateAsync(language);
+    //    }
 
-        public override Task<LanguageBase> GetAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
+    //    public async override Task<IEnumerable<ILanguage>> GetAllAsync()
+    //    {
+    //        return await connection.Table<ILanguage>().ToListAsync();
+    //    }
 
-        public override void RemoveAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
+    //    public async override Task<ILanguage> GetAsync(ILanguage language)
+    //    {
+    //        return await connection.Table<ILanguage>().Where(i => i.ID == language.ID).FirstOrDefaultAsync();
+    //    }
 
-        public override void UpdateAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
-    }
+    //}
 }

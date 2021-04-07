@@ -9,28 +9,36 @@ using System.Text;
 
 namespace Idle.DataAccess.Projects
 {
-    public class ExampleProject : ProjectBase
+    public class ExampleProject : IProject
     {
         public ExampleProject()
         {
 
         }
 
-        public override string Name => "Malware";
+        public int ID { get; set; }
 
-        public override string Description => "Why would you make this?";
+        public string Name  => "Malware";
 
-        public override Difficulty Difficulty => Difficulty.Medium;
+        public string Description => "Why would you make this?";
 
-        public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
+        public Difficulty Difficulty => Difficulty.Medium;
 
-        public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
+        public HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
 
-        public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
+        public HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
 
-        public override int PlayerLevel => 50;
+        public HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
 
-        public override int CoinIncome => 40;
-        public override int XPIncome => 20;
+        public int PlayerLevel => 50;
+
+        public int XP { get; set; }
+        public int Level { get; set; }
+        public string Grade { get; set; }
+
+        public int XPIncome => 40;
+
+        public int CoinIncome => 20;
+
     }
 }
