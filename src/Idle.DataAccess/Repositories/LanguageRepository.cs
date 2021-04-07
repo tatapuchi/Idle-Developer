@@ -11,8 +11,8 @@ namespace Idle.DataAccess.Repositories
 		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
 			await _connection.Table<LanguageBase>().ToListAsync();
 
-		public Task<LanguageBase> GetAsync(object id) =>
-			_connection.GetAsync<LanguageBase>(model => model.Name.Equals(id));
+		public Task<LanguageBase> GetAsync(int id) =>
+			_connection.Table<LanguageBase>().Where(model => model.ID == id).FirstOrDefaultAsync();
 
 		public Task InsertAsync(LanguageBase model) =>
 			_connection.InsertAsync(model);
