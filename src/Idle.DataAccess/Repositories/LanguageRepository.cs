@@ -6,36 +6,22 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-    public class LanguageRepository : RepositoryBase<LanguageBase>
-    {
-        public LanguageRepository()
-        {
-        }
+	public class LanguageRepository : RepositoryBase, IRepository<LanguageBase>
+	{
+		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
+			await _connection.Table<LanguageBase>().ToListAsync();
 
-        public override void CreateAsync(LanguageBase model)
-        {
-            
-        }
+		public Task<LanguageBase> GetAsync(object id) =>
+			_connection.GetAsync<LanguageBase>(model => model.Name.Equals(id));
 
+		public Task InsertAsync(LanguageBase model) =>
+			_connection.InsertAsync(model);
 
-        public override Task<IEnumerable<LanguageBase>> GetAllAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
+		public Task RemoveAsync(LanguageBase model) =>
+			_connection.DeleteAsync(model);
 
-        public override Task<LanguageBase> GetAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
+		public Task UpdateAsync(LanguageBase model) => 
+			_connection.UpdateAsync(model);
 
-        public override void RemoveAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void UpdateAsync(LanguageBase model)
-        {
-            throw new NotImplementedException();
-        }
-    }
+	}
 }

@@ -1,35 +1,38 @@
 ﻿using Idle.DataAccess.Fields;
 using Idle.DataAccess.Fields.Languages;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-    public abstract class RepositoryBase<TModel> where TModel: ModelBase
+
+
+	public abstract class RepositoryBase
     {
-        protected const string FileName = "idle.db3";
-        protected internal string DatabasePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), FileName);
-        protected internal SQLite.SQLiteOpenFlags Flags;
-        private SQLiteAsyncConnection connection;
+        protected internal SQLiteOpenFlags Flags;
+        protected static SQLiteAsyncConnection _connection;
 
         protected RepositoryBase()
         {
-            Flags |= SQLiteOpenFlags.ReadWrite;
-            Flags |= SQLiteOpenFlags.Create;
-            connection = new SQLiteAsyncConnection(DatabasePath, Flags);
+            Ctor();
+            _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public virtual void CreateAsync(TModel model) { }
-        public virtual void UpdateAsync(TModel model) { }
-        public virtual void RemoveAsync(TModel model) { }
-        public virtual Task<TModel> GetAsync(TModel model) { return null; }
+        // for testing
+        internal RepositoryBase(string path)
+		{
+            Ctor();
+            _connection = new SQLiteAsyncConnection(path);
+		}
 
-        public virtual Task<IEnumerable<TModel>> GetAllAsync(TModel model) { return null; }
-
+        private void Ctor()
+		{
+            Flags |= SQLiteOpenFlags.ReadWrite;
+            Flags |= SQLiteOpenFlags.Create;
+            Flags |= SQLiteOpenFlags.SharedCache;
+        }
 
     }
+
+	
 }
