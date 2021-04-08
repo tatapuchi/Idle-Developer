@@ -8,7 +8,7 @@ namespace Idle.DataAccess
     /// <summary>
     /// Base class for all models
     /// </summary>
-    public abstract class ModelBase
+    public class ModelBase
     {
 
         // /// <summary>

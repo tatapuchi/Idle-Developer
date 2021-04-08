@@ -6,36 +6,22 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-    //public class LanguageRepository: RepositoryBase<ILanguage> 
-    //{
-    //    public LanguageRepository()
-    //    {
-    //    }
+	public class LanguageRepository : RepositoryBase, IRepository<LanguageBase>
+	{
+		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
+			await _connection.Table<LanguageBase>().ToListAsync();
 
-    //    public async override void InsertAsync(ILanguage language)
-    //    {
-    //        await connection.InsertAsync(language);
-    //    }
+		public Task<LanguageBase> GetAsync(int id) =>
+			_connection.Table<LanguageBase>().Where(model => model.ID == id).FirstOrDefaultAsync();
 
-    //    public async override void DeleteAsync(ILanguage language)
-    //    {
-    //        await connection.DeleteAsync<ILanguage>(language);
-    //    }
+		public Task InsertAsync(LanguageBase model) =>
+			_connection.InsertAsync(model);
 
-    //    public async override void UpdateAsync(ILanguage language)
-    //    {
-    //        await connection.UpdateAsync(language);
-    //    }
+		public Task RemoveAsync(LanguageBase model) =>
+			_connection.DeleteAsync(model);
 
-    //    public async override Task<IEnumerable<ILanguage>> GetAllAsync()
-    //    {
-    //        return await connection.Table<ILanguage>().ToListAsync();
-    //    }
+		public Task UpdateAsync(LanguageBase model) => 
+			_connection.UpdateAsync(model);
 
-    //    public async override Task<ILanguage> GetAsync(ILanguage language)
-    //    {
-    //        return await connection.Table<ILanguage>().Where(i => i.ID == language.ID).FirstOrDefaultAsync();
-    //    }
-
-    //}
+	}
 }
