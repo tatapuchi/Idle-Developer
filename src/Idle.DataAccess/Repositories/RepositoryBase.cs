@@ -16,10 +16,10 @@ namespace Idle.DataAccess.Repositories
         protected RepositoryBase()
         {
             Ctor();
-            _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+            _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Flags);
         }
 
-        // for testing
+        // For testing
         internal RepositoryBase(string path)
 		{
             Ctor();

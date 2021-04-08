@@ -16,6 +16,12 @@ namespace Idle.DataAccess.Migrators
 			_connection = new SQLiteConnection(Constants.DatabasePath);
 		}
 
+		// For testing
+		internal MigratorBase(string path)
+		{
+			_connection = new SQLiteConnection(path);
+		}
+
 		public void Migrate()
 		{
 			if (DoesTableExist())
@@ -32,5 +38,6 @@ namespace Idle.DataAccess.Migrators
 			if (table == 0) return false;
 			return true;
 		}
+
 	}
 }
