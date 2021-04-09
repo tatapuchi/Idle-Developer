@@ -7,10 +7,7 @@ namespace Idle.DataAccess.Migrators
 	public class LanguageMigrator : MigratorBase<LanguageBase>
 	{
 		// For testing
-		public LanguageMigrator(string path)
-		{
-			_connection = new SQLiteConnection(path);
-		}
+		internal LanguageMigrator(string path) : base(path) { }
 		protected override string TableName => TableNames.Languages;
 	}
 }

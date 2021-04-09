@@ -15,25 +15,25 @@ namespace Idle.DataAccess.Tests
     public class RepositoryTest
     {
 
-        [TestMethod]
-        public void Migration()
-        {
-            LanguageMigrator lm = new LanguageMigrator(@"C:\Users\Aorus\source\repos\Idle\Idle.DataAccess.Tests\idle.db3");
-            lm.Migrate(); //delete after db and table is made
-            Assert.IsFalse(lm.Migrate(), "Table already exists, do not make a new one");
+        //[TestMethod]
+        //public void Migration()
+        //{
+        //    LanguageMigrator lm = new LanguageMigrator(@"C:\Users\Aorus\source\repos\Idle\Idle.DataAccess.Tests\idle.db3");
+        //    lm.Migrate(); //delete after db and table is made
+        //    Assert.IsFalse(lm.Migrate(), "Table already exists, do not make a new one");
 
-        }
+        //}
 
-        [TestMethod]
-        public void Insertion()
-        {
+        //[TestMethod]
+        //public void Insertion()
+        //{
 
-            LanguageRepository lr = new LanguageRepository(@"C:\Users\Aorus\source\repos\Idle\Idle.DataAccess.Tests\idle.db3");
-            CSharp cSharp = new CSharp() { XP = 50, Level = 1, Grade = "D" };
-            lr.InsertAsync(cSharp);
-            Assert.AreEqual(1, lr.DeleteAllAsync());
+        //    LanguageRepository lr = new LanguageRepository(@"C:\Users\Aorus\source\repos\Idle\Idle.DataAccess.Tests\idle.db3");
+        //    CSharp cSharp = new CSharp() { XP = 50, Level = 1, Grade = "D" };
+        //    lr.InsertAsync(cSharp);
+        //    Assert.AreEqual(1, lr.DeleteAllAsync());
 
-        }
+        //}
 
     }
 }
