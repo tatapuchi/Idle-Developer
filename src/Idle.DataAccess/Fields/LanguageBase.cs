@@ -1,13 +1,12 @@
 ﻿using Idle.DataAccess.Common;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Idle.DataAccess.Fields
 {
-    /// <summary>
-    /// Abstract base class for all languages
-    /// </summary>
+    [Table(TableNames.Languages)]
     public class LanguageBase : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome
     {
         // Descriptive Properties
