@@ -47,10 +47,6 @@ namespace Idle.DataAccess.Migrators
 			{
 				return false;
 			}
-
-			//var table = _connection.Execute($"SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{TableName}'");
-			//if (table == 0) return false;
-			//return true;
 		}
 
 	}
