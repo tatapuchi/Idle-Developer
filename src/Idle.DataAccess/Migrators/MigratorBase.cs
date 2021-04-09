@@ -9,7 +9,7 @@ namespace Idle.DataAccess.Migrators
 	public abstract class MigratorBase<TModel>
 		where TModel : ModelBase
 	{
-		private static SQLiteConnection _connection;
+		protected static SQLiteConnection _connection;
 
 		public MigratorBase()
 		{
@@ -17,26 +17,40 @@ namespace Idle.DataAccess.Migrators
 		}
 
 		// For testing
-		internal MigratorBase(string path)
+		public MigratorBase(string path)
 		{
 			_connection = new SQLiteConnection(path);
 		}
 
-		public void Migrate()
+		public bool Migrate()
 		{
 			if (DoesTableExist())
-				return;
+			{
+				return false; 
+			}
 
 			_connection.CreateTable<TModel>();
+			return true;
 		}
 
 		protected abstract string TableName { get; }
 
 		private bool DoesTableExist()
 		{
-			var table = _connection.Execute($"SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{TableName}'");
-			if (table == 0) return false;
-			return true;
+
+			var tableInfo = _connection.GetTableInfo(TableName);
+			if (tableInfo.Count > 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
+			//var table = _connection.Execute($"SELECT name FROM sqlite_master WHERE type = 'table' AND name = '{TableName}'");
+			//if (table == 0) return false;
+			//return true;
 		}
 
 	}

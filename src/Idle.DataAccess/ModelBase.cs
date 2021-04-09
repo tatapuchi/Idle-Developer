@@ -1,4 +1,4 @@
-﻿//using SQLite;
+﻿using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +14,7 @@ namespace Idle.DataAccess
         // /// <summary>
         // /// Primary Key for SQLite database
         // /// </summary>
-        //[AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
     }

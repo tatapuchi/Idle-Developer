@@ -1,4 +1,5 @@
 ﻿using Idle.DataAccess.Fields;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,18 @@ namespace Idle.DataAccess.Repositories
 {
 	public class LanguageRepository : RepositoryBase, IRepository<LanguageBase>
 	{
+
+		public LanguageRepository(string path)
+		{
+			Ctor();
+			_connection = new SQLiteAsyncConnection(path);
+		}
+
+		public async Task<IEnumerable<LanguageBase>> GetKnownLanguagesAsync()
+        {
+			return await _connection.Table<LanguageBase>().Where(model => model.Level >= 10).ToListAsync();
+		}
+
 		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
 			await _connection.Table<LanguageBase>().ToListAsync();
 
@@ -22,6 +35,9 @@ namespace Idle.DataAccess.Repositories
 
 		public Task UpdateAsync(LanguageBase model) => 
 			_connection.UpdateAsync(model);
+
+		public Task DeleteAllAsync() =>
+			_connection.DeleteAllAsync<LanguageBase>();
 
 	}
 }

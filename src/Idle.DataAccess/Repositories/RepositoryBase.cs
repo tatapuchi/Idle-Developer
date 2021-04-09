@@ -20,13 +20,13 @@ namespace Idle.DataAccess.Repositories
         }
 
         // For testing
-        internal RepositoryBase(string path)
+        public RepositoryBase(string path)
 		{
             Ctor();
             _connection = new SQLiteAsyncConnection(path);
 		}
 
-        private void Ctor()
+        protected void Ctor()
 		{
             Flags |= SQLiteOpenFlags.ReadWrite;
             Flags |= SQLiteOpenFlags.Create;
