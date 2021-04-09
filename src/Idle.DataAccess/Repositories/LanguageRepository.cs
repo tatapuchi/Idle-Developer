@@ -14,9 +14,6 @@ namespace Idle.DataAccess.Repositories
 
 		public LanguageRepository(string path) : base(path){ }
 
-		public async Task<IEnumerable<LanguageBase>> GetKnownLanguagesAsync() =>
-			await Connection.Table<LanguageBase>().Where(model => model.Level >= 10).ToListAsync();
-
 		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
 			await Connection.Table<LanguageBase>().ToListAsync();
 
@@ -31,9 +28,6 @@ namespace Idle.DataAccess.Repositories
 
 		public Task UpdateAsync(LanguageBase model) => 
 			Connection.UpdateAsync(model);
-
-		public Task DeleteAllAsync() =>
-			Connection.DeleteAllAsync<LanguageBase>();
 
 	}
 }
