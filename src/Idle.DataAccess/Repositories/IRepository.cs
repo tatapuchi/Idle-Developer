@@ -6,10 +6,10 @@ namespace Idle.DataAccess.Repositories
 	public interface IRepository<TModel>
         where TModel : ModelBase
 	{
-        Task InsertAsync(TModel model);
-        Task UpdateAsync(TModel model);
-        Task RemoveAsync(TModel model);
-        Task<TModel> GetAsync(int id);
+        Task<int> InsertAsync(TModel model);
+        Task<int> UpdateAsync(TModel model);
+        Task<int> RemoveAsync(TModel model);
+        Task<TModel> GetOrDefaultAsync(int id);
         Task<IEnumerable<TModel>> GetAllAsync();
 	}
 

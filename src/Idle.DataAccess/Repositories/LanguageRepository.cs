@@ -17,16 +17,16 @@ namespace Idle.DataAccess.Repositories
 		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
 			await Connection.Table<LanguageBase>().ToListAsync();
 
-		public Task<LanguageBase> GetAsync(int id) =>
+		public Task<LanguageBase> GetOrDefaultAsync(int id) =>
 			Connection.Table<LanguageBase>().Where(model => model.ID == id).FirstOrDefaultAsync();
 
-		public Task InsertAsync(LanguageBase model) =>
+		public Task<int> InsertAsync(LanguageBase model) =>
 			Connection.InsertAsync(model);
 
-		public Task RemoveAsync(LanguageBase model) =>
+		public Task<int> RemoveAsync(LanguageBase model) =>
 			Connection.DeleteAsync(model);
 
-		public Task UpdateAsync(LanguageBase model) => 
+		public Task<int> UpdateAsync(LanguageBase model) => 
 			Connection.UpdateAsync(model);
 
 	}
