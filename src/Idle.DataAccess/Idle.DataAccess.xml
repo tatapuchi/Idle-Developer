@@ -39,11 +39,6 @@
             Nightmare difficulty, examples include x86 assembly
             </summary>
         </member>
-        <member name="T:Idle.DataAccess.Fields.LanguageBase">
-            <summary>
-            Abstract base class for all languages
-            </summary>
-        </member>
         <member name="P:Idle.DataAccess.Fields.LanguageBase.Name">
             <summary>
             Name of the language
