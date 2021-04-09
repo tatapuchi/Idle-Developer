@@ -10,8 +10,9 @@ namespace Idle.DataAccess.Repositories
 
 	public abstract class RepositoryBase
     {
-        protected internal SQLiteOpenFlags Flags;
-        protected static SQLiteAsyncConnection _connection;
+        protected SQLiteOpenFlags Flags;
+        private static SQLiteAsyncConnection _connection;
+        internal SQLiteAsyncConnection Connection => _connection;
 
         protected RepositoryBase()
         {
