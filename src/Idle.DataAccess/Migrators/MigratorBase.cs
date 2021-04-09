@@ -10,7 +10,7 @@ namespace Idle.DataAccess.Migrators
 		where TModel : ModelBase
 	{
 		private static SQLiteConnection _connection;
-		internal static SQLiteConnection Connection;
+		internal SQLiteConnection Connection => _connection;
 
 		public MigratorBase()
 		{
@@ -33,7 +33,7 @@ namespace Idle.DataAccess.Migrators
 		// Template method petter (used with property intead of method)
 		protected abstract string TableName { get; }
 
-		private bool DoesTableExist()
+		internal bool DoesTableExist()
 		{
 			var tableInfo = Connection.GetTableInfo(TableName);
 
