@@ -24,8 +24,6 @@ namespace Idle.DataAccess.Tests.Migrators
 			// assert
 			lm.DoesTableExist().ShouldBeTrue();
 		}
-
-
-
 	}
+
 }

@@ -74,11 +74,6 @@
             Cost of this language
             </summary>
         </member>
-        <member name="T:Idle.DataAccess.Fields.Languages.CSharp">
-            <summary>
-            Class for the C# language
-            </summary>
-        </member>
         <member name="T:Idle.DataAccess.ICoinCost">
             <summary>
             An interface that defines the cost of something in coins

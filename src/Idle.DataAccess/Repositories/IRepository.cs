@@ -7,6 +7,7 @@ namespace Idle.DataAccess.Repositories
         where TModel : ModelBase
 	{
         Task<int> InsertAsync(TModel model);
+        Task<int> InsertAllAsync(IEnumerable<TModel> models);
         Task<int> UpdateAsync(TModel model);
         Task<int> RemoveAsync(TModel model);
         Task<TModel> GetOrDefaultAsync(int id);

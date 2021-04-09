@@ -20,8 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="Migrators\"/>
+    <Folder Include="Migrators\" />
   </ItemGroup>
 
 </Project>

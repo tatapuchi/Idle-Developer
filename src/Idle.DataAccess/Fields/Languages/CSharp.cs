@@ -1,13 +1,12 @@
 ﻿using Idle.DataAccess.Common;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Idle.DataAccess.Fields.Languages
 {
-    /// <summary>
-    /// Class for the C# language
-    /// </summary>
+    [Table(TableNames.Languages)]
     public class CSharp : LanguageBase
     {
         public CSharp()
