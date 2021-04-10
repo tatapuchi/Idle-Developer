@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,12 @@ namespace Idle.DataAccess.Tests.Regressions
 	// but we cannot create tables using abstract types. this regression tests validates that all members which would be astract are overriden now
 	public class LanguageBaseRegressions
 	{
+
+
 		[TestMethod]
 		public void RegressFor_AllVirtualMethods_ShouldBeOverriden()
 		{
+
 			try
 			{
 				var assembly = typeof(LanguageBase).Assembly;
@@ -30,9 +34,17 @@ namespace Idle.DataAccess.Tests.Regressions
 					var name = lang.Name;
 					var desc = lang.Description;
 					var diff = lang.Difficulty;
-
 					var xpCost = lang.XPCost;
 					var xpIncome = lang.XPIncome;
+
+
+
+					if (string.IsNullOrEmpty(name)) { throw new Exception(); }
+					if (string.IsNullOrEmpty(desc)) { throw new Exception(); }
+					if (diff == Common.Difficulty.None) { throw new Exception(); }
+					if (xpCost == 0) { throw new Exception(); }
+					if (xpIncome == 0) { throw new Exception(); }
+
 				}
 			}
 			catch (Exception)
