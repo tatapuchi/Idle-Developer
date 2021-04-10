@@ -1,28 +1,27 @@
-﻿using Idle.DataAccess.Enums;
+﻿using Idle.DataAccess.Common;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Idle.DataAccess.Fields
 {
-    /// <summary>
-    /// Abstract base class for all languages
-    /// </summary>
-    public abstract class LanguageBase : ModelBase, IDescriptive, IProgress, IXPCost
+    [Table(TableNames.Languages)]
+    public class LanguageBase : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome
     {
         // Descriptive Properties
         /// <summary>
         /// Name of the language
         /// </summary>
-        public abstract string Name { get; }
+        public virtual string Name => throw new NotImplementedException();
         /// <summary>
         /// Description of the language
         /// </summary>
-        public abstract string Description { get; }
+        public virtual string Description => throw new NotImplementedException();
         /// <summary>
         /// Difficulty of the language
         /// </summary>
-        public abstract Difficulty Difficulty { get; }
+        public virtual Difficulty Difficulty => throw new NotImplementedException();
 
 
 
@@ -46,7 +45,9 @@ namespace Idle.DataAccess.Fields
         /// <summary>
         /// Cost of this language
         /// </summary>
-        public abstract int XPCost { get; }
+        public virtual int XPCost => throw new NotImplementedException();
+
+        public virtual int XPIncome => throw new NotImplementedException();
 
     }
 }

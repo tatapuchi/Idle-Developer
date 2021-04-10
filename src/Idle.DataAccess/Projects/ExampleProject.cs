@@ -1,33 +1,36 @@
-﻿using Idle.DataAccess.Enums;
-using Idle.DataAccess.Fields;
-using Idle.DataAccess.Fields.Frameworks;
-using Idle.DataAccess.Fields.Languages;
-using Idle.DataAccess.Fields.Tools;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿//using Idle.DataAccess.Enums;
+//using Idle.DataAccess.Fields;
+//using Idle.DataAccess.Fields.Frameworks;
+//using Idle.DataAccess.Fields.Languages;
+//using Idle.DataAccess.Fields.Tools;
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
 
-namespace Idle.DataAccess.Projects
-{
-    public class ExampleProject : ProjectBase
-    {
-        public ExampleProject()
-        {
-            Income = 700;
-        }
+//namespace Idle.DataAccess.Projects
+//{
+//    public class ExampleProject : ProjectBase
+//    {
+//        public ExampleProject()
+//        {
 
-        public override string Name => "Malware";
+//        }
 
-        public override string Description => "Why would you make this?";
+//        public override string Name => "Malware";
 
-        public override Difficulty Difficulty => Difficulty.Medium;
+//        public override string Description => "Why would you make this?";
 
-        public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
+//        public override Difficulty Difficulty => Difficulty.Medium;
 
-        public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
+//        public override HashSet<LanguageBase> Languages => new HashSet<LanguageBase>() { new CSharp() };
 
-        public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
+//        public override HashSet<FrameworkBase> Frameworks => new HashSet<FrameworkBase>() { new Flutter() };
 
-        public override int PlayerLevel => 50;
-    }
-}
+//        public override HashSet<ToolBase> Tools => new HashSet<ToolBase>() { new Github() };
+
+//        public override int PlayerLevel => 50;
+
+//        public override int CoinIncome => 40;
+//        public override int XPIncome => 20;
+//    }
+//}

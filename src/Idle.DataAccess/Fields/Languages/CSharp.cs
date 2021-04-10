@@ -1,13 +1,12 @@
-﻿using Idle.DataAccess.Enums;
+﻿using Idle.DataAccess.Common;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Idle.DataAccess.Fields.Languages
 {
-    /// <summary>
-    /// Class for the C# language
-    /// </summary>
+    [Table(TableNames.Languages)]
     public class CSharp : LanguageBase
     {
         public CSharp()
@@ -20,5 +19,6 @@ namespace Idle.DataAccess.Fields.Languages
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 850;
+        public override int XPIncome => 20;
     }
 }

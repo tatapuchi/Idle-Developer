@@ -1,7 +1,4 @@
-﻿using Idle.DataAccess.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Idle.DataAccess.Common;
 
 namespace Idle.DataAccess
 {

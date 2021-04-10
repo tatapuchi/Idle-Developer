@@ -4,109 +4,39 @@
         <name>Idle.DataAccess</name>
     </assembly>
     <members>
-        <member name="T:Idle.DataAccess.Enums.Difficulty">
+        <member name="T:Idle.DataAccess.Common.Difficulty">
             <summary>
             An enum defining the different levels of difficulty
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.None">
+        <member name="F:Idle.DataAccess.Common.Difficulty.None">
             <summary>
             If difficulty is not applicable
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.Easy">
+        <member name="F:Idle.DataAccess.Common.Difficulty.Easy">
             <summary>
             Easy difficulty, examples would include HTML and CSS
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.Medium">
+        <member name="F:Idle.DataAccess.Common.Difficulty.Medium">
             <summary>
             Medium difficulty, examples include JavaScript and Python
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.Hard">
+        <member name="F:Idle.DataAccess.Common.Difficulty.Hard">
             <summary>
             Hard difficulty, examples include Java and C#
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.Expert">
+        <member name="F:Idle.DataAccess.Common.Difficulty.Expert">
             <summary>
             Expert difficulty, examples include C and C++
             </summary>
         </member>
-        <member name="F:Idle.DataAccess.Enums.Difficulty.Nightmare">
+        <member name="F:Idle.DataAccess.Common.Difficulty.Nightmare">
             <summary>
             Nightmare difficulty, examples include x86 assembly
-            </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Fields.FrameworkBase">
-            <summary>
-            Abstract class for all frameworks
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Name">
-            <summary>
-            Name of the framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Description">
-            <summary>
-            Description of the framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Difficulty">
-            <summary>
-            Difficulty of the framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.XP">
-            <summary>
-            XP in this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Level">
-            <summary>
-            Level in this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Grade">
-            <summary>
-            Grade in this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.XPCost">
-            <summary>
-            Cost of this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Languages">
-            <summary>
-            Required langauges for this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Frameworks">
-            <summary>
-            Required frameworks for this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.Tools">
-            <summary>
-            Required tools for this framework
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.FrameworkBase.PlayerLevel">
-            <summary>
-            Required minimum player level for this framework
-            </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Fields.Frameworks.Flutter">
-            <summary>
-            Class for the flutter framework
-            </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Fields.LanguageBase">
-            <summary>
-            Abstract base class for all languages
             </summary>
         </member>
         <member name="P:Idle.DataAccess.Fields.LanguageBase.Name">
@@ -144,56 +74,6 @@
             Cost of this language
             </summary>
         </member>
-        <member name="T:Idle.DataAccess.Fields.Languages.CSharp">
-            <summary>
-            Class for the C# language
-            </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Fields.ToolBase">
-            <summary>
-            Abstract class for all tools
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Name">
-            <summary>
-            Name of the tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Description">
-            <summary>
-            Description of the tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Difficulty">
-            <summary>
-            Difficulty of the tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.XP">
-            <summary>
-            XP in this tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Level">
-            <summary>
-            Level in this tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Grade">
-            <summary>
-            Grade in this tool
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.ToolBase.Proprietary">
-            <summary>
-            Whether this tool is bought for Player XP (false), or for Coins (true)
-            </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Fields.Tools.Github">
-            <summary>
-            Clas for the github tool
-            </summary>
-        </member>
         <member name="T:Idle.DataAccess.ICoinCost">
             <summary>
             An interface that defines the cost of something in coins
@@ -202,6 +82,16 @@
         <member name="P:Idle.DataAccess.ICoinCost.CoinCost">
             <summary>
             The cost of something in coins (Items are bought with coins)
+            </summary>
+        </member>
+        <member name="T:Idle.DataAccess.ICoinIncome">
+            <summary>
+            Interface defining income in coins
+            </summary>
+        </member>
+        <member name="P:Idle.DataAccess.ICoinIncome.CoinIncome">
+            <summary>
+            Income in coins
             </summary>
         </member>
         <member name="T:Idle.DataAccess.IDescriptive">
@@ -249,31 +139,6 @@
             Should be based on what level the player is at, sort of gives a ranking factor that makes the game more interesting that just plain levels.
             </summary>
         </member>
-        <member name="T:Idle.DataAccess.IRequirement">
-            <summary>
-            Interface that defines requirements for accessing something
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.IRequirement.Languages">
-            <summary>
-            Hashset that contains the required languages
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.IRequirement.Frameworks">
-            <summary>
-            Hashset that contains the required frameworks
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.IRequirement.Tools">
-            <summary>
-            Hashset that contains the required tools
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.IRequirement.PlayerLevel">
-            <summary>
-            Minimum player level required
-            </summary>
-        </member>
         <member name="T:Idle.DataAccess.IXPCost">
             <summary>
             An interface that defines the cost of something in XP
@@ -284,368 +149,20 @@
             The cost of something in player XP (languages/frameworks/tools are bought with player XP)
             </summary>
         </member>
-        <member name="P:Idle.DataAccess.Jobs.JobBase.XP">
+        <member name="T:Idle.DataAccess.IXPIncome">
             <summary>
-            XP in this job
+            Interface defining income in XP of the language/framework/tool, etc. (NOT player XP)
             </summary>
         </member>
-        <member name="P:Idle.DataAccess.Jobs.JobBase.Level">
+        <member name="P:Idle.DataAccess.IXPIncome.XPIncome">
             <summary>
-            Level in this job
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Jobs.JobBase.Grade">
-            <summary>
-            Grade in this job
+            Income in XP
             </summary>
         </member>
         <member name="T:Idle.DataAccess.ModelBase">
             <summary>
             Base class for all models
             </summary>
-        </member>
-        <member name="T:Idle.DataAccess.Player">
-            <summary>
-            Player Class.
-            Everything happens here.
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.Username">
-            <summary>
-            Player's name
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.XP">
-            <summary>
-            XP of the player, dictates the level of the player
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.Level">
-            <summary>
-            Level of the player, dictates the grade of the player
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.Coins">
-            <summary>
-            Number of coins the player has (In-Game Currency)
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.Grade">
-            <summary>
-            The calibre of a developer, marked by a letter grade.
-            These letters range from F to S++
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.SpeedMult">
-            <summary>
-            The speed multiplier of a player.
-            Affects how fast you complete a learning or job session.
-            This is an overall multiplier, that applies to all sessions
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Player.XPMult">
-            <summary>
-            The XP multiplier of a player.
-            Affects how much the player XP increases as you level up in a field.
-            This does not affect how much XP is earned from field sessions.
-            </summary>
-        </member>
-        <member name="M:Idle.DataAccess.Player.#ctor">
-            <summary>
-            Basic Constructor that takes in no arguments.
-            Sets username to a default value.
-            </summary>
-        </member>
-        <member name="M:Idle.DataAccess.Player.#ctor(Idle.DataAccess.PlayerDTO)">
-            <summary>
-            Constructor that takes in a DTO to assign values.
-            </summary>
-        </member>
-        <member name="M:Idle.DataAccess.Player.ToString">
-            <summary>
-            Overriden ToString() method
-            </summary>
-            <returns>Returns a formatted string containing the players fields, items, coins, xp, level, etc.</returns>
-        </member>
-        <member name="P:Idle.DataAccess.Projects.ProjectBase.XP">
-            <summary>
-            XP in this project
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Projects.ProjectBase.Level">
-            <summary>
-            Level in this project
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Projects.ProjectBase.Grade">
-            <summary>
-            Grade in this project
-            </summary>
-        </member>
-        <member name="T:Idle.Core.Fields.FieldDTO">
-            <summary>
-            DTO for the field classes
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.FieldDTO.Name">
-            <summary>
-            Needed to distinguish what field this is
-            </summary>
-        </member>
-        <member name="T:Idle.Core.Fields.Framework">
-            <summary>
-            Framework class that defines the structure of a framework
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Name">
-            <summary>
-            The name of the framework
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Description">
-            <summary>
-            The description of this framework
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Cost">
-            <summary>
-            The cost in player XP to unlock this framework
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Prerequisites">
-            <summary>
-            The frameworks that are needed to be able to start learning this framework.
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.XP">
-            <summary>
-            XP ín this framework, dictates the level of the framework
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Level">
-            <summary>
-            Level in this framework, dictates the grade of the player
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.Grade">
-            <summary>
-            The calibre of a developer in a framework, marked by a letter grade.
-            These letters range from F to S++
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.SpeedMult">
-            <summary>
-            The speed multiplier of a framework.
-            Affects how fast you complete the learning session.
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Framework.XPMult">
-            <summary>
-            The XP multiplier of a framework.
-            Affects how much the framework XP increase upon completion of a session.
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.IsAvailable(System.String[])">
-            <summary>
-            Checks based on the players known languages, whether he can unlock this framework or not
-            </summary>
-            <param name="languages">string array of languages known</param>
-            <returns>true or false, depending on whether the player can unlock this framework or not</returns>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.#ctor">
-            <summary>
-            Parameterless constructor
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.#ctor(System.String,System.String,System.Int32,System.String[])">
-            <summary>
-            Constructor that doesnt take in a DTO
-            </summary>
-            <param name="name">Name of the framework</param>
-            <param name="description">Description of the framework</param>
-            <param name="cost">Cost in player XP to unlock this framework</param>
-            <param name="prerequisites">string array of language prerequisites</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.Int32,System.String,System.String[])">
-            <summary>
-            Constructor that does take in a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-            <param name="name">Name of the framework</param>
-            <param name="description">Description of the framework</param>
-            <param name="cost">Cost in player XP to unlock this framework</param>
-            <param name="prerequisites">string array of language prerequisites</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.Update(Idle.Core.Fields.FieldDTO)">
-            <summary>
-            Method to update the framework's values from a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Framework.Convert">
-            <summary>
-            Method to convert language business object to a fieldDTO
-            </summary>
-            <returns>FieldDTO that we can store</returns>
-        </member>
-        <member name="T:Idle.Core.Fields.Language">
-            <summary>
-            Language class that defines the structure of a language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.Name">
-            <summary>
-            The name of the language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.Description">
-            <summary>
-            The description of this language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.Cost">
-            <summary>
-            The cost in player XP to unlock this language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.XP">
-            <summary>
-            XP ín this language, dictates the level of the language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.Level">
-            <summary>
-            Level in this language, dictates the grade of the player
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.Grade">
-            <summary>
-            The calibre of a developer in a language, marked by a letter grade.
-            These letters range from F to S++
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.SpeedMult">
-            <summary>
-            The speed multiplier of a language.
-            Affects how fast you complete the learning session.
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Language.XPMult">
-            <summary>
-            The XP multiplier of a language.
-            Affects how much the language XP increase upon completion of a session.
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Language.#ctor">
-            <summary>
-            Parameterless constructor
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Language.#ctor(System.String,System.Int32,System.String)">
-            <summary>
-            Constructor that doesnt take in a DTO
-            </summary>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Language.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.Int32,System.String)">
-            <summary>
-            Constructor that does take in a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Language.Update(Idle.Core.Fields.FieldDTO)">
-            <summary>
-            Method to update the language's values from a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Language.Convert">
-            <summary>
-            Method to convert language business object to a fieldDTO
-            </summary>
-            <returns>FieldDTO that we can store</returns>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.Name">
-            <summary>
-            The name of the language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.Description">
-            <summary>
-            The description of this language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.Cost">
-            <summary>
-            The cost in player XP to unlock this language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.XP">
-            <summary>
-            XP ín this language, dictates the level of the language
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.Level">
-            <summary>
-            Level in this language, dictates the grade of the player
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.Grade">
-            <summary>
-            The calibre of a developer in a language, marked by a letter grade.
-            These letters range from F to S++
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.SpeedMult">
-            <summary>
-            The speed multiplier of a language.
-            Affects how fast you complete the learning session.
-            </summary>
-        </member>
-        <member name="P:Idle.Core.Fields.Tool.XPMult">
-            <summary>
-            The XP multiplier of a language.
-            Affects how much the language XP increase upon completion of a session.
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Tool.#ctor">
-            <summary>
-            Parameterless constructor
-            </summary>
-        </member>
-        <member name="M:Idle.Core.Fields.Tool.#ctor(System.String,System.Int32,System.String)">
-            <summary>
-            Constructor that doesnt take in a DTO
-            </summary>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Tool.#ctor(Idle.Core.Fields.FieldDTO,System.String,System.Int32,System.String)">
-            <summary>
-            Constructor that does take in a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-            <param name="name">Name of the language</param>
-            <param name="description">Description of the language</param>
-            <param name="cost">Cost in player XP to unlock this language</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Tool.Update(Idle.Core.Fields.FieldDTO)">
-            <summary>
-            Method to update the language's values from a DTO
-            </summary>
-            <param name="dto">FieldDTO providing the values</param>
-        </member>
-        <member name="M:Idle.Core.Fields.Tool.Convert">
-            <summary>
-            Method to convert language business object to a fieldDTO
-            </summary>
-            <returns>FieldDTO that we can store</returns>
         </member>
     </members>
 </doc>
