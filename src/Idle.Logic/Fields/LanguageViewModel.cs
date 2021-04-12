@@ -96,6 +96,7 @@ namespace Idle.Logic.Fields
         public async void Load()
         {
             var x = await _repository.GetOrDefaultAsync(_language.Name);
+            if(x == null) { return; }
             _language.XP = x.XP;
         }
 
