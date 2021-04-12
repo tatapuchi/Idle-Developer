@@ -8,20 +8,13 @@ using System.Text;
 
 namespace Idle.Logic.Fields
 {
-    public class LanguageViewModel: BaseViewModel
+    public class LanguageViewModel : BaseViewModel
     {
         private readonly LanguageBase _language;
-        private readonly LanguageMigrator _migrator;
-        private readonly LanguageRepository _repository;
 
         public LanguageViewModel(LanguageBase language)
         {
             _language = language;
-            _migrator = new LanguageMigrator();
-            _repository = new LanguageRepository();
-
-            //Retrieves the value of XP from the database
-            Load();
 
             Name = language.Name;
             Description = language.Description;
@@ -88,20 +81,6 @@ namespace Idle.Logic.Fields
         {
             XP += XPIncome;
         }
-
-
-
-
-        //Load in from language list
-        public async void Load()
-        {
-            var x = await _repository.GetOrDefaultAsync(_language.Name);
-            if(x == null) { return; }
-            _language.XP = x.XP;
-        }
-
-
-
 
     }
 }
