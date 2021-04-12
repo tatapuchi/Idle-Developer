@@ -6,19 +6,23 @@ using System.Text;
 
 namespace Idle.Logic
 {
-    public class BaseViewModel: INotifyPropertyChanged
-    {
+	public class BaseViewModel : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		public event PropertyChangingEventHandler PropertyChanging;
+		public event PropertyChangedEventHandler PropertyChanged;
 
-        #region INotifyPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
-        {
-            var changed = PropertyChanged;
-            if (changed == null)
-                return;
+		protected void SetProperty<T>(ref T backingField, in T value, [CallerMemberName] string propertyName = "")
+		{
+			if (EqualityComparer<T>.Default.Equals(backingField, value)) return;
+			OnPropertyChanging(propertyName);
+			backingField = value;
+			OnPropertyChanged(propertyName);
+		}
 
-            changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
-    }
+		protected virtual void OnPropertyChanging([CallerMemberName] string propertyName = "") =>
+			PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
+
+		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = "") =>
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+	}
 }
