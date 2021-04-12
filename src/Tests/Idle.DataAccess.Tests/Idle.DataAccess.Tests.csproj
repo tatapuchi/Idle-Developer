@@ -16,11 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Idle.DataAccess\Idle.DataAccess.csproj" />
+    <Folder Include="Migrators\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrators\" />
+    <ProjectReference Include="..\..\Idle.DataAccess\Idle.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
