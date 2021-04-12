@@ -20,6 +20,9 @@ namespace Idle.DataAccess.Repositories
 		public Task<LanguageBase> GetOrDefaultAsync(int id) =>
 			Connection.Table<LanguageBase>().FirstOrDefaultAsync(model => model.ID == id);
 
+		public Task<LanguageBase> GetOrDefaultAsync(string name) =>
+			Connection.Table<LanguageBase>().FirstOrDefaultAsync(model => model.Name == name);
+
 		public Task<int> InsertAllAsync(IEnumerable<LanguageBase> models) =>
 			Connection.InsertAllAsync(models, true);
 
