@@ -36,7 +36,7 @@ namespace Idle.Logic.ModelViewModels
             get { return _xp; } 
             private set 
             {
-            _xp = value;
+                _xp = value;
 
             //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
             //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
@@ -57,7 +57,7 @@ namespace Idle.Logic.ModelViewModels
             get { return _level; } 
             private set 
             {
-                _level = value;
+                SetProperty(ref _level, value);
 
                 //I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
                 if (value > 10) { Grade = "D"; }
@@ -67,13 +67,15 @@ namespace Idle.Logic.ModelViewModels
                 if (value > 50) { Grade = "S"; }
                 if (value > 100) { Grade = "S+"; }
                 if (value > 200) { Grade = "S++"; }
-
-                OnPropertyChanged(nameof(Level));
             } 
         }
 
         private string _grade = "F";
-        public string Grade { get { return _grade; } private set { _grade = value; OnPropertyChanged(nameof(Grade)); } }
+        public string Grade 
+        {
+            get { return _grade; }
+            private set => SetProperty(ref _grade, value); 
+        }
 
 
         //Adds to XP based on the XPIncome property of the concretion
