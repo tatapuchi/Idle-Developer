@@ -21,7 +21,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Views", "src\Idle.View
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Framework", "src\Idle.Framework\Idle.Framework.csproj", "{9440FF3B-4CAC-49FD-AC38-DC0FC2C23089}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.DataAccess.Tests", "Idle.DataAccess.Tests\Idle.DataAccess.Tests.csproj", "{8E299D02-57BF-4E69-ABC7-8A0D91F467B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.DataAccess.Tests", "src\Tests\Idle.DataAccess.Tests\Idle.DataAccess.Tests.csproj", "{8E299D02-57BF-4E69-ABC7-8A0D91F467B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB60C17E-92F9-4A38-A51C-6DF1754C7489}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

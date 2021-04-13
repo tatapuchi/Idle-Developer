@@ -28,7 +28,7 @@ namespace Idle.DataAccess.Tests.Repositories
 			var insertedCount = await repo.InsertAsync(lang);
 
 			// assert
-			var count = await repo.Connection.Table<LanguageBase>().CountAsync();
+			var count = await repo.Connection.Table<Language>().CountAsync();
 			count.ShouldBe(1);
 			insertedCount.ShouldBe(1);
 
@@ -46,7 +46,7 @@ namespace Idle.DataAccess.Tests.Repositories
 			var addedCount = await repo.InsertAllAsync(langs);
 
 			// assert
-			var count = await repo.Connection.Table<LanguageBase>().CountAsync();
+			var count = await repo.Connection.Table<Language>().CountAsync();
 			count.ShouldBe(3);
 			addedCount.ShouldBe(3);
 
@@ -99,7 +99,7 @@ namespace Idle.DataAccess.Tests.Repositories
 			var updatedCount = await repo.UpdateAsync(lang);
 
 			// assert
-			var updatedLang = await repo.Connection.Table<LanguageBase>().FirstAsync();
+			var updatedLang = await repo.Connection.Table<Language>().FirstAsync();
 			updatedLang.XP.ShouldBe(1337);
 			updatedCount.ShouldBe(1);
 		}
@@ -117,11 +117,11 @@ namespace Idle.DataAccess.Tests.Repositories
 			var removedCount = await repo.RemoveAsync(toBeRemoved);
 
 			// assert
-			var count = await repo.Connection.Table<LanguageBase>().CountAsync();
+			var count = await repo.Connection.Table<Language>().CountAsync();
 			count.ShouldBe(2);
 			removedCount.ShouldBe(1);
 			
-			var itemsInTable = await repo.Connection.Table<LanguageBase>().ToListAsync();
+			var itemsInTable = await repo.Connection.Table<Language>().ToListAsync();
 			itemsInTable.ShouldNotContain(toBeRemoved);
 
 		}
@@ -144,7 +144,7 @@ namespace Idle.DataAccess.Tests.Repositories
 		private async Task<LanguageRepository> SetupAsync()
 		{
 			var repo = new LanguageRepository(":memory:");
-			await repo.Connection.CreateTableAsync<LanguageBase>();
+			await repo.Connection.CreateTableAsync<Language>();
 			return repo;
 		}
 

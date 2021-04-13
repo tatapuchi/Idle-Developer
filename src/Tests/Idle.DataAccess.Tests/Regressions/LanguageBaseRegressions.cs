@@ -23,11 +23,11 @@ namespace Idle.DataAccess.Tests.Regressions
 
 			try
 			{
-				var assembly = typeof(LanguageBase).Assembly;
+				var assembly = typeof(Language).Assembly;
 				var types = assembly.GetTypes();
-				var concreteLanguageTypes = types.Where(t => t.IsClass && t.IsSubclassOf(typeof(LanguageBase)));
+				var concreteLanguageTypes = types.Where(t => t.IsClass && t.IsSubclassOf(typeof(Language)));
 
-				var languages = concreteLanguageTypes.Select(t => (LanguageBase)Activator.CreateInstance(t));
+				var languages = concreteLanguageTypes.Select(t => (Language)Activator.CreateInstance(t));
 
 				foreach (var lang in languages)
 				{
@@ -36,8 +36,6 @@ namespace Idle.DataAccess.Tests.Regressions
 					var diff = lang.Difficulty;
 					var xpCost = lang.XPCost;
 					var xpIncome = lang.XPIncome;
-
-
 
 					if (string.IsNullOrEmpty(name)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(desc)) { throw new Exception(); }

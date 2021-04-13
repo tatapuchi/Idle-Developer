@@ -23,14 +23,19 @@ namespace Idle.DataAccess.Migrators
 			_connection = new SQLiteConnection(path);
 		}
 
-		public void Migrate()
+		// call base when overriding
+		public virtual void Migrate()
 		{
-			if (DoesTableExist()) return; 
-
-			Connection.CreateTable<TModel>();
+			#if DEBUG
+				Connection.DropTable<TModel>();
+			#endif
+			if (!DoesTableExist())
+			{
+				Connection.CreateTable<TModel>();
+			}
 		}
 
-		// Template method petter (used with property intead of method)
+		// Template method pettern (used with property intead of method)
 		protected abstract string TableName { get; }
 
 		internal bool DoesTableExist()
