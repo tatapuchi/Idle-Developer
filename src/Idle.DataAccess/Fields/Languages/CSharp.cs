@@ -7,7 +7,7 @@ using System.Text;
 namespace Idle.DataAccess.Fields.Languages
 {
     [Table(TableNames.Languages)]
-    public class CSharp : LanguageBase
+    public class CSharp : Language
     {
         public CSharp()
         {

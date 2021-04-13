@@ -7,7 +7,7 @@ using System.Text;
 namespace Idle.DataAccess.Fields.Languages
 {
     [Table(TableNames.Languages)]
-    public class Kotlin : LanguageBase
+    public class Kotlin : Language
     {
         public Kotlin()
         {

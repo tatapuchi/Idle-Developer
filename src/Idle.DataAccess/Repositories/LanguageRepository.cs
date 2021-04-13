@@ -7,32 +7,32 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-	public class LanguageRepository : RepositoryBase, IRepository<LanguageBase>
+	public class LanguageRepository : RepositoryBase, IRepository<Language>
 	{
 
 		public LanguageRepository(){ }
 
 		public LanguageRepository(string path) : base(path){ }
 
-		public async Task<IEnumerable<LanguageBase>> GetAllAsync() =>
-			await Connection.Table<LanguageBase>().ToListAsync();
+		public async Task<IEnumerable<Language>> GetAllAsync() =>
+			await Connection.Table<Language>().ToListAsync();
 
-		public Task<LanguageBase> GetOrDefaultAsync(int id) =>
-			Connection.Table<LanguageBase>().FirstOrDefaultAsync(model => model.ID == id);
+		public Task<Language> GetOrDefaultAsync(int id) =>
+			Connection.Table<Language>().FirstOrDefaultAsync(model => model.ID == id);
 
-		public Task<LanguageBase> GetOrDefaultAsync(string name) =>
-			Connection.Table<LanguageBase>().FirstOrDefaultAsync(model => model.Name == name);
+		public Task<Language> GetOrDefaultAsync(string name) =>
+			Connection.Table<Language>().FirstOrDefaultAsync(model => model.Name == name);
 
-		public Task<int> InsertAllAsync(IEnumerable<LanguageBase> models) =>
+		public Task<int> InsertAllAsync(IEnumerable<Language> models) =>
 			Connection.InsertAllAsync(models, true);
 
-		public Task<int> InsertAsync(LanguageBase model) =>
+		public Task<int> InsertAsync(Language model) =>
 			Connection.InsertAsync(model);
 
-		public Task<int> RemoveAsync(LanguageBase model) =>
+		public Task<int> RemoveAsync(Language model) =>
 			Connection.DeleteAsync(model);
 
-		public Task<int> UpdateAsync(LanguageBase model) => 
+		public Task<int> UpdateAsync(Language model) => 
 			Connection.UpdateAsync(model);
 
 	}

@@ -10,9 +10,9 @@ namespace Idle.Logic.ModelViewModels
 {
     public class LanguageViewModel : BaseViewModel
     {
-        private readonly LanguageBase _language;
+        private readonly Language _language;
 
-        public LanguageViewModel(LanguageBase language)
+        public LanguageViewModel(Language language)
         {
             _language = language;
 

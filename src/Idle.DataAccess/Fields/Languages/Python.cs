@@ -7,7 +7,7 @@ using System.Text;
 namespace Idle.DataAccess.Fields.Languages
 {
     [Table(TableNames.Languages)]
-    public class Python : LanguageBase
+    public class Python : Language
     {
         public Python()
         {

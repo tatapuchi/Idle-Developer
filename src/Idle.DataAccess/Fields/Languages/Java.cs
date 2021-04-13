@@ -7,7 +7,7 @@ using System.Text;
 namespace Idle.DataAccess.Fields.Languages
 {
     [Table(TableNames.Languages)]
-    public class Java : LanguageBase
+    public class Java : Language
     {
         public Java()
         {

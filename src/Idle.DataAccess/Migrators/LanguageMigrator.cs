@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Idle.DataAccess.Migrators
 {
-	public class LanguageMigrator : MigratorBase<LanguageBase>
+	public class LanguageMigrator : MigratorBase<Language>
 	{
 		public LanguageMigrator() { }
 		// For testing
@@ -18,14 +18,14 @@ namespace Idle.DataAccess.Migrators
 		{
 			base.Migrate();
 
-			var languages = new List<LanguageBase>() { new CSharp(), new Java(), new Kotlin() };
+			var languages = new List<Language>() { new CSharp(), new Java(), new Kotlin() };
 			InsertIfNotExisting(languages);
 			
 		}
 
-		private void InsertIfNotExisting(IEnumerable<LanguageBase> languages)
+		private void InsertIfNotExisting(IEnumerable<Language> languages)
 		{
-			var existingLanguages = Connection.Table<LanguageBase>().ToList();
+			var existingLanguages = Connection.Table<Language>().ToList();
 			var toBeAdded = languages.Except(existingLanguages).ToList();
 
 			if (toBeAdded.Count == 0)
