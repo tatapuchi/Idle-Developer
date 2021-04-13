@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 //Chewy-Regular font
-[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
+//[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
 
 namespace Idle
 {

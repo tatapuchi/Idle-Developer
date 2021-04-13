@@ -2,6 +2,7 @@
 using Idle.DataAccess.Fields;
 using Idle.DataAccess.Fields.Languages;
 using SQLite;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Idle.DataAccess.Migrators
@@ -24,11 +25,15 @@ namespace Idle.DataAccess.Migrators
 
 		private void InsertIfNotExisting(IEnumerable<LanguageBase> languages)
 		{
-			foreach (var item in languages)
+			var existingLanguages = Connection.Table<LanguageBase>().ToList();
+			var toBeAdded = languages.Except(existingLanguages).ToList();
+
+			if (toBeAdded.Count == 0)
+				return;
+
+			foreach (var language in toBeAdded)
 			{
-				string name = item.Name;
-				if (Connection.Table<LanguageBase>().Count(model => model.Name == item.Name) == 0)
-					Connection.Insert(item);
+				Connection.Insert(language);
 			}
 			
 		}

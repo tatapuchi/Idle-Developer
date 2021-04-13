@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
+             xmlns:modelViewModels="clr-namespace:Idle.Logic.ModelViewModels;assembly=Idle.Logic"
              x:Class="Idle.Views.LanguagesPage"
              x:DataType="viewModels:LanguagesViewModel">
 
@@ -9,14 +10,14 @@
             ItemsSource="{Binding Languages}"
             CachingStrategy="RecycleElement">
         <ListView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
                 <ViewCell>
                     <StackLayout Margin="36">
                         <Frame>
                             <StackLayout Margin="8">
-                                <Label Text="Name"/>
-                                <Label Text="Description"/>
-                                <Label Text="Grade"/>
+                                <Label Text="{Binding Name}"/>
+                                <Label Text="{Binding Description}"/>
+                                <Label Text="{Binding Grade}"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
