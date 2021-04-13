@@ -28,7 +28,7 @@ namespace Idle
             var languageMigrator = new LanguageMigrator();
             languageMigrator.Migrate();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
 
         }
 

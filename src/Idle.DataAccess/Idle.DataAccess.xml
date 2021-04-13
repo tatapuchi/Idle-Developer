@@ -39,41 +39,6 @@
             Nightmare difficulty, examples include x86 assembly
             </summary>
         </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.Name">
-            <summary>
-            Name of the language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.Description">
-            <summary>
-            Description of the language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.Difficulty">
-            <summary>
-            Difficulty of the language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.XP">
-            <summary>
-            XP in this language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.Level">
-            <summary>
-            Level in this language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.Grade">
-            <summary>
-            Grade in this language
-            </summary>
-        </member>
-        <member name="P:Idle.DataAccess.Fields.LanguageBase.XPCost">
-            <summary>
-            Cost of this language
-            </summary>
-        </member>
         <member name="T:Idle.DataAccess.ICoinCost">
             <summary>
             An interface that defines the cost of something in coins

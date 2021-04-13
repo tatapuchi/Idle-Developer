@@ -8,18 +8,15 @@
 
     <ListView x:Name="MyListView"
             ItemsSource="{Binding Languages}"
-            CachingStrategy="RecycleElement">
+            CachingStrategy="RecycleElement"
+            HasUnevenRows="True">
         <ListView.ItemTemplate>
             <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
                 <ViewCell>
-                    <StackLayout Margin="36">
-                        <Frame>
-                            <StackLayout Margin="8">
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Description}"/>
-                                <Label Text="{Binding Grade}"/>
-                            </StackLayout>
-                        </Frame>
+                    <StackLayout>
+                        <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
+                        <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
+                        <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>
