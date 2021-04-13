@@ -26,13 +26,16 @@ namespace Idle.DataAccess.Migrators
 		// call base when overriding
 		public virtual void Migrate()
 		{
+			#if DEBUG
+				Connection.DropTable<TModel>();
+			#endif
 			if (!DoesTableExist())
 			{
 				Connection.CreateTable<TModel>();
 			}
 		}
 
-		// Template method petter (used with property intead of method)
+		// Template method pettern (used with property intead of method)
 		protected abstract string TableName { get; }
 
 		internal bool DoesTableExist()
