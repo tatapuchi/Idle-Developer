@@ -26,6 +26,7 @@ namespace Idle.DataAccess.Migrators
 		{
 			foreach (var item in languages)
 			{
+				string name = item.Name;
 				if (Connection.Table<LanguageBase>().Count(model => model.Name == item.Name) == 0)
 					Connection.Insert(item);
 			}

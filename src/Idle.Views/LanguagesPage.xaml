@@ -14,9 +14,9 @@
                     <StackLayout Margin="36">
                         <Frame>
                             <StackLayout Margin="8">
-                                <Label Text="{Binding Name}"/>
-                                <Label Text="{Binding Description}"/>
-                                <Label Text="{Binding Grade}"/>
+                                <Label Text="Name"/>
+                                <Label Text="Description"/>
+                                <Label Text="Grade"/>
                             </StackLayout>
                         </Frame>
                     </StackLayout>
