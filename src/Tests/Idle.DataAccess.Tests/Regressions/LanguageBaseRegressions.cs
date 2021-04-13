@@ -37,8 +37,6 @@ namespace Idle.DataAccess.Tests.Regressions
 					var xpCost = lang.XPCost;
 					var xpIncome = lang.XPIncome;
 
-
-
 					if (string.IsNullOrEmpty(name)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(desc)) { throw new Exception(); }
 					if (diff == Common.Difficulty.None) { throw new Exception(); }
