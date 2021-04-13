@@ -16,6 +16,7 @@ namespace Idle.Views
 		{
 			InitializeComponent();
 
+
 		}
 
 	}
