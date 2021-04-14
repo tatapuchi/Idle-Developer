@@ -12,7 +12,7 @@ namespace Idle.DataAccess.Fields.Languages
         public CSharp()
         {
         }
-
+        public override string ImagePath => "Idle.Common.Images.Languages.Csharp.png";
         public override string Name => "C#";
 
         public override string Description => "Alternatively known as D flat, used to make games such as terraria and many more. A general purpose language, used basically everywhere, its C#.";

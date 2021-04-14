@@ -14,6 +14,8 @@
             <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
                 <ViewCell>
                     <StackLayout>
+                        <!--Change in a bit-->
+                        <Image x:Name="LanguageIcon" Source="{Binding ImagePath}" />
                         <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
                         <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
                         <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>

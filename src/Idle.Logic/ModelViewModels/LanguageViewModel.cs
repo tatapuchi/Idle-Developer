@@ -16,6 +16,9 @@ namespace Idle.Logic.ModelViewModels
         {
             _language = language;
 
+
+            ImagePath = language.ImagePath;
+
             Name = language.Name;
             Description = language.Description;
             Difficulty = language.Difficulty;
@@ -23,6 +26,7 @@ namespace Idle.Logic.ModelViewModels
             XPIncome = language.XPIncome;
         }
         
+        public string ImagePath { get;}
         public string Name { get; }
         public string Description { get; }
         public Difficulty Difficulty { get; }

@@ -13,6 +13,7 @@ namespace Idle.DataAccess.Fields.Languages
         {
         }
 
+        public override string ImagePath => "Idle.Common.Images.Languages.Kotlin.png";
         public override string Name => "Kotlin";
 
         public override string Description => "ander roid";
