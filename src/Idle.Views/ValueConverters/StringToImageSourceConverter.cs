@@ -12,7 +12,7 @@ namespace Idle.Views.ValueConverters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var imagesAssembly = typeof(Idle.Framework.AssemblyInfo).GetTypeInfo().Assembly;
+            var imagesAssembly = typeof(Idle.Resources.AssemblyInfo).GetTypeInfo().Assembly;
             var imageSource = ImageSource.FromResource((string) value, imagesAssembly);
 
             return imageSource;
