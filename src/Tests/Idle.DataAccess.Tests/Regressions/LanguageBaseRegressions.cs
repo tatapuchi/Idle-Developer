@@ -31,12 +31,15 @@ namespace Idle.DataAccess.Tests.Regressions
 
 				foreach (var lang in languages)
 				{
+					var imagePath = lang.ImagePath;
 					var name = lang.Name;
 					var desc = lang.Description;
 					var diff = lang.Difficulty;
 					var xpCost = lang.XPCost;
 					var xpIncome = lang.XPIncome;
 
+
+					if (string.IsNullOrEmpty(imagePath)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(name)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(desc)) { throw new Exception(); }
 					if (diff == Common.Difficulty.None) { throw new Exception(); }

@@ -5,7 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Languages\" />
+    <None Remove="Images\Languages\Csharp.png" />
+    <None Remove="Images\Languages\Kotlin.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Languages\Csharp.png" />
+    <EmbeddedResource Include="Images\Languages\Kotlin.png" />
   </ItemGroup>
 
 </Project>

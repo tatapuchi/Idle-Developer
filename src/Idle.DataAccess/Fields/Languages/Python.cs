@@ -12,7 +12,7 @@ namespace Idle.DataAccess.Fields.Languages
         public Python()
         {
         }
-
+        public override string ImagePath => "Idle.Framework.Images.Languages.Csharp.png";
         public override string Name => "Python";
 
         public override string Description => "snek";

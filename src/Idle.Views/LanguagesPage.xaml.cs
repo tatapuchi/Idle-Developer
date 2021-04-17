@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Idle.Views.ValueConverters;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -15,7 +17,6 @@ namespace Idle.Views
 		public LanguagesPage()
 		{
 			InitializeComponent();
-
 		}
 
 	}

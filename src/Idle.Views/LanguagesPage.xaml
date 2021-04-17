@@ -2,24 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
-             xmlns:modelViewModels="clr-namespace:Idle.Logic.ModelViewModels;assembly=Idle.Logic"
+             xmlns:modelViewModels="clr-namespace:Idle.Logic.ModelViewModels;assembly=Idle.Logic" 
+             xmlns:converters="clr-namespace:Idle.Views.ValueConverters"
              x:Class="Idle.Views.LanguagesPage"
              x:DataType="viewModels:LanguagesViewModel">
 
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StringToImageSourceConverter x:Key="stringToImageSource" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ListView x:Name="MyListView"
             ItemsSource="{Binding Languages}"
             CachingStrategy="RecycleElement"
             HasUnevenRows="True">
-        <ListView.ItemTemplate>
-            <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
-                <ViewCell>
-                    <StackLayout>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
+                    <ViewCell>
+                        <StackLayout>
+                            <!--For whatever reason, this does not want to work-->
+                        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}"/>
                         <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
-                        <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
-                        <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                            <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
+                            <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
 </ContentPage>
