@@ -21,13 +21,21 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
                     <ViewCell>
-                        <StackLayout>
-                            <!--For whatever reason, this does not want to work-->
-                        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}"/>
-                        <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
-                            <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
-                            <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
-                        </StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Grid.Column="0"
+                                Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}"/>
+
+                            <StackLayout Grid.Column="1">
+                                <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
+                                <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
+                            </StackLayout>
+                        </Grid>                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
