@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Idle.Framework\Idle.Framework.csproj" />
+    <ProjectReference Include="..\Idle.Framework\Idle.Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
