@@ -12,7 +12,7 @@ namespace Idle.DataAccess.Fields.Languages
         public Kotlin()
         {
         }
-        public override string ImagePath => "Idle.Framework.Images.Languages.Kotlin.png";
+        public override string ImagePath => "Idle.Resources.Images.Languages.Kotlin.png";
         public override string Name => "Kotlin";
 
         public override string Description => "ander roid";
