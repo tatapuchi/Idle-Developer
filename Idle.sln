@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Logic", "src\Idle.Logi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Views", "src\Idle.Views\Idle.Views.csproj", "{BE1E9528-772F-433F-B67E-49F9DD7577F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Resources", "src\Idle.Framework\Idle.Resources.csproj", "{9440FF3B-4CAC-49FD-AC38-DC0FC2C23089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.Resources", "src\Idle.Resources\Idle.Resources.csproj", "{9440FF3B-4CAC-49FD-AC38-DC0FC2C23089}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idle.DataAccess.Tests", "src\Tests\Idle.DataAccess.Tests\Idle.DataAccess.Tests.csproj", "{8E299D02-57BF-4E69-ABC7-8A0D91F467B9}"
 EndProject
