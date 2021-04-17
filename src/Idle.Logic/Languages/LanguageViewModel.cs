@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Logic.ModelViewModels
+namespace Idle.Logic.Languages
 {
     public class LanguageViewModel : BaseViewModel
     {
