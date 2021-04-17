@@ -1,5 +1,5 @@
 ﻿using Idle.DataAccess.Repositories;
-using Idle.Logic.ViewModels;
+using Idle.Logic.Languages;
 using Idle.Views;
 using System;
 using System.Collections.Generic;

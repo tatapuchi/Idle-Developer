@@ -1,5 +1,4 @@
 ﻿using Idle.DataAccess.Repositories;
-using Idle.Logic.ModelViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
 
-namespace Idle.Logic.ViewModels
+namespace Idle.Logic.Languages
 {
 	public class LanguagesViewModel : BaseViewModel
 	{

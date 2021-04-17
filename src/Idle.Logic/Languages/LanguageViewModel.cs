@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Logic.ModelViewModels
+namespace Idle.Logic.Languages
 {
     public class LanguageViewModel : BaseViewModel
     {
@@ -16,13 +16,16 @@ namespace Idle.Logic.ModelViewModels
         {
             _language = language;
 
+            ImagePath = language.ImagePath;
+
             Name = language.Name;
             Description = language.Description;
             Difficulty = language.Difficulty;
             XPCost = language.XPCost;
             XPIncome = language.XPIncome;
         }
-        
+
+        public string ImagePath { get; }
         public string Name { get; }
         public string Description { get; }
         public Difficulty Difficulty { get; }

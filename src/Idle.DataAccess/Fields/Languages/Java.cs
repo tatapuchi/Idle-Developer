@@ -13,6 +13,7 @@ namespace Idle.DataAccess.Fields.Languages
         {
         }
 
+        public override string ImagePath => "Idle.Framework.Images.Languages.Csharp.png";
         public override string Name => "Java";
 
         public override string Description => "le coffee";
