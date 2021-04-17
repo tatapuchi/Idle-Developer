@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
-             xmlns:modelViewModels="clr-namespace:Idle.Logic.ModelViewModels;assembly=Idle.Logic" 
+             xmlns:languages="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
              xmlns:converters="clr-namespace:Idle.Views.ValueConverters"
              x:Class="Idle.Views.LanguagesPage"
-             x:DataType="viewModels:LanguagesViewModel">
+             x:DataType="languages:LanguagesViewModel">
 
 
     <ContentPage.Resources>
@@ -19,7 +18,7 @@
             CachingStrategy="RecycleElement"
             HasUnevenRows="True">
             <ListView.ItemTemplate>
-                <DataTemplate x:DataType="modelViewModels:LanguageViewModel">
+                <DataTemplate x:DataType="languages:LanguageViewModel">
                     <ViewCell>
                         <StackLayout>
                             <!--For whatever reason, this does not want to work-->
