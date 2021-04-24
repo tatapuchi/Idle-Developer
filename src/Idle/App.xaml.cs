@@ -1,12 +1,12 @@
 ﻿
 using Idle.DataAccess;
 using Idle.DataAccess.Migrators;
-using Idle.ResourceAccess;
 using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Idle.Resources;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -29,8 +29,8 @@ namespace Idle
             var languageMigrator = new LanguageMigrator();
             languageMigrator.Migrate();
 
-            var fileSystemMigrator = new FileSystemMigrator();
-            fileSystemMigrator.Migrate();
+            var resourceAccessMigrator = new ResourcesMigarator(new DirectoryMigrator(), new ImagesMigrator(new LanguageImagesProvider()));
+            resourceAccessMigrator.Migrate();
 
             MainPage = new NavigationPage(new MainPage());
 

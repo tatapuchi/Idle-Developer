@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Idle.Resources
 {
-	// pls dont delete this class we use this like "typeof(AssemblyInfo).GetAssembly()"
+	[Obsolete]
 	public class AssemblyInfo
 	{
 	}

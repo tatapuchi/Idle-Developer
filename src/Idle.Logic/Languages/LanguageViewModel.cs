@@ -11,14 +11,9 @@ namespace Idle.Logic.Languages
 {
     public class LanguageViewModel : BaseViewModel
     {
-        internal readonly Language _language;
-
         public LanguageViewModel(Language language)
         {
-            _language = language;
-
-            ImagePath = language.ImagePath;
-
+            Model = language;
             Name = language.Name;
             Description = language.Description;
             Difficulty = language.Difficulty;
@@ -26,7 +21,7 @@ namespace Idle.Logic.Languages
             XPIncome = language.XPIncome;
         }
 
-        public string ImagePath { get; }
+        public Language Model { get; }
         public string Name { get; }
         public string Description { get; }
         public Difficulty Difficulty { get; }

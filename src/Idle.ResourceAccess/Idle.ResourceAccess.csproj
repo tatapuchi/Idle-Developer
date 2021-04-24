@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Idle.Models\Idle.Models.csproj" />
     <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
   </ItemGroup>
 

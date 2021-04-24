@@ -14,4 +14,8 @@
     <EmbeddedResource Include="Images\Languages\Kotlin.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Idle.Models\Idle.Models.csproj" />
+  </ItemGroup>
+
 </Project>

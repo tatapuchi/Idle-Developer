@@ -31,7 +31,7 @@ namespace Idle.Logic.Languages
 
 		public Task<int> PushAsync()
 		{
-			var languages = Languages.Select(vm => vm._language);
+			var languages = Languages.Select(vm => vm.Model);
 			return _languageRepository.UpdateAllAsync(languages);
 		}
 
