@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
+using Idle.DataAccess.Fields;
 
 namespace Idle.Logic.Languages
 {
@@ -28,5 +29,17 @@ namespace Idle.Logic.Languages
 			Languages.AddRange(languageViewModels);
 
 		}
+
+		public async Task PushAsync()
+		{
+			var languages = new List<Language>();
+			foreach(LanguageViewModel vm in Languages)
+            {
+				languages.Add(vm._language);
+            }
+
+			await _languageRepository.UpdateAllAsync(languages);
+		}
+
 	}
 }
