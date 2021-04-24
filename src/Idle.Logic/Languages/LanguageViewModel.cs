@@ -1,7 +1,8 @@
 ﻿using Idle.DataAccess.Common;
-using Idle.DataAccess.Fields;
 using Idle.DataAccess.Migrators;
 using Idle.DataAccess.Repositories;
+using Idle.Models.Common;
+using Idle.Models.Fields;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,10 +1,12 @@
-﻿using Idle.DataAccess.Common;
+﻿
+using Idle.Models;
+using Idle.Models.Common;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess.Fields
+namespace Idle.Models.Fields
 {
     [Table(TableNames.Languages)]
     public class Language : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome

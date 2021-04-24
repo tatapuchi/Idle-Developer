@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess.Common
+namespace Idle.Models.Common
 {
     /// <summary>
     /// An enum defining the different levels of difficulty

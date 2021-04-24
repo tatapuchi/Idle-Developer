@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess
+namespace Idle.Models
 {
     /// <summary>
     /// An interface that defines the cost of something in XP

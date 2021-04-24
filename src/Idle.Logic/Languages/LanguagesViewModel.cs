@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
-using Idle.DataAccess.Fields;
 
 namespace Idle.Logic.Languages
 {

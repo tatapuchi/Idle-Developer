@@ -1,9 +1,10 @@
 ﻿using Idle.DataAccess.Common;
-using Idle.DataAccess.Fields;
-using Idle.DataAccess.Fields.Languages;
 using SQLite;
 using System.Linq;
 using System.Collections.Generic;
+using Idle.Models.Fields;
+using Idle.Models.Fields.Languages;
+using Idle.Models.Common;
 
 namespace Idle.DataAccess.Migrators
 {

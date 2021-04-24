@@ -1,4 +1,5 @@
-﻿using Idle.DataAccess.Fields;
+﻿using Idle.Models.Common;
+using Idle.Models.Fields;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
@@ -42,7 +43,7 @@ namespace Idle.DataAccess.Tests.Regressions
 					if (string.IsNullOrEmpty(imagePath)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(name)) { throw new Exception(); }
 					if (string.IsNullOrEmpty(desc)) { throw new Exception(); }
-					if (diff == Common.Difficulty.None) { throw new Exception(); }
+					if (diff == Difficulty.None) { throw new Exception(); }
 					if (xpCost == 0) { throw new Exception(); }
 					if (xpIncome == 0) { throw new Exception(); }
 
