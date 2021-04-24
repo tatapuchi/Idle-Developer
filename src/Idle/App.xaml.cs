@@ -1,6 +1,7 @@
 ﻿
 using Idle.DataAccess;
 using Idle.DataAccess.Migrators;
+using Idle.ResourceAccess;
 using System;
 using System.Collections.Generic;
 using Xamarin.Essentials;
@@ -27,6 +28,9 @@ namespace Idle
         {
             var languageMigrator = new LanguageMigrator();
             languageMigrator.Migrate();
+
+            var fileSystemMigrator = new FileSystemMigrator();
+            fileSystemMigrator.Migrate();
 
             MainPage = new NavigationPage(new MainPage());
 
