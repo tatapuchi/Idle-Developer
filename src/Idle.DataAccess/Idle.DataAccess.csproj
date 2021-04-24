@@ -10,15 +10,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Player\**" />
+    <EmbeddedResource Remove="Player\**" />
+    <None Remove="Player\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Player\" />
   </ItemGroup>
 
 </Project>
