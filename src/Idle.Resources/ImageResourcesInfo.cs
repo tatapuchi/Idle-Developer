@@ -30,23 +30,32 @@ namespace Idle.Resources
 	{
 		private const string Images = Constants.AssemblyName + "Images.";
 		private const string languages = Images + "Languages.";
+
 		private const string cSharp = languages + "Csharp.png";
 		private const string kotlin = languages + "Kotlin.png";
 
-		public Dictionary<Type, ResourceNameAndPath> ResoucesAndPaths { get; } = new Dictionary<Type, ResourceNameAndPath>()
+		public Dictionary<Type, ResourceInfo> ResoucesAndPaths { get; } = new Dictionary<Type, ResourceInfo>()
 		{
-			[typeof(CSharp)] = new ResourceNameAndPath(cSharp, Path.Combine(Paths.LanguageImagesPath, cSharp)),
-			[typeof(Kotlin)] = new ResourceNameAndPath(cSharp, Path.Combine(Paths.LanguageImagesPath, kotlin))
+			[typeof(CSharp)] = new ResourceInfo(cSharp, Path.Combine(Paths.LanguageImagesPath, cSharp)),
+			[typeof(Kotlin)] = new ResourceInfo(kotlin, Path.Combine(Paths.LanguageImagesPath, kotlin)),
 		};
+
+		public ResourceInfo GetResourceInfoOrFallback(Type type)
+		{
+			if(ResoucesAndPaths.TryGetValue(type, out var result)) return result;
+
+			return new ResourceInfo("FallBack", "todo");
+		}
+
 		
 	}
 
-	public class ResourceNameAndPath
+	public class ResourceInfo
 	{
 		public string ResourceName { get; }
 		public string ResourcePath { get; }
 
-		public ResourceNameAndPath(string resouceName, string resourcePath)
+		public ResourceInfo(string resouceName, string resourcePath)
 		{
 			ResourceName = resouceName;
 			ResourcePath = resourcePath;
@@ -75,14 +84,20 @@ namespace Idle.Resources
 			foreach (var resourceMap in resourcesMapping)
 			{
 				var resourcePath = resourceMap.Value.ResourcePath;
+				#if DEBUG
+					if (File.Exists(resourcePath))
+						File.Delete(resourcePath);
+				#endif
+
+				
 				if (File.Exists(resourcePath)) continue;
 
 				var resourceName = resourceMap.Value.ResourceName;
 				var resourcesAssembly = Assembly.GetExecutingAssembly();
 
-#if DEBUG
-				var resources = resourcesAssembly.GetManifestResourceNames();
-#endif
+				#if DEBUG
+					var resources = resourcesAssembly.GetManifestResourceNames();
+				#endif
 
 				using var resourceStream = resourcesAssembly.GetManifestResourceStream(resourceName);
 				using var fileStream = File.Create(resourcePath);

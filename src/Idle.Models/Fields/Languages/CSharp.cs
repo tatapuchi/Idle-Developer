@@ -9,10 +9,7 @@ namespace Idle.Models.Fields.Languages
     [Table(TableNames.Languages)]
     public class CSharp : Language
     {
-        public CSharp()
-        {
-        }
-        public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
+        //public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
 
         public override string Name => "C#";
 

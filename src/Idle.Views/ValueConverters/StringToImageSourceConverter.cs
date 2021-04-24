@@ -19,11 +19,9 @@ namespace Idle.Views.ValueConverters
             //var imagesAssembly = typeof(Idle.Resources.AssemblyInfo).GetTypeInfo().Assembly;
             //var imageSource = ImageSource.FromResource((string) value, imagesAssembly);
             var vm = (LanguageViewModel)value;
-            var model = vm.Model;
-            var modelType = model.GetType();
-            var imagePath = _languageImagesProvider.ResoucesAndPaths[modelType].ResourcePath;
+            var imagePath = vm.ImagePath;
 
-            var imageSource = ImageSource.FromResource(imagePath);
+            var imageSource = ImageSource.FromFile(imagePath);
 
             return imageSource;
         }
