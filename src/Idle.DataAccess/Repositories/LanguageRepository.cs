@@ -32,7 +32,10 @@ namespace Idle.DataAccess.Repositories
 		public Task<int> RemoveAsync(Language model) =>
 			Connection.DeleteAsync(model);
 
-		public Task<int> UpdateAsync(Language model) => 
+		public Task<int> UpdateAllAsync(IEnumerable<Language> models) =>
+			Connection.UpdateAllAsync(models);
+
+        public Task<int> UpdateAsync(Language model) => 
 			Connection.UpdateAsync(model);
 
 	}
