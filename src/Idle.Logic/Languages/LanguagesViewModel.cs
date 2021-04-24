@@ -30,15 +30,10 @@ namespace Idle.Logic.Languages
 
 		}
 
-		public async Task PushAsync()
+		public Task<int> PushAsync()
 		{
-			var languages = new List<Language>();
-			foreach(LanguageViewModel vm in Languages)
-            {
-				languages.Add(vm._language);
-            }
-
-			await _languageRepository.UpdateAllAsync(languages);
+			var languages = Languages.Select(vm => vm._language);
+			return _languageRepository.UpdateAllAsync(languages);
 		}
 
 	}
