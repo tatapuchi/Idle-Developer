@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Idle.Resources.Common;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Idle.Resources
