@@ -5,13 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Fallback.png" />
     <None Remove="Images\Languages\Csharp.png" />
     <None Remove="Images\Languages\Fallback.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Fallback.png" />
     <EmbeddedResource Include="Images\Languages\Csharp.png" />
-    <EmbeddedResource Include="Images\Fallback.jpg" />
     <EmbeddedResource Include="Images\Languages\Kotlin.png" />
   </ItemGroup>
 
