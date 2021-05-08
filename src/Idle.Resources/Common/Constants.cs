@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Idle.Resources.Common
 {
 	internal static class Constants
 	{
-
-		internal const string AssemblyName = "Idle.Resources.";
+		internal static string AssemblyName { get; } = Assembly.GetAssembly(typeof(Constants)).GetName().Name;
 
 	}
 }

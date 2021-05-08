@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,12 +7,11 @@
   <ItemGroup>
     <None Remove="Images\Languages\Csharp.png" />
     <None Remove="Images\Languages\Fallback.jpg" />
-    <None Remove="Images\Languages\Kotlin.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Images\Languages\Csharp.png" />
-    <EmbeddedResource Include="Images\Languages\Fallback.jpg" />
+    <EmbeddedResource Include="Images\Fallback.jpg" />
     <EmbeddedResource Include="Images\Languages\Kotlin.png" />
   </ItemGroup>
 

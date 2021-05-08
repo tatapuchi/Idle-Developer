@@ -1,6 +1,7 @@
 ﻿using Idle.DataAccess.Common;
 using Idle.DataAccess.Migrators;
 using Idle.DataAccess.Repositories;
+using Idle.Logic.Common;
 using Idle.Models.Common;
 using Idle.Models.Fields;
 using System;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace Idle.Logic.Languages
 {
-    public class LanguageViewModel : BaseViewModel
+    public class LanguageViewModel : BaseViewModel, IImage
     {
         internal readonly Language _language;
 

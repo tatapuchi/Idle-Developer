@@ -26,17 +26,11 @@ namespace Idle
 
         protected override void OnStart()
         {
-            var languageImageProvider = new LanguageImagesProvider();
+            var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
 
             var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
-
-            var directoryMigrator = new DirectoryMigrator();
-            var imagesMigrator = new ImagesMigrator(languageImageProvider);
-
-            var resourceAccessMigrator = new ResourcesMigarator(directoryMigrator, imagesMigrator);
-            resourceAccessMigrator.Migrate();
 
             MainPage = new NavigationPage(new MainPage());
 

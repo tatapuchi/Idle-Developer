@@ -11,11 +11,11 @@ namespace Idle.DataAccess.Migrators
 {
 	public class LanguagesFactory
 	{
-		private readonly LanguageImagesProvider _languageImagesProvider;
+		private readonly ImagesProvider _imagesProvider;
 
-		public LanguagesFactory(LanguageImagesProvider languageImageProvider)
+		public LanguagesFactory(ImagesProvider imagesProvider)
 		{
-			_languageImagesProvider = languageImageProvider;
+			_imagesProvider = imagesProvider;
 		}
 
 		public IEnumerable<Language> CreateLanguages()
@@ -30,8 +30,8 @@ namespace Idle.DataAccess.Migrators
 		{
 			var language = new T();
 
-			var imageInfo = _languageImagesProvider.GetResourceInfoOrFallback(typeof(T));
-			language.ImagePath = imageInfo.ResourcePath;
+			var resourceName = _imagesProvider.GetResourceNameOrFallBack<T>();
+			language.ImagePath = resourceName;
 
 			return language;
 		}

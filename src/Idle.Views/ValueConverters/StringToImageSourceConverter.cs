@@ -1,27 +1,31 @@
-﻿using Idle.Logic.Languages;
+﻿using Idle.Logic.Common;
 using Idle.Resources;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Reflection;
-using System.Text;
+using System.IO;
 using Xamarin.Forms;
 
 namespace Idle.Views.ValueConverters
 {
     public class StringToImageSourceConverter : IValueConverter
     {
-        private static LanguageImagesProvider _languageImagesProvider = new LanguageImagesProvider();
+        private static ImagesProvider _imagesProvider = new ImagesProvider();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            //var imagesAssembly = typeof(Idle.Resources.AssemblyInfo).GetTypeInfo().Assembly;
-            //var imageSource = ImageSource.FromResource((string) value, imagesAssembly);
-            var vm = (LanguageViewModel)value;
-            var imagePath = vm.ImagePath;
+            var vm = value;
+            ImageSource imageSource;
 
-            var imageSource = ImageSource.FromFile(imagePath);
+            if(vm is IImage hasImage)
+            {
+                var imagePath = hasImage.ImagePath;
+                imageSource = ImageSource.FromStream(() => _imagesProvider.GetStream(imagePath));
+            }
+			else
+			{
+                // todo: use logging
+                imageSource = ImageSource.FromStream(() => new MemoryStream());
+			}
 
             return imageSource;
         }
