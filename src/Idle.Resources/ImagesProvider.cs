@@ -17,7 +17,7 @@ namespace Idle.Resources
 
 		// Images are grouped into folders // Generic images are placed in this folder directly
 		private static string _images { get; } = Constants.AssemblyName + ".Images.";
-		private static string _fallback { get; } = _images + "Fallback.jpg";
+		private static string _fallback { get; } = _images + "Fallback.png";
 
 		// All images which belong to the languages are below this line
 		private static string _languages { get; } = _images + "Languages.";
