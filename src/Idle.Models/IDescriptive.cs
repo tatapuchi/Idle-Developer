@@ -1,6 +1,6 @@
-﻿using Idle.DataAccess.Common;
+﻿using Idle.Models.Common;
 
-namespace Idle.DataAccess
+namespace Idle.Models
 {
     /// <summary>
     /// Interface that defines descriptive properties.

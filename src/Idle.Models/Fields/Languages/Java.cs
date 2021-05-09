@@ -1,10 +1,10 @@
-﻿using Idle.DataAccess.Common;
+﻿using Idle.Models.Common;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess.Fields.Languages
+namespace Idle.Models.Fields.Languages
 {
     [Table(TableNames.Languages)]
     public class Java : Language
@@ -13,7 +13,6 @@ namespace Idle.DataAccess.Fields.Languages
         {
         }
 
-        public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
         public override string Name => "Java";
 
         public override string Description => "le coffee";

@@ -33,6 +33,8 @@ namespace Idle
 			}
 		}
 
+        // todo: write a NavigationService which injects the dependenies
+        // the current implementation violates DI and Composition root pattern
         private async Task NavigateToLanguagesPageAsync()
 		{
             var languagesRepository = new LanguageRepository();

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Idle.Resources;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -25,7 +26,10 @@ namespace Idle
 
         protected override void OnStart()
         {
-            var languageMigrator = new LanguageMigrator();
+            var languageImageProvider = new ImagesProvider();
+            var languagesFactory = new LanguagesFactory(languageImageProvider);
+
+            var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
 
             MainPage = new NavigationPage(new MainPage());

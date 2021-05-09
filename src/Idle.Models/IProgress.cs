@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess
+namespace Idle.Models
 {
     /// <summary>
     /// Interface that defines properties for in game progression or levelling

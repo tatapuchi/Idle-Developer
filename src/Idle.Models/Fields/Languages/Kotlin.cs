@@ -1,10 +1,10 @@
-﻿using Idle.DataAccess.Common;
+﻿using Idle.Models.Common;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.DataAccess.Fields.Languages
+namespace Idle.Models.Fields.Languages
 {
     [Table(TableNames.Languages)]
     public class Kotlin : Language
@@ -12,7 +12,7 @@ namespace Idle.DataAccess.Fields.Languages
         public Kotlin()
         {
         }
-        public override string ImagePath => "Idle.Resources.Images.Languages.Kotlin.png";
+     
         public override string Name => "Kotlin";
 
         public override string Description => "ander roid";

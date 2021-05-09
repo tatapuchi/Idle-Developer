@@ -1,17 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Fallback.png" />
     <None Remove="Images\Languages\Csharp.png" />
-    <None Remove="Images\Languages\Kotlin.png" />
+    <None Remove="Images\Languages\Fallback.jpg" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Fallback.png" />
     <EmbeddedResource Include="Images\Languages\Csharp.png" />
     <EmbeddedResource Include="Images\Languages\Kotlin.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Idle.Models\Idle.Models.csproj" />
   </ItemGroup>
 
 </Project>
