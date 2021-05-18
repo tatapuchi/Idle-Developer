@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--Resource Dictionary containing our colours-->
+
+    <Color x:Key="LightGreen">#9FE2BF</Color>
+    <Color x:Key="Green">#40E0D0</Color>
+    <Color x:Key="Blue">#6495ED</Color>
+    <Color x:Key="LightPurple">#CCCCFF</Color>
+    <Color x:Key="Purple">#BF76D2</Color>
+    
+    
+    <Color x:Key="BrightGreen">#DFFF00</Color>
+    <Color x:Key="DarkOrange">#FFBF00</Color>
+    <Color x:Key="Orange">#FF7F50</Color>
+    <Color x:Key="Red">#DE3163</Color>
+    
+</ResourceDictionary>

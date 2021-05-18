@@ -2,42 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:languages="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
-             xmlns:converters="clr-namespace:Idle.Views.ValueConverters"
+             xmlns:Converters="clr-namespace:Idle.Views.ValueConverters"
              x:Class="Idle.Views.LanguagesPage"
              x:DataType="languages:LanguagesViewModel">
 
 
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:StringToImageSourceConverter x:Key="stringToImageSource" />
-        </ResourceDictionary>
+        
+        <ResourceDictionary Source="../Resources/Colours.xaml" />
+        
+        <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
+
+        <DataTemplate x:Key="LanguageDataTemplate">
+
+            <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12" Margin="36" >
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="3*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Image Scale="0.5" Grid.Column="0" Grid.Row="1" Source="{Binding ., Converter={StaticResource stringToImageSource}}"/>
+
+                    <StackLayout Grid.Column="0" Grid.Row="0">
+                        <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
+                        <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
+                    </StackLayout>
+
+                    <Grid Grid.Column="2" HorizontalOptions="End" Grid.Row="0">
+                        <BoxView BackgroundColor="{StaticResource LightPurple}"  HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="8"/>
+                        <Label Text="F" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
+                    </Grid>
+
+                    <StackLayout Grid.Column="2" Grid.Row="1" VerticalOptions="End">
+
+                        <ProgressBar/>
+                        <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"/>
+                    </StackLayout>
+
+
+                </Grid>
+            </Frame>
+
+        </DataTemplate>
+
     </ContentPage.Resources>
-    
-    <ListView x:Name="MyListView"
-            ItemsSource="{Binding Languages}"
-            CachingStrategy="RecycleElement"
-            HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="languages:LanguageViewModel">
-                    <ViewCell>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="3*"/>
-                            </Grid.ColumnDefinitions>
 
-                            <Image Grid.Column="0"
-                                Source="{Binding ., Converter={StaticResource stringToImageSource}}"/>
 
-                            <StackLayout Grid.Column="1">
-                                <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>
-                                <Label Text="{Binding Description, StringFormat='Description: {0}'}"/>
-                                <Label Text="{Binding Grade, StringFormat='Grade: {0}'}"/>
-                            </StackLayout>
-                        </Grid>                        
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <CollectionView x:Name="Languages" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="24" />
+        </CollectionView.ItemsLayout>
+    </CollectionView>
 
 </ContentPage>
