@@ -13,9 +13,9 @@ namespace Idle.Logic.ViewModels
 	{
 
 		private readonly INavigationService _navigation;
-		private readonly LanguageRepository _languageRepository;
+		private readonly LanguagesRepository _languageRepository;
 
-		public MainPageViewModel(INavigationService navigation, LanguageRepository languageRepository)
+		public MainPageViewModel(INavigationService navigation, LanguagesRepository languageRepository)
 			: this()
 		{
 			_navigation = navigation;

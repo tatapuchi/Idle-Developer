@@ -141,9 +141,9 @@ namespace Idle.DataAccess.Tests.Repositories
 
 		}
 
-		private async Task<LanguageRepository> SetupAsync()
+		private async Task<LanguagesRepository> SetupAsync()
 		{
-			var repo = new LanguageRepository(":memory:");
+			var repo = new LanguagesRepository(":memory:");
 			await repo.Connection.CreateTableAsync<Language>();
 			return repo;
 		}

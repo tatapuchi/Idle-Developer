@@ -35,7 +35,7 @@ namespace Idle
             var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
 
-            var languagesRepository = new LanguageRepository();
+            var languagesRepository = new LanguagesRepository();
 
             var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(naviation);
@@ -57,7 +57,7 @@ namespace Idle
 
         }
 
-        private MainPage CreateMainPage(NavigationService navigationService, LanguageRepository languagesRepository)
+        private MainPage CreateMainPage(NavigationService navigationService, LanguagesRepository languagesRepository)
 		{
             var page = new MainPage();
             var vm = new MainPageViewModel(navigationService, languagesRepository);

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-	public class LanguageRepository : RepositoryBase, IRepository<Language>
+	public class LanguagesRepository : RepositoryBase, IRepository<Language>
 	{
 
-		public LanguageRepository(){ }
+		public LanguagesRepository(){ }
 
-		internal LanguageRepository(string path) : base(path){ }
+		internal LanguagesRepository(string path) : base(path){ }
 
 		public async Task<IEnumerable<Language>> GetAllAsync() =>
 			await Connection.Table<Language>().ToListAsync();

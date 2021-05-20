@@ -11,9 +11,9 @@ namespace Idle.Logic.Languages
 {
 	public class LanguagesViewModel : ViewModelBase
 	{
-		private readonly LanguageRepository _languageRepository;
+		private readonly LanguagesRepository _languageRepository;
 
-		public LanguagesViewModel(LanguageRepository languageRepository)
+		public LanguagesViewModel(LanguagesRepository languageRepository)
 		{
 			_languageRepository = languageRepository;
 		}
