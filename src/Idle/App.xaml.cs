@@ -21,8 +21,6 @@ namespace Idle
     public partial class App : Application
     {
 
-        //Number of times opened
-        public static int timesopened;
         public App()
         {
             InitializeComponent();
@@ -42,11 +40,9 @@ namespace Idle
             var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(naviation);
 
-            navigationService.Register<MainPageViewModel>(() => 
-            {
-                var page = CreateMainPage(navigationService, languagesRepository);
-                return page;
-            });
+            var mainPage = CreateMainPage(navigationService, languagesRepository);
+
+            navigationService.Register<MainPageViewModel>(() => mainPage);
 
             navigationService.Register<LanguagesViewModel>(() =>
             {
@@ -56,8 +52,6 @@ namespace Idle
 
                 return page;
             });
-
-            var mainPage = CreateMainPage(navigationService, languagesRepository);
 
             MainPage = new NavigationPage(mainPage);
 
