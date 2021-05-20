@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Idle.Logic.Languages
 {
-    public class LanguageViewModel : BaseViewModel, IImage
+    public class LanguageViewModel : ViewModelBase, IImage
     {
         internal readonly Language _language;
 

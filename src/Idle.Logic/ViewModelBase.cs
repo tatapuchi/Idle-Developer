@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Idle.Logic
 {
-	public class BaseViewModel : INotifyPropertyChanging, INotifyPropertyChanged
+	public class ViewModelBase : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		public event PropertyChangingEventHandler PropertyChanging;
 		public event PropertyChangedEventHandler PropertyChanged;

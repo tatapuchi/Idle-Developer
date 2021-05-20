@@ -9,7 +9,7 @@ using Idle.Logic.Common;
 
 namespace Idle.Logic.Languages
 {
-	public class LanguagesViewModel : BaseViewModel
+	public class LanguagesViewModel : ViewModelBase
 	{
 		private readonly LanguageRepository _languageRepository;
 
