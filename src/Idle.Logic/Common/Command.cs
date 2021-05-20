@@ -5,6 +5,8 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Common
 {
+	// todo: write an "AsyncCommand" // when passing an async method to the current command then it is an async void
+	// which will swollow exceptions // the AsyncCommand should return a Task
 	class Command : Command<object>
 	{
 

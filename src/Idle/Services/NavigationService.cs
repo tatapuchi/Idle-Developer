@@ -28,18 +28,22 @@ namespace Idle.Services
 			_pageFactories[typeof(TViewModel)] = pageFactory;
 
 
-		public Task PushAsync<TViewModel>(bool animated)
+		public async Task<TViewModel> PushAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase
 		{
 			var page = GetPage<TViewModel>();
-			return Navigation.PushAsync(page, animated);
+			await Navigation.PushAsync(page, animated);
+			var vm = (TViewModel)page.BindingContext;
+			return vm;
 		}
 
-		public Task PushModalAsync<TViewModel>(bool animated)
+		public async Task<TViewModel> PushModalAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase
 		{
 			var page = GetPage<TViewModel>();
-			return Navigation.PushModalAsync(page, animated);
+			await Navigation.PushModalAsync(page, animated);
+			var vm = (TViewModel)page.BindingContext;
+			return vm;
 		}
 
 		public Task PopAsync(bool animated) => Navigation.PopAsync(animated);

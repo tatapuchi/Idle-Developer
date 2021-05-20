@@ -10,9 +10,9 @@ namespace Idle.Logic.Interfaces
 		Task PopAsync(bool animated);
 		Task PopModalAsync(bool animated);
 		Task PopToRootAsync(bool animated);
-		Task PushAsync<TViewModel>(bool animated)
+		Task<TViewModel> PushAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase;
-		Task PushModalAsync<TViewModel>(bool animated)
+		Task<TViewModel> PushModalAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase;
 	}
 }

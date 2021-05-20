@@ -31,7 +31,7 @@ namespace Idle
         {
             var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
-
+            
             var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
 

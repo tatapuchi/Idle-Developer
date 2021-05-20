@@ -20,32 +20,32 @@ namespace Idle
             
         }
 
-		private async void LanguagesButton_Clicked(object sender, EventArgs e)
-		{
-			try
-			{
-                await NavigateToLanguagesPageAsync();
-			}
-			catch (Exception)
-			{
+		//private async void LanguagesButton_Clicked(object sender, EventArgs e)
+		//{
+		//	try
+		//	{
+  //              await NavigateToLanguagesPageAsync();
+		//	}
+		//	catch (Exception)
+		//	{
 
-				throw;
-			}
-		}
+		//		throw;
+		//	}
+		//}
 
-        // todo: write a NavigationService which injects the dependenies
-        // the current implementation violates DI and Composition root pattern
-        private async Task NavigateToLanguagesPageAsync()
-		{
-            var languagesRepository = new LanguageRepository();
-            var languagesPage = new LanguagesPage();
-            var languagesViewModel = new LanguagesViewModel(languagesRepository);
+		// todo: write a NavigationService which injects the dependenies
+		// the current implementation violates DI and Composition root pattern
+		//private async Task NavigateToLanguagesPageAsync()
+		//{
+		//	var languagesRepository = new LanguageRepository();
+		//	var languagesPage = new LanguagesPage();
+		//	var languagesViewModel = new LanguagesViewModel(languagesRepository);
 
-            await languagesViewModel.LoadAsync();
-            languagesPage.BindingContext = languagesViewModel;
+		//	await languagesViewModel.LoadAsync();
+		//	languagesPage.BindingContext = languagesViewModel;
 
-            await Application.Current.MainPage.Navigation.PushAsync(languagesPage);
+		//	await Application.Current.MainPage.Navigation.PushAsync(languagesPage);
 
-        }
+		//}
 	}
 }
