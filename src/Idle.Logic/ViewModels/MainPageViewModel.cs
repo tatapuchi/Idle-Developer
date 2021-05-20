@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace Idle.Logic.ViewModels
 {
-	class MainPageViewModel : ViewModelBase
+	public class MainPageViewModel : ViewModelBase
 	{
 
 		private readonly INavigationService _navigation;

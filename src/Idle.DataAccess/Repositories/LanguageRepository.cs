@@ -12,7 +12,7 @@ namespace Idle.DataAccess.Repositories
 
 		public LanguageRepository(){ }
 
-		public LanguageRepository(string path) : base(path){ }
+		internal LanguageRepository(string path) : base(path){ }
 
 		public async Task<IEnumerable<Language>> GetAllAsync() =>
 			await Connection.Table<Language>().ToListAsync();
