@@ -18,6 +18,8 @@ using Idle.Views;
 
 namespace Idle
 {
+
+    // todo app class should be in views assembly. resource dictionary cannot be used currently
     public partial class App : Application
     {
 
@@ -55,6 +57,7 @@ namespace Idle
                 return page;
             });
 
+            // Idle.Views
             MainPage = new NavigationPage(mainPage);
 
         }

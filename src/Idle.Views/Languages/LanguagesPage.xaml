@@ -4,17 +4,14 @@
              xmlns:languages="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
              xmlns:Converters="clr-namespace:Idle.Views.ValueConverters"
              x:Class="Idle.Views.LanguagesPage"
-             x:DataType="languages:LanguagesViewModel">
-
+             x:DataType="{x:Type languages:LanguagesViewModel}">
 
     <ContentPage.Resources>
-        
         <ResourceDictionary Source="../Resources/Colours.xaml" />
-        
         <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
 
-        <DataTemplate x:Key="LanguageDataTemplate">
-
+        <DataTemplate x:Key="LanguageDataTemplate" 
+                      x:DataType="{x:Type languages:LanguageViewModel}">
             <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12">
                 <Grid >
                     <!--#region Grid Definitions-->
@@ -29,37 +26,59 @@
                     </Grid.RowDefinitions>
                     <!--#endregion-->
 
-                    <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Grid.Row="0" Spacing="18">
+                    <StackLayout Grid.Row="0" Grid.Column="0"
+                                 Spacing="18"
+                                 Orientation="Horizontal" 
+                                 HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
                         
-                        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand"/>
-                        <StackLayout  VerticalOptions="StartAndExpand">
-                            <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
-                            <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
+                        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" 
+                               VerticalOptions="StartAndExpand"/>
+                        
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}" 
+                                   FontSize="Subtitle" FontAttributes="Bold" 
+                                   TextColor="{StaticResource LightPurple}"/>
+                            <Label Text="{Binding Description}"
+                                   FontAttributes="Italic" TextColor="White"/>
                         </StackLayout>
                         
                     </StackLayout>
 
-                    <Grid Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="0">
-                        <BoxView BackgroundColor="{StaticResource LightPurple}" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="8"/>
-                        <Label Text="{Binding Grade}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
+                    <Grid Grid.Row="0"
+                          Grid.Column="1" 
+                          HorizontalOptions="End"
+                          VerticalOptions="Start">
+                        <BoxView BackgroundColor="{StaticResource LightPurple}"
+                                 HorizontalOptions="Center" VerticalOptions="Center" 
+                                 CornerRadius="8"/>
+                        <Label Text="{Binding Grade}" 
+                               FontSize="Title" 
+                               FontAttributes="Bold" 
+                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                               TextColor="{StaticResource BrightGreen}"/>
                     </Grid>
 
-                    <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
+                    <StackLayout Grid.Row="1"
+                                 Grid.Column="0" Grid.ColumnSpan="2" 
+                                 VerticalOptions="End" >
                         <ProgressBar Progress="{Binding Path=Progress, Mode=TwoWay}" />
-                        <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"
-                                Command="{Binding Path=BindingContext.XPCommand, Source={x:Reference Name=LanguagesCollectionView}}" 
+                        <Button Text="Upgrade" 
+                                CornerRadius="12" 
+                                TextColor="White"
+                                BackgroundColor="{StaticResource Red}"
+                                Command="{Binding GainProgressCommand}" 
                                 CommandParameter="{Binding .}"/>
                     </StackLayout>
 
                 </Grid>
             </Frame>
-
         </DataTemplate>
-
     </ContentPage.Resources>
 
-        
-        <CollectionView x:Name="LanguagesCollectionView" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
+    <CollectionView x:Name="LanguagesCollectionView" 
+                    ItemsSource="{Binding Languages}" 
+                    ItemTemplate="{StaticResource LanguageDataTemplate}" 
+                    Margin="12" >
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="24"/>
         </CollectionView.ItemsLayout>

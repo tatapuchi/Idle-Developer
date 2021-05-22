@@ -27,17 +27,17 @@ namespace Idle.Logic.Languages
 
 		private LanguagesViewModel()
 		{
-			XPCommand = new Command<LanguageViewModel>(UpdateXP);
+			//XPCommand = new Command(UpdateXP);
 		}
 
 		public RangeObservableCollection<LanguageViewModel> Languages { get; } = new RangeObservableCollection<LanguageViewModel>();
 
-		public void UpdateXP<T>(T obj)
-        {
-			if(typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
-			var viewModel = obj as LanguageViewModel;
-			viewModel.GainProgress();
-        }
+		//public void UpdateXP(T obj)
+  //      {
+		//	if(typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
+		//	var viewModel = obj as LanguageViewModel;
+		//	viewModel.GainProgress();
+  //      }
 
 		public async Task LoadAsync()
 		{

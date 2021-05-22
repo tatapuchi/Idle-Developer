@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
@@ -15,7 +16,8 @@ namespace Idle.Logic.Languages
     {
         internal readonly Language _language;
 
-        public LanguageViewModel(Language language)
+        public LanguageViewModel(Language language) 
+            : this()
         {
             _language = language;
 
@@ -25,7 +27,13 @@ namespace Idle.Logic.Languages
             Difficulty = language.Difficulty;
             XPCost = language.XPCost;
             XPIncome = language.XPIncome;
+        }
 
+		private LanguageViewModel()
+		{
+            GainProgressCommand = new Command(_ => Progress += 0.2f);
+
+            // todo on mainthread
             Task.Run(async () =>
             {
 
@@ -36,8 +44,11 @@ namespace Idle.Logic.Languages
                 }
 
             });
-
         }
+
+        public ICommand GainProgressCommand { get; }
+
+        #region Model-props
 
         public string ImagePath { get; }
         public string Name { get; }
@@ -46,6 +57,9 @@ namespace Idle.Logic.Languages
         public int XPCost { get; }
         public int XPIncome { get; }
 
+        #endregion Model-props
+
+        #region Props
 
         //Setting default value even though the value will be set in the constructor
         private int _xp = 0;
@@ -97,7 +111,6 @@ namespace Idle.Logic.Languages
             //private set => SetProperty(ref _grade, value); 
         }
 
-
         // The progress of our progress bar in the view
         private float _progress = 0.0f;
         public float Progress 
@@ -111,16 +124,17 @@ namespace Idle.Logic.Languages
             } 
         }
 
-        public void GainProgress()
-        {
-            Progress += 0.2f;
-        }
+        #endregion Props
+
 
         //Adds to XP based on the XPIncome property of the concretion
         public void GainXP()
         {
             XP += XPIncome;
         }
+
+
+
 
     }
 }
