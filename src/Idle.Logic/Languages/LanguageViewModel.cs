@@ -2,6 +2,7 @@
 using Idle.DataAccess.Migrators;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
+using Idle.Logic.Interfaces;
 using Idle.Models.Common;
 using Idle.Models.Fields;
 using System;
@@ -12,14 +13,17 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
-    public class LanguageViewModel : ViewModelBase, IImage
+
+	public class LanguageViewModel : ViewModelBase, IImage, IAsyncInit
     {
         internal readonly Language _language;
+        private readonly IMainThreadService _mainThreadService;
 
-        public LanguageViewModel(Language language) 
+        public LanguageViewModel(Language language, IMainThreadService mainThreadService) 
             : this()
         {
             _language = language;
+            _mainThreadService = mainThreadService;
 
             ImagePath = language.ImagePath;
             Name = language.Name;
@@ -32,19 +36,26 @@ namespace Idle.Logic.Languages
 		private LanguageViewModel()
 		{
             GainProgressCommand = new Command(_ => Progress += 0.2f);
-
-            // todo on mainthread
-            Task.Run(async () =>
-            {
-
-                while (true)
-                {
-                    Progress += 0.005f;
-                    await Task.Delay(50);
-                }
-
-            });
         }
+
+        public Task InitializeAsync()
+        {
+            return Task.Run(GainProgressTask);
+
+            Task GainProgressTask()
+            {
+                return _mainThreadService.InvokeOnMainThreadAsync(async () =>
+                {
+                    while (true)
+                    {
+                        Progress += 0.005f;
+                        await Task.Delay(50);
+                    };
+                });
+            }
+        }
+
+
 
         public ICommand GainProgressCommand { get; }
 
@@ -133,8 +144,6 @@ namespace Idle.Logic.Languages
             XP += XPIncome;
         }
 
-
-
-
-    }
+		
+	}
 }

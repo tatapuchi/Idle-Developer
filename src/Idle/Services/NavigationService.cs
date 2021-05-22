@@ -31,7 +31,7 @@ namespace Idle.Services
 		public async Task<TViewModel> PushAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase
 		{
-			var page = GetPage<TViewModel>();
+			var page = await GetPageAsync<TViewModel>();
 			await Navigation.PushAsync(page, animated);
 			var vm = (TViewModel)page.BindingContext;
 			return vm;
@@ -40,7 +40,7 @@ namespace Idle.Services
 		public async Task<TViewModel> PushModalAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase
 		{
-			var page = GetPage<TViewModel>();
+			var page = await GetPageAsync<TViewModel>();
 			await Navigation.PushModalAsync(page, animated);
 			var vm = (TViewModel)page.BindingContext;
 			return vm;
@@ -52,11 +52,16 @@ namespace Idle.Services
 
 		public Task PopToRootAsync(bool animated) => Navigation.PopToRootAsync(animated);
 
-		private static Page GetPage<TViewModel>()
+		private static async Task<Page> GetPageAsync<TViewModel>()
 			where TViewModel : ViewModelBase
 		{
 			var pageFactory = _pageFactories[typeof(TViewModel)];
 			var page = pageFactory.Invoke();
+			var vm = (TViewModel)page.BindingContext;
+
+			if (vm is IAsyncInit initAsync)
+				await initAsync.InitializeAsync();
+			
 			return page;
 		}
 	}
