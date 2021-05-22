@@ -1,5 +1,21 @@
 <Project>
+ 
+ <!-- Settings-->
  <PropertyGroup>
    <LangVersion>8.0</LangVersion>
+   
  </PropertyGroup>
+
+ <!-- Build Configuration-->
+
+    <Choose>
+      <When Condition=" '$(Configuration)' == 'Debug' ">
+        <PropertyGroup>
+          <Optimize>true</Optimize>
+          <Deterministic>true</Deterministic>
+        </PropertyGroup>
+      </When>
+    </Choose>
+  
+
 </Project>
