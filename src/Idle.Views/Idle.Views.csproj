@@ -18,4 +18,8 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Behaviours\" />
+  </ItemGroup>
+
 </Project>

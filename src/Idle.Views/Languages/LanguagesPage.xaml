@@ -17,36 +17,35 @@
 
             <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12" Margin="36" >
                 <Grid >
+                    <!--#region Grid Definitions-->
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <!--#endregion-->
 
-
-                    <Image Scale="0.5" Grid.Column="0" Grid.Row="1" Source="{Binding ., Converter={StaticResource stringToImageSource}}"/>
-
-                    <StackLayout Grid.Column="0" Grid.Row="0">
-                        <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
-                        <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
+                    <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Grid.Row="0" Spacing="18">
+                        <Image Source="{Binding ., Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand" />
+                        <StackLayout VerticalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
+                            <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
+                        </StackLayout>
                     </StackLayout>
 
-                    <Grid Grid.Column="2" HorizontalOptions="End" Grid.Row="0">
-                        <BoxView BackgroundColor="{StaticResource LightPurple}"  HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="8"/>
+                    <Grid Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="0">
+                        <BoxView BackgroundColor="{StaticResource LightPurple}" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="8"/>
                         <Label Text="F" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
                     </Grid>
 
-                    <StackLayout Grid.Column="2" Grid.Row="1" VerticalOptions="End">
-
+                    <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" >
                         <ProgressBar/>
                         <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"/>
                     </StackLayout>
-
 
                 </Grid>
             </Frame>
