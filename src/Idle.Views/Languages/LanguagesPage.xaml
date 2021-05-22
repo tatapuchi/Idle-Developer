@@ -30,21 +30,25 @@
                     <!--#endregion-->
 
                     <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Grid.Row="0" Spacing="18">
+                        
                         <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand"/>
-                        <StackLayout VerticalOptions="StartAndExpand">
+                        <StackLayout  VerticalOptions="StartAndExpand">
                             <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
                             <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
                         </StackLayout>
+                        
                     </StackLayout>
 
                     <Grid Grid.Column="1" HorizontalOptions="End" VerticalOptions="Start" Grid.Row="0">
                         <BoxView BackgroundColor="{StaticResource LightPurple}" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="8"/>
-                        <Label Text="F" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
+                        <Label Text="{Binding Grade}" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
                     </Grid>
 
                     <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
-                        <ProgressBar/>
-                        <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"/>
+                        <ProgressBar Progress="{Binding Path=Progress, Mode=TwoWay}" />
+                        <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"
+                                Command="{Binding Path=BindingContext.XPCommand, Source={x:Reference Name=LanguagesCollectionView}}" 
+                                CommandParameter="{Binding .}"/>
                     </StackLayout>
 
                 </Grid>

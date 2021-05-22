@@ -6,19 +6,29 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
+using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
 	public class LanguagesViewModel : ViewModelBase
 	{
 		private readonly LanguagesRepository _languageRepository;
+		public Command<LanguageViewModel> XPCommand { get; set; }
 
 		public LanguagesViewModel(LanguagesRepository languageRepository)
 		{
 			_languageRepository = languageRepository;
+			XPCommand = new Command<LanguageViewModel>(UpdateXP);
 		}
 
 		public RangeObservableCollection<LanguageViewModel> Languages { get; } = new RangeObservableCollection<LanguageViewModel>();
+
+		public void UpdateXP<T>(T obj)
+        {
+			if(typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
+			var viewModel = obj as LanguageViewModel;
+			viewModel.GainProgress();
+        }
 
 		public async Task LoadAsync()
 		{
@@ -36,4 +46,5 @@ namespace Idle.Logic.Languages
 		}
 
 	}
+
 }

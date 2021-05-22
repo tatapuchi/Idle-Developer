@@ -7,6 +7,7 @@ using Idle.Models.Fields;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Idle.Logic.Languages
 {
@@ -24,6 +25,18 @@ namespace Idle.Logic.Languages
             Difficulty = language.Difficulty;
             XPCost = language.XPCost;
             XPIncome = language.XPIncome;
+
+            Task.Run(async () =>
+            {
+
+                while (true)
+                {
+                    Progress += 0.005f;
+                    await Task.Delay(50);
+                }
+
+            });
+
         }
 
         public string ImagePath { get; }
@@ -32,6 +45,7 @@ namespace Idle.Logic.Languages
         public Difficulty Difficulty { get; }
         public int XPCost { get; }
         public int XPIncome { get; }
+
 
         //Setting default value even though the value will be set in the constructor
         private int _xp = 0;
@@ -44,10 +58,10 @@ namespace Idle.Logic.Languages
 
             //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
             //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
-                while (_xp > (45 * Level))
+                while (_xp > (25 * Level))
                 {
 
-                    _xp -= (45 * Level);
+                    _xp -= (25 * Level);
                     Level++;
                 }
 
@@ -61,7 +75,8 @@ namespace Idle.Logic.Languages
             get { return _level; } 
             private set 
             {
-                SetProperty(ref _level, value);
+                _level = value;
+                //SetProperty(ref _level, value);
 
                 //I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
                 if (value > 10) { Grade = "D"; }
@@ -78,9 +93,28 @@ namespace Idle.Logic.Languages
         public string Grade 
         {
             get { return _grade; }
-            private set => SetProperty(ref _grade, value); 
+            set { _grade = value; OnPropertyChanged(nameof(Grade)); }
+            //private set => SetProperty(ref _grade, value); 
         }
 
+
+        // The progress of our progress bar in the view
+        private float _progress = 0.0f;
+        public float Progress 
+        { 
+            get { return _progress; } 
+            set 
+            {
+                _progress = value;
+                if (_progress >= 1f) { _progress = 0f; GainXP(); }
+                OnPropertyChanged(nameof(Progress));
+            } 
+        }
+
+        public void GainProgress()
+        {
+            Progress += 0.2f;
+        }
 
         //Adds to XP based on the XPIncome property of the concretion
         public void GainXP()
