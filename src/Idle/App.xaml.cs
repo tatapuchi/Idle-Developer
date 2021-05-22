@@ -29,25 +29,27 @@ namespace Idle
 
         protected override void OnStart()
         {
+            // "Idle.DataAccess"
             var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
-            
             var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
 
             var languagesRepository = new LanguagesRepository();
 
+            // "Idle.Services"
             var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(naviation);
+            var mainThreadService = new MainThreadService();
 
-            var mainPage = CreateMainPage(navigationService, languagesRepository);
+            var mainPage = CreateMainPage(languagesRepository, navigationService);
 
             navigationService.Register<MainPageViewModel>(() => mainPage);
 
             navigationService.Register<LanguagesViewModel>(() =>
             {
                 var page = new LanguagesPage();
-                var vm = new LanguagesViewModel(languagesRepository);
+                var vm = new LanguagesViewModel(languagesRepository, mainThreadService);
                 page.BindingContext = vm;
 
                 return page;
@@ -57,7 +59,8 @@ namespace Idle
 
         }
 
-        private MainPage CreateMainPage(NavigationService navigationService, LanguagesRepository languagesRepository)
+        private static MainPage CreateMainPage(LanguagesRepository languagesRepository,
+            NavigationService navigationService)
 		{
             var page = new MainPage();
             var vm = new MainPageViewModel(navigationService, languagesRepository);
@@ -65,6 +68,8 @@ namespace Idle
 
             return page;
         }
+
+       
 
         protected override void OnSleep()
         {

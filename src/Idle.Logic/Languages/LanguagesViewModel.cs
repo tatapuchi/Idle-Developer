@@ -7,17 +7,26 @@ using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
 using System.Windows.Input;
+using Idle.Logic.Interfaces;
 
 namespace Idle.Logic.Languages
 {
 	public class LanguagesViewModel : ViewModelBase
 	{
 		private readonly LanguagesRepository _languageRepository;
+		private readonly IMainThreadService _mainThreadService;
+
 		public Command<LanguageViewModel> XPCommand { get; set; }
 
-		public LanguagesViewModel(LanguagesRepository languageRepository)
+		public LanguagesViewModel(LanguagesRepository languageRepository, IMainThreadService mainThreadService)
+			: this()
 		{
 			_languageRepository = languageRepository;
+			_mainThreadService = mainThreadService;
+		}
+
+		private LanguagesViewModel()
+		{
 			XPCommand = new Command<LanguageViewModel>(UpdateXP);
 		}
 
