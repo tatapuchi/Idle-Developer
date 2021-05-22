@@ -15,7 +15,7 @@
 
         <DataTemplate x:Key="LanguageDataTemplate">
 
-            <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12" Margin="36">
+            <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12">
                 <Grid >
                     <!--#region Grid Definitions-->
                     <Grid.ColumnDefinitions>
@@ -54,10 +54,11 @@
 
     </ContentPage.Resources>
 
-    <CollectionView x:Name="LanguagesCollectionView" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
+        
+        <CollectionView x:Name="LanguagesCollectionView" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="24"/>
         </CollectionView.ItemsLayout>
     </CollectionView>
-
+        
 </ContentPage>
