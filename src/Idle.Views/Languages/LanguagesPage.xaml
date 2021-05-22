@@ -30,7 +30,7 @@
                     <!--#endregion-->
 
                     <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Grid.Row="0" Spacing="18">
-                        <Image Source="{Binding ., Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand"/>
+                        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand"/>
                         <StackLayout VerticalOptions="StartAndExpand">
                             <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
                             <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
