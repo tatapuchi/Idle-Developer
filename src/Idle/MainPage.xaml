@@ -1,11 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="Idle.MainPage" BackgroundColor="#F0F0F3" >
+             xmlns:viewModels="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
+             x:Class="Idle.MainPage"
+             x:DataType="viewModels:MainPageViewModel"
+             BackgroundColor="#F0F0F3" >
 
     <StackLayout Margin="36">
 
-        <Button Text="Languages" Clicked="LanguagesButton_Clicked" />
+        <Button Text="Languages" Command="{Binding NavigateToLanguagesPageCommand}"/>
         
 
     </StackLayout>

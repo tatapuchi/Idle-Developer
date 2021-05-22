@@ -54,7 +54,6 @@
 
     </ContentPage.Resources>
 
-
     <CollectionView x:Name="LanguagesCollectionView" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Vertical" ItemSpacing="24"/>
