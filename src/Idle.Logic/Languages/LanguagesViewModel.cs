@@ -19,25 +19,13 @@ namespace Idle.Logic.Languages
 		public Command<LanguageViewModel> XPCommand { get; set; }
 
 		public LanguagesViewModel(LanguagesRepository languageRepository, IMainThreadService mainThreadService)
-			: this()
 		{
 			_languageRepository = languageRepository;
 			_mainThreadService = mainThreadService;
 		}
 
-		private LanguagesViewModel()
-		{
-			//XPCommand = new Command(UpdateXP);
-		}
-
 		public RangeObservableCollection<LanguageViewModel> Languages { get; } = new RangeObservableCollection<LanguageViewModel>();
 
-		//public void UpdateXP(T obj)
-  //      {
-		//	if(typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
-		//	var viewModel = obj as LanguageViewModel;
-		//	viewModel.GainProgress();
-  //      }
 
 		public async Task LoadAsync()
 		{
