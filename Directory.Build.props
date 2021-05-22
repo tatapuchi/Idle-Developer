@@ -12,7 +12,6 @@
       <When Condition=" '$(Configuration)' == 'Debug' ">
         <PropertyGroup>
           <Optimize>true</Optimize>
-          <Deterministic>true</Deterministic>
         </PropertyGroup>
       </When>
     </Choose>
