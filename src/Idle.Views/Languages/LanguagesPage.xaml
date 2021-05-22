@@ -15,7 +15,7 @@
 
         <DataTemplate x:Key="LanguageDataTemplate">
 
-            <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12" Margin="36" >
+            <Frame BackgroundColor="{StaticResource Purple}" CornerRadius="12" Margin="36">
                 <Grid >
                     <!--#region Grid Definitions-->
                     <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
                     <!--#endregion-->
 
                     <StackLayout Orientation="Horizontal" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="StartAndExpand" Grid.Row="0" Spacing="18">
-                        <Image Source="{Binding ., Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand" />
+                        <Image Source="{Binding ., Converter={StaticResource stringToImageSource}}" VerticalOptions="StartAndExpand"/>
                         <StackLayout VerticalOptions="StartAndExpand">
                             <Label Text="{Binding Name}" FontSize="Subtitle" FontAttributes="Bold" TextColor="{StaticResource LightPurple}"/>
                             <Label Text="{Binding Description}" FontAttributes="Italic" TextColor="White"/>
@@ -42,7 +42,7 @@
                         <Label Text="F" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="{StaticResource BrightGreen}"/>
                     </Grid>
 
-                    <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" >
+                    <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
                         <ProgressBar/>
                         <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"/>
                     </StackLayout>
@@ -55,9 +55,9 @@
     </ContentPage.Resources>
 
 
-    <CollectionView x:Name="Languages" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
+    <CollectionView x:Name="LanguagesCollectionView" ItemsSource="{Binding Languages}" ItemTemplate="{StaticResource LanguageDataTemplate}" Margin="12" >
         <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical" ItemSpacing="24" />
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="24"/>
         </CollectionView.ItemsLayout>
     </CollectionView>
 
