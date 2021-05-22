@@ -27,7 +27,7 @@
                             </Grid.ColumnDefinitions>
 
                             <Image Grid.Column="0"
-                                Source="{Binding ., Converter={StaticResource stringToImageSource}}"/>
+                                Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}"/>
 
                             <StackLayout Grid.Column="1">
                                 <Label Text="{Binding Name, StringFormat='Name: {0}'}"/>

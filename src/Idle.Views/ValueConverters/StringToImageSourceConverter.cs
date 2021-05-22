@@ -13,20 +13,8 @@ namespace Idle.Views.ValueConverters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var vm = value;
-            ImageSource imageSource;
-
-            if(vm is IImage hasImage)
-            {
-                var imagePath = hasImage.ImagePath;
-                imageSource = ImageSource.FromStream(() => _imagesProvider.GetStream(imagePath));
-            }
-			else
-			{
-                // todo: use logging
-                imageSource = ImageSource.FromStream(() => new MemoryStream());
-			}
-
+            var imagePath = (string)value;
+            var imageSource = ImageSource.FromStream(() => _imagesProvider.GetStream(imagePath));
             return imageSource;
         }
 

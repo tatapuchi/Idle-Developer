@@ -19,33 +19,5 @@ namespace Idle
             InitializeComponent();
             
         }
-
-		private async void LanguagesButton_Clicked(object sender, EventArgs e)
-		{
-			try
-			{
-                await NavigateToLanguagesPageAsync();
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-
-        // todo: write a NavigationService which injects the dependenies
-        // the current implementation violates DI and Composition root pattern
-        private async Task NavigateToLanguagesPageAsync()
-		{
-            var languagesRepository = new LanguageRepository();
-            var languagesPage = new LanguagesPage();
-            var languagesViewModel = new LanguagesViewModel(languagesRepository);
-
-            await languagesViewModel.LoadAsync();
-            languagesPage.BindingContext = languagesViewModel;
-
-            await Application.Current.MainPage.Navigation.PushAsync(languagesPage);
-
-        }
 	}
 }
