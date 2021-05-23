@@ -26,7 +26,10 @@ namespace Idle.Logic.ViewModels
 		private MainPageViewModel()
 		{
 			NavigateToLanguagesPageCommand = new Command(async _ => await NavigateToLanguagesViewModelImpl());
+
 		}
+
+		public ICommand NavigateToLanguagesPageCommand { get; }
 
 		private async Task<LanguagesViewModel> NavigateToLanguagesViewModelImpl()
 		{
@@ -41,7 +44,7 @@ namespace Idle.Logic.ViewModels
 			}
 		}
 
-		public ICommand NavigateToLanguagesPageCommand { get; }
+		
 
 		
 
