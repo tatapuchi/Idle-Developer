@@ -39,7 +39,7 @@ namespace Idle.Logic.Languages
 			return vm;
 		}
 
-		public Task<int> PushAsync()
+		public Task<int> SaveAsync()
 		{
 			var languages = Languages.Select(vm => vm._language);
 			return _languageRepository.UpdateAllAsync(languages);

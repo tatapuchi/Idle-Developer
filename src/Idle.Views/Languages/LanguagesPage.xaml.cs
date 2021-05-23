@@ -27,6 +27,21 @@ namespace Idle.Views
 			set => BindingContext = value;
 		}
 
+		protected async override void OnDisappearing()
+		{
+			try
+			{
+				await SaveAsync();
+				base.OnDisappearing();
+			}
+			catch (Exception)
+			{
+				// todo use logging
+				throw;
+			}
+		}
+
+		private Task SaveAsync() => ViewModel.SaveAsync();
 
 	}
 }
