@@ -7,14 +7,16 @@ using Idle.Models.Common;
 using Idle.Models.Fields;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
+using System.Timers;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
-
-	public class LanguageViewModel : ViewModelBase, IImage, IAsyncInit
+    // https://forums.xamarin.com/discussion/39438/is-there-the-indeterminate-attribute-for-the-progressbar-in-xamarin-forms
+    public class LanguageViewModel : ViewModelBase, IImage
     {
         internal readonly Language _language;
         private readonly IMainThreadService _mainThreadService;
@@ -36,28 +38,13 @@ namespace Idle.Logic.Languages
 		private LanguageViewModel()
 		{
             GainProgressCommand = new Command(_ => Progress += 0.2f);
+
+          
         }
 
-        public Task InitializeAsync()
-        {
-            return Task.Run(GainProgressTask);
+        
 
-            Task GainProgressTask()
-            {
-                return _mainThreadService.InvokeOnMainThreadAsync(async () =>
-                {
-                    while (true)
-                    {
-                        Progress += 0.005f;
-                        await Task.Delay(50);
-                    };
-                });
-            }
-        }
-
-
-
-        public ICommand GainProgressCommand { get; }
+		public ICommand GainProgressCommand { get; }
 
         #region Model-props
 
@@ -144,6 +131,36 @@ namespace Idle.Logic.Languages
             XP += XPIncome;
         }
 
-		
+
+        //private async void GainProgressAsyncWork(object sender, DoWorkEventArgs e)
+        //{
+        //    try
+        //    {
+        //        await GainProgressWorkAsyncImpl();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        // todo use logging
+        //        throw;
+        //    }
+        //}
+
+        //private async Task GainProgressWorkAsyncImpl()
+        //{
+        //    await _mainThreadService.InvokeOnMainThreadAsync(async () =>
+        //    {
+        //        while (true)
+        //        {
+        //            Progress += 0.005f;
+        //            await Task.Delay(50);
+        //        };
+        //    });
+        //}
+
+		//public void Dispose()
+		//{
+  //          if (_isDisposed) return;
+  //          _progressTimer.Stop();
+		//}
 	}
 }

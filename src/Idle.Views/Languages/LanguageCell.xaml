@@ -59,13 +59,13 @@
         <StackLayout Grid.Row="1"
                                  Grid.Column="0" Grid.ColumnSpan="2" 
                                  VerticalOptions="End" >
-            <ProgressBar Progress="{Binding Path=Progress, Mode=TwoWay}" />
+            <ProgressBar x:Name="progressBar" Progress="{Binding Path=Progress, Mode=TwoWay}" />
             <Button Text="Upgrade" 
-                                CornerRadius="12" 
-                                TextColor="White"
-                                BackgroundColor="{StaticResource Red}"
-                                Command="{Binding GainProgressCommand}" 
-                                CommandParameter="{Binding .}"/>
+                    CornerRadius="12" 
+                    TextColor="White"
+                    BackgroundColor="{StaticResource Red}"
+                    Command="{Binding GainProgressCommand}" 
+                    CommandParameter="{Binding .}"/>
         </StackLayout>
 
     </Grid>
