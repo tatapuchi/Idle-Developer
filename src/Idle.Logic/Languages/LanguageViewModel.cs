@@ -63,8 +63,8 @@ namespace Idle.Logic.Languages
             {
                 _xp = value;
 
-            //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
-            //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
+                //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
+                //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
                 while (_xp > (25 * Level))
                 {
 
@@ -126,36 +126,5 @@ namespace Idle.Logic.Languages
             XP += XPIncome;
         }
 
-
-        //private async void GainProgressAsyncWork(object sender, DoWorkEventArgs e)
-        //{
-        //    try
-        //    {
-        //        await GainProgressWorkAsyncImpl();
-        //    }
-        //    catch (Exception)
-        //    {
-        //        // todo use logging
-        //        throw;
-        //    }
-        //}
-
-        //private async Task GainProgressWorkAsyncImpl()
-        //{
-        //    await _mainThreadService.InvokeOnMainThreadAsync(async () =>
-        //    {
-        //        while (true)
-        //        {
-        //            Progress += 0.005f;
-        //            await Task.Delay(50);
-        //        };
-        //    });
-        //}
-
-		//public void Dispose()
-		//{
-  //          if (_isDisposed) return;
-  //          _progressTimer.Stop();
-		//}
 	}
 }
