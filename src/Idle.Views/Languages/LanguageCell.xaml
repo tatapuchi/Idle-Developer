@@ -26,10 +26,10 @@
         <!--#endregion-->
 
         <StackLayout Grid.Row="0" Grid.Column="0"
-                                 Spacing="18"
-                                 Orientation="Horizontal" 
-                                 HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
-
+                     Spacing="18"
+                     Orientation="Horizontal" 
+                     HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
+            
             <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" 
                                VerticalOptions="StartAndExpand"/>
 
@@ -42,10 +42,9 @@
             </StackLayout>
         </StackLayout>
 
-        <Grid Grid.Row="0"
-                          Grid.Column="1" 
-                          HorizontalOptions="End"
-                          VerticalOptions="Start">
+        <Grid Grid.Row="0" Grid.Column="1" 
+              HorizontalOptions="End"
+              VerticalOptions="Start">
             <BoxView BackgroundColor="{StaticResource LightPurple}"
                                  HorizontalOptions="Center" VerticalOptions="Center" 
                                  CornerRadius="8"/>
@@ -57,8 +56,8 @@
         </Grid>
 
         <StackLayout Grid.Row="1"
-                                 Grid.Column="0" Grid.ColumnSpan="2" 
-                                 VerticalOptions="End" >
+                     Grid.Column="0" Grid.ColumnSpan="2" 
+                     VerticalOptions="End" >
             <ProgressBar x:Name="progressBar" Progress="{Binding Path=Progress, Mode=TwoWay}" />
             <Button Text="Upgrade" 
                     CornerRadius="12" 
