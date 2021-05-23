@@ -27,11 +27,6 @@ namespace Idle.Views
 			set => BindingContext = value;
 		}
 
-		protected override bool OnBackButtonPressed()
-		{
-			ViewModel.Dispose();
-			return base.OnBackButtonPressed();
-		}
 
 	}
 }

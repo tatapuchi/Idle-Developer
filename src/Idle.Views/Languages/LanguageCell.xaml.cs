@@ -15,14 +15,14 @@ namespace Idle.Views.Languages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LanguageCell : Frame, IViewModel<LanguageViewModel>
 	{
-		private readonly Timer _progressTimer = new Timer();
+		//private readonly Timer _progressTimer = new Timer();
 
+		const string _progressbarAnimationName = "RecurringProgressAnimation";
+		private uint _duration = 10000;
 
 		public LanguageCell()
 		{
 			InitializeComponent();
-
-			
 		}
 
 		public LanguageViewModel ViewModel 
@@ -35,29 +35,57 @@ namespace Idle.Views.Languages
 		{
 			base.OnBindingContextChanged();
 
-			if(ViewModel is null)
-			{
-				_progressTimer.Elapsed -= OnProgressTimerElapsed;
-				_progressTimer.Stop();
-			}
-			else
-			{
-				_progressTimer.Interval = 11000;
-				_progressTimer.Elapsed += OnProgressTimerElapsed;
-				_progressTimer.Start();
-			}
-			
+			if (ViewModel is null) return;
+			//StartProgressAnimation(1, _duration, true);
+			ProgressTo(_progressbarAnimationName, 1, _duration, Easing.Linear, true);
 		}
 
-		// todo async void
-		private async void OnProgressTimerElapsed(object sender, ElapsedEventArgs e)
+		private async void GainProgressClicked(object sender, EventArgs e)
 		{
-			await Device.InvokeOnMainThreadAsync(async () =>
-			{
-				await progressBar.ProgressTo(1, 10000, Easing.Linear);
-				await progressBar.ProgressTo(0, 0, Easing.Linear);
-			});
+			//progressBar.CancelAnimations();
+			progressBar.AbortAnimation(_progressbarAnimationName);
+			ViewModel.GainProgressCommand.Execute(null); 
+			
+			// todo resume the animation.
+			double remainingProgress = 1 - ViewModel.Progress;
+			double speed = 1 / (double)_duration;
+            uint remainingDuration = (uint)(remainingProgress / speed);
+
+			await ProgressTo(_progressbarAnimationName, 1, remainingDuration, Easing.Linear, false);
+			progressBar.AbortAnimation(_progressbarAnimationName);
+			await ProgressTo(_progressbarAnimationName, 1, _duration, Easing.Linear, true);
 		}
 
+		//private void StartProgressAnimation(uint progressTo, uint duration, bool isRecurring)
+		//{
+		//	progressBar.Animate(_recurringProgressAnimation,
+		//		arg =>
+		//		{
+		//			var added = arg - ViewModel.Progress;
+		//			ViewModel.Progress += (float)added;
+		//			progressBar.Progress = ViewModel.Progress;
+		//		}, progressTo, duration,
+		//		Easing.Linear,
+		//		(value, isFinished) =>
+		//		{
+		//			//if (isFinished && progressBar.Progress >= 1)
+		//			//	progressBar.Progress = 0;
+		//			//else
+		//			//{
+		//			//	progressBar.Progress = ViewModel.Progress;
+		//			//}
+		//		},
+		//		() => isRecurring);
+		//}
+
+		public Task<bool> ProgressTo(string animationName, double value, uint length, Easing easing, bool isRecurring)
+		{
+			var tcs = new TaskCompletionSource<bool>();
+
+			progressBar.Animate(animationName, d => ViewModel.Progress = (float)d, ViewModel.Progress, value, length: length, easing: easing, finished: (d, finished) => tcs.SetResult(finished),
+				repeat: () => isRecurring);
+
+			return tcs.Task;
+		}
 	}
 }

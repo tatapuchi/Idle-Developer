@@ -64,7 +64,7 @@
                     CornerRadius="12" 
                     TextColor="White"
                     BackgroundColor="{StaticResource Red}"
-                    Command="{Binding GainProgressCommand}" 
+                    Clicked="GainProgressClicked" 
                     CommandParameter="{Binding .}"/>
         </StackLayout>
 
