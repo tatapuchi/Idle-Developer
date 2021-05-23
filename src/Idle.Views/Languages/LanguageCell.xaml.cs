@@ -78,11 +78,16 @@ namespace Idle.Views.Languages
 		//		() => isRecurring);
 		//}
 
-		public Task<bool> ProgressTo(string animationName, double value, uint length, Easing easing, bool isRecurring)
+		private Task<bool> ProgressTo(string animationName, double value, uint length, Easing easing, bool isRecurring)
 		{
 			var tcs = new TaskCompletionSource<bool>();
 
-			progressBar.Animate(animationName, d => ViewModel.Progress = (float)d, ViewModel.Progress, value, length: length, easing: easing, finished: (d, finished) => tcs.SetResult(finished),
+			progressBar.Animate(animationName,
+				d => ViewModel.Progress = (float)d, 
+				ViewModel.Progress, value, 
+				length: length, 
+				easing: easing, 
+				finished: (d, finished) => tcs.TrySetResult(finished),
 				repeat: () => isRecurring);
 
 			return tcs.Task;
