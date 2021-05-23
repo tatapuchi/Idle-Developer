@@ -122,7 +122,7 @@ namespace Idle.Logic.Languages
 
 
 		//Adds to XP based on the XPIncome property of the concretion
-		public void GainXP()
+		private void GainXP()
         {
             XP += XPIncome;
         }
