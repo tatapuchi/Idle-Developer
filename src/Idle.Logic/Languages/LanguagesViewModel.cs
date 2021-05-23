@@ -15,14 +15,12 @@ namespace Idle.Logic.Languages
 	public class LanguagesViewModel : ViewModelBase, IAsyncInit
 	{
 		private readonly LanguagesRepository _languageRepository;
-		private readonly IMainThreadService _mainThreadService;
 
 		public Command<LanguageViewModel> XPCommand { get; set; }
 
-		public LanguagesViewModel(LanguagesRepository languageRepository, IMainThreadService mainThreadService)
+		public LanguagesViewModel(LanguagesRepository languageRepository)
 		{
 			_languageRepository = languageRepository;
-			_mainThreadService = mainThreadService;
 		}
 
 		public RangeObservableCollection<LanguageViewModel> Languages { get; } = new RangeObservableCollection<LanguageViewModel>();
@@ -37,7 +35,7 @@ namespace Idle.Logic.Languages
 
 		private LanguageViewModel CreteLanguagesViewModel(Language lang)
 		{
-			var vm = new LanguageViewModel(lang, _mainThreadService);
+			var vm = new LanguageViewModel(lang);
 			return vm;
 		}
 

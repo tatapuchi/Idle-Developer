@@ -42,7 +42,6 @@ namespace Idle
             // "Idle.Services"
             var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(naviation);
-            var mainThreadService = new MainThreadService();
 
             var mainPage = CreateMainPage(languagesRepository, navigationService);
 
@@ -51,7 +50,7 @@ namespace Idle
             navigationService.Register<LanguagesViewModel>(() =>
             {
                 var page = new LanguagesPage();
-                var vm = new LanguagesViewModel(languagesRepository, mainThreadService);
+                var vm = new LanguagesViewModel(languagesRepository);
                 page.BindingContext = vm;
 
                 return page;
