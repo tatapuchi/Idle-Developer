@@ -15,17 +15,14 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
-    // https://forums.xamarin.com/discussion/39438/is-there-the-indeterminate-attribute-for-the-progressbar-in-xamarin-forms
     public class LanguageViewModel : ViewModelBase, IImage
     {
         internal readonly Language _language;
-        private readonly IMainThreadService _mainThreadService;
 
-        public LanguageViewModel(Language language, IMainThreadService mainThreadService) 
+        public LanguageViewModel(Language language) 
             : this()
         {
             _language = language;
-            _mainThreadService = mainThreadService;
 
             ImagePath = language.ImagePath;
             Name = language.Name;
@@ -38,8 +35,6 @@ namespace Idle.Logic.Languages
 		private LanguageViewModel()
 		{
             GainProgressCommand = new Command(_ => Progress += 0.2f);
-
-          
         }
 
         
