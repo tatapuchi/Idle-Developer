@@ -2,14 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
-             xmlns:Converters="clr-namespace:Idle.Views.ValueConverters" 
              xmlns:local="clr-namespace:Idle.Views.Languages"
              x:Class="Idle.Views.LanguagesPage"
              x:DataType="{x:Type vm:LanguagesViewModel}">
 
     <ContentPage.Resources>
-        <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
-
         <DataTemplate x:Key="LanguageDataTemplate" 
                       x:DataType="{x:Type vm:LanguageViewModel}">
             <local:LanguageCell/>

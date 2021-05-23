@@ -1,16 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Frame xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:Converters="clr-namespace:Idle.Views.ValueConverters" 
-             xmlns:vm="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
-             x:Class="Idle.Views.Languages.LanguageCell"
-             x:DataType="{x:Type vm:LanguageViewModel}"
-             BackgroundColor="{StaticResource Purple}" CornerRadius="12">
-    <Frame.Resources>
-        <ResourceDictionary>
-            <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
-        </ResourceDictionary>
-    </Frame.Resources>
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:vm="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
+       x:Class="Idle.Views.Languages.LanguageCell"
+       x:DataType="{x:Type vm:LanguageViewModel}"
+       BackgroundColor="{StaticResource Purple}" CornerRadius="12">
     <Grid>
         <!--#region Grid Definitions-->
         <Grid.ColumnDefinitions>
@@ -28,16 +22,16 @@
                      Spacing="18"
                      Orientation="Horizontal" 
                      HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
-            
-            <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSource}}" 
-                               VerticalOptions="StartAndExpand"/>
+
+            <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+                   VerticalOptions="StartAndExpand"/>
 
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label Text="{Binding Name}" 
-                                   FontSize="Subtitle" FontAttributes="Bold" 
-                                   TextColor="{StaticResource LightPurple}"/>
+                       FontSize="Subtitle" FontAttributes="Bold" 
+                       TextColor="{StaticResource LightPurple}"/>
                 <Label Text="{Binding Description}"
-                                   FontAttributes="Italic" TextColor="White"/>
+                       FontAttributes="Italic" TextColor="White"/>
             </StackLayout>
         </StackLayout>
 
@@ -45,13 +39,13 @@
               HorizontalOptions="End"
               VerticalOptions="Start">
             <BoxView BackgroundColor="{StaticResource LightPurple}"
-                                 HorizontalOptions="Center" VerticalOptions="Center" 
-                                 CornerRadius="8"/>
+                     HorizontalOptions="Center" VerticalOptions="Center" 
+                     CornerRadius="8"/>
             <Label Text="{Binding Grade}" 
-                               FontSize="Title" 
-                               FontAttributes="Bold" 
-                               HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                               TextColor="{StaticResource BrightGreen}"/>
+                   FontSize="Title" 
+                   FontAttributes="Bold" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                   TextColor="{StaticResource BrightGreen}"/>
         </Grid>
 
         <StackLayout Grid.Row="1"
