@@ -33,7 +33,11 @@ namespace Idle.Views.Languages
 		{
 			base.OnBindingContextChanged();
 
-			if (ViewModel is null) return;
+			if (ViewModel is null)
+			{
+				progressBar.AbortAnimation(_progressbarAnimationName);
+				return;
+			}
 			
 			// this method call is intended not to be avaited
 			ProgressTo(_progressbarAnimationName, 1, _duration, Easing.Linear, true);
@@ -63,13 +67,22 @@ namespace Idle.Views.Languages
 		{
 			var tcs = new TaskCompletionSource<bool>();
 
-			progressBar.Animate(animationName,
-				d => ViewModel.Progress = (float)d, 
-				ViewModel.Progress, value, 
-				length: length, 
-				easing: easing, 
+			// this has to be either wrapped in a try catch or not awaited as a NRE occurs when navigating back off the page
+			// or todo: stop the animation before navigating out of the page
+			try
+			{
+				progressBar.Animate(animationName,
+				d => ViewModel.Progress = (float)d,
+				ViewModel.Progress, value,
+				length: length,
+				easing: easing,
 				finished: (d, finished) => tcs.TrySetResult(finished),
 				repeat: () => isRecurring);
+			}
+			catch (Exception)
+			{
+				tcs.TrySetResult(false);
+			}
 
 			return tcs.Task;
 		}
