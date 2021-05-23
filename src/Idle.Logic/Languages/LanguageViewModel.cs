@@ -14,6 +14,7 @@ namespace Idle.Logic.Languages
     public class LanguageViewModel : ViewModelBase, IImage
     {
         internal readonly Language _language;
+        public Command<LanguageViewModel> XPCommand { get; set; }
 
         public LanguageViewModel(Language language)
         {
@@ -26,6 +27,9 @@ namespace Idle.Logic.Languages
             XPCost = language.XPCost;
             XPIncome = language.XPIncome;
 
+
+            XPCommand = new Command<LanguageViewModel>(UpdateXP);
+
             Task.Run(async () =>
             {
 
@@ -37,6 +41,13 @@ namespace Idle.Logic.Languages
 
             });
 
+        }
+
+        public void UpdateXP<T>(T obj)
+        {
+            if (typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
+            var viewModel = obj as LanguageViewModel;
+            viewModel.GainProgress();
         }
 
         public string ImagePath { get; }
@@ -76,7 +87,7 @@ namespace Idle.Logic.Languages
             private set 
             {
                 _level = value;
-                //SetProperty(ref _level, value);
+                SetProperty(ref _level, value);
 
                 //I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
                 if (value > 10) { Grade = "D"; }

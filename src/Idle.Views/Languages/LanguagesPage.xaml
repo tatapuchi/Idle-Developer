@@ -47,7 +47,7 @@
                     <StackLayout VerticalOptions="End" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1">
                         <ProgressBar Progress="{Binding Path=Progress, Mode=TwoWay}" />
                         <Button Text="Upgrade" TextColor="White" CornerRadius="12" BackgroundColor="{StaticResource Red}"
-                                Command="{Binding Path=BindingContext.XPCommand, Source={x:Reference Name=LanguagesCollectionView}}" 
+                                Command="{Binding Path=XPCommand}" 
                                 CommandParameter="{Binding .}"/>
                     </StackLayout>
 
