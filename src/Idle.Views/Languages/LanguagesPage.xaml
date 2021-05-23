@@ -8,7 +8,6 @@
              x:DataType="{x:Type vm:LanguagesViewModel}">
 
     <ContentPage.Resources>
-        <ResourceDictionary Source="../Resources/Colours.xaml" />
         <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
 
         <DataTemplate x:Key="LanguageDataTemplate" 

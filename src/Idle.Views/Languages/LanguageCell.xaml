@@ -8,7 +8,6 @@
              BackgroundColor="{StaticResource Purple}" CornerRadius="12">
     <Frame.Resources>
         <ResourceDictionary>
-            <ResourceDictionary Source="../Resources/Colours.xaml" />
             <Converters:StringToImageSourceConverter x:Key="stringToImageSource" />
         </ResourceDictionary>
     </Frame.Resources>
