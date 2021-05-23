@@ -4,11 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Fields\**" />
-    <EmbeddedResource Remove="Fields\**" />
-    <None Remove="Fields\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.Logic\Idle.Logic.csproj" />
@@ -16,10 +11,6 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Behaviours\" />
   </ItemGroup>
 
 </Project>
