@@ -18,6 +18,7 @@ namespace Idle.Logic.Languages
     public class LanguageViewModel : ViewModelBase, IImage
     {
         internal readonly Language _language;
+        public Command<LanguageViewModel> XPCommand { get; set; }
 
         public LanguageViewModel(Language language) 
             : this()
@@ -43,6 +44,13 @@ namespace Idle.Logic.Languages
 
         #region Model-props
 
+        public void UpdateXP<T>(T obj)
+        {
+            if (typeof(T) != typeof(LanguageViewModel)) { throw new ArgumentException("Command Parameter must be of type LanguageViewModel"); }
+            var viewModel = obj as LanguageViewModel;
+            viewModel.GainProgress();
+        }
+
         public string ImagePath { get; }
         public string Name { get; }
         public string Description { get; }
@@ -63,12 +71,12 @@ namespace Idle.Logic.Languages
             {
                 _xp = value;
 
-                //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
-                //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
-                while (_xp > (25 * Level))
+            //This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
+            //we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
+                while (_xp > LevellingAmount())
                 {
 
-                    _xp -= (25 * Level);
+                    _xp -= LevellingAmount();
                     Level++;
                 }
 
@@ -86,13 +94,13 @@ namespace Idle.Logic.Languages
                 //SetProperty(ref _level, value);
 
                 //I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
-                if (value > 10) { Grade = "D"; }
-                if (value > 20) { Grade = "C"; }
-                if (value > 30) { Grade = "B"; }
-                if (value > 40) { Grade = "A"; }
-                if (value > 50) { Grade = "S"; }
-                if (value > 100) { Grade = "S+"; }
-                if (value > 200) { Grade = "S++"; }
+                if (value > 5) { Grade = "D"; }
+                if (value > 10) { Grade = "C"; }
+                if (value > 20) { Grade = "B"; }
+                if (value > 30) { Grade = "A"; }
+                if (value > 40) { Grade = "S"; }
+                if (value > 50) { Grade = "S+"; }
+                if (value > 100) { Grade = "S++"; }
             } 
         }
 
@@ -125,6 +133,14 @@ namespace Idle.Logic.Languages
         {
             XP += XPIncome;
         }
+        
+        //This will change once multipliers have been introduced
+        private int LevellingAmount()
+        {
+            int amount = 25;
+            amount *= (int) (1 + (Level * 0.1));
+            return amount;
+        }
 
-	}
+    }
 }
