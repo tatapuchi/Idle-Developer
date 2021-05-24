@@ -28,12 +28,12 @@ namespace Idle.Logic.Languages
 		public async Task InitializeAsync()
 		{
 			var languages = await _languageRepository.GetAllAsync();
-			var languageViewModels = languages.Select(lang => CreteLanguagesViewModel(lang));
+			var languageViewModels = languages.Select(lang => CreateLanguagesViewModel(lang));
 
 			Languages.AddRange(languageViewModels);
 		}
 
-		private LanguageViewModel CreteLanguagesViewModel(Language lang)
+		private LanguageViewModel CreateLanguagesViewModel(Language lang)
 		{
 			var vm = new LanguageViewModel(lang);
 			return vm;
