@@ -9,8 +9,6 @@ using System.Text;
 
 namespace Idle.Resources
 {
-	internal struct TokenOf<T> { }
-
 	public class ImagesProvider
 	{
 		private static Assembly _assembly { get; } = Assembly.GetExecutingAssembly();
@@ -28,16 +26,18 @@ namespace Idle.Resources
 		// private static string _frameworks { get; } = _images + "Frameworks.";
 		// private static string _cSharp { get; } = _frameworks + "SomeFramework.png";
 
+		private static readonly Dictionary<Type, string> _resources = new Dictionary<Type, string>()
+		{
+			[typeof(CSharp)] = _cSharp,
+			[typeof(Kotlin)] = _kotlin,
+		};
+
 		public string GetResourceNameOrFallBack<T>()
 		{
-			var resourceName = default(TokenOf<T>) switch
-			{
-				TokenOf<CSharp> _ => _cSharp,
-				TokenOf<Kotlin> _ => _kotlin,
-				_ => _fallback
-			};
+			if (_resources.TryGetValue(typeof(T), out var resourceName))
+				return resourceName;
 
-			return resourceName;
+			return _fallback; ;
 		}
 
 		public Stream GetStream(string resourceName)

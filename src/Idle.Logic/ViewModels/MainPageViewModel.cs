@@ -5,6 +5,7 @@ using Idle.Logic.Languages;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Idle.Logic.ViewModels
@@ -24,14 +25,28 @@ namespace Idle.Logic.ViewModels
 
 		private MainPageViewModel()
 		{
-			NavigateToLanguagesPageCommand = new Command(async _ => 
-			{
-				var vm = await _navigation.PushAsync<LanguagesViewModel>(true);
-				await vm.LoadAsync();
-			});
+			NavigateToLanguagesPageCommand = new Command(async _ => await NavigateToLanguagesViewModelImpl());
+
 		}
 
 		public ICommand NavigateToLanguagesPageCommand { get; }
+
+		private async Task<LanguagesViewModel> NavigateToLanguagesViewModelImpl()
+		{
+			try
+			{
+				return await _navigation.PushAsync<LanguagesViewModel>(true);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
+
+		
+
+		
 
 	}
 }
