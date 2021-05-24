@@ -43,7 +43,7 @@ namespace Idle
             var navigation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(navigation);
 
-            var mainPage = CreateMainPage(languagesRepository, navigationService);
+            var mainPage = CreateMainPage(navigationService);
 
             navigationService.Register<MainPageViewModel>(() => mainPage);
 
@@ -61,11 +61,10 @@ namespace Idle
 
         }
 
-        private static MainPage CreateMainPage(LanguagesRepository languagesRepository,
-            NavigationService navigationService)
+        private static MainPage CreateMainPage(NavigationService navigationService)
 		{
             var page = new MainPage();
-            var vm = new MainPageViewModel(navigationService, languagesRepository);
+            var vm = new MainPageViewModel(navigationService);
             page.BindingContext = vm;
 
             return page;
