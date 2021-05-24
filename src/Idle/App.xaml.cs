@@ -40,8 +40,8 @@ namespace Idle
             var languagesRepository = new LanguagesRepository();
 
             // "Idle.Services"
-            var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
-            var navigationService = new NavigationService(naviation);
+            var navigation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
+            var navigationService = new NavigationService(navigation);
 
             var mainPage = CreateMainPage(languagesRepository, navigationService);
 
