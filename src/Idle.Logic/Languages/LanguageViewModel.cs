@@ -15,7 +15,7 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Languages
 {
-    public class LanguageViewModel : ViewModelBase, IImage
+    public class LanguageViewModel : ViewModelBase
     {
         internal readonly Language _language;
 
