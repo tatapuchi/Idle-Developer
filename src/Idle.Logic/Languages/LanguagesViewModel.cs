@@ -16,8 +16,6 @@ namespace Idle.Logic.Languages
 	{
 		private readonly LanguagesRepository _languageRepository;
 
-		public Command<LanguageViewModel> XPCommand { get; set; }
-
 		public LanguagesViewModel(LanguagesRepository languageRepository)
 		{
 			_languageRepository = languageRepository;
