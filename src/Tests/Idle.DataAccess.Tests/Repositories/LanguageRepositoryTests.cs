@@ -105,6 +105,30 @@ namespace Idle.DataAccess.Tests.Repositories
 		}
 
 		[TestMethod]
+		public async Task UpdateAllAsync_ChangingXp_RecordShouldBeUpdated()
+        {
+			// arrange
+			var repo = await SetupAsync();
+			var langs = new List<Language>() { new CSharp() { ID = 1, XP = 50}, new Java { ID = 2, XP = 100}, new Kotlin { ID = 3, XP = 400} };
+			await repo.InsertAllAsync(langs);
+
+			//act
+			langs[0].XP = 9001;
+			langs[1].XP = 9002;
+			langs[2].XP = 9003;
+			var updatedCount = await repo.Connection.UpdateAllAsync(langs);
+
+			// assert
+			var updatedLangs = await repo.Connection.Table<Language>().ToListAsync();
+			updatedLangs[0].XP.ShouldBe(9001);
+			updatedLangs[1].XP.ShouldBe(9002);
+			updatedLangs[2].XP.ShouldBe(9003);
+			updatedCount.ShouldBe(3);
+
+		}
+
+
+		[TestMethod]
 		public async Task RemoveAsync_AfterInserting3Languages_AndRemoving1_2ShouldBeInTable()
 		{
 			// arrange
