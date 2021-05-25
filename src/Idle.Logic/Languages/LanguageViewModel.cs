@@ -62,6 +62,7 @@ namespace Idle.Logic.Languages
 			private set
 			{
 				if (!TrySetProperty(ref _xp, value)) return;
+				_language.XP = _xp;
 
 				var lvlingAmount = LevellingAmount();
 
@@ -70,6 +71,7 @@ namespace Idle.Logic.Languages
 				while (_xp > lvlingAmount)
 				{
 					_xp -= lvlingAmount;
+					_language.XP = _xp;
 					Level++;
 				}
 			}
@@ -83,6 +85,7 @@ namespace Idle.Logic.Languages
 			private set
 			{
 				if (!TrySetProperty(ref _level, value)) return;
+				_language.Level = _level;
 
 				//I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
 				if (value > 5) { Grade = "D"; }
@@ -98,8 +101,8 @@ namespace Idle.Logic.Languages
 		private string _grade = "F";
         public string Grade
 		{
-			get => _grade;
-            set => TrySetProperty(ref _grade, value);
+			get { return _grade; }
+            set{ TrySetProperty(ref _grade, value);  _language.Grade = _grade; }
 		}
 
 		// The progress of our progress bar in the view
