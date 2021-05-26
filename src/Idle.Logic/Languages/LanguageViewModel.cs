@@ -40,12 +40,12 @@ namespace Idle.Logic.Languages
 
         #region Props
 
-        public string ImagePath { get => _language.ImagePath; }
-        public string Name { get => _language.Name; }
-        public string Description { get => _language.Description; }
-        public Difficulty Difficulty { get => _language.Difficulty; }
-        public int XPCost { get => _language.XPCost; }
-        public int XPIncome { get => _language.XPIncome; }
+        public string ImagePath => _language.ImagePath; 
+        public string Name => _language.Name; 
+        public string Description => _language.Description; 
+        public Difficulty Difficulty => _language.Difficulty; 
+        public int XPCost => _language.XPCost; 
+        public int XPIncome => _language.XPIncome; 
 
 		//Setting default value even though the value will be set in the constructor
 		private int _xp = 0;
