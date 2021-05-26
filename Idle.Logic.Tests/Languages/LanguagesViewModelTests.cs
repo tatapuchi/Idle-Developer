@@ -41,6 +41,20 @@ namespace Idle.Logic.Tests.Languages
         [TestMethod]
         public async Task Progress_Update_Should_Be_Saved()
         {
+            // arrange
+            var repo = await SetupAsync();
+            var CSharp = new CSharp() { ID = 1, XP = 25, Level = 300, Grade = "S++", Progress = 0.5f };
+            await repo.InsertAsync(CSharp);
+            LanguagesViewModel vm = new LanguagesViewModel(repo);
+            await vm.InitializeAsync();
+
+            // act 
+            vm.Languages[0].Progress += 0.3f;
+            await vm.SaveAsync();
+
+            // assert
+            var lang = await repo.GetOrDefaultAsync(CSharp.ID);
+            lang.Progress.ShouldBe(0.8f);
 
         }
 
