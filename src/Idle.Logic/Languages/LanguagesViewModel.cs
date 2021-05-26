@@ -6,10 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
+using System.Windows.Input;
+using Idle.Logic.Interfaces;
+using Idle.Models.Fields;
 
 namespace Idle.Logic.Languages
 {
-	public class LanguagesViewModel : ViewModelBase
+	public class LanguagesViewModel : ViewModelBase, IAsyncInit
 	{
 		private readonly LanguagesRepository _languageRepository;
 
@@ -20,20 +23,27 @@ namespace Idle.Logic.Languages
 
 		public RangeObservableCollection<LanguageViewModel> Languages { get; } = new RangeObservableCollection<LanguageViewModel>();
 
-		public async Task LoadAsync()
+		public async Task InitializeAsync()
 		{
 			var languages = await _languageRepository.GetAllAsync();
-			var languageViewModels = languages.Select(lang => new LanguageViewModel(lang));
+			var languageViewModels = languages.Select(lang => CreateLanguageViewModel(lang));
 
 			Languages.AddRange(languageViewModels);
-
 		}
 
-		public Task<int> PushAsync()
+		private LanguageViewModel CreateLanguageViewModel(Language lang)
 		{
-			var languages = Languages.Select(vm => vm._language);
+			var vm = new LanguageViewModel(lang);
+			return vm;
+		}
+
+		public Task<int> SaveAsync()
+		{
+			var languages = Languages.Select(vm => vm.GetModel());
 			return _languageRepository.UpdateAllAsync(languages);
 		}
 
+		
 	}
+
 }

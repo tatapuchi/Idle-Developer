@@ -18,6 +18,8 @@ using Idle.Views;
 
 namespace Idle
 {
+
+    // todo app class should be in views assembly. resource dictionary cannot be used currently
     public partial class App : Application
     {
 
@@ -29,18 +31,19 @@ namespace Idle
 
         protected override void OnStart()
         {
+            // "Idle.DataAccess"
             var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
-            
             var languageMigrator = new LanguageMigrator(languagesFactory);
             languageMigrator.Migrate();
 
             var languagesRepository = new LanguagesRepository();
 
-            var naviation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
-            var navigationService = new NavigationService(naviation);
+            // "Idle.Services"
+            var navigation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
+            var navigationService = new NavigationService(navigation);
 
-            var mainPage = CreateMainPage(navigationService, languagesRepository);
+            var mainPage = CreateMainPage(navigationService);
 
             navigationService.Register<MainPageViewModel>(() => mainPage);
 
@@ -53,18 +56,21 @@ namespace Idle
                 return page;
             });
 
+            // Idle.Views
             MainPage = new NavigationPage(mainPage);
 
         }
 
-        private MainPage CreateMainPage(NavigationService navigationService, LanguagesRepository languagesRepository)
+        private static MainPage CreateMainPage(NavigationService navigationService)
 		{
             var page = new MainPage();
-            var vm = new MainPageViewModel(navigationService, languagesRepository);
+            var vm = new MainPageViewModel(navigationService);
             page.BindingContext = vm;
 
             return page;
         }
+
+       
 
         protected override void OnSleep()
         {

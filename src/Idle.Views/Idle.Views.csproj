@@ -4,11 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Fields\**" />
-    <EmbeddedResource Remove="Fields\**" />
-    <None Remove="Fields\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.Logic\Idle.Logic.csproj" />
@@ -19,7 +14,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Behaviours\" />
+    <EmbeddedResource Update="Resources\IdleResourceDictionary.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ValueConverters\ValueConverters.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\IdleResourceDictionary.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

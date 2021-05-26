@@ -11,12 +11,13 @@ namespace Idle.Logic
 		public event PropertyChangingEventHandler PropertyChanging;
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		protected void SetProperty<T>(ref T backingField, in T value, [CallerMemberName] string propertyName = "")
+		protected bool TrySetProperty<T>(ref T backingField, in T value, [CallerMemberName] string propertyName = "")
 		{
-			if (EqualityComparer<T>.Default.Equals(backingField, value)) return;
+			if (EqualityComparer<T>.Default.Equals(backingField, value)) return false;
 			OnPropertyChanging(propertyName);
 			backingField = value;
 			OnPropertyChanged(propertyName);
+			return true;
 		}
 
 		protected virtual void OnPropertyChanging([CallerMemberName] string propertyName = "") =>

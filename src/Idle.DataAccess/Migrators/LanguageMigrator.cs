@@ -45,8 +45,13 @@ namespace Idle.DataAccess.Migrators
 		{
 			_languagesFactory = languagesFactory;
 		}
-		// For testing
-		internal LanguageMigrator(string path) : base(path) { }
+
+		// for testing
+		internal LanguageMigrator(LanguagesFactory languagesFactory, string path) : base(path)
+		{
+			_languagesFactory = languagesFactory;
+		}
+
 		protected override string TableName => TableNames.Languages;
 
 		public override void Migrate()
