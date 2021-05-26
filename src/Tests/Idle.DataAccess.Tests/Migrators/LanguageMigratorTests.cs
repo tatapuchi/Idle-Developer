@@ -1,4 +1,5 @@
 ﻿using Idle.DataAccess.Migrators;
+using Idle.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;
@@ -16,7 +17,7 @@ namespace Idle.DataAccess.Tests.Migrators
 		public void Migrate_WhenMigrated_TableExists()
 		{
 			// arrange
-			LanguageMigrator lm = new LanguageMigrator(":memory:");
+			LanguageMigrator lm = new LanguageMigrator(new LanguagesFactory(new ImagesProvider()), ":memory:");
 			
 			// act
 			lm.Migrate();

@@ -49,12 +49,12 @@ namespace Idle.Logic.Tests.Languages
             await vm.InitializeAsync();
 
             // act 
-            vm.Languages[0].Progress += 0.3f;
+            vm.Languages[0].GainProgressCommand.Execute(null);
             await vm.SaveAsync();
 
             // assert
             var lang = await repo.GetOrDefaultAsync(CSharp.ID);
-            lang.Progress.ShouldBe(0.8f);
+            lang.Progress.ShouldBe(0.7f);
 
         }
 
