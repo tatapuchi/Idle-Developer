@@ -108,6 +108,10 @@
       <Project>{bb244de9-691c-4276-a8f5-cd61fcf59742}</Project>
       <Name>Idle.Logic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\src\Idle.Models\Idle.Models.csproj">
+      <Project>{3ec488ca-42ed-4b8e-8b11-30c6dd18d1b0}</Project>
+      <Name>Idle.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

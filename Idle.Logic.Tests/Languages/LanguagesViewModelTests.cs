@@ -7,6 +7,8 @@ using Idle.Models.Fields.Languages;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Shouldly;
+using System.Linq;
+using Idle.Logic.Common;
 
 namespace Idle.Logic.Tests.Languages
 {
@@ -18,18 +20,26 @@ namespace Idle.Logic.Tests.Languages
         {
             // arrange
             var repo = await SetupAsync();
-            var langs = new List<Language>() { new CSharp() { ID = 1, XP = 50 }, new Java { ID = 2, XP = 100 }, new Kotlin { ID = 3, XP = 400 } };
-            await repo.InsertAllAsync(langs);
+            await repo.InsertAsync(new CSharp() { ID=1, XP = 25, Level = 300, Grade="S++"});
+            await repo.InsertAsync(new Java() { ID = 2, XP = 35, Level = 420, Grade = "S++" });
+            await repo.InsertAsync(new Kotlin() { ID = 3, XP = 5, Level = 550, Grade = "S++" });
             LanguagesViewModel vm = new LanguagesViewModel(repo);
 
             //act
-            vm.InitializeAsync();
-            var langvms = vm.Languages;
+            await vm.InitializeAsync();
 
             //assert
-            langvms[0].XP.ShouldBe(50);
-            langvms[1].XP.ShouldBe(100);
-            langvms[2].XP.ShouldBe(400);
+            vm.Languages.Count.ShouldBe(3);
+            vm.Languages.FirstOrDefault(x => x.Name == "Java").Grade.ShouldBe("S++");
+            vm.Languages.FirstOrDefault(x => x.Name == "CSharp").Grade.ShouldBe("C");
+            vm.Languages.FirstOrDefault(x => x.Name == "Kotlin").Grade.ShouldBe("B");
+
+        }
+
+
+        [TestMethod]
+        public async Task Progress_Update_Should_Be_Saved()
+        {
 
         }
 
@@ -39,5 +49,6 @@ namespace Idle.Logic.Tests.Languages
             await repo.Connection.CreateTableAsync<Language>();
             return repo;
         }
+
     }
 }

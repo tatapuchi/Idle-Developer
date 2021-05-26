@@ -28,7 +28,8 @@ namespace Idle.Logic.Languages
             Description = language.Description;
             Difficulty = language.Difficulty;
             ImagePath = language.ImagePath;
-            
+
+			Progress = language.Progress;
             XP = language.XP;
             Level = language.Level;
             Grade = language.Grade;
@@ -113,6 +114,7 @@ namespace Idle.Logic.Languages
 			set
 			{
 				if (!TrySetProperty(ref _progress, value)) return;
+				_language.Progress = _progress;
 				if (_progress >= 1f)
 				{
 					_progress = 0f;

@@ -10,6 +10,11 @@ namespace Idle.Models
     public interface IProgress
     {
         /// <summary>
+        /// Progress bar progress
+        /// </summary>
+        public float Progress { get; set; }
+
+        /// <summary>
         /// The amount of experience points the player has in something.
         /// Could refer to overall XP of the player, XP in a certain language/framework/tool, XP in his job, etc.
         /// </summary>
