@@ -47,34 +47,36 @@ namespace Idle.Logic.Languages
         public int XPCost { get => _language.XPCost; }
         public int XPIncome { get => _language.XPIncome; }
 
-        //Setting default value even though the value will be set in the constructor
+		//Setting default value even though the value will be set in the constructor
+		private int _xp = 0;
         public int XP
 		{
-			get => _language.XP;
+			get => _xp;
 
 			private set
 			{
-				if (!TrySetProperty(value => _language.XP = value, () => _language.XP, value)) return;
+				if (!TrySetProperty(ref _xp, value)) return;
 
 				var lvlingAmount = LevellingAmount();
 
 				//This part checks if the XP is high enough to increment the Level, this is needed in here as when we load data in from the db
 				//we want to provide the language objects with only the XP, and then let the setters handle the updating of the Level and Grade
-				while (_language.XP > lvlingAmount)
+				while (_xp > lvlingAmount)
 				{
-					_language.XP -= lvlingAmount;
+					_xp -= lvlingAmount;
 					Level++;
 				}
 			}
 		}
 
 		//Setting default value even though the value will be set in the constructor
+		private int _level = 1;
         public int Level
 		{
-			get => _language.Level;
+			get => _level;
 			private set
 			{
-				if (!TrySetProperty(value => _language.Level = value, () => _language.Level, value)) return;
+				if (!TrySetProperty(ref _level, value)) return;
 
 				//I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
 				if (value > 5) { Grade = "D"; }
@@ -87,22 +89,24 @@ namespace Idle.Logic.Languages
 			}
 		}
 
+		private string _grade = "F";
         public string Grade
 		{
-			get { return _language.Grade; }
-            set{ TrySetProperty(value => _language.Grade = value, () => _language.Grade, value);}
+			get => _grade;
+            set{ TrySetProperty(ref _grade, value);}
 		}
 
 		// The progress of our progress bar in the view
+		private float _progress = 0f;
         public float Progress
 		{
-			get => _language.Progress;
+			get => _progress;
 			set
 			{
-				if (!TrySetProperty(value => _language.Progress = value, () => _language.Progress, value)) return;
-				if (_language.Progress >= 1f)
+				if (!TrySetProperty(ref _progress, value)) return;
+				if (_progress >= 1f)
 				{
-					_language.Progress = 0f;
+					_progress = 0f;
 					GainXP();
 				}
 			}
@@ -125,5 +129,16 @@ namespace Idle.Logic.Languages
             return amount;
         }
 
-    }
+
+		public Language GetModel()
+		{
+			_language.Progress = Progress;
+			_language.XP = XP;
+			_language.Level = Level;
+			_language.Grade = Grade;
+
+			return _language;
+		}
+
+	}
 }
