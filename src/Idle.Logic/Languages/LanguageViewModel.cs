@@ -52,7 +52,6 @@ namespace Idle.Logic.Languages
         public int XP
 		{
 			get => _xp;
-
 			private set
 			{
 				if (!TrySetProperty(ref _xp, value)) return;
