@@ -20,6 +20,17 @@ namespace Idle.Logic
 			return true;
 		}
 
+		protected bool TrySetProperty<T>(Action<T> setProp, Func<T> getProp, in T value, [CallerMemberName] string propertyName = "")
+        {
+			T x = getProp.Invoke();
+			if (EqualityComparer<T>.Default.Equals(x, value)) return false;
+			//if (x.Equals(value)) { return false; }
+			OnPropertyChanging(propertyName);
+			setProp.Invoke(value);
+			OnPropertyChanged(propertyName);
+			return true;
+        }
+
 		protected virtual void OnPropertyChanging([CallerMemberName] string propertyName = "") =>
 			PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
 
