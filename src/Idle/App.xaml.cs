@@ -12,6 +12,8 @@ using Idle.Logic.ViewModels;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Languages;
 using Idle.Views;
+using Idle.Views.Shop;
+using Idle.Logic.Shop;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -51,6 +53,15 @@ namespace Idle
             {
                 var page = new LanguagesPage();
                 var vm = new LanguagesViewModel(languagesRepository);
+                page.BindingContext = vm;
+
+                return page;
+            });
+
+            navigationService.Register<ShopViewModel>(() =>
+            {
+                var page = new ShopPage();
+                var vm = new ShopViewModel();
                 page.BindingContext = vm;
 
                 return page;
