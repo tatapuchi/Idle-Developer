@@ -6,11 +6,24 @@
              x:DataType="{x:Type vm:MainPageViewModel}"
              BackgroundColor="#F0F0F3" >
 
-    <StackLayout Margin="36">
+        <Grid Margin="36" RowSpacing="12" ColumnSpacing="12">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Button Text="Languages" TextColor="White" Command="{Binding NavigateToLanguagesPageCommand}" BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
-        <Button Text="Shop" TextColor="White" Command="{Binding NavigateToShopPageCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-    </StackLayout>
+            <Button Grid.Column="0" Grid.Row="0" Text="Languages" TextColor="White" Command="{Binding NavigateToLanguagesPageCommand}" BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+            <Button Grid.Column="1" Grid.Row="0" Text="Shop" TextColor="White" Command="{Binding NavigateToShopPageCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+
+        </Grid>
 
 </ContentPage>
