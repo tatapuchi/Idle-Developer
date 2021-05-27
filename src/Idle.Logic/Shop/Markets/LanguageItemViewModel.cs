@@ -18,5 +18,10 @@ namespace Idle.Logic.Shop.Markets
         public string Description => _language.Description;
         public int XPCost => _language.XPCost;
         public string ImagePath => _language.ImagePath;
+
+        public void PurchaseLanguage()
+        {
+            _language.Active = true;
+        }
     }
 }

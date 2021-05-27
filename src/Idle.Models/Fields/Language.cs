@@ -1,6 +1,7 @@
 ﻿
 using Idle.Models;
 using Idle.Models.Common;
+using Idle.Models.Interfaces;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 namespace Idle.Models.Fields
 {
     [Table(TableNames.Languages)]
-    public class Language : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome
+    public class Language : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome, IActive
     {
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
@@ -23,5 +24,7 @@ namespace Idle.Models.Fields
 
         public virtual int XPCost { get; set; }
         public virtual int XPIncome {get; set;}
+
+        public virtual bool Active { get; set; } = false;
     }
 }
