@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
+             xmlns:local="clr-namespace:Idle.Views.Languages"
+             x:Class="Idle.Views.LanguagesPage"
+             x:DataType="{x:Type vm:LanguagesViewModel}">
+
+    <ContentPage.Resources>
+        <DataTemplate x:Key="LanguageDataTemplate" 
+                      x:DataType="{x:Type vm:LanguageViewModel}">
+            <local:LanguageCell/>
+        </DataTemplate>
+    </ContentPage.Resources>
+
+    <CollectionView x:Name="LanguagesCollectionView" 
+                    ItemsSource="{Binding Languages}" 
+                    ItemTemplate="{StaticResource LanguageDataTemplate}" 
+                    Margin="12" >
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="24"/>
+        </CollectionView.ItemsLayout>
+    </CollectionView>
+        
+</ContentPage>

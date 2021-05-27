@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>.\Idle.DataAccess.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Player\**" />
+    <EmbeddedResource Remove="Player\**" />
+    <None Remove="Player\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Idle.Models\Idle.Models.csproj" />
+    <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
+  </ItemGroup>
+
+</Project>
