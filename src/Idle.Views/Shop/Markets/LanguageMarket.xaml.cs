@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Idle.Logic.Shop.Markets;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,11 @@ namespace Idle.Views.Shop.Markets
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LanguageMarket : ContentPage
     {
+        public LanguageMarketViewModel viewModel = new LanguageMarketViewModel();
         public LanguageMarket()
         {
             InitializeComponent();
+            this.BindingContext = viewModel;
         }
     }
 }
