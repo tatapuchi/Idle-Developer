@@ -8,7 +8,8 @@
 
     <StackLayout Margin="36">
 
-        <Button Text="Languages" Command="{Binding NavigateToLanguagesPageCommand}"/>
+        <Button Text="Languages" TextColor="White" Command="{Binding NavigateToLanguagesPageCommand}" BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+        <Button Text="Shop" TextColor="White" Command="{Binding NavigateToShopPageCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
 
     </StackLayout>
 

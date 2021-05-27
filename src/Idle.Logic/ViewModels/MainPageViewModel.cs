@@ -2,6 +2,7 @@
 using Idle.Logic.Common;
 using Idle.Logic.Interfaces;
 using Idle.Logic.Languages;
+using Idle.Logic.Shop;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,9 +26,12 @@ namespace Idle.Logic.ViewModels
 		{
 			NavigateToLanguagesPageCommand = new Command(async _ => await NavigateToLanguagesViewModelImpl());
 
+			NavigateToShopPageCommand = new Command(async _ => await NavigateToShopViewModelImpl());
 		}
 
 		public ICommand NavigateToLanguagesPageCommand { get; }
+
+		public ICommand NavigateToShopPageCommand { get; }
 
 		private async Task<LanguagesViewModel> NavigateToLanguagesViewModelImpl()
 		{
@@ -42,9 +46,20 @@ namespace Idle.Logic.ViewModels
 			}
 		}
 
-		
+		private async Task<ShopViewModel> NavigateToShopViewModelImpl()
+		{
+			try
+			{
+				return await _navigation.PushAsync<ShopViewModel>(true);
+			}
+			catch (Exception)
+			{
 
-		
+				throw;
+			}
+		}
+
+
 
 	}
 }
