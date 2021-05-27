@@ -1,48 +1,40 @@
 ﻿using Idle.DataAccess.Common;
+using Idle.DataAccess.Repositories;
 using Idle.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Migrators
 {
-	public abstract class MigratorBase<TModel>
-		where TModel : ModelBase
+	public abstract class MigratorBase<TModel> : DbConnectionBase
+		where TModel : ModelBase, new()
 	{
-		private static SQLiteConnection _connection;
-		internal SQLiteConnection Connection => _connection;
+		public MigratorBase() { }
 
-		public MigratorBase()
-		{
-			_connection = new SQLiteConnection(Constants.DatabasePath);
-		}
-
-		// For testing
-		internal MigratorBase(string path)
-		{
-			_connection = new SQLiteConnection(path);
-		}
+		internal MigratorBase(SQLiteAsyncConnection sQLiteAsyncConnection) 
+			: base(sQLiteAsyncConnection) { }
 
 		// call base when overriding
-		public virtual void Migrate()
+		public virtual async Task MigrateAsync()
 		{
 			#if DEBUG
-				Connection.DropTable<TModel>();
+				await Connection.DropTableAsync<TModel>();
 			#endif
-			if (!DoesTableExist())
-			{
-				Connection.CreateTable<TModel>();
-			}
+			var doesExist = await DoesTableExistAsync();
+			if (!doesExist)
+				await Connection.CreateTableAsync<TModel>();
 		}
+
 
 		// Template method pettern (used with property intead of method)
 		protected abstract string TableName { get; }
 
-		internal bool DoesTableExist()
+		internal async Task<bool> DoesTableExistAsync()
 		{
-			var tableInfo = Connection.GetTableInfo(TableName);
-
+			var tableInfo = await Connection.GetTableInfoAsync(TableName);
 			var doesTableExist = tableInfo.Count > 0 ? true : false;
 			return doesTableExist;
 		}

@@ -12,6 +12,7 @@ using Idle.Logic.ViewModels;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Languages;
 using Idle.Views;
+using System.Threading.Tasks;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -29,13 +30,27 @@ namespace Idle
 
         }
 
-        protected override void OnStart()
+        protected async override void OnStart()
+        {
+
+			try
+			{
+                await OnStartImplAsync();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+        }
+
+        private async Task OnStartImplAsync() 
         {
             // "Idle.DataAccess"
             var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
             var languageMigrator = new LanguageMigrator(languagesFactory);
-            languageMigrator.Migrate();
+            await languageMigrator.MigrateAsync();
 
             var languagesRepository = new LanguagesRepository();
 
@@ -58,7 +73,6 @@ namespace Idle
 
             // Idle.Views
             MainPage = new NavigationPage(mainPage);
-
         }
 
         private static MainPage CreateMainPage(NavigationService navigationService)
