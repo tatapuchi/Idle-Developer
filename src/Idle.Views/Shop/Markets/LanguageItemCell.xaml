@@ -21,8 +21,8 @@
                        TextColor="{StaticResource LightPurple}"/>
             <Label Text="{Binding Description}"
                        FontAttributes="Italic" TextColor="White"/>
-            <Label Text="{Binding XPCost}"
-                       FontAttributes="Italic" TextColor="White"/>
+            <Label Text="{Binding Path=XPCost,StringFormat='Cost: {0} XP' }" 
+                       FontAttributes="Bold" TextColor="White"/>
         </StackLayout>
 
         <Button BackgroundColor="{StaticResource Green}" Text="Purchase" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12"/>
