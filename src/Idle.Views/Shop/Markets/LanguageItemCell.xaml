@@ -9,7 +9,7 @@
 
     <StackLayout
         Spacing="18"
-        Orientation="Horizontal" 
+        Orientation="Vertical" 
         HorizontalOptions="Start" VerticalOptions="StartAndExpand">
 
         <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
@@ -24,5 +24,7 @@
             <Label Text="{Binding XPCost}"
                        FontAttributes="Italic" TextColor="White"/>
         </StackLayout>
+
+        <Button BackgroundColor="{StaticResource Green}" Text="Purchase" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12"/>
     </StackLayout>
 </Frame>
