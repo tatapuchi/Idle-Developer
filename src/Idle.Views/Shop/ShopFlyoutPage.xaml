@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Idle.Views.Shop"
-             xmlns:languages="clr-namespace:Idle.Views"
+             xmlns:languages="clr-namespace:Idle.Views" 
+             xmlns:market="clr-namespace:Idle.Views.Shop.Markets"
              x:Class="Idle.Views.Shop.ShopFlyoutPage"
              Padding="0,40,0,0"
              Title="Markets">
@@ -10,10 +11,7 @@
         <ListView x:Name="listView" x:FieldModifier="public">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:FlyoutPageItem}">
-                    <local:FlyoutPageItem Title="Languages"/>
-                    <local:FlyoutPageItem Title="Frameworks"/>
-                    <local:FlyoutPageItem Title="Tools"/>
-                    <local:FlyoutPageItem Title="Items"/>
+                    <local:FlyoutPageItem Title="Languages" TargetType="{x:Type market:LanguageMarket}"/>
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
