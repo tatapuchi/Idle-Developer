@@ -4,35 +4,22 @@ using System.Text;
 
 namespace Idle.DataAccess.Repositories
 {
-
-
-	public abstract class RepositoryBase
-    {
-        protected SQLiteOpenFlags Flags;
+    public abstract class DbConnectionBase
+	{
+        private SQLiteOpenFlags Flags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache;
+        
         private static SQLiteAsyncConnection _connection;
-        internal SQLiteAsyncConnection Connection => _connection;
+        internal protected SQLiteAsyncConnection Connection => _connection;
 
-        protected RepositoryBase()
+        protected DbConnectionBase()
         {
-            Ctor();
             _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Flags);
         }
 
         // For testing
-        protected RepositoryBase(string path)
-		{
-            Ctor();
-            _connection = new SQLiteAsyncConnection(path);
-		}
-
-        private void Ctor()
-		{
-            Flags |= SQLiteOpenFlags.ReadWrite;
-            Flags |= SQLiteOpenFlags.Create;
-            Flags |= SQLiteOpenFlags.SharedCache;
+        protected internal DbConnectionBase(SQLiteAsyncConnection sQLiteAsyncConnection)
+        {
+            _connection = sQLiteAsyncConnection;
         }
-
     }
-
-	
 }

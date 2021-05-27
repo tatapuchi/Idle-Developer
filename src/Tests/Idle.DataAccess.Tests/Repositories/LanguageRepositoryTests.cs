@@ -1,8 +1,11 @@
-﻿using Idle.DataAccess.Repositories;
+﻿using Idle.DataAccess.Migrators;
+using Idle.DataAccess.Repositories;
 using Idle.Models.Fields;
 using Idle.Models.Fields.Languages;
+using Idle.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -167,7 +170,9 @@ namespace Idle.DataAccess.Tests.Repositories
 
 		private async Task<LanguagesRepository> SetupAsync()
 		{
-			var repo = new LanguagesRepository(":memory:");
+			var connection = new SQLiteAsyncConnection(":memory:");
+
+			var repo = new LanguagesRepository(connection);
 			await repo.Connection.CreateTableAsync<Language>();
 			return repo;
 		}

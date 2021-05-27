@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using Shouldly;
 using System.Linq;
 using Idle.Logic.Common;
+using SQLite;
+using Idle.Resources;
+using Idle.DataAccess.Migrators;
 
 namespace Idle.Logic.Tests.Languages
 {
@@ -20,9 +23,6 @@ namespace Idle.Logic.Tests.Languages
         {
             // arrange
             var repo = await SetupAsync();
-            await repo.InsertAsync(new CSharp() { ID=1, XP = 25, Level = 300, Grade="S++", Progress = 0.5f});
-            await repo.InsertAsync(new Java() { ID = 2, XP = 35, Level = 420, Grade = "S++", Progress = 0.6f });
-            await repo.InsertAsync(new Kotlin() { ID = 3, XP = 5, Level = 550, Grade = "S++", Progress = 0.4f });
             LanguagesViewModel vm = new LanguagesViewModel(repo);
 
             //act
@@ -30,10 +30,6 @@ namespace Idle.Logic.Tests.Languages
 
             //assert
             vm.Languages.Count.ShouldBe(3);
-            vm.Languages.FirstOrDefault(x => x.Name == "Java").Level.ShouldBe(420);
-            vm.Languages.FirstOrDefault(x => x.Name == "C#").Level.ShouldBe(300);
-            vm.Languages.FirstOrDefault(x => x.Name == "Kotlin").Level.ShouldBe(550);
-
 
         }
 
@@ -43,25 +39,31 @@ namespace Idle.Logic.Tests.Languages
         {
             // arrange
             var repo = await SetupAsync();
-            var CSharp = new CSharp() { ID = 1, XP = 25, Level = 300, Grade = "S++", Progress = 0.5f };
-            await repo.InsertAsync(CSharp);
             LanguagesViewModel vm = new LanguagesViewModel(repo);
             await vm.InitializeAsync();
+            var lang = vm.Languages[0];
 
             // act 
-            vm.Languages[0].GainProgressCommand.Execute(null);
+            lang.GainProgressCommand.Execute(null);
             await vm.SaveAsync();
 
             // assert
-            var lang = await repo.GetOrDefaultAsync(CSharp.ID);
-            lang.Progress.ShouldBe(0.7f);
+            var model = await repo.GetOrDefaultAsync(lang.GetModel().ID);
+            model.Progress.ShouldBe(0.2f);
+            lang.Progress.ShouldBe(0.2f);
 
         }
 
         private async Task<LanguagesRepository> SetupAsync()
         {
-            var repo = new LanguagesRepository(":memory:");
-            await repo.Connection.CreateTableAsync<Language>();
+            var connection = new SQLiteAsyncConnection(":memory:");
+
+            var imagesProvider = new ImagesProvider();
+            var languagesFactory = new LanguagesFactory(imagesProvider);
+            var migrator = new LanguageMigrator(languagesFactory, connection);
+            await migrator.MigrateAsync();
+
+            var repo = new LanguagesRepository(connection);
             return repo;
         }
 

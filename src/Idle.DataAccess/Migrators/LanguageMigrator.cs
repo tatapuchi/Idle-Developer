@@ -6,6 +6,7 @@ using Idle.Models.Fields;
 using Idle.Models.Fields.Languages;
 using Idle.Models.Common;
 using Idle.Resources;
+using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Migrators
 {
@@ -48,36 +49,32 @@ namespace Idle.DataAccess.Migrators
 		}
 
 		// for testing
-		internal LanguageMigrator(LanguagesFactory languagesFactory, string path) : base(path)
+		internal LanguageMigrator(LanguagesFactory languagesFactory, SQLiteAsyncConnection sQLiteAsyncConnection) : base(sQLiteAsyncConnection)
 		{
 			_languagesFactory = languagesFactory;
 		}
 
 		protected override string TableName => TableNames.Languages;
 
-		public override void Migrate()
+		public override async Task MigrateAsync()
 		{
-			base.Migrate();
+			await base.MigrateAsync();
 
 			var languages = _languagesFactory.CreateLanguages();
-
-			InsertIfNotExisting(languages);
+			await InsertIfNotExisting(languages);
 			
 		}
 
 
-		private void InsertIfNotExisting(IEnumerable<Language> languages)
+		private async Task InsertIfNotExisting(IEnumerable<Language> languages)
 		{
-			var existingLanguages = Connection.Table<Language>().ToList();
+			var existingLanguages = await Connection.Table<Language>().ToListAsync();
 			var toBeAdded = languages.Except(existingLanguages).ToList();
 
 			if (toBeAdded.Count == 0)
 				return;
 
-			foreach (var language in toBeAdded)
-			{
-				Connection.Insert(language);
-			}
+			await Connection.InsertAllAsync(toBeAdded);
 			
 		}
 	}
