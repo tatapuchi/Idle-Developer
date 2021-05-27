@@ -19,13 +19,13 @@ namespace Idle.DataAccess.Migrators
 
 		// call base when overriding
 		public virtual async Task MigrateAsync()
-		{
-			#if DEBUG
-				await Connection.DropTableAsync<TModel>();
-			#endif
-			var doesExist = await DoesTableExistAsync();
-			if (!doesExist)
-				await Connection.CreateTableAsync<TModel>();
+		{	
+				#if DEBUG
+					await Connection.DropTableAsync<TModel>();
+				#endif
+				var doesExist = await DoesTableExistAsync();
+				if (!doesExist)
+					await Connection.CreateTableAsync<TModel>();
 		}
 
 

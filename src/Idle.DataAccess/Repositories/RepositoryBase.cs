@@ -6,15 +6,12 @@ namespace Idle.DataAccess.Repositories
 {
     public abstract class DbConnectionBase
 	{
-        private SQLiteOpenFlags Flags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache;
+        private static readonly SQLiteOpenFlags Flags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create | SQLiteOpenFlags.SharedCache;
         
-        private static SQLiteAsyncConnection _connection;
+        private static SQLiteAsyncConnection _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Flags);
         internal protected SQLiteAsyncConnection Connection => _connection;
 
-        protected DbConnectionBase()
-        {
-            _connection = new SQLiteAsyncConnection(Constants.DatabasePath, Flags);
-        }
+        protected DbConnectionBase(){ }
 
         // For testing
         protected internal DbConnectionBase(SQLiteAsyncConnection sQLiteAsyncConnection)
