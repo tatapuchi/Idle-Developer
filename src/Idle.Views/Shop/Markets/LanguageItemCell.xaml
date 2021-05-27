@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
+       x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
+       x:DataType="{x:Type vm:LanguageItemViewModel}"
+       BackgroundColor="{StaticResource Purple}" CornerRadius="12">
+    <!--#endregion-->
+
+    <StackLayout
+        Spacing="18"
+        Orientation="Horizontal" 
+        HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+
+        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+                   VerticalOptions="StartAndExpand"/>
+
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label Text="{Binding Name}" 
+                       FontSize="Subtitle" FontAttributes="Bold" 
+                       TextColor="{StaticResource LightPurple}"/>
+            <Label Text="{Binding Description}"
+                       FontAttributes="Italic" TextColor="White"/>
+            <Label Text="{Binding XPCost}"
+                       FontAttributes="Italic" TextColor="White"/>
+        </StackLayout>
+    </StackLayout>
+</Frame>

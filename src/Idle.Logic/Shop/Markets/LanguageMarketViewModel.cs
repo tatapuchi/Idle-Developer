@@ -11,13 +11,13 @@ namespace Idle.Logic.Shop.Markets
     public class LanguageMarketViewModel : ViewModelBase
     {
 
-        public ObservableCollection<LanguageViewModel> Items { get; set; } = new ObservableCollection<LanguageViewModel>();
+        public ObservableCollection<LanguageItemViewModel> Items { get; set; } = new ObservableCollection<LanguageItemViewModel>();
 
         public LanguageMarketViewModel()
         {
-            Items.Add(new LanguageViewModel(new CSharp()));
-            Items.Add(new LanguageViewModel(new Java()));
-            Items.Add(new LanguageViewModel(new Kotlin()));
+            Items.Add(new LanguageItemViewModel(new CSharp()));
+            Items.Add(new LanguageItemViewModel(new Java()));
+            Items.Add(new LanguageItemViewModel(new Kotlin()));
         }
     }
 }

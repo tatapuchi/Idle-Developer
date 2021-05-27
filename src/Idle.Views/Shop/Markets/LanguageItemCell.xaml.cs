@@ -12,20 +12,17 @@ using Xamarin.Forms.Xaml;
 namespace Idle.Views.Shop.Markets
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LanguageMarket : ContentPage, IViewModel<LanguageMarketViewModel>
+    public partial class LanguageItemCell : Frame, IViewModel<LanguageItemViewModel>
     {
-        public LanguageMarketViewModel viewModel = new LanguageMarketViewModel();
-        public LanguageMarket()
+        public LanguageItemCell()
         {
             InitializeComponent();
-            this.BindingContext = viewModel;
         }
 
-        public LanguageMarketViewModel ViewModel
+        public LanguageItemViewModel ViewModel
         {
-            get => (LanguageMarketViewModel)BindingContext;
+            get => (LanguageItemViewModel)BindingContext;
             set => BindingContext = value;
         }
-
     }
 }

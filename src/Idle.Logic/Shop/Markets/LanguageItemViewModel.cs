@@ -16,7 +16,7 @@ namespace Idle.Logic.Shop.Markets
 
         public string Name => _language.Name;
         public string Description => _language.Description;
-
         public int XPCost => _language.XPCost;
+        public string ImagePath => _language.ImagePath;
     }
 }

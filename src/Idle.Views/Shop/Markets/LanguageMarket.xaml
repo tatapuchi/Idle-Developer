@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Idle.Views.Shop.Markets.LanguageMarket"
-             xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
+             xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic" xmlns:local="clr-namespace:Idle.Views.Shop.Markets"
              x:DataType="{x:Type vm:LanguageMarketViewModel}">
     
     <ContentPage.Resources>
-        <DataTemplate x:Key="LanguageItemDataTemplate">
+        <DataTemplate x:Key="LanguageItemDataTemplate" x:DataType="{x:Type vm:LanguageItemViewModel}">
+            <local:LanguageItemCell/>
         </DataTemplate>
     </ContentPage.Resources>
     
@@ -35,7 +36,7 @@
                     ItemTemplate="{StaticResource LanguageItemDataTemplate}" 
                     Margin="12">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="2"/>
+                        <GridItemsLayout Orientation="Vertical" HorizontalItemSpacing="12" VerticalItemSpacing="12" Span="2"/>
                     </CollectionView.ItemsLayout>
                 </CollectionView>
             </StackLayout>
