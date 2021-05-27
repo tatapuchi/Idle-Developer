@@ -20,10 +20,6 @@ namespace Idle.Logic.Shop.Markets
         public LanguageMarketViewModel(LanguagesRepository languageRepository)
         {
             this._languageRepository = languageRepository;
-
-            Items.Add(new LanguageItemViewModel(new CSharp()));
-            Items.Add(new LanguageItemViewModel(new Java()));
-            Items.Add(new LanguageItemViewModel(new Kotlin()));
         }
 
         public LanguageMarketViewModel()

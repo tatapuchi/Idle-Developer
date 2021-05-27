@@ -13,7 +13,7 @@
     
     
     <Color x:Key="BrightGreen">#DFFF00</Color>
-    <Color x:Key="DarkOrange">#FFBF00</Color>
+    <Color x:Key="LightOrange">#FFBF00</Color>
     <Color x:Key="Orange">#FF7F50</Color>
     <Color x:Key="Red">#DE3163</Color>
     

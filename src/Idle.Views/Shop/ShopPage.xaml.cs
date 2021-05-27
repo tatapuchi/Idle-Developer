@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Idle.Logic.Interfaces;
+using Idle.Views.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +16,7 @@ namespace Idle.Views.Shop
     {
         public ShopPage()
         {
+
             InitializeComponent();
 
             flyoutPage.listView.ItemSelected += OnItemSelected;
@@ -28,10 +31,13 @@ namespace Idle.Views.Shop
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            INavigationService s;
+
             var item = e.SelectedItem as FlyoutPageItem;
             if (item != null)
             {
                 Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                //Detail = _navigation.PushAsync<(item.TargetType)>(true);
                 flyoutPage.listView.SelectedItem = null;
                 IsPresented = false;
             }

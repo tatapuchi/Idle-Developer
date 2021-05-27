@@ -22,8 +22,8 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" Grid.Row="0" Text="Languages" TextColor="White" Command="{Binding NavigateToLanguagesPageCommand}" BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
-            <Button Grid.Column="1" Grid.Row="0" Text="Shop" TextColor="White" Command="{Binding NavigateToShopPageCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
-
-        </Grid>
+            <Button Grid.Column="1" Grid.Row="0" Text="Shop" TextColor="White"   BackgroundColor="{StaticResource Purple}" CornerRadius="12" IsEnabled="False"/>
+        <Button Grid.Column="0" Grid.Row="1" Text="Language Market" TextColor="White" Command="{Binding NavigateToLanguageMarketCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+    </Grid>
 
 </ContentPage>

@@ -4,27 +4,32 @@
        xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
        x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
        x:DataType="{x:Type vm:LanguageItemViewModel}"
-       BackgroundColor="{StaticResource Purple}" CornerRadius="12">
+       BackgroundColor="{StaticResource Blue}" CornerRadius="12">
     <!--#endregion-->
 
     <StackLayout
-        Spacing="18"
+        Spacing="8"
         Orientation="Vertical" 
-        HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+        HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
 
-        <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+        <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
                    VerticalOptions="StartAndExpand"/>
 
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="{Binding Name}" 
-                       FontSize="Subtitle" FontAttributes="Bold" 
-                       TextColor="{StaticResource LightPurple}"/>
-            <Label Text="{Binding Description}"
-                       FontAttributes="Italic" TextColor="White"/>
-            <Label Text="{Binding Path=XPCost,StringFormat='Cost: {0} XP' }" 
-                       FontAttributes="Bold" TextColor="White"/>
-        </StackLayout>
+        <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
 
-        <Button BackgroundColor="{StaticResource Green}" Text="Purchase" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12"/>
+        <Label Text="{Binding Name}" 
+                       FontSize="Subtitle" FontAttributes="Bold" 
+                       TextColor="{StaticResource LightPurple}"
+                       HorizontalOptions="Center"/>
+
+        <Label Text="{Binding Description}"
+                       FontAttributes="Italic" TextColor="White"/>
+
+
+
+
+        <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand"/>
+
+        
     </StackLayout>
 </Frame>
