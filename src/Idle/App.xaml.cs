@@ -30,21 +30,7 @@ namespace Idle
 
         }
 
-        protected async override void OnStart()
-        {
-
-			try
-			{
-                await OnStartImplAsync();
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-        }
-
-        private async Task OnStartImplAsync() 
+        public async Task InitilizeAsync() 
         {
             // "Idle.DataAccess"
             var languageImageProvider = new ImagesProvider();
