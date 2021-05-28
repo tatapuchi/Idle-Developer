@@ -26,6 +26,9 @@
             <Image Source="{Binding ImagePath, Converter={StaticResource imageStringToImageSourceConverter}}" 
                    VerticalOptions="StartAndExpand"/>
 
+            <Image Source="{Binding Grade, Converter={StaticResource gradeStringToImageSourceConverter}}" 
+                   VerticalOptions="StartAndExpand"/>
+
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label Text="{Binding Name}" 
                        FontSize="Subtitle" FontAttributes="Bold" 
