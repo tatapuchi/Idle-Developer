@@ -30,7 +30,7 @@ namespace Idle.Logic.Shop.Markets
         public string ImagePath => _language.ImagePath;
 
         private bool _active = false;
-        public bool Active { get => _active; private set { TrySetProperty(ref _active, value); } }
+        public bool Active { get => _active; private set => TrySetProperty(ref _active, value); }
 
         public Language GetModel()
         {
