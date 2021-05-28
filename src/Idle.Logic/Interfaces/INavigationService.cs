@@ -14,5 +14,6 @@ namespace Idle.Logic.Interfaces
 			where TViewModel : ViewModelBase;
 		Task<TViewModel> PushModalAsync<TViewModel>(bool animated)
 			where TViewModel : ViewModelBase;
+
 	}
 }

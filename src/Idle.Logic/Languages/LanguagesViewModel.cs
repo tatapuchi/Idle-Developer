@@ -25,7 +25,7 @@ namespace Idle.Logic.Languages
 
 		public async Task InitializeAsync()
 		{
-			var languages = await _languageRepository.GetAllAsync();
+			var languages = await _languageRepository.GetAllActiveLanguagesAsync();
 			var languageViewModels = languages.Select(lang => CreateLanguageViewModel(lang));
 
 			Languages.AddRange(languageViewModels);

@@ -2,6 +2,8 @@
 using Idle.Logic.Common;
 using Idle.Logic.Interfaces;
 using Idle.Logic.Languages;
+using Idle.Logic.Shop;
+using Idle.Logic.Shop.Markets;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,9 +27,15 @@ namespace Idle.Logic.ViewModels
 		{
 			NavigateToLanguagesPageCommand = new Command(async _ => await NavigateToLanguagesViewModelImpl());
 
+
+			NavigateToLanguageMarketCommand = new Command(async _ => await NavigateToLanguageMarketModelImpl());
 		}
 
-		public ICommand NavigateToLanguagesPageCommand { get; }
+
+        public ICommand NavigateToLanguagesPageCommand { get; }
+
+		// temp
+		public ICommand NavigateToLanguageMarketCommand { get; }
 
 		private async Task<LanguagesViewModel> NavigateToLanguagesViewModelImpl()
 		{
@@ -42,9 +50,19 @@ namespace Idle.Logic.ViewModels
 			}
 		}
 
-		
 
-		
+		private async Task<LanguageMarketViewModel> NavigateToLanguageMarketModelImpl()
+		{
+			try
+			{
+				return await _navigation.PushAsync<LanguageMarketViewModel>(true);
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		}
 
 	}
 }

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
+       x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
+       x:DataType="{x:Type vm:LanguageItemViewModel}"
+       BackgroundColor="{StaticResource Blue}" CornerRadius="12">
+
+    <Grid>
+        <!--Default UI (Before Purchase)-->
+        <StackLayout
+        Spacing="6"
+        Orientation="Vertical" 
+        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <StackLayout VerticalOptions="StartAndExpand">
+                <!--Image Stacklayout, contains the image and the underline beneath it-->
+                <StackLayout>
+                    <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}"/>
+                    <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
+                </StackLayout>
+
+                <!--Information Stacklayout, contains Name and Description-->
+                <StackLayout Margin="0, 6, 0, 0">
+                    <Label Text="{Binding Name}" 
+                       FontSize="Subtitle" FontAttributes="Bold" 
+                       TextColor="{StaticResource LightPurple}"
+                       HorizontalOptions="Center"/>
+
+                    <Label Text="{Binding Description}"
+                       FontAttributes="Italic" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+
+
+            <!--Button, contains info about cost-->
+            <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="{StaticResource Blue}" Margin="0, 18, 0, 0"
+                    Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+
+        </StackLayout>
+
+        <!--Frame that covers the UI upon purchase-->
+        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="8"
+               BackgroundColor="{StaticResource Orange}" IsVisible="{Binding Active}">
+            <Label HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title" Text="Sold" TextColor="{StaticResource Red}"/>
+        </Frame>
+        
+    </Grid>
+</Frame>

@@ -15,7 +15,7 @@ namespace Idle.Models.Fields.Languages
 
         public override string Name => "Java";
 
-        public override string Description => "le coffee";
+        public override string Description => "A language like C# but not C#";
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 750;

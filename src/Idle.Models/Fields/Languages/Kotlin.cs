@@ -15,7 +15,7 @@ namespace Idle.Models.Fields.Languages
      
         public override string Name => "Kotlin";
 
-        public override string Description => "ander roid";
+        public override string Description => "A language for building android apps.";
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 450;

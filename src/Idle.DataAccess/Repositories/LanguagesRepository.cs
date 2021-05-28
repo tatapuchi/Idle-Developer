@@ -2,6 +2,8 @@
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,6 +18,9 @@ namespace Idle.DataAccess.Repositories
 
 		public async Task<IEnumerable<Language>> GetAllAsync() =>
 			await Connection.Table<Language>().ToListAsync();
+
+		public async Task<IEnumerable<Language>> GetAllActiveLanguagesAsync() =>
+			await Connection.Table<Language>().Where(lang => lang.Active == true).ToListAsync();
 
 		public Task<Language> GetOrDefaultAsync(int id) =>
 			Connection.Table<Language>().FirstOrDefaultAsync(model => model.ID == id);

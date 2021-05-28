@@ -12,6 +12,10 @@ using Idle.Logic.ViewModels;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Languages;
 using Idle.Views;
+using Idle.Views.Shop;
+using Idle.Logic.Shop;
+using Idle.Logic.Shop.Markets;
+using Idle.Views.Shop.Markets;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -56,6 +60,15 @@ namespace Idle
                 return page;
             });
 
+            navigationService.Register<LanguageMarketViewModel>(() =>
+            {
+                var page = new LanguageMarket();
+                var vm = new LanguageMarketViewModel(languagesRepository);
+                page.BindingContext = vm;
+
+                return page;
+            });
+
             // Idle.Views
             MainPage = new NavigationPage(mainPage);
 
@@ -70,7 +83,8 @@ namespace Idle
             return page;
         }
 
-       
+        
+
 
         protected override void OnSleep()
         {
