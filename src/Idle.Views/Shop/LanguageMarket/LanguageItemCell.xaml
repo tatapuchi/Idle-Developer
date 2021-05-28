@@ -5,38 +5,45 @@
        x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
        x:DataType="{x:Type vm:LanguageItemViewModel}"
        BackgroundColor="{StaticResource Blue}" CornerRadius="12">
-    <!--#endregion-->
 
     <Grid>
+        <!--Default UI (Before Purchase)-->
         <StackLayout
-        Spacing="8"
+        Spacing="6"
         Orientation="Vertical" 
-        HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
+        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-            <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
-                   VerticalOptions="StartAndExpand"/>
+            <StackLayout VerticalOptions="StartAndExpand">
+                <!--Image Stacklayout, contains the image and the underline beneath it-->
+                <StackLayout>
+                    <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}"/>
+                    <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
+                </StackLayout>
 
-            <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
-
-            <Label Text="{Binding Name}" 
+                <!--Information Stacklayout, contains Name and Description-->
+                <StackLayout Margin="0, 6, 0, 0">
+                    <Label Text="{Binding Name}" 
                        FontSize="Subtitle" FontAttributes="Bold" 
                        TextColor="{StaticResource LightPurple}"
                        HorizontalOptions="Center"/>
 
-            <Label Text="{Binding Description}"
+                    <Label Text="{Binding Description}"
                        FontAttributes="Italic" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
 
 
-
-
-            <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand"/>
-
+            <!--Button, contains info about cost-->
+            <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="{StaticResource Blue}" Margin="0, 18, 0, 0"
+                    Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
 
         </StackLayout>
 
+        <!--Frame that covers the UI upon purchase-->
         <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="8"
                BackgroundColor="{StaticResource Orange}" IsVisible="{Binding Active}">
             <Label HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title" Text="Sold" TextColor="{StaticResource Red}"/>
         </Frame>
+        
     </Grid>
 </Frame>
