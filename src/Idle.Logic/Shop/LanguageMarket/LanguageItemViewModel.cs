@@ -10,7 +10,7 @@ namespace Idle.Logic.Shop.Markets
 {
     public class LanguageItemViewModel: ViewModelBase
     {
-        internal readonly Language _language;
+        private readonly Language _language;
         private readonly LanguagesRepository _languageRepository;
 
         public LanguageItemViewModel(Language language, LanguagesRepository languagesRepository)

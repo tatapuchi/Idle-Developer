@@ -17,7 +17,7 @@ namespace Idle.Logic.Languages
 {
     public class LanguageViewModel : ViewModelBase
     {
-        internal readonly Language _language;
+        private readonly Language _language;
 
         public LanguageViewModel(Language language) 
             : this()
