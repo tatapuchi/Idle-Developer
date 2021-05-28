@@ -16,14 +16,14 @@ namespace Idle.Resources
 		protected static string _fallback { get; } = _images + "Fallback.png";
 		private static Assembly _assembly { get; } = Assembly.GetExecutingAssembly();
 
-		public Stream GetStream(string resourceName)
+		public virtual Stream GetStream(string resourceName)
 		{
 			var stream = _assembly.GetManifestResourceStream(resourceName);
 			return stream;
 		}
 	}
 
-	public class GradeImagesProvider : ImagesProvider
+	public class GradeImagesProvider : ImagesProviderBase
 	{
 		private static string _grades { get; } = _images + "Grades.";
 
@@ -49,6 +49,13 @@ namespace Idle.Resources
 		};
 
 
+		public override Stream GetStream(string resourceName)
+		{
+			var resourceN = GetResourceNameOrFallBack(resourceName);
+			var stream = base.GetStream(resourceN);
+			return stream;
+		}
+
 		public string GetResourceNameOrFallBack(string grade)
 		{
 			if (_resources.TryGetValue(grade, out var resourceName))
@@ -61,9 +68,6 @@ namespace Idle.Resources
 
 	public class ImagesProvider : ImagesProviderBase
 	{
-		
-
-
 		// All images which belong to the languages are below this line
 		private static string _languages { get; } = _images + "Languages.";
 		private static string _cSharp { get; } = _languages + "Csharp.png";
