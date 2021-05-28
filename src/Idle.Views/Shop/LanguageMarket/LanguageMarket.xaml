@@ -33,7 +33,7 @@
             <StackLayout Grid.Row="1">
                 <CollectionView  
                     x:Name="LanguageItemCollectionView" 
-                    ItemsSource="{Binding Items}" 
+                    ItemsSource="{Binding Languages}" 
                     ItemTemplate="{StaticResource LanguageItemDataTemplate}" 
                     Margin="12">
                     <CollectionView.ItemsLayout>

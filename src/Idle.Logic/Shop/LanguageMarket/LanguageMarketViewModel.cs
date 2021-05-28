@@ -15,7 +15,7 @@ namespace Idle.Logic.Shop.Markets
     public class LanguageMarketViewModel : ViewModelBase, IAsyncInit
     {
         private readonly LanguagesRepository _languageRepository;
-        public RangeObservableCollection<LanguageItemViewModel> Items { get; } = new RangeObservableCollection<LanguageItemViewModel>();
+        public RangeObservableCollection<LanguageItemViewModel> Languages { get; } = new RangeObservableCollection<LanguageItemViewModel>();
 
         public LanguageMarketViewModel(LanguagesRepository languageRepository)
         {
@@ -26,7 +26,7 @@ namespace Idle.Logic.Shop.Markets
             var languages = await _languageRepository.GetAllInactiveLanguagesAsync();
             var languageItemViewModels = languages.Select(lang => CreateLanguageItemViewModel(lang));
 
-            Items.AddRange(languageItemViewModels);
+            Languages.AddRange(languageItemViewModels);
         }
 
         private LanguageItemViewModel CreateLanguageItemViewModel(Language lang)
@@ -37,7 +37,7 @@ namespace Idle.Logic.Shop.Markets
 
         public Task<int> SaveAsync()
         {
-            var languages = Items.Select(vm => vm.GetModel());
+            var languages = Languages.Select(vm => vm.GetModel());
             return _languageRepository.UpdateAllAsync(languages);
         }
 
