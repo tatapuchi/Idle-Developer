@@ -40,7 +40,7 @@ namespace Idle.Resources
 			return stream;
 		}
 
-		public string GetResourceNameOrFallBack(string grade)
+		private string GetResourceNameOrFallBack(string grade)
 		{
 			if (_resources.TryGetValue(grade, out var resourceName))
 				return resourceName;
