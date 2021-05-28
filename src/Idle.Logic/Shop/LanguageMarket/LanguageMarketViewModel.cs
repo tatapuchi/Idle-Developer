@@ -23,7 +23,7 @@ namespace Idle.Logic.Shop.Markets
         }
         public async Task InitializeAsync()
         {
-            var languages = await _languageRepository.GetAllInactiveLanguagesAsync();
+            var languages = await _languageRepository.GetAllAsync();
             var languageItemViewModels = languages.Select(lang => CreateLanguageItemViewModel(lang));
 
             Languages.AddRange(languageItemViewModels);
@@ -31,14 +31,8 @@ namespace Idle.Logic.Shop.Markets
 
         private LanguageItemViewModel CreateLanguageItemViewModel(Language lang)
         {
-            var vm = new LanguageItemViewModel(lang);
+            var vm = new LanguageItemViewModel(lang, _languageRepository);
             return vm;
-        }
-
-        public Task<int> SaveAsync()
-        {
-            var languages = Languages.Select(vm => vm.GetModel());
-            return _languageRepository.UpdateAllAsync(languages);
         }
 
     }

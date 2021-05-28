@@ -22,9 +22,6 @@ namespace Idle.DataAccess.Repositories
 		public async Task<IEnumerable<Language>> GetAllActiveLanguagesAsync() =>
 			await Connection.Table<Language>().Where(lang => lang.Active == true).ToListAsync();
 
-		public async Task<IEnumerable<Language>> GetAllInactiveLanguagesAsync() =>
-			await Connection.Table<Language>().Where(lang => lang.Active == false).ToListAsync();
-
 		public Task<Language> GetOrDefaultAsync(int id) =>
 			Connection.Table<Language>().FirstOrDefaultAsync(model => model.ID == id);
 

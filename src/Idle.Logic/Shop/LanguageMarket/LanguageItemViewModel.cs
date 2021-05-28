@@ -1,4 +1,5 @@
-﻿using Idle.Logic.Common;
+﻿using Idle.DataAccess.Repositories;
+using Idle.Logic.Common;
 using Idle.Models.Fields;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,19 @@ namespace Idle.Logic.Shop.Markets
     public class LanguageItemViewModel: ViewModelBase
     {
         internal readonly Language _language;
+        private readonly LanguagesRepository _languageRepository;
 
-        public LanguageItemViewModel(Language language)
+        public LanguageItemViewModel(Language language, LanguagesRepository languagesRepository)
             :this()
         {
             _language = language;
+            Active = language.Active;
+            _languageRepository = languagesRepository;
         }
 
         private LanguageItemViewModel()
         {
-            PurchaseLanguageCommand = new Command(_ => Active = true);
+            PurchaseLanguageCommand = new Command(_ => { Active = true; _languageRepository.UpdateAsync(GetModel()); } );
         }
 
         public ICommand PurchaseLanguageCommand { get; }
@@ -29,7 +33,7 @@ namespace Idle.Logic.Shop.Markets
         public int XPCost => _language.XPCost;
         public string ImagePath => _language.ImagePath;
 
-        private bool _active = false;
+        private bool _active;
         public bool Active { get => _active; private set => TrySetProperty(ref _active, value); }
 
         public Language GetModel()
