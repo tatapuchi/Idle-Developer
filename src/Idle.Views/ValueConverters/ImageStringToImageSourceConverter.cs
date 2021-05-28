@@ -10,7 +10,4 @@ namespace Idle.Views.ValueConverters
         protected override ImagesProviderBase ImagesProvider => new ImagesProvider();
 	}
 
-    // todo
-    // public class GradeStringToÍmageSourceConverter : StringToImageSourceConverterBase{ }
-    
 }
