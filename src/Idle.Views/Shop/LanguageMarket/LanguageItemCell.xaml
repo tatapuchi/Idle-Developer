@@ -7,29 +7,36 @@
        BackgroundColor="{StaticResource Blue}" CornerRadius="12">
     <!--#endregion-->
 
-    <StackLayout
+    <Grid>
+        <StackLayout
         Spacing="8"
         Orientation="Vertical" 
         HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand">
 
-        <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+            <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
                    VerticalOptions="StartAndExpand"/>
 
-        <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
+            <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
 
-        <Label Text="{Binding Name}" 
+            <Label Text="{Binding Name}" 
                        FontSize="Subtitle" FontAttributes="Bold" 
                        TextColor="{StaticResource LightPurple}"
                        HorizontalOptions="Center"/>
 
-        <Label Text="{Binding Description}"
+            <Label Text="{Binding Description}"
                        FontAttributes="Italic" TextColor="White"/>
 
 
 
 
-        <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand"/>
+            <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="White" Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand"/>
 
-        
-    </StackLayout>
+
+        </StackLayout>
+
+        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="8"
+               BackgroundColor="{StaticResource Orange}" IsVisible="{Binding Active}">
+            <Label HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title" Text="Sold" TextColor="{StaticResource Red}"/>
+        </Frame>
+    </Grid>
 </Frame>

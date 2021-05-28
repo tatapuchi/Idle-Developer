@@ -14,7 +14,7 @@ namespace Idle.Logic.Shop.Markets
         public LanguageItemViewModel(Language language)
         {
             this._language = language;
-            PurchaseLanguageCommand = new Command(_ => _language.Active = true); ;
+            PurchaseLanguageCommand = new Command(_ =>  Active = true); 
         }
 
         public ICommand PurchaseLanguageCommand { get; }
@@ -23,7 +23,16 @@ namespace Idle.Logic.Shop.Markets
         public string Description => _language.Description;
         public int XPCost => _language.XPCost;
         public string ImagePath => _language.ImagePath;
-         
+
+        private bool _active = false;
+        public bool Active { get => _active; set { TrySetProperty(ref _active, value); } }
+
+        public Language GetModel()
+        {
+            _language.Active = Active;
+            return _language;
+        }
+
         // make sure langauge is removed from observablecollection when its bought
 
     }
