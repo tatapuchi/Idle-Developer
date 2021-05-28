@@ -9,24 +9,20 @@ using System.Text;
 
 namespace Idle.Resources
 {
-	public class ImagesProvider
+	public class ImagesProvider : ImagesProviderBase
 	{
-		private static Assembly _assembly { get; } = Assembly.GetExecutingAssembly();
-
-		// Images are grouped into folders // Generic images are placed in this folder directly
-		private static string _images { get; } = Constants.AssemblyName + ".Images.";
-		private static string _fallback { get; } = _images + "Fallback.png";
-
 		// All images which belong to the languages are below this line
 		private static string _languages { get; } = _images + "Languages.";
 		private static string _cSharp { get; } = _languages + "Csharp.png";
 		private static string _kotlin { get; } = _languages + "Kotlin.png";
 
-		// When someone adds another folder eg "Framworks" then follow the upper pattern. Example:
-		// private static string _frameworks { get; } = _images + "Frameworks.";
-		// private static string _cSharp { get; } = _frameworks + "SomeFramework.png";
+		protected override string _fallback => _languages + "Fallback.png";
 
-		private static readonly Dictionary<Type, string> _resources = new Dictionary<Type, string>()
+        // When someone adds another folder eg "Framworks" then follow the upper pattern. Example:
+        // private static string _frameworks { get; } = _images + "Frameworks.";
+        // private static string _cSharp { get; } = _frameworks + "SomeFramework.png";
+
+        private static readonly Dictionary<Type, string> _resources = new Dictionary<Type, string>()
 		{
 			[typeof(CSharp)] = _cSharp,
 			[typeof(Kotlin)] = _kotlin,
@@ -37,15 +33,8 @@ namespace Idle.Resources
 			if (_resources.TryGetValue(typeof(T), out var resourceName))
 				return resourceName;
 
-			return _fallback; ;
+			return _fallback;
 		}
-
-		public Stream GetStream(string resourceName)
-		{
-			var stream = _assembly.GetManifestResourceStream(resourceName); 
-			return stream;
-		}
-
 	}
 
 	

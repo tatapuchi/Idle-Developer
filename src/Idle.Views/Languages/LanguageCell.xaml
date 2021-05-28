@@ -23,8 +23,10 @@
                      Orientation="Horizontal" 
                      HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
 
-            <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+            <Image Source="{Binding ImagePath, Converter={StaticResource imageStringToImageSourceConverter}}" 
                    VerticalOptions="StartAndExpand"/>
+
+
 
             <StackLayout VerticalOptions="StartAndExpand">
                 <Label Text="{Binding Name}" 
@@ -35,18 +37,9 @@
             </StackLayout>
         </StackLayout>
 
-        <Grid Grid.Row="0" Grid.Column="1" 
-              HorizontalOptions="End"
-              VerticalOptions="Start">
-            <BoxView BackgroundColor="{StaticResource LightPurple}"
-                     HorizontalOptions="Center" VerticalOptions="Center" 
-                     CornerRadius="8"/>
-            <Label Text="{Binding Grade}" 
-                   FontSize="Title" 
-                   FontAttributes="Bold" 
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                   TextColor="{StaticResource BrightGreen}"/>
-        </Grid>
+        <Image Grid.Row="0" Grid.Column="1" 
+              HorizontalOptions="End" Scale="2"
+              VerticalOptions="Start" Source="{Binding Grade, Converter={StaticResource gradeStringToImageSourceConverter}}" />
 
         <StackLayout Grid.Row="1"
                      Grid.Column="0" Grid.ColumnSpan="2" 
