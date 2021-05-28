@@ -14,11 +14,9 @@ namespace Idle.Views.Shop.Markets
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LanguageMarket : ContentPage, IViewModel<LanguageMarketViewModel>
     {
-        //public LanguageMarketViewModel viewModel = new LanguageMarketViewModel();
         public LanguageMarket()
         {
             InitializeComponent();
-            //this.BindingContext = viewModel;
         }
 
         public LanguageMarketViewModel ViewModel

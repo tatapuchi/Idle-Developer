@@ -21,15 +21,6 @@ namespace Idle.Logic.Shop.Markets
         {
             this._languageRepository = languageRepository;
         }
-
-        public LanguageMarketViewModel()
-        {
-            Items.Add(new LanguageItemViewModel(new CSharp()));
-            Items.Add(new LanguageItemViewModel(new Java()));
-            Items.Add(new LanguageItemViewModel(new Kotlin()));
-        }
-
-
         public async Task InitializeAsync()
         {
             var languages = await _languageRepository.GetAllInactiveLanguagesAsync();

@@ -48,7 +48,6 @@ namespace Idle
             var navigationService = new NavigationService(navigation);
 
             var mainPage = CreateMainPage(navigationService);
-            var shopPage = CreateShopPage(navigationService);
 
             navigationService.Register<MainPageViewModel>(() => mainPage);
 
@@ -61,9 +60,7 @@ namespace Idle
                 return page;
             });
 
-            navigationService.Register<ShopViewModel>(() => shopPage);
-
-            navigationService.Register<LanguageMarketViewModel>(() => 
+            navigationService.Register<LanguageMarketViewModel>(() =>
             {
                 var page = new LanguageMarket();
                 var vm = new LanguageMarketViewModel(languagesRepository);
@@ -81,15 +78,6 @@ namespace Idle
 		{
             var page = new MainPage();
             var vm = new MainPageViewModel(navigationService);
-            page.BindingContext = vm;
-
-            return page;
-        }
-
-        private static ShopPage CreateShopPage(NavigationService navigationService)
-        {
-            var page = new ShopPage();
-            var vm = new ShopViewModel(navigationService);
             page.BindingContext = vm;
 
             return page;
