@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Idle.Views.ValueConverters"
              x:Class="Idle.Views.ValueConverters.ValueConverters">
     
-    <local:StringToImageSourceConverter x:Key="stringToImageSourceConverter" />
+    <local:ImageStringToImageSourceConverter x:Key="imageStringToImageSourceConverter" />
     
 </ResourceDictionary>

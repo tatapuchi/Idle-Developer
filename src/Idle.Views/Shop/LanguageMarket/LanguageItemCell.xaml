@@ -16,7 +16,7 @@
             <StackLayout VerticalOptions="StartAndExpand">
                 <!--Image Stacklayout, contains the image and the underline beneath it-->
                 <StackLayout>
-                    <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}"/>
+                    <Image Scale="0.75" Source="{Binding ImagePath, Converter={StaticResource imageStringToImageSourceConverter}}"/>
                     <BoxView HeightRequest="4" WidthRequest="100" BackgroundColor="{StaticResource LightGreen}" CornerRadius="2"/>
                 </StackLayout>
 

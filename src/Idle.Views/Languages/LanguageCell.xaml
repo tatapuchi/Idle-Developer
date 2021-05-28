@@ -23,7 +23,7 @@
                      Orientation="Horizontal" 
                      HorizontalOptions="Start" VerticalOptions="StartAndExpand" >
 
-            <Image Source="{Binding ImagePath, Converter={StaticResource stringToImageSourceConverter}}" 
+            <Image Source="{Binding ImagePath, Converter={StaticResource imageStringToImageSourceConverter}}" 
                    VerticalOptions="StartAndExpand"/>
 
             <StackLayout VerticalOptions="StartAndExpand">
