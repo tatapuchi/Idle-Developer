@@ -9,7 +9,7 @@ namespace Idle.Models.Interfaces
         /// <summary>
         /// Whether the field has been purchased or not
         /// </summary>
-        public bool Active { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }

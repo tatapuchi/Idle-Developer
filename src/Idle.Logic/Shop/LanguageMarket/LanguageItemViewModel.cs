@@ -17,13 +17,13 @@ namespace Idle.Logic.Shop.Markets
             :this()
         {
             _language = language;
-            Active = language.Active;
+            IsActive = language.IsActive;
             _languageRepository = languagesRepository;
         }
 
         private LanguageItemViewModel()
         {
-            PurchaseLanguageCommand = new Command(_ => { Active = true; _languageRepository.UpdateAsync(GetModel()); } );
+            PurchaseLanguageCommand = new Command(_ => { IsActive = true; _languageRepository.UpdateAsync(GetModel()); } );
         }
 
         public ICommand PurchaseLanguageCommand { get; }
@@ -33,12 +33,12 @@ namespace Idle.Logic.Shop.Markets
         public int XPCost => _language.XPCost;
         public string ImagePath => _language.ImagePath;
 
-        private bool _active;
-        public bool Active { get => _active; private set => TrySetProperty(ref _active, value); }
+        private bool _isActive;
+        public bool IsActive { get => _isActive; private set => TrySetProperty(ref _isActive, value); }
 
         public Language GetModel()
         {
-            _language.Active = Active;
+            _language.IsActive = IsActive;
             return _language;
         }
 

@@ -11,7 +11,6 @@
     <Color x:Key="LightPurple">#CCCCFF</Color>
     <Color x:Key="Purple">#BF76D2</Color>
     
-    
     <Color x:Key="BrightGreen">#DFFF00</Color>
     <Color x:Key="LightOrange">#FFBF00</Color>
     <Color x:Key="Orange">#FF7F50</Color>
