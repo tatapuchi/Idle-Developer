@@ -12,9 +12,14 @@ namespace Idle.Logic.Shop.Markets
         internal readonly Language _language;
 
         public LanguageItemViewModel(Language language)
+            :this()
         {
             _language = language;
-            PurchaseLanguageCommand = new Command(_ =>  Active = true); 
+        }
+
+        private LanguageItemViewModel()
+        {
+            PurchaseLanguageCommand = new Command(_ => Active = true);
         }
 
         public ICommand PurchaseLanguageCommand { get; }
