@@ -14,7 +14,7 @@ namespace Idle.Models.Fields.Languages
         }
         public override string Name => "Python";
 
-        public override string Description => "snek";
+        public override string Description => "Everyone uses this already, big cringe language.";
 
         public override Difficulty Difficulty => Difficulty.Medium;
         public override int XPCost => 550;

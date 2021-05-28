@@ -23,6 +23,7 @@ namespace Idle.DataAccess.Migrators
 			yield return CreateLanguage<CSharp>();
 			yield return CreateLanguage<Java>();
 			yield return CreateLanguage<Kotlin>();
+			yield return CreateLanguage<Python>();
 		}
 
 		private T CreateLanguage<T>()
