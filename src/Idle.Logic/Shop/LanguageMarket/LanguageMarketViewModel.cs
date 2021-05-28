@@ -15,11 +15,11 @@ namespace Idle.Logic.Shop.Markets
     public class LanguageMarketViewModel : ViewModelBase, IAsyncInit
     {
         private readonly LanguagesRepository _languageRepository;
-        public RangeObservableCollection<LanguageItemViewModel> Items { get; set; } = new RangeObservableCollection<LanguageItemViewModel>();
+        public RangeObservableCollection<LanguageItemViewModel> Items { get; } = new RangeObservableCollection<LanguageItemViewModel>();
 
         public LanguageMarketViewModel(LanguagesRepository languageRepository)
         {
-            this._languageRepository = languageRepository;
+            _languageRepository = languageRepository;
         }
         public async Task InitializeAsync()
         {
