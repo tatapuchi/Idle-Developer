@@ -9,10 +9,6 @@ using System.Text;
 
 namespace Idle.Resources
 {
-
-
-
-
 	public class ImagesProvider : ImagesProviderBase
 	{
 		// All images which belong to the languages are below this line

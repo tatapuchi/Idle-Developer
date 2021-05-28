@@ -93,9 +93,7 @@ namespace Idle.Logic.Languages
         public string Grade
 		{
 			get => _grade;
-            set{ TrySetProperty(ref _grade, value);
-			//update GradeImagePath
-			}
+			set => TrySetProperty(ref _grade, value);
 		}
 
 		// The progress of our progress bar in the view

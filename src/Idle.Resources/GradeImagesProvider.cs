@@ -18,7 +18,7 @@ namespace Idle.Resources
 		private static string _SP { get; } = _grades + "SP.png";
 		private static string _SPP { get; } = _grades + "SPP.png";
 
-		protected override string _fallback => _grades + "Grade_Fallback.png";
+		protected override string _fallback => _grades + "Fallback.png";
 
 		private static readonly Dictionary<string, string> _resources = new Dictionary<string, string>()
 		{
