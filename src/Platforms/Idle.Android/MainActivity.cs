@@ -45,7 +45,7 @@ namespace Idle.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        private async Task<App> OnCreateImplAsync()
+        private static async Task<App> OnCreateImplAsync()
 		{
             var app = new App();
             await app.InitilizeAsync();
