@@ -11,6 +11,7 @@
     <None Remove="Images\Grades\C.png" />
     <None Remove="Images\Grades\D.png" />
     <None Remove="Images\Grades\F.png" />
+    <None Remove="Images\Grades\Grade_Fallback.png" />
     <None Remove="Images\Grades\S.png" />
     <None Remove="Images\Grades\SP.png" />
     <None Remove="Images\Grades\SPP.png" />
@@ -19,12 +20,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\Fallback.png" />
+    <EmbeddedResource Include="Images\Languages\Fallback.png" />
     <EmbeddedResource Include="Images\Grades\B.png" />
     <EmbeddedResource Include="Images\Grades\C.png" />
     <EmbeddedResource Include="Images\Grades\D.png" />
     <EmbeddedResource Include="Images\Grades\F.png" />
     <EmbeddedResource Include="Images\Grades\A.png" />
+    <EmbeddedResource Include="Images\Grades\Grade_Fallback.png" />
     <EmbeddedResource Include="Images\Grades\SPP.png" />
     <EmbeddedResource Include="Images\Grades\S.png" />
     <EmbeddedResource Include="Images\Grades\SP.png" />

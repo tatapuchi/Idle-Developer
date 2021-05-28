@@ -42,9 +42,6 @@ namespace Idle.Logic.Languages
 
         public string ImagePath => _language.ImagePath;
 
-		//needs INPC and INPCG
-		public string GradeImagePath => _language.GradeImagePath;
-
         public string Name => _language.Name; 
         public string Description => _language.Description; 
         public Difficulty Difficulty => _language.Difficulty; 

@@ -25,17 +25,4 @@ namespace Idle.Views.ValueConverters
 
     }
 
-    // todo
-    public class GradeStringToImageSourceConverter : StringToImageSourceConverterBase
-    {
-        protected override ImagesProviderBase ImagesProvider => new GradeImagesProvider();
-
-        //protected override object ConvertOverride(object value, Type targetType, object parameter, CultureInfo culture)
-        //{
-        //    var imagePath = ImagesProvider.GetResourceNameOrFallBack((string)value);
-        //    var imageSource = ImageSource.FromStream(() => ImagesProvider.GetStream(imagePath));
-        //    return imageSource;
-        //}
-    }
-
 }
