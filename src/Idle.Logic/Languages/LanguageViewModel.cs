@@ -40,7 +40,11 @@ namespace Idle.Logic.Languages
 
         #region Props
 
-        public string ImagePath => _language.ImagePath; 
+        public string ImagePath => _language.ImagePath;
+
+		//needs INPC and INPCG
+		public string GradeImagePath => _language.GradeImagePath;
+
         public string Name => _language.Name; 
         public string Description => _language.Description; 
         public Difficulty Difficulty => _language.Difficulty; 
@@ -92,7 +96,9 @@ namespace Idle.Logic.Languages
         public string Grade
 		{
 			get => _grade;
-            set{ TrySetProperty(ref _grade, value);}
+            set{ TrySetProperty(ref _grade, value);
+			//update GradeImagePath
+			}
 		}
 
 		// The progress of our progress bar in the view
