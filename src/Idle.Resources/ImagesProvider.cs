@@ -9,10 +9,24 @@ using System.Text;
 
 namespace Idle.Resources
 {
-	public class ImagesProvider
+	public abstract class ImagesProviderBase
 	{
 		private static Assembly _assembly { get; } = Assembly.GetExecutingAssembly();
 
+		public Stream GetStream(string resourceName)
+		{
+			var stream = _assembly.GetManifestResourceStream(resourceName);
+			return stream;
+		}
+	}
+
+	public class GradeImagesProvider : ImagesProvider
+	{
+		// todo
+	}
+
+	public class ImagesProvider : ImagesProviderBase
+	{
 		// Images are grouped into folders // Generic images are placed in this folder directly
 		private static string _images { get; } = Constants.AssemblyName + ".Images.";
 		private static string _fallback { get; } = _images + "Fallback.png";
@@ -39,13 +53,6 @@ namespace Idle.Resources
 
 			return _fallback; ;
 		}
-
-		public Stream GetStream(string resourceName)
-		{
-			var stream = _assembly.GetManifestResourceStream(resourceName); 
-			return stream;
-		}
-
 	}
 
 	
