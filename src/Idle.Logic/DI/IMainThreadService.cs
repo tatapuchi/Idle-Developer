@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Idle.Logic.Interfaces
+namespace Idle.Logic.DI
 {
 	public interface IMainThreadService
 	{

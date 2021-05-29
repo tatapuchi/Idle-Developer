@@ -2,7 +2,7 @@
 using Idle.DataAccess.Migrators;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
-using Idle.Logic.Interfaces;
+using Idle.Logic.DI;
 using Idle.Models.Common;
 using Idle.Models.Fields;
 using System;

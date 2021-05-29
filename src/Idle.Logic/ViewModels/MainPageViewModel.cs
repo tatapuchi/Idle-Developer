@@ -1,6 +1,6 @@
 ﻿using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
-using Idle.Logic.Interfaces;
+using Idle.Logic.DI;
 using Idle.Logic.Languages;
 using Idle.Logic.Shop;
 using Idle.Logic.Shop.Markets;

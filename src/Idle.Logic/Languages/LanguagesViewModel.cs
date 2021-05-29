@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using Idle.Logic.Common;
 using System.Windows.Input;
-using Idle.Logic.Interfaces;
+using Idle.Logic.DI;
 using Idle.Models.Fields;
 
 namespace Idle.Logic.Languages

@@ -1,5 +1,5 @@
 ﻿using Idle.Logic;
-using Idle.Logic.Interfaces;
+using Idle.Logic.DI;
 using System;
 using System.Collections.Generic;
 using System.Text;
