@@ -61,7 +61,7 @@ namespace Idle.DataAccess.Migrators
 			await base.MigrateAsync();
 
 			var languages = _languagesFactory.CreateLanguages();
-			await InsertIfNotExisting(languages);
+			await InsertIfNotExistingAsync(languages);
 			
 		}
 
