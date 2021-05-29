@@ -10,6 +10,8 @@ namespace Idle.Resources.Tests.L10N
 		public void TestMethod1()
 		{
 			var resource = new LocalizationResourceWrapper();
+
+			var supportedCultures = resource.GetSupportedCultures();
 		}
 	}
 }
