@@ -66,7 +66,7 @@ namespace Idle.DataAccess.Migrators
 		}
 
 
-		private async Task InsertIfNotExisting(IEnumerable<Language> languages)
+		private async Task InsertIfNotExistingAsync(IEnumerable<Language> languages)
 		{
 			var existingLanguages = await Connection.Table<Language>().ToListAsync();
 			var toBeAdded = languages.Except(existingLanguages).ToList();
