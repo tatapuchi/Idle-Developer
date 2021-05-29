@@ -23,6 +23,7 @@
             </Style>
         </ResourceDictionary>
     </Frame.Resources>
+    
     <Grid>
         <!--Default UI (Before Purchase)-->
         <StackLayout Spacing="6"
