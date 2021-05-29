@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Frame xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
+       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic" xmlns:local="clr-namespace:Idle.Views.Triggers"
        x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
        x:DataType="{x:Type vm:LanguageItemViewModel}"
        BackgroundColor="{StaticResource Blue}"
@@ -15,7 +15,9 @@
                         <Setter Property="Opacity" Value="1"/>
                     </DataTrigger>
                     <DataTrigger TargetType="VisualElement" Binding="{Binding IsActive}" Value="True">
-                        <Setter Property="Opacity" Value="0.5"/>
+                        <DataTrigger.EnterActions>
+                            <local:FadeTriggerAction/>
+                        </DataTrigger.EnterActions>
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
