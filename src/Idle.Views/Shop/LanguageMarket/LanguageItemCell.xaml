@@ -63,6 +63,15 @@
                     <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
                         <Setter Property="Text" Value="Learned"/>
                     </DataTrigger>
+                    
+                    <!--Please do not change this to a Binding, IsEnabled will not be set to false if you use a binding because the button has a command-->
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="False">
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+
                 </Button.Triggers>
             </Button>
 
