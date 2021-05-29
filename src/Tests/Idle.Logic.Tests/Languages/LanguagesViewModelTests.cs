@@ -12,6 +12,7 @@ using Idle.Logic.Common;
 using SQLite;
 using Idle.Resources;
 using Idle.DataAccess.Migrators;
+using Idle.Resources.Images;
 
 namespace Idle.Logic.Tests.Languages
 {

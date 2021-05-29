@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Idle.Resources
+namespace Idle.Resources.Images
 {
 	public class GradeImagesProvider : ImagesProviderBase
 	{

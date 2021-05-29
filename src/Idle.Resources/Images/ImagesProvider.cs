@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Idle.Resources
+namespace Idle.Resources.Images
 {
 	public class ImagesProvider : ImagesProviderBase
 	{

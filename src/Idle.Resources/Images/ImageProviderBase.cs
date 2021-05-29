@@ -5,7 +5,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Idle.Resources
+namespace Idle.Resources.Images
 {
 	public abstract class ImagesProviderBase
 	{

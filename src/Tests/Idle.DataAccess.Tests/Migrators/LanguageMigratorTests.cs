@@ -1,6 +1,7 @@
 ﻿using Idle.DataAccess.Migrators;
 using Idle.Models.Fields;
 using Idle.Resources;
+using Idle.Resources.Images;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using SQLite;

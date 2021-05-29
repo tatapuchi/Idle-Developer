@@ -7,6 +7,7 @@ using Idle.Models.Fields.Languages;
 using Idle.Models.Common;
 using Idle.Resources;
 using System.Threading.Tasks;
+using Idle.Resources.Images;
 
 namespace Idle.DataAccess.Migrators
 {
