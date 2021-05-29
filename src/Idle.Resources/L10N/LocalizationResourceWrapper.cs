@@ -12,7 +12,16 @@ namespace Idle.Resources.L10N
 
 		internal protected string[] GetSupportedCultures()
 		{
-			var path = typeof(LocalizationResource);
+			var type = typeof(LocalizationResource);
+			var assembly = type.Assembly;
+			var ns = type.Namespace;
+
+			const string resx = ".resx";
+
+			var resxFiles = assembly.GetTypes()
+				.Where(t => !t.IsClass && t.Namespace == ns && t.Name.EndsWith(resx))
+				.Select(t => t.Name);
+			
 			return null;
 		}
 
