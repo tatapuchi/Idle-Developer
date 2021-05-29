@@ -1,17 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Frame xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic"
+       xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic" xmlns:local="clr-namespace:Idle.Views.Triggers"
        x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
        x:DataType="{x:Type vm:LanguageItemViewModel}"
-       BackgroundColor="{StaticResource Blue}" CornerRadius="12">
-
+       BackgroundColor="{StaticResource Blue}"
+       Style="{StaticResource readOnlyStyleTrigger}"
+       CornerRadius="12">
+    <Frame.Resources>
+        <ResourceDictionary>
+            <Style x:Key="readOnlyStyleTrigger" TargetType="VisualElement">
+                <Style.Triggers>
+                    <DataTrigger TargetType="VisualElement" Binding="{Binding IsActive}" Value="False">
+                        <Setter Property="Opacity" Value="1"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="VisualElement" Binding="{Binding IsActive}" Value="True">
+                        <DataTrigger.EnterActions>
+                            <local:FadeTriggerAction/>
+                        </DataTrigger.EnterActions>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Frame.Resources>
     <Grid>
         <!--Default UI (Before Purchase)-->
-        <StackLayout
-        Spacing="6"
-        Orientation="Vertical" 
-        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <StackLayout Spacing="6"
+                     Orientation="Vertical" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
             <StackLayout VerticalOptions="StartAndExpand">
                 <!--Image Stacklayout, contains the image and the underline beneath it-->
@@ -34,16 +50,38 @@
 
 
             <!--Button, contains info about cost-->
-            <Button BackgroundColor="{StaticResource Green}" Text="{Binding Path=XPCost,StringFormat='{0} XP' }" TextColor="{StaticResource Blue}" Margin="0, 18, 0, 0"
-                    Command="{Binding PurchaseLanguageCommand}" CornerRadius="12" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"/>
+            <Button Margin="0, 18, 0, 0"
+                    CornerRadius="12" 
+                    HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand"
+                    BackgroundColor="{StaticResource Green}" 
+                    TextColor="{StaticResource Blue}" 
+                    Command="{Binding PurchaseLanguageCommand}">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="False">
+                        <Setter Property="Text" Value="{Binding Path=XPCost,StringFormat='{0} XP'}"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
+                        <Setter Property="Text" Value="Learned"/>
+                    </DataTrigger>
+                    
+                    <!--Please do not change this to a Binding, IsEnabled will not be set to false if you use a binding because the button has a command-->
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="False">
+                        <Setter Property="IsEnabled" Value="True"/>
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+
+                </Button.Triggers>
+            </Button>
 
         </StackLayout>
 
         <!--Frame that covers the UI upon purchase-->
-        <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="8"
-               BackgroundColor="{StaticResource Orange}" IsVisible="{Binding Active}">
+        <!--<Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="8"
+               BackgroundColor="{StaticResource Orange}" IsVisible="{Binding IsActive}">
             <Label HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title" Text="Sold" TextColor="{StaticResource Red}"/>
-        </Frame>
+        </Frame>-->
         
     </Grid>
 </Frame>

@@ -16,6 +16,8 @@ using Idle.Views.Shop;
 using Idle.Logic.Shop;
 using Idle.Logic.Shop.Markets;
 using Idle.Views.Shop.Markets;
+using Idle.Logic;
+using System.Threading.Tasks;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -33,13 +35,13 @@ namespace Idle
 
         }
 
-        protected override void OnStart()
+        public async Task InitilizeAsync() 
         {
             // "Idle.DataAccess"
             var languageImageProvider = new ImagesProvider();
             var languagesFactory = new LanguagesFactory(languageImageProvider);
             var languageMigrator = new LanguageMigrator(languagesFactory);
-            languageMigrator.Migrate();
+            await languageMigrator.MigrateAsync();
 
             var languagesRepository = new LanguagesRepository();
 
@@ -47,44 +49,26 @@ namespace Idle
             var navigation = new Lazy<INavigation>(() => Application.Current.MainPage.Navigation);
             var navigationService = new NavigationService(navigation);
 
-            var mainPage = CreateMainPage(navigationService);
+            // "Idle.Logic" and "Idle.Views"
+            var mainPage = SetBindingContext(new MainPage(), new MainPageViewModel(navigationService));
 
             navigationService.Register<MainPageViewModel>(() => mainPage);
-
+            
             navigationService.Register<LanguagesViewModel>(() =>
-            {
-                var page = new LanguagesPage();
-                var vm = new LanguagesViewModel(languagesRepository);
-                page.BindingContext = vm;
-
-                return page;
-            });
+                SetBindingContext(new LanguagesPage(), new LanguagesViewModel(languagesRepository)));
 
             navigationService.Register<LanguageMarketViewModel>(() =>
-            {
-                var page = new LanguageMarket();
-                var vm = new LanguageMarketViewModel(languagesRepository);
-                page.BindingContext = vm;
-
-                return page;
-            });
+                SetBindingContext(new LanguageMarket(), new LanguageMarketViewModel(languagesRepository)));
 
             // Idle.Views
             MainPage = new NavigationPage(mainPage);
-
         }
 
-        private static MainPage CreateMainPage(NavigationService navigationService)
+        private static Page SetBindingContext(Page page, ViewModelBase vm)
 		{
-            var page = new MainPage();
-            var vm = new MainPageViewModel(navigationService);
             page.BindingContext = vm;
-
             return page;
-        }
-
-        
-
+		}
 
         protected override void OnSleep()
         {

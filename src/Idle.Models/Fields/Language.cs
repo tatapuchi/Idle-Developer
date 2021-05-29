@@ -25,6 +25,6 @@ namespace Idle.Models.Fields
         public virtual int XPCost { get; set; }
         public virtual int XPIncome {get; set;}
 
-        public virtual bool Active { get; set; } = false;
+        public virtual bool IsActive { get; set; }
     }
 }

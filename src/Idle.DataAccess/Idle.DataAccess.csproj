@@ -5,9 +5,9 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <!--<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>.\Idle.DataAccess.xml</DocumentationFile>
-  </PropertyGroup>
+  </PropertyGroup>-->
 
   <ItemGroup>
     <Compile Remove="Player\**" />

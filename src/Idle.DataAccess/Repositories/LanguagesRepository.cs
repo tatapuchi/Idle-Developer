@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Repositories
 {
-	public class LanguagesRepository : RepositoryBase, IRepository<Language>
+	public class LanguagesRepository : DbConnectionBase, IRepository<Language>
 	{
 
 		public LanguagesRepository(){ }
 
-		internal LanguagesRepository(string path) : base(path){ }
+		internal LanguagesRepository(SQLiteAsyncConnection sQLiteAsyncConnection) : base(sQLiteAsyncConnection){ }
 
 		public async Task<IEnumerable<Language>> GetAllAsync() =>
 			await Connection.Table<Language>().ToListAsync();
 
 		public async Task<IEnumerable<Language>> GetAllActiveLanguagesAsync() =>
-			await Connection.Table<Language>().Where(lang => lang.Active == true).ToListAsync();
+			await Connection.Table<Language>().Where(lang => lang.IsActive == true).ToListAsync();
 
 		public Task<Language> GetOrDefaultAsync(int id) =>
 			Connection.Table<Language>().FirstOrDefaultAsync(model => model.ID == id);
