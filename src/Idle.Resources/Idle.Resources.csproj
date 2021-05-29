@@ -38,4 +38,8 @@
     <ProjectReference Include="..\Idle.Models\Idle.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="L10N\" />
+  </ItemGroup>
+
 </Project>
