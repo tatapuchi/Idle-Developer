@@ -59,5 +59,23 @@ namespace Idle.Resources.L10N {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language Market.
+        /// </summary>
+        internal static string MainPage_Button_Language_Market {
+            get {
+                return ResourceManager.GetString("MainPage.Button.Language-Market", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages.
+        /// </summary>
+        internal static string MainPage_Button_Languages {
+            get {
+                return ResourceManager.GetString("MainPage.Button.Languages", resourceCulture);
+            }
+        }
     }
 }
