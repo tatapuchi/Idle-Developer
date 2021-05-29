@@ -8,9 +8,11 @@ namespace Idle.Views.Triggers
     public class FadeTriggerAction : TriggerAction<VisualElement>
     {
 
+        public float End { get; set; } = 0.4f;
+        public uint Duration { get; set; } = 1000;
         protected override void Invoke(VisualElement sender)
         {
-            sender.FadeTo(0.4, 1000);
+            sender.FadeTo(End, Duration);
         }
     }
 }
