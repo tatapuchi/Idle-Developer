@@ -7,24 +7,24 @@ using System.Text;
 
 namespace Idle.Resources.L10N
 {
-	public abstract class LocalizationBase
+	public interface ILocalization
 	{
-		public abstract string GetString(string cultureName);
-		public abstract bool TrySetCulture(string cultureName);
+		string GetString(string cultureName);
+		bool TrySetCulture(string cultureName);
 	}
 
-	public class Localization : LocalizationBase
+	public class Localization : ILocalization
 	{
 		private const string _neutral = "en";
 		private static CultureInfo _usedCulture = new CultureInfo(_neutral);
 
-		public override string GetString(string cultureName)
+		public string GetString(string cultureName)
 		{
 			var result = LocalizationResource.ResourceManager.GetString(cultureName, _usedCulture);
 			return result;
 		}
 
-		public override bool TrySetCulture(string cultureName)
+		public bool TrySetCulture(string cultureName)
 		{
 			if (!IsCultureSupported(cultureName)) return false;
 			_usedCulture = new CultureInfo(cultureName);
