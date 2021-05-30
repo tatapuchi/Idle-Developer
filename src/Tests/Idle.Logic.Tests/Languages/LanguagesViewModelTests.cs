@@ -2,8 +2,6 @@
 using Idle.Logic.Languages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using Idle.Models.Fields;
-using Idle.Models.Fields.Languages;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Shouldly;
@@ -12,7 +10,7 @@ using Idle.Logic.Common;
 using SQLite;
 using Idle.Resources;
 using Idle.DataAccess.Migrators;
-using Idle.Resources.Images;
+using Idle.DataAccess.Images;
 
 namespace Idle.Logic.Tests.Languages
 {

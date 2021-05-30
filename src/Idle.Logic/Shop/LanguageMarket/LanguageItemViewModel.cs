@@ -1,6 +1,6 @@
 ﻿using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
-using Idle.Models.Fields;
+using Idle.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -8,7 +8,7 @@ using System.Linq;
 using Idle.Logic.Common;
 using System.Windows.Input;
 using Idle.Logic.DI;
-using Idle.Models.Fields;
+using Idle.Models.Models;
 
 namespace Idle.Logic.Languages
 {

@@ -1,7 +1,7 @@
 ﻿using Idle.DataAccess.Migrators;
+using Idle.DataAccess.ModelTemplates.Languages;
 using Idle.DataAccess.Repositories;
-using Idle.Models.Fields;
-using Idle.Models.Fields.Languages;
+using Idle.Models.Models;
 using Idle.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;

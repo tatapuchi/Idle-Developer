@@ -1,5 +1,5 @@
 ﻿using Idle.Models.Common;
-using Idle.Models.Fields;
+using Idle.Models.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using System;

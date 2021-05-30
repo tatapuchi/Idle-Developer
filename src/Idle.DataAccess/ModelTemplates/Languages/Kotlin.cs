@@ -1,4 +1,5 @@
 ﻿using Idle.Models.Common;
+using Idle.Models.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;

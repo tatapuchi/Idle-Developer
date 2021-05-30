@@ -1,4 +1,4 @@
-﻿
+﻿    
 using Idle.Models;
 using Idle.Models.Common;
 using Idle.Models.Interfaces;

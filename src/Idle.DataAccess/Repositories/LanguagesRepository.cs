@@ -1,4 +1,4 @@
-﻿using Idle.Models.Fields;
+﻿using Idle.Models.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;

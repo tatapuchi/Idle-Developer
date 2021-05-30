@@ -1,8 +1,7 @@
 ﻿using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
 using Idle.Logic.Languages;
-using Idle.Models.Fields;
-using Idle.Models.Fields.Languages;
+using Idle.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

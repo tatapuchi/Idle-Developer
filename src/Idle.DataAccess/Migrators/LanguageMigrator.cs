@@ -2,12 +2,11 @@
 using SQLite;
 using System.Linq;
 using System.Collections.Generic;
-using Idle.Models.Fields;
-using Idle.Models.Fields.Languages;
 using Idle.Models.Common;
-using Idle.Resources;
 using System.Threading.Tasks;
-using Idle.Resources.Images;
+using Idle.DataAccess.Images;
+using Idle.Models.Models;
+using Idle.DataAccess.ModelTemplates.Languages;
 
 namespace Idle.DataAccess.Migrators
 {
