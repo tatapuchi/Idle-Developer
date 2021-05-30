@@ -106,4 +106,7 @@
   <data name="LanguageCell.Button.Upgrade" xml:space="preserve">
     <value>Upgrade</value>
   </data>
+  <data name="LanguageItemCell.Button.Learned" xml:space="preserve">
+    <value>Learned</value>
+  </data>
 </root>

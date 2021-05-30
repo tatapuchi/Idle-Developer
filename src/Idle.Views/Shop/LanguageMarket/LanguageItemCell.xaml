@@ -2,6 +2,7 @@
 <Frame xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:vm="clr-namespace:Idle.Logic.Shop.Markets;assembly=Idle.Logic" xmlns:local="clr-namespace:Idle.Views.Triggers"
+       xmlns:common="clr-namespace:Idle.Views.Common"
        x:Class="Idle.Views.Shop.Markets.LanguageItemCell"
        x:DataType="{x:Type vm:LanguageItemViewModel}"
        BackgroundColor="{StaticResource Blue}"
@@ -60,19 +61,12 @@
                 <Button.Triggers>
                     <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="False">
                         <Setter Property="Text" Value="{Binding Path=XPCost,StringFormat='{0} XP'}"/>
-                    </DataTrigger>
-                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
-                        <Setter Property="Text" Value="Learned"/>
-                    </DataTrigger>
-                    
-                    <!--Please do not change this to a Binding, IsEnabled will not be set to false if you use a binding because the button has a command-->
-                    <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="False">
                         <Setter Property="IsEnabled" Value="True"/>
                     </DataTrigger>
                     <DataTrigger TargetType="Button" Binding="{Binding IsActive}" Value="True">
+                        <Setter Property="Text" Value="{common:L10N Key=LanguageItemCell.Button.Learned}"/>
                         <Setter Property="IsEnabled" Value="False"/>
                     </DataTrigger>
-
                 </Button.Triggers>
             </Button>
 
