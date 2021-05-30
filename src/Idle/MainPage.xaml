@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
+             xmlns:common="clr-namespace:Idle.Views.Common;assembly=Idle.Views"
              x:Class="Idle.MainPage"
              x:DataType="{x:Type vm:MainPageViewModel}"
              BackgroundColor="#F0F0F3" >
@@ -21,8 +22,18 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-        <Button Grid.Column="0" Grid.Row="0" Text="Languages" TextColor="White" Command="{Binding NavigateToLanguagesPageCommand}" BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
-        <Button Grid.Column="1" Grid.Row="0" Text="Language Market" TextColor="White" Command="{Binding NavigateToLanguageMarketCommand}"  BackgroundColor="{StaticResource Purple}" CornerRadius="12"/>
+        <Button Grid.Column="0" Grid.Row="0" 
+                Text="{common:L10N Key=MainPage.Button.Languages}" 
+                Command="{Binding NavigateToLanguagesPageCommand}"
+                BackgroundColor="{StaticResource Purple}"
+                TextColor="White"
+                CornerRadius="12"/>
+        <Button Grid.Column="1" Grid.Row="0" 
+                Text="{common:L10N Key=MainPage.Button.Language-Market}"
+                Command="{Binding NavigateToLanguageMarketCommand}"  
+                BackgroundColor="{StaticResource Purple}"
+                TextColor="White" 
+                CornerRadius="12"/>
     </Grid>
 
 </ContentPage>

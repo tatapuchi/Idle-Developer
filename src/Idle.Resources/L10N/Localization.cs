@@ -9,7 +9,7 @@ namespace Idle.Resources.L10N
 {
 	public interface ILocalization
 	{
-		string GetString(string cultureName);
+		string GetString(string key);
 		bool TrySetCulture(string cultureName);
 	}
 
@@ -18,9 +18,9 @@ namespace Idle.Resources.L10N
 		private const string _neutral = "en";
 		private static CultureInfo _usedCulture = new CultureInfo(_neutral);
 
-		public string GetString(string cultureName)
+		public string GetString(string key)
 		{
-			var result = LocalizationResource.ResourceManager.GetString(cultureName, _usedCulture);
+			var result = LocalizationResource.ResourceManager.GetString(key, _usedCulture);
 			return result;
 		}
 
