@@ -9,7 +9,7 @@ namespace Idle.Views.Common
 	// todo: move mainpage from Idle to Idle.Views then change this class to internal
 	public class L10N : IMarkupExtension<string>
 	{
-		private static Localization _localization = new Localization();
+		private static LocalizationService _localization = new LocalizationService();
 
 		public string Key { get; set; }
 
