@@ -1,5 +1,6 @@
 ﻿using Idle.Models.Common;
 using Idle.Models.Models;
+using Idle.Resources.L10N;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,9 @@ namespace Idle.DataAccess.ModelTemplates.Languages
     {
         //public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
 
-        public override string Name => "C#";
+        public override string Name => Localization.GetString("Language.CSharp.Name");
 
-        public override string Description => "It lets you see sharp. Ba dum tss.";
+        public override string Description => Localization.GetString("Language.CSharp.Description");
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 850;

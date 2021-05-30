@@ -115,4 +115,10 @@
   <data name="LanguageMarket.Label.Start-speaking-now" xml:space="preserve">
     <value>Start speaking now!</value>
   </data>
+  <data name="Language.CSharp.Name" xml:space="preserve">
+    <value>C#</value>
+  </data>
+  <data name="Language.CSharp.Description" xml:space="preserve">
+    <value>It lets you see sharp. Ba dum tss.</value>
+  </data>
 </root>

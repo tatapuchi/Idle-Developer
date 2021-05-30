@@ -61,6 +61,60 @@ namespace Idle.Resources.L10N {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to It lets you see sharp. Ba dum tss..
+        /// </summary>
+        internal static string Language_CSharp_Description {
+            get {
+                return ResourceManager.GetString("Language.CSharp.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to C#.
+        /// </summary>
+        internal static string Language_CSharp_Name {
+            get {
+                return ResourceManager.GetString("Language.CSharp.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upgrade.
+        /// </summary>
+        internal static string LanguageCell_Button_Upgrade {
+            get {
+                return ResourceManager.GetString("LanguageCell.Button.Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Learned.
+        /// </summary>
+        internal static string LanguageItemCell_Button_Learned {
+            get {
+                return ResourceManager.GetString("LanguageItemCell.Button.Learned", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language Market.
+        /// </summary>
+        internal static string LanguageMarket_Label_Language_Market {
+            get {
+                return ResourceManager.GetString("LanguageMarket.Label.Language-Market", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start speaking now!.
+        /// </summary>
+        internal static string LanguageMarket_Label_Start_speaking_now {
+            get {
+                return ResourceManager.GetString("LanguageMarket.Label.Start-speaking-now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language Market.
         /// </summary>
         internal static string MainPage_Button_Language_Market {
