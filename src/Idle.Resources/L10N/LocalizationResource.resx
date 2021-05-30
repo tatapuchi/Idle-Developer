@@ -109,4 +109,10 @@
   <data name="LanguageItemCell.Button.Learned" xml:space="preserve">
     <value>Learned</value>
   </data>
+  <data name="LanguageMarket.Label.Language-Market" xml:space="preserve">
+    <value>Language Market</value>
+  </data>
+  <data name="LanguageMarket.Label.Start-speaking-now" xml:space="preserve">
+    <value>Start speaking now!</value>
+  </data>
 </root>
