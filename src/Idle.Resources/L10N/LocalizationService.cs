@@ -7,6 +7,8 @@ using System.Text;
 
 namespace Idle.Resources.L10N
 {
+	// todo: move everthing in this block to dataaccess as this contains logic of accessing data
+
 	public interface ILocalizationService
 	{
 		string GetString(string key);
@@ -52,7 +54,6 @@ namespace Idle.Resources.L10N
 			Localization._usedCulture = new CultureInfo(cultureName);
 			return true;
 		}
-
 
 	}
 }
