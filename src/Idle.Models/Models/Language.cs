@@ -20,6 +20,8 @@ namespace Idle.Models.Models
         public float Progress { get; set; } = 0.0f;
         public int XP { get; set; } = 0;
         public int Level { get; set; } = 1;
+
+        // todo: use enum
         public string Grade { get; set; } = "F";
 
         public virtual int XPCost { get; set; }

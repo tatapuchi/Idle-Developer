@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 using Idle.DataAccess.Images;
 using Idle.Models.Models;
 using Idle.DataAccess.ModelTemplates.Languages;
+using System;
 
 namespace Idle.DataAccess.Migrators
 {
 	public class LanguagesFactory
 	{
+		[Obsolete]
 		private readonly ImagesProvider _imagesProvider;
 
 		public LanguagesFactory(ImagesProvider imagesProvider)

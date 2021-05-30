@@ -8,6 +8,7 @@ using System.Text;
 
 namespace Idle.DataAccess.Images
 {
+	[Obsolete]
 	public class ImagesProvider : ImagesProviderBase
 	{
 		// All images which belong to the languages are below this line
