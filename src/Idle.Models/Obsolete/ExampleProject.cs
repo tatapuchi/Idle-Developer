@@ -7,6 +7,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Obsolete
+{
 //namespace Idle.DataAccess.Projects
 //{
 //    public class ExampleProject : ProjectBase
@@ -34,3 +36,4 @@
 //        public override int XPIncome => 20;
 //    }
 //}
+}

@@ -4,6 +4,8 @@
 //using System.Runtime.CompilerServices;
 //using System.Text;
 
+namespace Idle.Models.Models
+{
 //namespace Idle.DataAccess.Fields
 //{
 //    /// <summary>
@@ -73,3 +75,4 @@
 
 //    }
 //}
+}

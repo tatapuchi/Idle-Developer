@@ -7,6 +7,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Obsolete
+{
 //namespace Idle.DataAccess.Jobs
 //{
 //    public class ExampleJob : JobBase
@@ -33,3 +35,4 @@
 //        public override int XPIncome => 20;
 //    }
 //}
+}

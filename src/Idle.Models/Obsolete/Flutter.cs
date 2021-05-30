@@ -3,6 +3,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Obsolete
+{
 //namespace Idle.DataAccess.Fields.Frameworks
 //{
 //    /// <summary>
@@ -35,3 +37,4 @@
 
 //    }
 //}
+}

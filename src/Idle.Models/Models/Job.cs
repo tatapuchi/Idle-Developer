@@ -4,6 +4,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Models
+{
 //namespace Idle.DataAccess.Jobs
 //{
 //    public abstract class JobBase : ModelBase, IDescriptive, IRequirement, IProgress, IXPIncome, ICoinIncome
@@ -46,3 +48,4 @@
 
 //    }
 //}
+}

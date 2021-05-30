@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Models.Fields
+namespace Idle.Models.Models
 {
     [Table(TableNames.Languages)]
     public class Language : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome, IActive

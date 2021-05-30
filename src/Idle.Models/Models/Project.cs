@@ -4,6 +4,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Models
+{
 //namespace Idle.DataAccess.Projects
 //{
 
@@ -46,3 +48,4 @@
 
 //    }
 //}
+}

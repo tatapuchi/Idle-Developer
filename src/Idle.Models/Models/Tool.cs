@@ -3,6 +3,8 @@
 //using System.Collections.Generic;
 //using System.Text;
 
+namespace Idle.Models.Models
+{
 //namespace Idle.DataAccess.Fields
 //{
 //    /// <summary>
@@ -42,3 +44,4 @@
 //        public abstract int XPIncome { get; }
 //    }
 //}
+}

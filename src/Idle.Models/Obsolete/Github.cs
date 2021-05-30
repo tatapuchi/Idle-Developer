@@ -4,6 +4,8 @@
 //using System.Text;
 //using Xamarin.Forms;
 
+namespace Idle.Models.Obsolete
+{
 //namespace Idle.DataAccess.Fields.Tools
 //{
 //    /// <summary>
@@ -25,3 +27,4 @@
 //        public override int XPIncome => 30;
 //    }
 //}
+}

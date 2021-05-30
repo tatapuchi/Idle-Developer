@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Models.Fields.Languages
+namespace Idle.DataAccess.ModelTemplates.Languages
 {
     [Table(TableNames.Languages)]
     public class CSharp : Language
