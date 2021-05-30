@@ -103,4 +103,7 @@
   <data name="MainPage.Button.Language-Market" xml:space="preserve">
     <value>Language Market</value>
   </data>
+  <data name="LanguageCell.Button.Upgrade" xml:space="preserve">
+    <value>Upgrade</value>
+  </data>
 </root>

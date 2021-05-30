@@ -2,6 +2,7 @@
 <Frame xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:vm="clr-namespace:Idle.Logic.Languages;assembly=Idle.Logic"
+       xmlns:common="clr-namespace:Idle.Views.Common"
        x:Class="Idle.Views.Languages.LanguageCell"
        x:DataType="{x:Type vm:LanguageViewModel}"
        BackgroundColor="{StaticResource Purple}" CornerRadius="12">
@@ -38,14 +39,15 @@
         </StackLayout>
 
         <Image Grid.Row="0" Grid.Column="1" 
-              HorizontalOptions="End" Scale="2"
-              VerticalOptions="Start" Source="{Binding Grade, Converter={StaticResource gradeStringToImageSourceConverter}}" />
+               HorizontalOptions="End" Scale="2"
+               VerticalOptions="Start" 
+               Source="{Binding Grade, Converter={StaticResource gradeStringToImageSourceConverter}}" />
 
         <StackLayout Grid.Row="1"
                      Grid.Column="0" Grid.ColumnSpan="2" 
                      VerticalOptions="End" >
             <ProgressBar x:Name="progressBar" Progress="{Binding Path=Progress, Mode=TwoWay}" />
-            <Button Text="Upgrade" 
+            <Button Text="{common:L10N Key=LanguageCell.Button.Upgrade}" 
                     CornerRadius="12" 
                     TextColor="White"
                     BackgroundColor="{StaticResource Red}"

@@ -6,6 +6,7 @@ using Xamarin.Forms.Xaml;
 
 namespace Idle.Views.Common
 {
+	// todo: move mainpage from Idle to Idle.Views then change this class to internal
 	public class L10N : IMarkupExtension<string>
 	{
 		private static Localization _localization = new Localization();
