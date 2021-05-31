@@ -6,10 +6,10 @@ using System.Text;
 
 namespace Idle.Views.ValueConverters
 {
-    public class KeyStringToLocalizedStringConverter : ValueConverterBase
+    public class L10NConverter : ValueConverterBase
     {
 
-        protected ILocalizationService LocalizationService = new LocalizationService();
+        private static ILocalizationService LocalizationService = new LocalizationService();
 
         protected override object ConvertOverride(object value, Type targetType, object parameter, CultureInfo culture)
         {
