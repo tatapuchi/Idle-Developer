@@ -20,6 +20,7 @@ namespace Idle.DataAccess.Images
 
 		protected override string _fallback => _grades + "Fallback.png";
 
+		// todo use enum
 		private static readonly Dictionary<string, string> _resources = new Dictionary<string, string>()
 		{
 			["F"] = _F,
