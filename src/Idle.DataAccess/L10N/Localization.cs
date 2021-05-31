@@ -2,19 +2,10 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 
 namespace Idle.Resources.L10N
 {
-	// todo: move everthing in this block to dataaccess as this contains logic of accessing data
-
-	public interface ILocalizationService
-	{
-		string GetString(string key);
-		bool TrySetCulture(string cultureName);
-	}
-
 	public static class Localization
 	{
 		private const string _neutral = "en";
@@ -38,22 +29,5 @@ namespace Idle.Resources.L10N
 		{
 			yield return _neutral;
 		}
-	}
-
-	public class LocalizationService : ILocalizationService
-	{
-		public string GetString(string key)
-		{
-			var result = Localization.GetString(key);
-			return result;
-		}
-
-		public bool TrySetCulture(string cultureName)
-		{
-			if (!Localization.IsCultureSupported(cultureName)) return false;
-			Localization._usedCulture = new CultureInfo(cultureName);
-			return true;
-		}
-
 	}
 }

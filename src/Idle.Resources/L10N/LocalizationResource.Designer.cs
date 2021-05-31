@@ -22,7 +22,7 @@ namespace Idle.Resources.L10N {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class LocalizationResource {
+    public class LocalizationResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Idle.Resources.L10N {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Idle.Resources.L10N.LocalizationResource", typeof(LocalizationResource).Assembly);
@@ -51,7 +51,7 @@ namespace Idle.Resources.L10N {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to It lets you see sharp. Ba dum tss..
         /// </summary>
-        internal static string Language_CSharp_Description {
+        public static string Language_CSharp_Description {
             get {
                 return ResourceManager.GetString("Language.CSharp.Description", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to C#.
         /// </summary>
-        internal static string Language_CSharp_Name {
+        public static string Language_CSharp_Name {
             get {
                 return ResourceManager.GetString("Language.CSharp.Name", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to A language like C# but not C#.
         /// </summary>
-        internal static string Language_Java_Description {
+        public static string Language_Java_Description {
             get {
                 return ResourceManager.GetString("Language.Java.Description", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Java.
         /// </summary>
-        internal static string Language_Java_Name {
+        public static string Language_Java_Name {
             get {
                 return ResourceManager.GetString("Language.Java.Name", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to A language for building android apps..
         /// </summary>
-        internal static string Language_Kotlin_Description {
+        public static string Language_Kotlin_Description {
             get {
                 return ResourceManager.GetString("Language.Kotlin.Description", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Kotlin.
         /// </summary>
-        internal static string Language_Kotlin_Name {
+        public static string Language_Kotlin_Name {
             get {
                 return ResourceManager.GetString("Language.Kotlin.Name", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Everyone uses this for stuff, big cringe..
         /// </summary>
-        internal static string Language_Python_Description {
+        public static string Language_Python_Description {
             get {
                 return ResourceManager.GetString("Language.Python.Description", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Python.
         /// </summary>
-        internal static string Language_Python_Name {
+        public static string Language_Python_Name {
             get {
                 return ResourceManager.GetString("Language.Python.Name", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Upgrade.
         /// </summary>
-        internal static string LanguageCell_Button_Upgrade {
+        public static string LanguageCell_Button_Upgrade {
             get {
                 return ResourceManager.GetString("LanguageCell.Button.Upgrade", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Learned.
         /// </summary>
-        internal static string LanguageItemCell_Button_Learned {
+        public static string LanguageItemCell_Button_Learned {
             get {
                 return ResourceManager.GetString("LanguageItemCell.Button.Learned", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Language Market.
         /// </summary>
-        internal static string LanguageMarket_Label_Language_Market {
+        public static string LanguageMarket_Label_Language_Market {
             get {
                 return ResourceManager.GetString("LanguageMarket.Label.Language-Market", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Start speaking now!.
         /// </summary>
-        internal static string LanguageMarket_Label_Start_speaking_now {
+        public static string LanguageMarket_Label_Start_speaking_now {
             get {
                 return ResourceManager.GetString("LanguageMarket.Label.Start-speaking-now", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Language Market.
         /// </summary>
-        internal static string MainPage_Button_Language_Market {
+        public static string MainPage_Button_Language_Market {
             get {
                 return ResourceManager.GetString("MainPage.Button.Language-Market", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace Idle.Resources.L10N {
         /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
-        internal static string MainPage_Button_Languages {
+        public static string MainPage_Button_Languages {
             get {
                 return ResourceManager.GetString("MainPage.Button.Languages", resourceCulture);
             }
