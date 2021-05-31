@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Idle.Resources.L10N;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Idle.Resources.L10N
+namespace Idle.DataAccess.L10N
 {
 	internal class Localization
 	{

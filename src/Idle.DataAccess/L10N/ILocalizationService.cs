@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Idle.Resources.L10N
+namespace Idle.DataAccess.L10N
 {
 	public interface ILocalizationService
 	{
