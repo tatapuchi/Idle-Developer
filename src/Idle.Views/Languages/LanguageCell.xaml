@@ -30,10 +30,10 @@
 
 
             <StackLayout VerticalOptions="StartAndExpand">
-                <Label Text="{Binding Name}" 
+                <Label Text="{Binding Name, Converter={StaticResource keyStringToLocalizedStringConverter}}" 
                        FontSize="Subtitle" FontAttributes="Bold" 
                        TextColor="{StaticResource LightPurple}"/>
-                <Label Text="{Binding Description}"
+                <Label Text="{Binding Description, Converter={StaticResource keyStringToLocalizedStringConverter}}"
                        FontAttributes="Italic" TextColor="White"/>
             </StackLayout>
         </StackLayout>

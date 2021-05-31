@@ -14,9 +14,9 @@ namespace Idle.DataAccess.ModelTemplates.Languages
         {
         }
 
-        public override string Name => "Java";
+        public override string Name => "Language.Java.Name";
 
-        public override string Description => "A language like C# but not C#";
+        public override string Description => "Language.Java.Description";
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 750;

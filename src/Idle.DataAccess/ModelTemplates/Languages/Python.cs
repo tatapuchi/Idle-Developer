@@ -13,9 +13,9 @@ namespace Idle.DataAccess.ModelTemplates.Languages
         public Python()
         {
         }
-        public override string Name => "Python";
+        public override string Name => "Language.Python.Name";
 
-        public override string Description => "Everyone uses this already, big cringe language.";
+        public override string Description => "Language.Python.Description";
 
         public override Difficulty Difficulty => Difficulty.Medium;
         public override int XPCost => 550;

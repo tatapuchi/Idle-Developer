@@ -6,5 +6,5 @@
     
     <local:ImageStringToImageSourceConverter x:Key="imageStringToImageSourceConverter" />
     <local:GradeStringToImageSourceConverter x:Key="gradeStringToImageSourceConverter" />
-    
+    <local:KeyStringToLocalizedStringConverter x:Key="keyStringToLocalizedStringConverter" />
 </ResourceDictionary>

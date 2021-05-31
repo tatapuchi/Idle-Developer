@@ -79,6 +79,60 @@ namespace Idle.Resources.L10N {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A language like C# but not C#.
+        /// </summary>
+        internal static string Language_Java_Description {
+            get {
+                return ResourceManager.GetString("Language.Java.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Java.
+        /// </summary>
+        internal static string Language_Java_Name {
+            get {
+                return ResourceManager.GetString("Language.Java.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A language for building android apps..
+        /// </summary>
+        internal static string Language_Kotlin_Description {
+            get {
+                return ResourceManager.GetString("Language.Kotlin.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kotlin.
+        /// </summary>
+        internal static string Language_Kotlin_Name {
+            get {
+                return ResourceManager.GetString("Language.Kotlin.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Everyone uses this for stuff, big cringe..
+        /// </summary>
+        internal static string Language_Python_Description {
+            get {
+                return ResourceManager.GetString("Language.Python.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Python.
+        /// </summary>
+        internal static string Language_Python_Name {
+            get {
+                return ResourceManager.GetString("Language.Python.Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Upgrade.
         /// </summary>
         internal static string LanguageCell_Button_Upgrade {

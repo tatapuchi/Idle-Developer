@@ -13,9 +13,9 @@ namespace Idle.DataAccess.ModelTemplates.Languages
     {
         //public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
 
-        public override string Name => Localization.GetString("Language.CSharp.Name");
+        public override string Name => "Language.CSharp.Name";
 
-        public override string Description => Localization.GetString("Language.CSharp.Description");
+        public override string Description => "Language.CSharp.Description";
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 850;

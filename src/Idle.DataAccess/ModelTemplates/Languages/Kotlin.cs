@@ -14,9 +14,9 @@ namespace Idle.DataAccess.ModelTemplates.Languages
         {
         }
      
-        public override string Name => "Kotlin";
+        public override string Name => "Language.Kotlin.Name";
 
-        public override string Description => "A language for building android apps.";
+        public override string Description => "Language.Kotlin.Description";
 
         public override Difficulty Difficulty => Difficulty.Hard;
         public override int XPCost => 450;

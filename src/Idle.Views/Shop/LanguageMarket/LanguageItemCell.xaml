@@ -40,12 +40,12 @@
 
                 <!--Information Stacklayout, contains Name and Description-->
                 <StackLayout Margin="0, 6, 0, 0">
-                    <Label Text="{Binding Name}" 
+                    <Label Text="{Binding Name, Converter={StaticResource keyStringToLocalizedStringConverter}}" 
                        FontSize="Subtitle" FontAttributes="Bold" 
                        TextColor="{StaticResource LightPurple}"
                        HorizontalOptions="Center"/>
 
-                    <Label Text="{Binding Description}"
+                    <Label Text="{Binding Description, Converter={StaticResource keyStringToLocalizedStringConverter}}"
                        FontAttributes="Italic" TextColor="White"/>
                 </StackLayout>
             </StackLayout>
