@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Idle.Resources.L10N
 {
-	public static class Localization
+	internal class Localization
 	{
 		private const string _neutral = "en";
 		internal static CultureInfo _usedCulture = new CultureInfo(_neutral);
