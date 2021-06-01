@@ -18,7 +18,6 @@ using Idle.Logic.Shop.Markets;
 using Idle.Views.Shop.Markets;
 using Idle.Logic;
 using System.Threading.Tasks;
-using Idle.DataAccess.Images;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]

@@ -5,14 +5,14 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace Idle.DataAccess.L10N
+namespace Idle.Resources.L10N
 {
 	internal class Localization
 	{
 		private const string _neutral = "en";
 		internal static CultureInfo _usedCulture = new CultureInfo(_neutral);
 
-		public static string GetString(string key)
+		internal static string GetString(string key)
 		{
 			var result = LocalizationResource.ResourceManager.GetString(key, _usedCulture);
 			return result;

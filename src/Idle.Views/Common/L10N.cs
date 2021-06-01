@@ -1,7 +1,5 @@
-﻿using Idle.DataAccess.L10N;
+﻿using Idle.Resources.L10N;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms.Xaml;
 
 namespace Idle.Views.Common

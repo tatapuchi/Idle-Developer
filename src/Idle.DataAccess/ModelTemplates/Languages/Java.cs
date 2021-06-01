@@ -1,14 +1,10 @@
-﻿using Idle.DataAccess.Images;
-using Idle.Models.Common;
+﻿using Idle.Models.Common;
 using Idle.Models.Models;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Idle.DataAccess.ModelTemplates.Languages
 {
-    [Table(TableNames.Languages)]
+	[Table(TableNames.Languages)]
     public class Java : Language
     {
         public Java()

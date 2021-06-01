@@ -1,5 +1,5 @@
-﻿using Idle.DataAccess.Images;
-using Idle.Resources;
+﻿using Idle.Resources;
+using Idle.Resources.Images;
 using System;
 using System.Collections.Generic;
 using System.Text;

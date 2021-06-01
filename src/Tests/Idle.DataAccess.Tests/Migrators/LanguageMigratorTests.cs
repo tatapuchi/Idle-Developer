@@ -1,4 +1,4 @@
-﻿using Idle.DataAccess.Images;
+﻿
 using Idle.DataAccess.Migrators;
 using Idle.Models.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

@@ -1,10 +1,4 @@
-﻿using Idle.DataAccess.Images;
-using Idle.Logic.Common;
-using Idle.Resources;
-using System;
-using System.Globalization;
-using System.IO;
-using Xamarin.Forms;
+﻿using Idle.Resources.Images;
 
 namespace Idle.Views.ValueConverters
 {

@@ -1,12 +1,11 @@
-﻿using Idle.DataAccess.ModelTemplates.Languages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Idle.DataAccess.Images
+namespace Idle.Resources.Images
 {
 	public class ImagesProvider : ImagesProviderBase
 	{

@@ -4,14 +4,14 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Idle.DataAccess.Images
+namespace Idle.Resources.Images
 {
 	public abstract class ImagesProviderBase
 	{
 		protected static string _images { get; } = Constants.AssemblyName + ".Images.";
 		protected abstract string _fallback { get; }
 
-		private static Assembly _assembly { get; } = Constants.ResourcesAssembly;
+		private static System.Reflection.Assembly _assembly { get; } = Constants.ResourcesAssembly;
 
 		public virtual Stream GetStream(string resourceName)
 		{

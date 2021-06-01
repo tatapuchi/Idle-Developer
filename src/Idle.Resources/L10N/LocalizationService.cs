@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace Idle.DataAccess.L10N
+namespace Idle.Resources.L10N
 {
 	public class LocalizationService : ILocalizationService
 	{

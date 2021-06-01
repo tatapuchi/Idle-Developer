@@ -44,7 +44,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="L10N\LocalizationResource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
+      <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LocalizationResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

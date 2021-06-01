@@ -1,20 +1,14 @@
-﻿using Idle.DataAccess.Repositories;
+﻿using Idle.DataAccess.Migrators;
+using Idle.DataAccess.Repositories;
 using Idle.Logic.Languages;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using Shouldly;
-using System.Linq;
-using Idle.Logic.Common;
 using SQLite;
-using Idle.Resources;
-using Idle.DataAccess.Migrators;
-using Idle.DataAccess.Images;
+using System.Threading.Tasks;
 
 namespace Idle.Logic.Tests.Languages
 {
-    [TestClass]
+	[TestClass]
     public class LanguagesViewModelTests
     {
         [TestMethod]
