@@ -39,8 +39,7 @@ namespace Idle
         public async Task InitilizeAsync() 
         {
             // "Idle.DataAccess"
-            var languageImageProvider = new ImagesProvider();
-            var languagesFactory = new LanguagesFactory(languageImageProvider);
+            var languagesFactory = new LanguagesFactory();
             var languageMigrator = new LanguageMigrator(languagesFactory);
             await languageMigrator.MigrateAsync();
 

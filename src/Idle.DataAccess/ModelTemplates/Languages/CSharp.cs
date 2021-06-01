@@ -11,8 +11,7 @@ namespace Idle.DataAccess.ModelTemplates.Languages
     [Table(TableNames.Languages)]
     public class CSharp : Language
     {
-        //public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
-
+        public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";
         public override string Name => "Language.CSharp.Name";
 
         public override string Description => "Language.CSharp.Description";

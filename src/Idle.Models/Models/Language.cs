@@ -15,7 +15,7 @@ namespace Idle.Models.Models
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
         public virtual Difficulty Difficulty { get; set; }
-        public string ImagePath { get; set; }
+        public virtual string ImagePath { get; set; }
 
         public float Progress { get; set; } = 0.0f;
         public int XP { get; set; } = 0;

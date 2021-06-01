@@ -57,8 +57,7 @@ namespace Idle.Logic.Tests.Languages
         {
             var connection = new SQLiteAsyncConnection(":memory:");
 
-            var imagesProvider = new ImagesProvider();
-            var languagesFactory = new LanguagesFactory(imagesProvider);
+            var languagesFactory = new LanguagesFactory();
             var migrator = new LanguageMigrator(languagesFactory, connection);
             await migrator.MigrateAsync();
 

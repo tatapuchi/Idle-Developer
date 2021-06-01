@@ -46,7 +46,7 @@ namespace Idle.DataAccess.Images
 			if (_resources.TryGetValue(grade, out var resourceName))
 				return resourceName;
 
-			return _fallback;
+			return fallback;
 		}
 
 

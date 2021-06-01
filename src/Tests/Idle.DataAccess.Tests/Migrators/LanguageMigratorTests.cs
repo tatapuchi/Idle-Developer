@@ -31,8 +31,7 @@ namespace Idle.DataAccess.Tests.Migrators
 
 		private (LanguageMigrator Migrator, SQLiteAsyncConnection Connection) Setup()
 		{
-			var imagesProvider = new ImagesProvider();
-			var langagesFactory = new LanguagesFactory(imagesProvider);
+			var langagesFactory = new LanguagesFactory();
 			var connection = new SQLiteAsyncConnection(":memory:");
 			var migrator = new LanguageMigrator(langagesFactory, connection);
 			return (migrator, connection);

@@ -1,4 +1,5 @@
-﻿using Idle.Models.Common;
+﻿using Idle.DataAccess.Images;
+using Idle.Models.Common;
 using Idle.Models.Models;
 using SQLite;
 using System;
@@ -13,7 +14,8 @@ namespace Idle.DataAccess.ModelTemplates.Languages
         public Kotlin()
         {
         }
-     
+
+        public override string ImagePath => "Idle.Resources.Images.Languages.Kotlin.png";
         public override string Name => "Language.Kotlin.Name";
 
         public override string Description => "Language.Kotlin.Description";

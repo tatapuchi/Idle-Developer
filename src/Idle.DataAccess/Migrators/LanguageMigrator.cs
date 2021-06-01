@@ -13,32 +13,14 @@ namespace Idle.DataAccess.Migrators
 {
 	public class LanguagesFactory
 	{
-		[Obsolete]
-		private readonly ImagesProvider _imagesProvider;
-
-		public LanguagesFactory(ImagesProvider imagesProvider)
-		{
-			_imagesProvider = imagesProvider;
-		}
-
 		public IEnumerable<Language> CreateLanguages()
 		{
-			yield return CreateLanguage<CSharp>();
-			yield return CreateLanguage<Java>();
-			yield return CreateLanguage<Kotlin>();
-			yield return CreateLanguage<Python>();
+			yield return new CSharp();
+			yield return new Java();
+			yield return new Kotlin();
+			yield return new Python();
 		}
 
-		private T CreateLanguage<T>()
-			where T : Language, new()
-		{
-			var language = new T();
-
-			var resourceName = _imagesProvider.GetResourceNameOrFallBack<T>();
-			language.ImagePath = resourceName;
-
-			return language;
-		}
 	}
 
 	public class LanguageMigrator : MigratorBase<Language>

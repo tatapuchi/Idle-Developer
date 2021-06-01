@@ -1,4 +1,5 @@
-﻿using Idle.Models.Common;
+﻿using Idle.DataAccess.Images;
+using Idle.Models.Common;
 using Idle.Models.Models;
 using SQLite;
 using System;
@@ -14,6 +15,7 @@ namespace Idle.DataAccess.ModelTemplates.Languages
         {
         }
 
+        public override string ImagePath => "Idle.Resources.Images.Languages.Python.png";
         public override string Name => "Language.Java.Name";
 
         public override string Description => "Language.Java.Description";
