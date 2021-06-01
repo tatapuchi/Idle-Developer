@@ -1,16 +1,11 @@
-﻿using Idle.DataAccess.Migrators;
-using Idle.DataAccess.ModelTemplates.Languages;
+﻿using Idle.DataAccess.ModelTemplates.Languages;
 using Idle.DataAccess.Repositories;
 using Idle.Models.Models;
-using Idle.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Shouldly;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Tests.Repositories

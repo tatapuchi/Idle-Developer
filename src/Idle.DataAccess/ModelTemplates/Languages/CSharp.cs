@@ -1,14 +1,10 @@
 ﻿using Idle.Models.Common;
 using Idle.Models.Models;
-using Idle.Resources.L10N;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Idle.DataAccess.ModelTemplates.Languages
 {
-    [Table(TableNames.Languages)]
+	[Table(TableNames.Languages)]
     public class CSharp : Language
     {
         public override string ImagePath => "Idle.Resources.Images.Languages.Csharp.png";

@@ -7,10 +7,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.Logic\Idle.Logic.csproj" />
+    <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainPage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

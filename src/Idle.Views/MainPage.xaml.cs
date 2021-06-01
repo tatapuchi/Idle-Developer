@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace Idle
+namespace Idle.Views
 {
     public partial class MainPage : ContentPage
     {

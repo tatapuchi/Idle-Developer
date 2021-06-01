@@ -25,7 +25,6 @@ using System.Threading.Tasks;
 namespace Idle
 {
 
-    // todo app class should be in views assembly. resource dictionary cannot be used currently
     public partial class App : Application
     {
 

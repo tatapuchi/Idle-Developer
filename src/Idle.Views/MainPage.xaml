@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:vm="clr-namespace:Idle.Logic.ViewModels;assembly=Idle.Logic"
              xmlns:common="clr-namespace:Idle.Views.Common;assembly=Idle.Views"
-             x:Class="Idle.MainPage"
+             x:Class="Idle.Views.MainPage"
              x:DataType="{x:Type vm:MainPageViewModel}"
              BackgroundColor="#F0F0F3" >
 

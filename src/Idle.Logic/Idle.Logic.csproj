@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Idle.DataAccess\Idle.DataAccess.csproj" />
+    <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
   </ItemGroup>
 
 </Project>
