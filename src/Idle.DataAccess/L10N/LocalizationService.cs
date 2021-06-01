@@ -7,12 +7,6 @@ using System.Text;
 
 namespace Idle.DataAccess.L10N
 {
-	// todo: move everthing in this block to dataaccess as this contains logic of accessing data
-
-
-
-
-
 	public class LocalizationService : ILocalizationService
 	{
 		public string GetString(string key)
