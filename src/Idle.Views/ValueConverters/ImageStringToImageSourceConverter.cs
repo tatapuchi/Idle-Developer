@@ -13,18 +13,6 @@ namespace Idle.Views.ValueConverters
 	{
         protected override ImagesProviderBase ImagesProvider => new ImagesProvider();
 
-        protected override object ConvertOverride(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            var imagePath = (string)value;
-            var stream = ImagesProvider.GetStream(imagePath);
-            if (stream == null)
-            {
-                var fallbackImageSource = ImageSource.FromStream(() => ImagesProvider.GetStream(ImagesProvider.fallback));
-                return fallbackImageSource;
-            }
-            var imageSource = ImageSource.FromStream(() => stream);
-            return imageSource;
-        }
     }
 
 }
