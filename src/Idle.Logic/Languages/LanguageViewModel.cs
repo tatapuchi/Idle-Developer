@@ -32,7 +32,7 @@ namespace Idle.Logic.Languages
 
 		private LanguageViewModel()
 		{
-            GainProgressCommand = new Command(_ => Progress += 0.2f);
+            GainProgressCommand = new Command(() => Progress += 0.2f);
         }
 
         

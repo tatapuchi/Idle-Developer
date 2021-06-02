@@ -5,26 +5,48 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Common
 {
-	// todo: fix canExecute and invoke event
-	// todo: "Command" should implement "ICommand" and not the generic command
+
 	// todo: write an "AsyncCommand" // when passing an async method to the current command then it is an async void
 	// which will swollow exceptions // the AsyncCommand should return a Task
-	public class Command : Command<object>
+	public class Command : ICommand
 	{
+		private readonly Action _execute;
+		private readonly Func<bool> _canExecute;
 
-		public Command(Action<object> execute) : base(execute){ }
+		public Command(Action execute) 
+		{
+			_execute = execute;
+			_canExecute = () => true;
+		}
 
-		public Command(Action<object> execute, Predicate<object> canExecute) 
-			: base(execute, canExecute) { }
+		public Command(Action execute, Func<bool> canExecute) 
+		{
+			_execute = execute;
+			_canExecute = canExecute;
+		}
+
+		public event EventHandler CanExecuteChanged;
+
+		public bool CanExecute(object parameter)
+		{
+			var canExecute = _canExecute.Invoke();
+			return canExecute;
+		}
+
+		public void Execute(object parameter)
+		{
+			if (!CanExecute(null)) return;
+			_execute.Invoke();
+		}
 	}
 
-	// todo "generic command" should inherit non generic "Command"
 	public class Command<TParameter> : ICommand
 	{
 		public event EventHandler CanExecuteChanged;
 
 		private readonly Action<TParameter> _execute;
 		private readonly Predicate<TParameter> _canExecute;
+
 
 		public Command(Action<TParameter> execute)
 		{

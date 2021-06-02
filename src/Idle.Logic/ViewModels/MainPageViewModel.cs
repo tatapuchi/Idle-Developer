@@ -25,10 +25,10 @@ namespace Idle.Logic.ViewModels
 
 		private MainPageViewModel()
 		{
-			NavigateToLanguagesPageCommand = new Command(async _ => await NavigateToLanguagesViewModelImpl());
+			NavigateToLanguagesPageCommand = new Command(async () => await NavigateToLanguagesViewModelImpl());
 
 
-			NavigateToLanguageMarketCommand = new Command(async _ => await NavigateToLanguageMarketModelImpl());
+			NavigateToLanguageMarketCommand = new Command(async () => await NavigateToLanguageMarketModelImpl());
 		}
 
 
