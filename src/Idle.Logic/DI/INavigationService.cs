@@ -10,9 +10,9 @@ namespace Idle.Logic.DI
 		Task PopAsync(bool animated);
 		Task PopModalAsync(bool animated);
 		Task PopToRootAsync(bool animated);
-		Task<TViewModel> PushAsync<TViewModel>(bool animated)
+		Task<TViewModel> PushAsync<TViewModel>(bool animated = true)
 			where TViewModel : ViewModelBase;
-		Task<TViewModel> PushModalAsync<TViewModel>(bool animated)
+		Task<TViewModel> PushModalAsync<TViewModel>(bool animated = true)
 			where TViewModel : ViewModelBase;
 
 	}

@@ -24,10 +24,10 @@ namespace Idle.Logic.Shop.Markets
         private LanguageItemViewModel()
         {
             // todo use canexecute changed // todo fix command, command canexecute is broken
-            PurchaseLanguageCommand = new Command(() => 
+            PurchaseLanguageCommand = new AsyncCommand(async () => 
             { 
                 IsActive = true; 
-                _languageRepository.UpdateAsync(GetModel());
+                await _languageRepository.UpdateAsync(GetModel());
             } );
         }
 
@@ -46,8 +46,6 @@ namespace Idle.Logic.Shop.Markets
             _language.IsActive = IsActive;
             return _language;
         }
-
-        // make sure langauge is removed from observablecollection when its bought
 
     }
 }

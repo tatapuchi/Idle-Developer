@@ -25,44 +25,13 @@ namespace Idle.Logic.ViewModels
 
 		private MainPageViewModel()
 		{
-			NavigateToLanguagesPageCommand = new Command(async () => await NavigateToLanguagesViewModelImpl());
-
-
-			NavigateToLanguageMarketCommand = new Command(async () => await NavigateToLanguageMarketModelImpl());
+			NavigateToLanguagesPageCommand = new AsyncCommand(async () => await _navigation.PushAsync<LanguagesViewModel>());
+			NavigateToLanguageMarketCommand = new AsyncCommand(async () => await _navigation.PushAsync<LanguageMarketViewModel>());
 		}
 
 
         public ICommand NavigateToLanguagesPageCommand { get; }
-
-		// temp
 		public ICommand NavigateToLanguageMarketCommand { get; }
-
-		private async Task<LanguagesViewModel> NavigateToLanguagesViewModelImpl()
-		{
-			try
-			{
-				return await _navigation.PushAsync<LanguagesViewModel>(true);
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
-
-
-		private async Task<LanguageMarketViewModel> NavigateToLanguageMarketModelImpl()
-		{
-			try
-			{
-				return await _navigation.PushAsync<LanguageMarketViewModel>(true);
-			}
-			catch (Exception)
-			{
-
-				throw;
-			}
-		}
 
 	}
 }
