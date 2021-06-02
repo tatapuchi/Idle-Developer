@@ -1,21 +1,11 @@
-﻿using Idle.DataAccess.Common;
-using Idle.DataAccess.Migrators;
-using Idle.DataAccess.Repositories;
-using Idle.Logic.Common;
-using Idle.Logic.DI;
+﻿using Idle.Logic.Common;
 using Idle.Models.Common;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-using System.Timers;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Idle.Models.Models;
 
 namespace Idle.Logic.Languages
 {
-    public class LanguageViewModel : ViewModelBase
+	public class LanguageViewModel : ViewModelBase
     {
         private readonly Language _language;
 

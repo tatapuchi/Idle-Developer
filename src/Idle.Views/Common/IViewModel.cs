@@ -1,4 +1,4 @@
-﻿using Idle.Logic;
+﻿using Idle.Logic.Common;
 
 namespace Idle.Views.Common
 {

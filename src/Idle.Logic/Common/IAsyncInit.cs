@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Idle.Logic
+namespace Idle.Logic.Common
 {
 	public interface IAsyncInit
 	{

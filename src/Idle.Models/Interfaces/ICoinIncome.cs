@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Models
+﻿namespace Idle.Models
 {
-    /// <summary>
-    /// Interface defining income in coins
-    /// </summary>
-    public interface ICoinIncome
+	/// <summary>
+	/// Interface defining income in coins
+	/// </summary>
+	public interface ICoinIncome
     {
         /// <summary>
         /// Income in coins

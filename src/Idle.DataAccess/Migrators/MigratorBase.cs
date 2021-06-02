@@ -1,10 +1,6 @@
-﻿using Idle.DataAccess.Common;
-using Idle.DataAccess.Repositories;
+﻿using Idle.DataAccess.Repositories;
 using Idle.Models;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Idle.DataAccess.Migrators

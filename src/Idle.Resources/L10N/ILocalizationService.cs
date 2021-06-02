@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Resources.L10N
+﻿namespace Idle.Resources.L10N
 {
 	public interface ILocalizationService
 	{

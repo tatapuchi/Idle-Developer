@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Models
+﻿namespace Idle.Models
 {
-    /// <summary>
-    /// An interface that defines the cost of something in coins
-    /// </summary>
-    public interface ICoinCost
+	/// <summary>
+	/// An interface that defines the cost of something in coins
+	/// </summary>
+	public interface ICoinCost
     {
         /// <summary>
         /// The cost of something in coins (Items are bought with coins)

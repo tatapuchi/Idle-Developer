@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Idle.Common.Extensions;
 
 namespace Idle.Logic.Common
 {
-    public interface IAsyncCommand : ICommand
+	public interface IAsyncCommand : ICommand
     {
         Task ExecuteAsync();
         bool CanExecute();

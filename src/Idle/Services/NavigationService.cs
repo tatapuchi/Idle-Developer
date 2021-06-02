@@ -1,14 +1,13 @@
-﻿using Idle.Logic;
+﻿using Idle.Logic.Common;
 using Idle.Logic.DI;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Idle.Services
 {
-	
+
 
 	// note: removepage and insertpage methods are ot implemented yet
 	public class NavigationService : INavigationService

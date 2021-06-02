@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
 
-namespace Idle.Logic
+namespace Idle.Logic.Common
 {
 	public class ViewModelBase : INotifyPropertyChanging, INotifyPropertyChanged
 	{

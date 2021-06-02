@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Models
+﻿namespace Idle.Models
 {
-    /// <summary>
-    /// Interface that defines properties for in game progression or levelling
-    /// </summary>
-    public interface IProgress
+	/// <summary>
+	/// Interface that defines properties for in game progression or levelling
+	/// </summary>
+	public interface IProgress
     {
         /// <summary>
         /// Progress bar progress

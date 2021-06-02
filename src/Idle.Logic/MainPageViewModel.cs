@@ -1,16 +1,10 @@
-﻿using Idle.DataAccess.Repositories;
-using Idle.Logic.Common;
+﻿using Idle.Logic.Common;
 using Idle.Logic.DI;
 using Idle.Logic.Languages;
-using Idle.Logic.Shop;
-using Idle.Logic.Shop.Markets;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+using Idle.Logic.Shop.LanguageMarket;
 using System.Windows.Input;
 
-namespace Idle.Logic.ViewModels
+namespace Idle.Logic
 {
 	public class MainPageViewModel : ViewModelBase
 	{

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-
-namespace Idle.Resources.Images
+﻿namespace Idle.Resources.Images
 {
 	internal static class Constants
 	{

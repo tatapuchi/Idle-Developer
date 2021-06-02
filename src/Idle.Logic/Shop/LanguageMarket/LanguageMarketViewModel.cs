@@ -1,17 +1,12 @@
 ﻿using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
-using Idle.Logic.Languages;
 using Idle.Models.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Idle.Logic.Shop.Markets
+namespace Idle.Logic.Shop.LanguageMarket
 {
-    public class LanguageMarketViewModel : ViewModelBase, IAsyncInit
+	public class LanguageMarketViewModel : ViewModelBase, IAsyncInit
     {
         private readonly LanguagesRepository _languageRepository;
         public RangeObservableCollection<LanguageItemViewModel> Languages { get; } = new RangeObservableCollection<LanguageItemViewModel>();

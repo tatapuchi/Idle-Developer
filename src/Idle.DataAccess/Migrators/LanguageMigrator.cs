@@ -1,12 +1,10 @@
-﻿using Idle.DataAccess.Common;
-using SQLite;
+﻿using SQLite;
 using System.Linq;
 using System.Collections.Generic;
 using Idle.Models.Common;
 using System.Threading.Tasks;
 using Idle.Models.Models;
 using Idle.DataAccess.ModelTemplates.Languages;
-using System;
 
 namespace Idle.DataAccess.Migrators
 {

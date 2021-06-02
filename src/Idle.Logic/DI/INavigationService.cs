@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Idle.Logic.Common;
 using System.Threading.Tasks;
 
 namespace Idle.Logic.DI

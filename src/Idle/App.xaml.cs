@@ -1,23 +1,15 @@
-﻿
-using Idle.DataAccess;
-using Idle.DataAccess.Migrators;
+﻿using Idle.DataAccess.Migrators;
 using System;
-using System.Collections.Generic;
-using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Idle.Resources;
 using Idle.Services;
-using Idle.Logic.ViewModels;
 using Idle.DataAccess.Repositories;
 using Idle.Logic.Languages;
 using Idle.Views;
-using Idle.Views.Shop;
-using Idle.Logic.Shop;
-using Idle.Logic.Shop.Markets;
 using Idle.Views.Shop.Markets;
 using Idle.Logic;
 using System.Threading.Tasks;
+using Idle.Logic.Common;
+using Idle.Logic.Shop.LanguageMarket;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -25,7 +17,7 @@ using System.Threading.Tasks;
 namespace Idle
 {
 
-    public partial class App : Application
+	public partial class App : Application
     {
 
         public App()

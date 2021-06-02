@@ -1,15 +1,10 @@
-﻿    
-using Idle.Models;
-using Idle.Models.Common;
+﻿using Idle.Models.Common;
 using Idle.Models.Interfaces;
 using SQLite;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Idle.Models.Models
 {
-    [Table(TableNames.Languages)]
+	[Table(TableNames.Languages)]
     public class Language : ModelBase, IDescriptive, IProgress, IXPCost, IXPIncome, IActive
     {
         public virtual string Name { get; set; }

@@ -1,11 +1,7 @@
 ﻿using Idle.Logic.DI;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Xamarin.Essentials;
-using static Xamarin.Essentials.MainThread;
 
 namespace Idle.Services
 {

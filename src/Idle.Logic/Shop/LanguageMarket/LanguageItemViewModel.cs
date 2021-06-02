@@ -1,14 +1,11 @@
 ﻿using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
 using Idle.Models.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 
-namespace Idle.Logic.Shop.Markets
+namespace Idle.Logic.Shop.LanguageMarket
 {
-    public class LanguageItemViewModel: ViewModelBase
+	public class LanguageItemViewModel: ViewModelBase
     {
         private readonly Language _language;
         private readonly LanguagesRepository _languageRepository;

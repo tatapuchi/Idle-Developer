@@ -1,5 +1,4 @@
-﻿using Idle.Resources;
-using Idle.Resources.Images;
+﻿using Idle.Resources.Images;
 using System;
 using System.Globalization;
 using Xamarin.Forms;

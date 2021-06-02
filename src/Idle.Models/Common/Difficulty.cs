@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Models.Common
+﻿namespace Idle.Models.Common
 {
-    /// <summary>
-    /// An enum defining the different levels of difficulty
-    /// </summary>
-    public enum Difficulty
+	/// <summary>
+	/// An enum defining the different levels of difficulty
+	/// </summary>
+	public enum Difficulty
     {
         /// <summary>
         /// If difficulty is not applicable

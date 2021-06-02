@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Idle.Views.Triggers
 {
-    public class FadeTriggerAction : TriggerAction<VisualElement>
+	public class FadeTriggerAction : TriggerAction<VisualElement>
     {
 
         public float End { get; set; } = 0.4f;

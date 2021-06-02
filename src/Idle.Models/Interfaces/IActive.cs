@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Idle.Models.Interfaces
+﻿namespace Idle.Models.Interfaces
 {
-    public interface IActive
+	public interface IActive
     {
         /// <summary>
         /// Whether the field has been purchased or not
