@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Idle.Common\Idle.Common.csproj" />
     <ProjectReference Include="..\Idle.DataAccess\Idle.DataAccess.csproj" />
     <ProjectReference Include="..\Idle.Resources\Idle.Resources.csproj" />
   </ItemGroup>
