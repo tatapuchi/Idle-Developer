@@ -1,4 +1,5 @@
-﻿using Idle.DataAccess.Repositories;
+﻿using Idle.Common.Diagnostics;
+using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
 using Idle.Models.Models;
 using System.Windows.Input;
@@ -9,18 +10,20 @@ namespace Idle.Logic.Shop.LanguageMarket
     {
         private readonly Language _language;
         private readonly LanguagesRepository _languageRepository;
+        private readonly ILogger _logger;
 
-        public LanguageItemViewModel(Language language, LanguagesRepository languagesRepository)
+        public LanguageItemViewModel(Language language, LanguagesRepository languagesRepository, ILogger logger)
             :this()
         {
             _language = language;
-            IsActive = language.IsActive;
             _languageRepository = languagesRepository;
+            _logger = logger;
+            IsActive = language.IsActive;
         }
 
         private LanguageItemViewModel()
         {
-            PurchaseLanguageCommand = new AsyncCommand(async () => 
+            PurchaseLanguageCommand = new AsyncCommand(_logger, async () => 
             { 
                 IsActive = true; 
                 await _languageRepository.UpdateAsync(GetModel());

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Idle.Common.Diagnostics;
 using Idle.Common.Extensions;
 
 namespace Idle.Logic.Common
@@ -22,13 +23,16 @@ namespace Idle.Logic.Common
         public event EventHandler CanExecuteChanged;
 
         private bool _isExecuting;
+        private readonly ILogger _logger;
         private readonly Func<Task> _execute;
         private readonly Func<bool> _canExecute;
 
         public AsyncCommand(
+            ILogger logger,
             Func<Task> execute,
             Func<bool> canExecute = null)
         {
+            _logger = logger;
             _execute = execute;
             _canExecute = canExecute;
         }
@@ -56,7 +60,7 @@ namespace Idle.Logic.Common
 		public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
 		bool ICommand.CanExecute(object parameter) => CanExecute();
-		void ICommand.Execute(object parameter) => ExecuteAsync().AwaitAsync();
+		void ICommand.Execute(object parameter) => ExecuteAsync().AwaitAsync(_logger);
 		
 	}
 
@@ -66,11 +70,13 @@ namespace Idle.Logic.Common
         public event EventHandler CanExecuteChanged;
 
         private bool _isExecuting;
+        private readonly ILogger _logger;
         private readonly Func<T, Task> _execute;
         private readonly Func<T, bool> _canExecute;
 
-        public AsyncCommand(Func<T, Task> execute, Func<T, bool> canExecute = null)
+        public AsyncCommand(ILogger logger, Func<T, Task> execute, Func<T, bool> canExecute = null)
         {
+            _logger = logger;
             _execute = execute;
             _canExecute = canExecute;
         }
@@ -98,7 +104,7 @@ namespace Idle.Logic.Common
 		public void RaiseCanExecuteChanged() => CanExecuteChanged?.Invoke(this, EventArgs.Empty);
 
 		bool ICommand.CanExecute(object parameter) => CanExecute((T)parameter);
-		void ICommand.Execute(object parameter) => ExecuteAsync((T)parameter).AwaitAsync();
+		void ICommand.Execute(object parameter) => ExecuteAsync((T)parameter).AwaitAsync(_logger);
 		
 	}
 

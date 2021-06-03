@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Idle.Common.Diagnostics;
+using System;
 using System.Threading.Tasks;
 
 namespace Idle.Common.Extensions
@@ -6,7 +7,7 @@ namespace Idle.Common.Extensions
 	public static class TaskExtensions
 	{
 		// todo: pass logger via Method Injection
-		public static async void AwaitAsync(this Task task)
+		public static async void AwaitAsync(this Task task, ILogger logger)
 		{
 			try
 			{
@@ -14,8 +15,10 @@ namespace Idle.Common.Extensions
 			}
 			catch (Exception e)
 			{
-				// todo: add logging
-				throw;
+				logger.Log(LogLevel.Error, new LogMessage(e));
+				#if DEBUG
+					throw;
+				#endif
 			}
 		}
 

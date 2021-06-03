@@ -1,4 +1,5 @@
-﻿using Idle.DataAccess.Repositories;
+﻿using Idle.Common.Diagnostics;
+using Idle.DataAccess.Repositories;
 using Idle.Logic.Common;
 using Idle.Models.Models;
 using System.Linq;
@@ -9,12 +10,16 @@ namespace Idle.Logic.Shop.LanguageMarket
 	public class LanguageMarketViewModel : ViewModelBase, IAsyncInit
     {
         private readonly LanguagesRepository _languageRepository;
-        public RangeObservableCollection<LanguageItemViewModel> Languages { get; } = new RangeObservableCollection<LanguageItemViewModel>();
+        private readonly ILogger _logger;
 
-        public LanguageMarketViewModel(LanguagesRepository languageRepository)
+        public LanguageMarketViewModel(LanguagesRepository languageRepository, ILogger logger)
         {
             _languageRepository = languageRepository;
+            _logger = logger;
         }
+        
+        public RangeObservableCollection<LanguageItemViewModel> Languages { get; } = new RangeObservableCollection<LanguageItemViewModel>();
+        
         public async Task InitializeAsync()
         {
             var languages = await _languageRepository.GetAllAsync();
@@ -25,7 +30,7 @@ namespace Idle.Logic.Shop.LanguageMarket
 
         private LanguageItemViewModel CreateLanguageItemViewModel(Language lang)
         {
-            var vm = new LanguageItemViewModel(lang, _languageRepository);
+            var vm = new LanguageItemViewModel(lang, _languageRepository, _logger);
             return vm;
         }
 
