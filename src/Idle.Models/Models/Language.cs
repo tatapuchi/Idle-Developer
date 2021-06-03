@@ -1,4 +1,5 @@
-﻿using Idle.Models.Common;
+﻿using Idle.Common.Types;
+using Idle.Models.Common;
 using Idle.Models.Interfaces;
 using SQLite;
 
@@ -17,7 +18,7 @@ namespace Idle.Models.Models
         public int Level { get; set; } = 1;
 
         // todo: use enum
-        public string Grade { get; set; } = "F";
+        public Grade Grade { get; set; } = Grade.F;
 
         public virtual int XPCost { get; set; }
         public virtual int XPIncome {get; set;}

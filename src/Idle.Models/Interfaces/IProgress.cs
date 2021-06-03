@@ -1,4 +1,6 @@
-﻿namespace Idle.Models
+﻿using Idle.Common.Types;
+
+namespace Idle.Models
 {
 	/// <summary>
 	/// Interface that defines properties for in game progression or levelling
@@ -28,6 +30,6 @@
         /// Shows the proficiency of the player overall, in a certain language/framework/tool, in his job, etc.
         /// Should be based on what level the player is at, sort of gives a ranking factor that makes the game more interesting that just plain levels.
         /// </summary>
-        public string Grade { get; set; }
+        public Grade Grade { get; set; }
     }
 }

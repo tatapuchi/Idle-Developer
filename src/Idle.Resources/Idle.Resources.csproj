@@ -35,6 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Idle.Common\Idle.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="L10N\LocalizationResource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Idle.Views
+namespace Idle.Views.Languages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LanguagesPage : ContentPage, IViewModel<LanguagesViewModel>

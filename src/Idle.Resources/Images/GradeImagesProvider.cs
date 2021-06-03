@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Idle.Common.Types;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Idle.Resources.Images
 {
@@ -19,29 +22,28 @@ namespace Idle.Resources.Images
 		protected override string _fallback => _grades + "Fallback.png";
 
 		// todo use enum
-		private static readonly Dictionary<string, string> _resources = new Dictionary<string, string>()
+		private static readonly Dictionary<string, string> _resources = new Dictionary<Grade, string>()
 		{
-			["F"] = _F,
-			["D"] = _D,
-			["C"] = _C,
-			["B"] = _B,
-			["A"] = _A,
-			["S"] = _S,
-			["S+"] = _SP,
-			["S++"] = _SPP,
-		};
+			[Grade.F] = _F,
+			[Grade.D] = _D,
+			[Grade.C] = _C,
+			[Grade.B] = _B,
+			[Grade.A] = _A,
+			[Grade.S] = _S,
+			[Grade.Sp] = _SP,
+			[Grade.Spp] = _SPP,
+		}.ToDictionary(resource => resource.Key.ToString(), resource => resource.Value);
 
-
-		public override Stream GetStream(string resourceName)
+		public override Stream GetStream(string key)
 		{
-			var resourceN = GetResourceNameOrFallBack(resourceName);
+			var resourceN = GetResourceNameOrFallBack(key);
 			var stream = base.GetStream(resourceN);
 			return stream;
 		}
 
-		private string GetResourceNameOrFallBack(string grade)
+		private string GetResourceNameOrFallBack(string gradeValue)
 		{
-			if (_resources.TryGetValue(grade, out var resourceName))
+			if (_resources.TryGetValue(gradeValue, out var resourceName))
 				return resourceName;
 
 			return _fallback;

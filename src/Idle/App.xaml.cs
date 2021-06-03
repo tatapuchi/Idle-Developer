@@ -10,6 +10,7 @@ using Idle.Logic;
 using System.Threading.Tasks;
 using Idle.Logic.Common;
 using Idle.Logic.Shop.LanguageMarket;
+using Idle.Views.Languages;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]

@@ -3,7 +3,7 @@
 namespace Idle.Views.ValueConverters
 {
 
-	public class ImageStringToImageSourceConverter : StringToImageSourceConverterBase
+	public class ImageStringToImageSourceConverter : ObjectToImageSourceConverterBase
 	{
         protected override ImagesProviderBase ImagesProvider => new ImagesProvider();
 

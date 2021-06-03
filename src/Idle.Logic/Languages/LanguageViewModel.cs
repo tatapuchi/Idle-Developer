@@ -2,6 +2,7 @@
 using Idle.Models.Common;
 using System.Windows.Input;
 using Idle.Models.Models;
+using Idle.Common.Types;
 
 namespace Idle.Logic.Languages
 {
@@ -69,18 +70,18 @@ namespace Idle.Logic.Languages
 				if (!TrySetProperty(ref _level, value)) return;
 
 				//I prefer to use guard clause over if-else because its a lot easier to read this way and more concise
-				if (value > 5) { Grade = "D"; }
-				if (value > 10) { Grade = "C"; }
-				if (value > 20) { Grade = "B"; }
-				if (value > 30) { Grade = "A"; }
-				if (value > 40) { Grade = "S"; }
-				if (value > 50) { Grade = "S+"; }
-				if (value > 100) { Grade = "S++"; }
+				if (value > 5) { Grade = Grade.D; }
+				if (value > 10) { Grade = Grade.C; }
+				if (value > 20) { Grade = Grade.B; }
+				if (value > 30) { Grade = Grade.A; }
+				if (value > 40) { Grade = Grade.S; }
+				if (value > 50) { Grade = Grade.Sp; }
+				if (value > 100) { Grade = Grade.Spp; }
 			}
 		}
 
-		private string _grade = "F";
-        public string Grade
+		private Grade _grade = Grade.F;
+        public Grade Grade
 		{
 			get => _grade;
 			set => TrySetProperty(ref _grade, value);

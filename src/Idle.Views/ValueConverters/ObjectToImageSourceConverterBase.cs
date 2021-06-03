@@ -5,13 +5,21 @@ using Xamarin.Forms;
 
 namespace Idle.Views.ValueConverters
 {
-	public abstract class StringToImageSourceConverterBase : ValueConverterBase
+	public abstract class ObjectToImageSourceConverterBase : ValueConverterBase
     {
         protected abstract ImagesProviderBase ImagesProvider { get; }
 
         protected override object ConvertOverride(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var imagePath = (string)value;
+            // value is into value of emum
+            string imagePath;
+
+            if (value is Enum e)
+                imagePath = e.ToString();
+            else if (value is string s)
+                imagePath = s;
+            else throw new NotImplementedException();
+
             var imageSource = ImageSource.FromStream(() => ImagesProvider.GetStream(imagePath));
             return imageSource;
         }
@@ -22,7 +30,5 @@ namespace Idle.Views.ValueConverters
             throw new NotImplementedException();
         }
 
-
     }
-
 }
