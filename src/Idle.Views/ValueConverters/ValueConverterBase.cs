@@ -21,6 +21,5 @@ namespace Idle.Views.ValueConverters
             return result;
         }
     }
-
     
 }
