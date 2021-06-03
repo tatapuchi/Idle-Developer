@@ -15,7 +15,7 @@ namespace Idle.Resources.Images
 		private static string _b { get; } = _grades + "B.png";
 		private static string _a { get; } = _grades + "A.png";
 		private static string _s { get; } = _grades + "S.png";
-		private static string _SP { get; } = _grades + "SP.png";
+		private static string _sp { get; } = _grades + "SP.png";
 		private static string _SPP { get; } = _grades + "SPP.png";
 
 		protected override string _fallback => _grades + "Fallback.png";
@@ -28,7 +28,7 @@ namespace Idle.Resources.Images
 			[Grade.B] = _b,
 			[Grade.A] = _a,
 			[Grade.S] = _s,
-			[Grade.Sp] = _SP,
+			[Grade.Sp] = _sp,
 			[Grade.Spp] = _SPP,
 		}.ToDictionary(resource => resource.Key.ToString(), resource => resource.Value);
 
