@@ -17,7 +17,6 @@ namespace Idle.Models.Models
         public int XP { get; set; } = 0;
         public int Level { get; set; } = 1;
 
-        // todo: use enum
         public Grade Grade { get; set; } = Grade.F;
 
         public virtual int XPCost { get; set; }

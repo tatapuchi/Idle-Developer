@@ -7,17 +7,18 @@
  </PropertyGroup>
 
  <!-- Build Configuration-->
-
- <!-- todo: move the test project to the sln root. because we use "Optimized" we see less debug information.
-            this build.props file should only attach to projects which are important for a deployment-->
-    <Choose>
-      <When Condition=" '$(Configuration)' == 'Debug' ">
-        <PropertyGroup>
-          <DebugType>Full</DebugType>
-          <!--<Optimize>true</Optimize>-->
-        </PropertyGroup>
-      </When>
-    </Choose>
+  <Choose>
+    <When Condition=" '$(Configuration)' == 'Debug' ">
+      <PropertyGroup>
+        <DebugType>Full</DebugType>
+        <!--<Optimize>true</Optimize>-->
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(Configuration)' == 'Release' ">
+      <PropertyGroup>
+        <Optimize>true</Optimize>
+      </PropertyGroup>
+    </When>
+  </Choose>
   
-
 </Project>

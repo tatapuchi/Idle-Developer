@@ -5,6 +5,7 @@ namespace Idle.Common.Extensions
 {
 	public static class TaskExtensions
 	{
+		// todo: pass logger via Method Injection
 		public static async void AwaitAsync(this Task task)
 		{
 			try

@@ -3,9 +3,6 @@ using System.Windows.Input;
 
 namespace Idle.Logic.Common
 {
-
-	// todo: write an "AsyncCommand" // when passing an async method to the current command then it is an async void
-	// which will swollow exceptions // the AsyncCommand should return a Task
 	public class Command : ICommand
 	{
 		private readonly Action _execute;
