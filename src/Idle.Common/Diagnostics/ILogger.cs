@@ -20,7 +20,8 @@ namespace Idle.Common.Diagnostics
 		public void Log(LogMessage logMessage) => Debug.WriteLine(logMessage.ToString());
 	}
 
-	// todo: https://www.msctek.com/xamarin-forms-logging-with-appcenter/
+	// todo: https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/xamarin 
+	// and: https://www.msctek.com/xamarin-forms-logging-with-appcenter/
 	// we will do this before deploying the app.
 	// we would only have to implement the strategy and not change any other code
 	//internal class AppCenetLoggerStrategy : ILogger
