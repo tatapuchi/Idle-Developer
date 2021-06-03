@@ -11,8 +11,8 @@ namespace Idle.Common.Diagnostics
 		private const string _logPrefix = "### ";
 
 		public LogMessage(
-			[CallerMemberName] string callerName = null, 
-			[CallerFilePath] string filePath = null, 
+			[CallerMemberName] string callerName = null,
+			[CallerFilePath] string filePath = null,
 			[CallerLineNumber] int? lineNumber = null)
 		{
 			CallerName = callerName;
@@ -24,7 +24,7 @@ namespace Idle.Common.Diagnostics
 			Exception exception,
 			[CallerMemberName] string callerName = null,
 			[CallerFilePath] string filePath = null,
-			[CallerLineNumber] int? lineNumber = null) 
+			[CallerLineNumber] int? lineNumber = null)
 		: this(callerName, filePath, lineNumber)
 		{
 			Exception = exception;
@@ -58,10 +58,12 @@ namespace Idle.Common.Diagnostics
 		public int? LineNumber { get; }
 
 		public string? Message { get; }
-		public Exception? Exception { get; set; }
+		public Exception? Exception { get; }
+		public LogLevel LogLevel { get; internal set; }
 
 		public override string ToString()
 		{
+			const string logLevel = nameof(LogLevel);
 			const string message = nameof(Message);
 			const string exception = nameof(Exception);
 			const string callerName = nameof(CallerName);
@@ -69,6 +71,7 @@ namespace Idle.Common.Diagnostics
 			const string lineNumber = nameof(LineNumber);
 
 			var sb = new StringBuilder(_logPrefix);
+			AppendIfNotNull(sb, logLevel, LogLevel);
 			AppendIfNotNull(sb, message, Message);
 			AppendIfNotNull(sb, exception, Exception);
 			AppendIfNotNull(sb, callerName, CallerName);
