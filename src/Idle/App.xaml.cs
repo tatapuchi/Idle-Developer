@@ -21,21 +21,24 @@ namespace Idle
 
 	public partial class App : Application
     {
+        private readonly ILogger _logger = new Logger();
+
 
         public App()
         {
+            AppDomain.CurrentDomain.UnhandledException += OnUnhandledException;
             InitializeComponent();
 
         }
 
-        public async Task InitilizeAsync() 
+		public async Task InitilizeAsync() 
         {
             // "Idle.Common"
-            var logger = new Logger();
+            // ..
 
             // "Idle.DataAccess"
             var languagesFactory = new LanguagesFactory();
-            var languageMigrator = new LanguageMigrator(languagesFactory, logger);
+            var languageMigrator = new LanguageMigrator(languagesFactory, _logger);
             await languageMigrator.MigrateAsync();
 
             var languagesRepository = new LanguagesRepository();
@@ -59,12 +62,6 @@ namespace Idle
             MainPage = new NavigationPage(mainPage);
         }
 
-        private static Page SetBindingContext(Page page, ViewModelBase vm)
-		{
-            page.BindingContext = vm;
-            return page;
-		}
-
         protected override void OnSleep()
         {
    
@@ -74,6 +71,18 @@ namespace Idle
         {
         }
 
-      
+        private static Page SetBindingContext(Page page, ViewModelBase vm)
+        {
+            page.BindingContext = vm;
+            return page;
+        }
+
+        private void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            var exception = (Exception)e.ExceptionObject;
+            _logger.Log(LogLevel.Fatal, new LogMessage(exception));
+        }
+
+
     }
 }
