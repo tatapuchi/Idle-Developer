@@ -1,27 +1,36 @@
-﻿using Idle.Common.Extensions;
+﻿using Idle.Common.Diagnostics;
+using Idle.Common.Extensions;
+using System;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Idle.Views.Triggers
 {
-	public class FadeTriggerAction : TriggerAction<VisualElement>
+
+    public class FadeTriggerAction : TriggerAction<VisualElement>
     {
+        private readonly ILogger _logger = Logger.Instance;
 
         public float End { get; set; } = 0.4f;
         public uint Duration { get; set; } = 1000;
+
         protected override async void Invoke(VisualElement sender)
         {
 			try
 			{
                 await AwaitAsync(sender.FadeTo(End, Duration));
             }
-			catch (System.Exception)
+			catch (Exception e)
 			{
-				// todo: logging and no throw
+                _logger.Log(LogLevel.Error, new LogMessage(e));
 			}
             
         }
 
+        public static readonly BindableProperty LoggerProperty = BindableProperty.Create(
+                nameof(Logger), typeof(ILogger), typeof(FadeTriggerAction), BindingMode.OneTime);
+
         private static async Task AwaitAsync(Task task) => await task;
+
     }
 }

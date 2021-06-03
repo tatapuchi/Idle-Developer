@@ -10,20 +10,20 @@ namespace Idle.Logic.Shop.LanguageMarket
     {
         private readonly Language _language;
         private readonly LanguagesRepository _languageRepository;
-        private readonly ILogger _logger;
+        public ILogger Logger { get; }
 
         public LanguageItemViewModel(Language language, LanguagesRepository languagesRepository, ILogger logger)
             :this()
         {
             _language = language;
             _languageRepository = languagesRepository;
-            _logger = logger;
+            Logger = logger;
             IsActive = language.IsActive;
         }
 
         private LanguageItemViewModel()
         {
-            PurchaseLanguageCommand = new AsyncCommand(_logger, async () => 
+            PurchaseLanguageCommand = new AsyncCommand(Logger, async () => 
             { 
                 IsActive = true; 
                 await _languageRepository.UpdateAsync(GetModel());

@@ -21,7 +21,7 @@ namespace Idle
 
 	public partial class App : Application
     {
-        private readonly ILogger _logger = new Logger();
+        private readonly ILogger _logger = Logger.Instance;
 
 
         public App()
