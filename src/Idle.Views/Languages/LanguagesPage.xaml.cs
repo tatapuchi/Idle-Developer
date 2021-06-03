@@ -11,12 +11,6 @@ namespace Idle.Views.Languages
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LanguagesPage : ContentPage, IViewModel<LanguagesViewModel>
 	{
-		// todo: think about minimizing the singleton access. Solutions:
-		// 1: pass the logger to the ViewModelBase, which means we can access the logger in all views and viewmodels
-		// 2: using factories and property or method injection
-		// !! we dont want to inject the logger into the ctor of the view
-		private readonly ILogger _logger = Logger.Instance;
-
 		public LanguagesPage()
 		{
 			InitializeComponent();
@@ -37,7 +31,8 @@ namespace Idle.Views.Languages
 			}
 			catch (Exception e)
 			{
-				_logger.Log(LogLevel.Error, new LogMessage(e));
+				var logger = ViewModel.Logger;
+				logger.Log(LogLevel.Error, new LogMessage(e));
 				#if DEBUG
 					throw;
 				#endif

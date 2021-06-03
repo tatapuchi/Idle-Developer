@@ -53,7 +53,7 @@ namespace Idle
             navigationService.Register<MainViewModel>(() => mainPage);
             
             navigationService.Register<LanguagesViewModel>(() =>
-                SetBindingContext(new LanguagesPage(), new LanguagesViewModel(languagesRepository)));
+                SetBindingContext(new LanguagesPage(), new LanguagesViewModel(languagesRepository, _logger)));
 
             navigationService.Register<LanguageMarketViewModel>(() =>
                 SetBindingContext(new LanguageMarketPage(), new LanguageMarketViewModel(languagesRepository, _logger)));
