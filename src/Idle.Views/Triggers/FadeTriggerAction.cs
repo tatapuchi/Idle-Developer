@@ -27,9 +27,6 @@ namespace Idle.Views.Triggers
             
         }
 
-        public static readonly BindableProperty LoggerProperty = BindableProperty.Create(
-                nameof(Logger), typeof(ILogger), typeof(FadeTriggerAction), BindingMode.OneTime);
-
         private static async Task AwaitAsync(Task task) => await task;
 
     }
