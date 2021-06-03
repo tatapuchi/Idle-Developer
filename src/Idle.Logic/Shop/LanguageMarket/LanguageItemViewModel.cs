@@ -20,12 +20,11 @@ namespace Idle.Logic.Shop.LanguageMarket
 
         private LanguageItemViewModel()
         {
-            // todo use canexecute changed // todo fix command, command canexecute is broken
             PurchaseLanguageCommand = new AsyncCommand(async () => 
             { 
                 IsActive = true; 
                 await _languageRepository.UpdateAsync(GetModel());
-            } );
+            }, () => !IsActive);
         }
 
         public ICommand PurchaseLanguageCommand { get; }

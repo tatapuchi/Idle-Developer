@@ -6,18 +6,18 @@ using System.Windows.Input;
 
 namespace Idle.Logic
 {
-	public class MainPageViewModel : ViewModelBase
+	public class MainViewModel : ViewModelBase
 	{
 
 		private readonly INavigationService _navigation;
 
-		public MainPageViewModel(INavigationService navigation)
+		public MainViewModel(INavigationService navigation)
 			: this()
 		{
 			_navigation = navigation;
 		}
 
-		private MainPageViewModel()
+		private MainViewModel()
 		{
 			NavigateToLanguagesPageCommand = new AsyncCommand(async () => await _navigation.PushAsync<LanguagesViewModel>());
 			NavigateToLanguageMarketCommand = new AsyncCommand(async () => await _navigation.PushAsync<LanguageMarketViewModel>());

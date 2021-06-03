@@ -18,6 +18,9 @@
     <Compile Update="MainPage.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
+    <Compile Update="Shop\LanguageMarket\LanguageMarketPage.xaml.cs">
+      <DependentUpon>LanguageMarketPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +30,7 @@
     <EmbeddedResource Update="Shop\LanguageMarket\LanguageItemCell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Shop\LanguageMarket\LanguageMarket.xaml">
+    <EmbeddedResource Update="Shop\LanguageMarket\LanguageMarketPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ValueConverters\ValueConverters.xaml">

@@ -6,9 +6,9 @@ using Xamarin.Forms.Xaml;
 namespace Idle.Views.Shop.Markets
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LanguageMarket : ContentPage, IViewModel<LanguageMarketViewModel>
+    public partial class LanguageMarketPage : ContentPage, IViewModel<LanguageMarketViewModel>
     {
-        public LanguageMarket()
+        public LanguageMarketPage()
         {
             InitializeComponent();
         }

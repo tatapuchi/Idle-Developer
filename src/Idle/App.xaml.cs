@@ -41,15 +41,15 @@ namespace Idle
             var navigationService = new NavigationService(navigation);
 
             // "Idle.Logic" and "Idle.Views"
-            var mainPage = SetBindingContext(new MainPage(), new MainPageViewModel(navigationService));
+            var mainPage = SetBindingContext(new MainPage(), new MainViewModel(navigationService));
 
-            navigationService.Register<MainPageViewModel>(() => mainPage);
+            navigationService.Register<MainViewModel>(() => mainPage);
             
             navigationService.Register<LanguagesViewModel>(() =>
                 SetBindingContext(new LanguagesPage(), new LanguagesViewModel(languagesRepository)));
 
             navigationService.Register<LanguageMarketViewModel>(() =>
-                SetBindingContext(new LanguageMarket(), new LanguageMarketViewModel(languagesRepository)));
+                SetBindingContext(new LanguageMarketPage(), new LanguageMarketViewModel(languagesRepository)));
 
             // Idle.Views
             MainPage = new NavigationPage(mainPage);

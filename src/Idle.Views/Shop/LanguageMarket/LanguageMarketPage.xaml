@@ -4,7 +4,7 @@
              xmlns:common="clr-namespace:Idle.Views.Common"
              xmlns:vm="clr-namespace:Idle.Logic.Shop.LanguageMarket;assembly=Idle.Logic" 
              xmlns:local="clr-namespace:Idle.Views.Shop.Markets"
-             x:Class="Idle.Views.Shop.Markets.LanguageMarket"
+             x:Class="Idle.Views.Shop.Markets.LanguageMarketPage"
              x:DataType="{x:Type vm:LanguageMarketViewModel}">
     
     <ContentPage.Resources>
