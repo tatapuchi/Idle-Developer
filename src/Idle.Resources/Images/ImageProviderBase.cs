@@ -9,9 +9,9 @@ namespace Idle.Resources.Images
 
 		private static System.Reflection.Assembly _assembly { get; } = Constants.ResourcesAssembly;
 
-		public virtual Stream GetStream(string key)
+		public virtual Stream GetStream(string resourceKey)
 		{
-			var stream = _assembly.GetManifestResourceStream(key);
+			var stream = _assembly.GetManifestResourceStream(resourceKey);
 			return stream;
 		}
 	}

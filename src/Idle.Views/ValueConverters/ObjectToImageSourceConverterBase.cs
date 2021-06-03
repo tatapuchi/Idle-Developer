@@ -12,15 +12,15 @@ namespace Idle.Views.ValueConverters
         protected override object ConvertOverride(object value, Type targetType, object parameter, CultureInfo culture)
         {
             // value is into value of emum
-            string imagePath;
+            string resourceKey;
 
             if (value is Enum e)
-                imagePath = e.ToString();
+                resourceKey = e.ToString();
             else if (value is string s)
-                imagePath = s;
+                resourceKey = s;
             else throw new NotImplementedException();
 
-            var imageSource = ImageSource.FromStream(() => ImagesProvider.GetStream(imagePath));
+            var imageSource = ImageSource.FromStream(() => ImagesProvider.GetStream(resourceKey));
             return imageSource;
         }
 

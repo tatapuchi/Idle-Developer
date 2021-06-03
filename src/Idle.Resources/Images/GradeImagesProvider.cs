@@ -33,16 +33,16 @@ namespace Idle.Resources.Images
 			[Grade.Spp] = _SPP,
 		}.ToDictionary(resource => resource.Key.ToString(), resource => resource.Value);
 
-		public override Stream GetStream(string key)
+		public override Stream GetStream(string resourceKey)
 		{
-			var resourceN = GetResourceNameOrFallBack(key);
+			var resourceN = GetResourceNameOrFallBack(resourceKey);
 			var stream = base.GetStream(resourceN);
 			return stream;
 		}
 
-		private string GetResourceNameOrFallBack(string gradeValue)
+		private string GetResourceNameOrFallBack(string resourceKey)
 		{
-			if (_resources.TryGetValue(gradeValue, out var resourceName))
+			if (_resources.TryGetValue(resourceKey, out var resourceName))
 				return resourceName;
 
 			return _fallback;

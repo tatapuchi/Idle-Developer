@@ -7,9 +7,9 @@ namespace Idle.Resources.Images
 		private static string _languages { get; } = _images + "Languages.";
 		protected override string _fallback => _languages + "Fallback.png";
 
-		public override Stream GetStream(string resourceName)
+		public override Stream GetStream(string resourceKey)
 		{
-			var stream = base.GetStream(resourceName);
+			var stream = base.GetStream(resourceKey);
 			if (stream is null)
 				stream = base.GetStream(_fallback);
 
