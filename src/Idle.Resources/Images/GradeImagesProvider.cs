@@ -13,7 +13,7 @@ namespace Idle.Resources.Images
 		private static string _d { get; } = _grades + "D.png";
 		private static string _c { get; } = _grades + "C.png";
 		private static string _b { get; } = _grades + "B.png";
-		private static string _A { get; } = _grades + "A.png";
+		private static string _a { get; } = _grades + "A.png";
 		private static string _S { get; } = _grades + "S.png";
 		private static string _SP { get; } = _grades + "SP.png";
 		private static string _SPP { get; } = _grades + "SPP.png";
@@ -26,7 +26,7 @@ namespace Idle.Resources.Images
 			[Grade.D] = _d,
 			[Grade.C] = _c,
 			[Grade.B] = _b,
-			[Grade.A] = _A,
+			[Grade.A] = _a,
 			[Grade.S] = _S,
 			[Grade.Sp] = _SP,
 			[Grade.Spp] = _SPP,
