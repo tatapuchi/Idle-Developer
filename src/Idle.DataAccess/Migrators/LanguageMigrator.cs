@@ -5,6 +5,7 @@ using Idle.Models.Common;
 using System.Threading.Tasks;
 using Idle.Models.Models;
 using Idle.DataAccess.ModelTemplates.Languages;
+using Idle.Common.Diagnostics;
 
 namespace Idle.DataAccess.Migrators
 {
@@ -23,10 +24,12 @@ namespace Idle.DataAccess.Migrators
 	public class LanguageMigrator : MigratorBase<Language>
 	{
 		private readonly LanguagesFactory _languagesFactory;
+		private readonly ILogger _logger;
 
-		public LanguageMigrator(LanguagesFactory languagesFactory) 
+		public LanguageMigrator(LanguagesFactory languagesFactory, ILogger logger) 
 		{
 			_languagesFactory = languagesFactory;
+			_logger = logger;
 		}
 
 		// for testing
@@ -39,10 +42,20 @@ namespace Idle.DataAccess.Migrators
 
 		public override async Task MigrateAsync()
 		{
-			await base.MigrateAsync();
+			try
+			{
+				await base.MigrateAsync();
 
-			var languages = _languagesFactory.CreateLanguages();
-			await InsertIfNotExistingAsync(languages);
+				var languages = _languagesFactory.CreateLanguages();
+				await InsertIfNotExistingAsync(languages);
+			}
+			catch (System.Exception e)
+			{
+				_logger.Log(LogLevel.Error, new LogMessage(e));
+				#if DEBUG
+					throw;
+				#endif
+			}
 			
 		}
 

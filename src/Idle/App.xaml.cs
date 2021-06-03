@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Idle.Logic.Common;
 using Idle.Logic.Shop.LanguageMarket;
 using Idle.Views.Languages;
+using Idle.Common.Diagnostics;
 
 //Chewy-Regular font
 //[assembly:ExportFont("Chewy-Regular.ttf", Alias = "Chewy")]
@@ -29,9 +30,12 @@ namespace Idle
 
         public async Task InitilizeAsync() 
         {
+            // "Idle.Common"
+            var logger = new Logger();
+
             // "Idle.DataAccess"
             var languagesFactory = new LanguagesFactory();
-            var languageMigrator = new LanguageMigrator(languagesFactory);
+            var languageMigrator = new LanguageMigrator(languagesFactory, logger);
             await languageMigrator.MigrateAsync();
 
             var languagesRepository = new LanguagesRepository();
