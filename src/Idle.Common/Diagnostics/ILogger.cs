@@ -21,7 +21,6 @@ namespace Idle.Common.Diagnostics
 	}
 
 	// todo: https://www.msctek.com/xamarin-forms-logging-with-appcenter/
-	// we will probably have to use a multi targeting project.
 	// we will do this before deploying the app.
 	// we would only have to implement the strategy and not change any other code
 	//internal class AppCenetLoggerStrategy : ILogger
@@ -41,7 +40,8 @@ namespace Idle.Common.Diagnostics
 		private readonly static IEnumerable<ILogger> _loggers = new List<ILogger>()
 		{
 			new EmptyLoggerStrategy(),
-			new ConsoleLoggerStrategy()
+			new ConsoleLoggerStrategy(),
+			// new AppCenetLoggerStrategy()
 		};
 
 		public void Log(LogMessage logMessage)
