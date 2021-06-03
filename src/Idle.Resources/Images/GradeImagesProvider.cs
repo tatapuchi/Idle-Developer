@@ -47,6 +47,5 @@ namespace Idle.Resources.Images
 			return _fallback;
 		}
 
-
 	}
 }
